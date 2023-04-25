@@ -38,10 +38,10 @@ export const Desktop = ({ film }: IProps) => {
           className={styles.simulyar}
         />
       )}
-      {/* <ActorsCreators
+      <ActorsCreators
         persons={film.persons}
         className={styles.ActorsCreators}
-      /> */}
+      />
       <AdditionalMaterials className={styles.additionalMaterials} />
       <BlockComments className={styles.comments} />
       <AllDevaicePoster

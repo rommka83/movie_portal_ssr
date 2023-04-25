@@ -50,7 +50,13 @@ export function ActorsCreators({ persons, className }: props) {
                   className={styles.link}
                 > */}
                 {el.photo !== '' ? (
-                  <Image src={el.photo} alt={el.name} className={styles.pic} />
+                  <Image
+                    width={60}
+                    height={60}
+                    src={el.photo}
+                    alt={el.name}
+                    className={styles.pic}
+                  />
                 ) : (
                   <div
                     className={classNames(styles.noPhoto, 'icon-person_56__0')}
