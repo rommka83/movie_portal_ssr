@@ -32,7 +32,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.headerWrapper}>
-        <div className={classNames(styles.container, 'container')}>
+        {/* <div className={classNames(styles.container, 'container')}>
           <div className={styles.content}>
             <Link href='/' className={styles.logo}>
               <Logo className={styles.logoImg} />
@@ -66,7 +66,7 @@ export function Header() {
         </div>
         <HeaderDropdown opened={show} onClose={onHeaderDropdownClose}>
           <HeaderMoviesFilter />
-        </HeaderDropdown>
+        </HeaderDropdown> */}
       </div>
     </header>
   );

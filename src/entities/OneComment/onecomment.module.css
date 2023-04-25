@@ -38,7 +38,7 @@
 }
 .commentFooter {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 20px;
 }
 .commentBtn {

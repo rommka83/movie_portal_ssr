@@ -15,6 +15,7 @@ import { IFilm } from 'shared/types/IFilm';
 import { PosterCards } from 'shared/bisnes/PosterCards/PosterCards';
 import { ISimulyarMovies } from 'shared/types/ISimulyarMovie';
 import classNames from 'classnames';
+import Link from 'next/link';
 
 interface IProps {
   title: string;
@@ -109,9 +110,9 @@ export const CategoryFilms: FC<props> = ({
                         height: '100%',
                       }}
                     >
-                      {/* <Link to={`/MoviePage/${obj.id}/${obj.name}`}> */}
-                      <MovieBadge film={obj} />
-                      {/* </Link> */}
+                      <Link href={`/MoviePage/${obj.id}`}>
+                        <MovieBadge film={obj} />
+                      </Link>
                     </div>
                   </li>
                 );

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { UseMedia } from 'shared/hooks/useMedia';
 import { MouseEvent } from 'react';
 import classNames from 'classnames';
-import { HeaderDropdownType } from 'widgets/Header';
+import { HeaderDropdownType } from 'widgets/Header/Header';
 
 interface IHeaderNav {
   onMouseEnter: (event: MouseEvent<HTMLLIElement>) => void;

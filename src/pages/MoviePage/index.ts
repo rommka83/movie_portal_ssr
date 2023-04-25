@@ -1,1 +1,3 @@
-export { MoviePage as default } from './MoviePage';
+import MoviePage from './[id]';
+
+export default MoviePage;

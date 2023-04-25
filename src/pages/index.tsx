@@ -1,9 +1,28 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from '@next/font/google';
+import React, { useEffect } from 'react';
+import styles from '../../styles/home.module.css';
+import testKinopoisk from '../temp/DB/testKinopoisk.json';
+import { CategoryFilms } from 'widgets/CategoryFilms';
+import { PromoSlider } from 'widgets/PromoSlider';
+import { MovieBadge } from 'entities/MovieBadge';
 
-const inter = Inter({ subsets: ['latin'] });
+let adventures = testKinopoisk.filter((el) =>
+  el.genres.find((e) => e.name === 'приключения')
+);
+let fantasy = testKinopoisk.filter((el) =>
+  el.genres.find((e) => e.name === 'фэнтези')
+);
 
 export default function Home() {
-  return <h1>главная</h1>;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return (
+    <>
+      {/* <PromoSlider movies={testKinopoisk} /> */}
+      <div className='container'>
+        <CategoryFilms title={'Приключения'} movies={adventures} />
+        <CategoryFilms title={'Фэнтези'} movies={fantasy} />
+      </div>
+    </>
+  );
 }

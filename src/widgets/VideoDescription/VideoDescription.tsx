@@ -62,10 +62,9 @@ export function VideoDescription({ film, className, short = false }: props) {
       {!short && (
         <>
           <ActorsList actors={film.persons} reiting={film.rating.kp} />
-          <ContentText
-            children={film.description}
-            className={styles.description}
-          />
+          <ContentText className={styles.description}>
+            {film.description}
+          </ContentText>
           <Grading grading={film.rating.kp} />
         </>
       )}

@@ -2,7 +2,7 @@ import React, { HTMLAttributes, useMemo, useRef } from 'react';
 import styles from './additionalmaterials.module.css';
 import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
 import classNames from 'classnames';
-import video from '../../temp/test-video.mp4';
+// import video from '../../temp/test-video.mp4';
 import { nanoid } from '@reduxjs/toolkit';
 import { useAppDispatch } from 'app/store/hooks';
 import { changeTrailerPlayer } from 'app/store/trailerPlayerSlice';
@@ -11,7 +11,7 @@ interface IProps {}
 type props = HTMLAttributes<HTMLDivElement> & IProps;
 
 const obj = {
-  url: video,
+  url: '',
   name: 'трейлер',
 };
 const arr = Array(10).fill(obj);
@@ -34,10 +34,9 @@ export function AdditionalMaterials({ className }: props) {
 
   return (
     <div className={classNames(styles.root, className)}>
-      <SectionTitle
-        children={'Трейлеры и доп.материалы'}
-        className={styles.title}
-      />
+      <SectionTitle className={styles.title}>
+        {'Трейлеры и доп.материалы'}
+      </SectionTitle>
       <ul className={styles.list} ref={list}>
         {arr.slice(0, 4).map((el) => {
           return (
@@ -47,7 +46,7 @@ export function AdditionalMaterials({ className }: props) {
               style={{ width: `${itemWidth}px` }}
               onClick={() => hendleClick(el)}
             >
-              <video src={video} className={styles.video}></video>
+              <video src={''} className={styles.video}></video>
               <p className={styles.itemName}>{el.name}</p>
             </li>
           );
@@ -56,20 +55,3 @@ export function AdditionalMaterials({ className }: props) {
     </div>
   );
 }
-
-// {
-//   trailers: {
-//     url: string;
-//     name: string;
-//     site?: string;
-//     type?: string;
-//     size?: number;
-//   }[];
-//   teasers: {
-//     url: string;
-//     name: string;
-//     site?: string;
-//     type?: string;
-//     size?: number;
-//   }[];
-// }

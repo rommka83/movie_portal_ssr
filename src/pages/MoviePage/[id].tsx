@@ -5,12 +5,21 @@ import { UseMedia } from 'shared/hooks/useMedia';
 import { Tablet } from './tablet/Tablet';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { getComments } from 'app/store/commentsRequest';
-import { useParams } from 'react-router';
 import test from '../../temp/DB/testKinopoisk.json';
 
-export function MoviePage() {
-  const { id } = useParams();
+export async function getServerSideProps(context: any) {
+  const { id } = context.params;
 
+  return {
+    props: { id },
+  };
+}
+
+interface IProps {
+  id: string;
+}
+
+export default function MoviePage({ id }: IProps) {
   const film = useMemo(() => {
     if (id === undefined) return;
     return test.find((el) => el.id === +id);
@@ -23,9 +32,9 @@ export function MoviePage() {
     if (film === undefined) return;
   }, [film]);
 
-  if (tablet) {
-    return <Tablet />;
-  }
+  // if (tablet) {
+  //   return <Tablet />;
+  // }
 
   return film === undefined ? null : <Desktop film={film} />;
 }

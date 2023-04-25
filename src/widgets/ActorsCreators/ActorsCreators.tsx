@@ -1,15 +1,15 @@
 import React, { useMemo } from 'react';
 import styles from './actorscreators.module.css';
 import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
-import { t } from 'i18next';
 import { nanoid } from '@reduxjs/toolkit';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 import { UseMedia } from 'shared/hooks/useMedia';
 import { useAppDispatch } from 'app/store/hooks';
 import { openClose } from 'app/store/ActorsCreatorsModalSlice';
 import { HTMLAttributes } from 'react';
 import { IPerson } from 'shared/types/IPerson';
+import { useTranslation } from 'react-i18next';
+import Image from 'next/image';
 
 interface IProps {
   persons: IPerson[];
@@ -20,6 +20,7 @@ export function ActorsCreators({ persons, className }: props) {
   const tablet = UseMedia('(max-width: 850px)');
   const mobile = UseMedia('(max-width: 500px)');
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   const [amountCardPerson, widthCardPerson] = useMemo(() => {
     if (mobile) return [3, 20];
@@ -29,7 +30,9 @@ export function ActorsCreators({ persons, className }: props) {
 
   return (
     <div className={classNames(styles.root, className)}>
-      <SectionTitle children={t('ActorsCreators')} className={styles.title} />
+      <SectionTitle className={styles.title}>
+        {t('ActorsCreators')}
+      </SectionTitle>
       <div className={styles.picWrapper}>
         <ul
           className={styles.list}
@@ -42,27 +45,24 @@ export function ActorsCreators({ persons, className }: props) {
 
             return (
               <li className={styles.item} key={nanoid()}>
-                <Link
+                {/* <Link
                   to={`/ActorPage/${el.id}/${el.name}`}
                   className={styles.link}
-                >
-                  {el.photo !== '' ? (
-                    <img src={el.photo} alt={el.name} className={styles.pic} />
-                  ) : (
-                    <div
-                      className={classNames(
-                        styles.noPhoto,
-                        'icon-person_56__0'
-                      )}
-                    ></div>
-                  )}
+                > */}
+                {el.photo !== '' ? (
+                  <Image src={el.photo} alt={el.name} className={styles.pic} />
+                ) : (
+                  <div
+                    className={classNames(styles.noPhoto, 'icon-person_56__0')}
+                  ></div>
+                )}
 
-                  <p className={styles.name}>{name}</p>
-                  <p className={classNames(styles.name, styles.surName)}>
-                    {surName}
-                  </p>
-                  <p className={styles.position}>{el.profession}</p>
-                </Link>
+                <p className={styles.name}>{name}</p>
+                <p className={classNames(styles.name, styles.surName)}>
+                  {surName}
+                </p>
+                <p className={styles.position}>{el.profession}</p>
+                {/* </Link> */}
               </li>
             );
           })}
