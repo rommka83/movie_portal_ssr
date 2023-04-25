@@ -7,7 +7,10 @@ export const General: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
   return (
     <div className={styles.general}>
       {/* <Header /> */}
+      <h1>Heder</h1>
       <main className={styles.main}>{children}</main>
+      <h1>Footer</h1>
+
       {/* <Footer /> */}
     </div>
   );
