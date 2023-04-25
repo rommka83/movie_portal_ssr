@@ -11,7 +11,6 @@ import { MovieBadge } from 'entities/MovieBadge';
 import { nanoid } from '@reduxjs/toolkit';
 import styles from './categoryfilms.module.css';
 import { UseMedia } from 'shared/hooks/useMedia';
-import { Link } from 'react-router-dom';
 import { IFilm } from 'shared/types/IFilm';
 import { PosterCards } from 'shared/bisnes/PosterCards/PosterCards';
 import { ISimulyarMovies } from 'shared/types/ISimulyarMovie';
@@ -92,7 +91,7 @@ export const CategoryFilms: FC<props> = ({
 
   return (
     <section className={classNames(styles.root, className)}>
-      <SectionTitle children={title} />
+      <SectionTitle>{title}</SectionTitle>
       <div className={styles.sliderWrapper}>
         <div className={styles.window}>
           <ul
@@ -110,9 +109,9 @@ export const CategoryFilms: FC<props> = ({
                         height: '100%',
                       }}
                     >
-                      <Link to={`/MoviePage/${obj.id}/${obj.name}`}>
-                        <MovieBadge film={obj} />
-                      </Link>
+                      {/* <Link to={`/MoviePage/${obj.id}/${obj.name}`}> */}
+                      <MovieBadge film={obj} />
+                      {/* </Link> */}
                     </div>
                   </li>
                 );
@@ -127,12 +126,12 @@ export const CategoryFilms: FC<props> = ({
                         height: '100%',
                       }}
                     >
-                      <Link to={`/MoviePage/${obj.id}/${obj.name}`}>
-                        <PosterCards
-                          src={obj.poster.url ? obj.poster.url : ''}
-                          name={obj.name}
-                        />
-                      </Link>
+                      {/* <Link to={`/MoviePage/${obj.id}/${obj.name}`}> */}
+                      <PosterCards
+                        src={obj.poster.url ? obj.poster.url : ''}
+                        name={obj.name}
+                      />
+                      {/* </Link> */}
                     </div>
                   </li>
                 );

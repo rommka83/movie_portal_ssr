@@ -18,7 +18,7 @@ export function Home() {
   }, []);
   return (
     <>
-      <PromoSlider movies={testKinopoisk} />
+      {/* <PromoSlider movies={testKinopoisk} /> */}
       <div className='container'>
         <CategoryFilms title={'Приключения'} movies={adventures} />
         <CategoryFilms title={'Фэнтези'} movies={fantasy} />
