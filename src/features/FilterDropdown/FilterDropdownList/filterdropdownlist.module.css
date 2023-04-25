@@ -1,0 +1,62 @@
+.filterDropList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 12px;
+}
+
+@media (max-width: 1124px) {
+  .filterDropList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .filterDropList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filterDropListItem:hover .filterDropInputText {
+  color: var(--white);
+}
+
+.filterDropListItem:hover .filterDropCheckbox {
+  opacity: 1;
+}
+
+.filterDropLabel {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.filterDropInput {
+  display: none;
+}
+
+.filterDropInputText {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+  color: var(--gray-48);
+  transition: color 400ms;
+}
+
+.filterDropCheckbox {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  transition: opacity 400ms;
+  color: var(--white);
+}
+
+.checkmark {
+  display: block;
+  font-size: 16px;
+  line-height: 1;
+  transition-property: color;
+}

@@ -1,0 +1,13 @@
+.root {
+  margin-top: 10px;
+}
+.root > p {
+  font-size: 12px;
+  color: var(--gray-72);
+}
+.yearСountry {
+  margin-bottom: 5px;
+}
+.genre {
+  margin-bottom: 5px;
+}

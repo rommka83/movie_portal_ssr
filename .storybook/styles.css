@@ -1,0 +1,12 @@
+.docs-story {
+  background-color: #100e19;
+}
+td > span,
+th > span,
+.docblock-argstable,
+.docblock-argstable-body {
+  color: black;
+}
+#control-type > option {
+  color: black;
+}

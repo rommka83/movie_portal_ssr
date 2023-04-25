@@ -1,0 +1,1 @@
+export { ShortDescription } from './ShortDescription';

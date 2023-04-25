@@ -1,0 +1,18 @@
+.btn {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+  font-size: 20px;
+}
+
+.btn::before {
+  margin-right: 10px;
+}
+
+.btn:hover {
+  opacity: 1;
+  scale: 1.1;
+}

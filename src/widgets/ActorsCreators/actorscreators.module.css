@@ -1,0 +1,68 @@
+.root {
+}
+.title {
+  margin-bottom: 30px;
+  opacity: 0.5;
+}
+.list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 15px;
+  overflow: hidden;
+}
+.item {
+  width: 100%;
+}
+.pic {
+  width: 100%;
+  aspect-ratio: 1/1;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+.entryModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+  background-color: var(--green);
+  cursor: pointer;
+}
+.noPhoto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+  background-color: var(--gray-60);
+  font-size: 40px;
+  color: var(--pink);
+}
+
+.name,
+.surName {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--gray-7e0);
+  text-align: center;
+}
+.name {
+}
+.surName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.position {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--gray-light);
+  text-align: center;
+}

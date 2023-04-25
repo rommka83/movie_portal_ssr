@@ -1,0 +1,1 @@
+export { MovieBadge } from './MovieBadge';

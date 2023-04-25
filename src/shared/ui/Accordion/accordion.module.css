@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.accordionButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+}
+
+.textButton {
+  padding-left: 14px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+}

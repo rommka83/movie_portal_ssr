@@ -1,0 +1,223 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 8px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.containerBorder {
+  border-top: 1px solid var(--gray-16);
+  border-bottom: 1px solid var(--gray-16);
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  padding: 48px 0px;
+}
+.columnNarrow {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.columnNarrow:not(:first-child) {
+  padding-left: 15px;
+}
+
+.columnNarrow:not(:last-child) {
+  padding-right: 15px;
+}
+
+.columnCentered {
+  align-items: center;
+  gap: 24px;
+}
+
+.columnTitle {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.description p {
+  line-height: 15px;
+  color: var(--gray-48);
+}
+
+.support {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.buttonOrLink.buttonOrLink {
+  width: 196px;
+}
+
+.supportButtons {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.supportButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.envelop,
+.phone {
+  font-size: 16px;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  line-height: 14px;
+}
+
+.questionText {
+  color: var(--gray-48);
+}
+
+.questionLink {
+  color: var(--white);
+}
+
+.questionLink:hover {
+  color: var(--gray-48);
+}
+
+.footerWidget {
+  --start-gradient-color: #a869f0;
+  --end-gradient-color: #834cc2;
+  --shadow-color: #a869f0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  width: 104px;
+  height: 104px;
+  background: linear-gradient(
+    180deg,
+    var(--start-gradient-color) 0%,
+    var(--end-gradient-color) 100%
+  );
+  box-shadow: 0 0 104px var(--shadow-color);
+}
+
+.footerWidgetIcon {
+  position: relative;
+  font-size: 56px;
+}
+
+.footerWidgetIconAbsolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.linkActivation {
+  background-image: -webkit-linear-gradient(
+    135deg,
+    var(--pink-light),
+    var(--pink)
+  );
+  background-image: -o-linear-gradient(135deg, var(--pink-light), var(--pink));
+  background-image: linear-gradient(-45deg, var(--pink-light), var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.footerWidgetText {
+  text-align: center;
+}
+
+.footerWidgetText:hover {
+  color: var(--gray-48);
+}
+
+.columnWide {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.stores {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.storesLink.storesLink.storesLink {
+  width: fit-content;
+  height: 40px;
+  padding: 0px 15px 0px 0px;
+}
+
+.storesLinkContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  font-size: 20px;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.preamble {
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+}
+
+.caption {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.copyrights {
+  display: flex;
+  flex-direction: column;
+}
+
+.copyrightContent {
+  color: var(--gray-48);
+}
+
+.community {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}

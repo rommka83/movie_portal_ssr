@@ -1,0 +1,1 @@
+export { CategoryFilms } from './CategoryFilms';

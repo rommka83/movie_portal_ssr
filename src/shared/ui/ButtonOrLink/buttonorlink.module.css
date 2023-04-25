@@ -1,0 +1,96 @@
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 16px;
+	border-width: 1px;
+	border-style: solid;
+	padding: 7px 11px;
+	border-radius: var(--main-border-radius);
+	color: #fff;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.button.primary {
+	background-color: var(--pink);
+	border-color: var(--pink);
+}
+
+.button.primary:hover {
+	background-color: var(--pink-hover);
+	border-color: var(--pink-hover);
+}
+
+.button.primary:active {
+	background-color: var(--pink-active);
+	border-color: var(--pink-active);
+}
+
+.button.secondary {
+	background-color: var(--dark-gray);
+	border-color: var(--dark-gray);
+	padding: 9px 15px;
+}
+
+.button.secondary:hover {
+	background-color: var(--dark-gray-hover);
+	border-color: var(--dark-gray-hover);
+}
+
+.button.secondary:active {
+	background-color: var(--dark-gray-active);
+	border-color: var(--dark-gray-active);
+}
+
+.button.third {
+	padding: 6px 16px;
+	border-radius: var(--secondary-border-radius);
+	background-color: var(--gray);
+	color: var(--gray-light);
+	border: none;
+}
+
+.button.third:hover {
+	background-color: var(--gray-hover);
+}
+
+.button.third:active {
+	background-color: var(--gray-active);
+}
+
+.button.transparent {
+	background-color: transparent;
+	border-color: var(--gray-32);
+}
+
+.button.transparent:hover {
+	background-color: transparent;
+	border-color: var(--gray-32);
+}
+
+.button.transparent:active {
+	background-color: var(--gray-08);
+	border-color: var(--gray-72);
+}
+
+.button.round {
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	padding: 0;
+	border-width: 2px;
+}
+
+.button.small {
+	padding: 3px 7px;
+	border-radius: var(--third-border-radius);
+}
+
+.button.large {
+	font-size: 15px;
+	line-height: 20px;
+}

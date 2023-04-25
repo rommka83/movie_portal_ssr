@@ -1,0 +1,15 @@
+.root {
+  width: 100%;
+  overflow: hidden;
+}
+.coruselWrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+.corusel {
+  display: flex;
+  gap: 20px;
+}
+.ItemComments {
+  width: 100%;
+}

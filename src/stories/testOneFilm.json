@@ -1,0 +1,146 @@
+{
+  "videos": {
+    "trailers": [
+      {
+        "url": "https://www.youtube.com/watch?v=jL3vytC1140",
+        "name": "Тизер (сезон 1)",
+        "site": "youtube"
+      }
+    ],
+    "teasers": []
+  },
+  "id": 1111765,
+  "type": "anime",
+  "externalId": { "kpHD": null, "imdb": "tt0856162", "tmdb": 74091 },
+  "name": "Страна самоцветов",
+  "rating": {
+    "kp": 7.711,
+    "imdb": 7.9,
+    "filmCritics": 0,
+    "russianFilmCritics": 0,
+    "await": 0
+  },
+  "description": "В далёком будущем после серии катаклизмов Земля окружена шестью лунами и почти полностью покрыта океаном. На крохотном островке суши обитают 28 представителей новой расы — самоцветов, которые вынуждены непрерывно бороться за существование с обитателями лун.",
+  "votes": {
+    "kp": 2490,
+    "imdb": 1763,
+    "filmCritics": 0,
+    "russianFilmCritics": 0,
+    "await": 0
+  },
+  "distributors": { "distributor": null, "distributorRelease": null },
+  "premiere": { "country": "Япония", "world": "2017-10-07T00:00:00.000Z" },
+  "slogan": null,
+  "year": 2017,
+  "poster": {
+    "url": "https://st.kp.yandex.net/images/film_big/1111765.jpg",
+    "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_1111765.jpg"
+  },
+  "facts": null,
+  "genres": [
+    { "name": "аниме" },
+    { "name": "мультфильм" },
+    { "name": "приключения" },
+    { "name": "фэнтези" }
+  ],
+  "countries": [{ "name": "Япония" }],
+  "seasonsInfo": [{ "number": 1, "episodesCount": 12 }],
+  "persons": [
+    {
+      "id": 2752034,
+      "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2752034.jpg",
+      "name": "Микако Комацу",
+      "enName": "Mikako Komatsu",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 2313151,
+      "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2313151.jpg",
+      "name": "Томоё Куросава",
+      "enName": "Tomoyo Kurosawa",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1235051,
+      "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1235051.jpg",
+      "name": "Юко Санпэй",
+      "enName": "Yuko Sanpei",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 409389,
+      "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_409389.jpg",
+      "name": "Риэ Кугимия",
+      "enName": "Rie Kugimiya",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 483199,
+      "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_483199.jpg",
+      "name": "Мамико Ното",
+      "enName": "Mamiko Noto",
+      "profession": "актеры",
+      "enProfession": "actor"
+    }
+  ],
+  "images": { "postersCount": 5, "backdropsCount": 4, "framesCount": 31 },
+  "lists": [],
+  "spokenLanguages": [{ "name": "日本語", "nameEn": "Japanese" }],
+  "productionCompanies": [
+    {
+      "name": "Orange",
+      "url": "https://www.themoviedb.org/t/p/original/cp27UOmwl39GhReASLlGOekc2OB.png",
+      "previewUrl": "https://www.themoviedb.org/t/p/w500/cp27UOmwl39GhReASLlGOekc2OB.png"
+    }
+  ],
+  "typeNumber": 4,
+  "alternativeName": "Houseki no Kuni",
+  "backdrop": { "url": null, "previewUrl": null },
+  "budget": {},
+  "enName": null,
+  "movieLength": 24,
+  "names": [{ "name": "Страна самоцветов" }, { "name": "Houseki no Kuni" }],
+  "networks": [
+    {
+      "name": "MBS",
+      "url": "https://www.themoviedb.org/t/p/original/7RNXnyiMbjgqtPAjja13wchcrGI.png",
+      "previewUrl": "https://www.themoviedb.org/t/p/w500/7RNXnyiMbjgqtPAjja13wchcrGI.png"
+    },
+    {
+      "name": "AT-X",
+      "url": "https://www.themoviedb.org/t/p/original/fERjndErEpveJmQZccJbJDi93rj.png",
+      "previewUrl": "https://www.themoviedb.org/t/p/w500/fERjndErEpveJmQZccJbJDi93rj.png"
+    },
+    {
+      "name": "Tokyo MX",
+      "url": "https://www.themoviedb.org/t/p/original/3qFArHw6nrFIdkH2tPht701sNhs.png",
+      "previewUrl": "https://www.themoviedb.org/t/p/w500/3qFArHw6nrFIdkH2tPht701sNhs.png"
+    },
+    {
+      "name": "BS11",
+      "url": "https://www.themoviedb.org/t/p/original/JQ5bx6n7Qmdmyqz6sqjo5Fz2iR.png",
+      "previewUrl": "https://www.themoviedb.org/t/p/w500/JQ5bx6n7Qmdmyqz6sqjo5Fz2iR.png"
+    }
+  ],
+  "status": "completed",
+  "subType": "Сценарированный",
+  "updateDates": [],
+  "fees": { "world": {}, "russia": {}, "usa": {} },
+  "updatedAt": "2023-04-17T11:01:20.125Z",
+  "ratingMpaa": null,
+  "shortDescription": null,
+  "technology": { "hasImax": false, "has3D": false },
+  "ticketsOnSale": false,
+  "similarMovies": [],
+  "sequelsAndPrequels": [],
+  "ageRating": null,
+  "logo": { "url": null },
+  "watchability": { "items": null },
+  "releaseYears": [{ "start": 2017, "end": 2017 }],
+  "top10": null,
+  "top250": null
+}

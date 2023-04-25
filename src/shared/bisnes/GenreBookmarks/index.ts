@@ -1,0 +1,1 @@
+export { GenreBookmarks } from './GenreBookmarks';

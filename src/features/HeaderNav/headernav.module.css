@@ -1,0 +1,21 @@
+.nav {
+	height: 100%;
+}
+
+.list {
+	display: flex;
+	gap: 16px;
+	height: 100%;
+}
+.item {
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	font-weight: 600;
+	height: 100%;
+	cursor: pointer;
+}
+
+.item.active > a {
+	color: var(--white);
+}

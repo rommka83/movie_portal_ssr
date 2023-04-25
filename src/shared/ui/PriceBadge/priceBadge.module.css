@@ -1,0 +1,15 @@
+.priceBadge {
+	font-size: 13px;
+	line-height: 16px;
+	font-weight: 400;
+}
+
+
+.pink {
+	color: var(--pink);
+}
+
+
+.gray {
+	color: var(--gray-light);
+}

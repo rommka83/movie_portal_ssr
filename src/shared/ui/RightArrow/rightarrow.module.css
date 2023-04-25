@@ -1,0 +1,16 @@
+.RightArrow {
+  /* background-color: transparent;
+  border: none; */
+  opacity: 0.7;
+}
+.big {
+  width: 32px;
+  height: 32px;
+}
+.small {
+  width: 16px;
+  height: 16px;
+}
+.RightArrow:hover {
+  opacity: 1;
+}

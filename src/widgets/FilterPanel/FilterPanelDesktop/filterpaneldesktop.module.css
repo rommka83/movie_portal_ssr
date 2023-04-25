@@ -1,0 +1,113 @@
+.filterDesktop {
+  margin-top: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 16px;
+  border-radius: 6px;
+  background-color: var(--dark-gray);
+}
+
+.plankList {
+  --gap-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-size);
+}
+
+@media (max-width: 1124px) {
+  .plankList {
+    flex-wrap: wrap;
+  }
+}
+
+.dropdownRating.dropdownRating {
+  --dropdown-width: 210px;
+}
+
+.dropdownVotes.dropdownVotes {
+  --dropdown-width: 235px;
+}
+
+.dropdownSearch.dropdownSearch {
+  --dropdown-width: 300px;
+}
+
+.card.card {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+@media (max-width: 1024px) {
+  .genreCardContainer {
+    width: 50%;
+  }
+}
+
+.iconCard.iconCard {
+  color: var(--white);
+}
+
+.resetButton {
+  width: fit-content;
+  padding: 8px;
+  font-size: 15px;
+  line-height: 20px;
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.carousel {
+  border-bottom: 1px solid var(--gray-light);
+  padding: 12px;
+}
+
+.list {
+  margin-top: 16px;
+}
+
+.countriesButtonContainer {
+  display: inline-block;
+  padding: 0 4px;
+}
+
+.countriesButton.countriesButton {
+  border: 1px solid var(--white);
+}
+
+.resetButtonContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.resetIcon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.inputRating {
+  width: 125px;
+  height: 6px;
+  border-radius: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.inputRating[type='range']::-webkit-slider-thumb {
+  cursor: pointer;
+  width: 6px;
+  height: 6px;
+  -webkit-appearance: none;
+}
+
+.inputRating::-moz-range-thumb {
+  background: #ecf0f1;
+  border-radius: 10px/100%;
+  cursor: pointer;
+}

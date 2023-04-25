@@ -1,0 +1,30 @@
+.title {
+  margin-bottom: 30px;
+  opacity: 0.5;
+}
+.list {
+  display: flex;
+  overflow: hidden;
+}
+.item {
+  cursor: pointer;
+}
+.item:not(:last-child) {
+  margin-right: 10px;
+}
+.item:hover > .video {
+  transform: scale(1.02);
+}
+.item:hover > .itemName {
+  opacity: 1;
+}
+.video {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.itemName {
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}

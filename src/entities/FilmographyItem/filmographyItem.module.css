@@ -1,0 +1,89 @@
+.filmographyList {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.filmographyItem {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.filmographyPhoto {
+    min-width: 80px;
+    height: 123px;
+}
+
+.filmographyImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: var(--pink--linear-gradient);
+}
+
+.filmographyBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 15px;
+}
+
+.filmographyInfo {
+    width: 60%;
+    padding-right: 10px;
+}
+
+.filmographyTitle {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--white);
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.filmographyRating {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--gray-light);
+}
+
+.filmographyRatingSpan {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--gray-light);
+}
+
+.btn {
+    width: 140px;
+    height: 40px;
+}
+
+@media(max-width:600px) {
+    .filmographyBody {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        width: 100%;
+        margin-left: 15px;
+    }
+
+    .filmographyInfo {
+        width: 100%;
+        margin-bottom: 20px;
+
+    }
+
+    .btn {
+        width: 100%;
+        height: 40px;
+        margin-left: 0px;
+
+    }
+}

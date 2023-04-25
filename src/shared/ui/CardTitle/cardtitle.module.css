@@ -1,0 +1,10 @@
+.cardTitle {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--gray-7e0);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}

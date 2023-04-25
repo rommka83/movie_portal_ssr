@@ -1,0 +1,53 @@
+.root {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+.offerЕoСonnect {
+  grid-column: 1;
+}
+.offerVariants {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+.offerBtn {
+  width: fit-content;
+  font-weight: 700;
+}
+.posters {
+  grid-column: 2;
+  position: relative;
+  width: 400px;
+}
+.tv {
+  width: 100%;
+  opacity: 0.9;
+}
+.posterTv {
+  position: absolute;
+  top: 5px;
+  left: 20%;
+  width: 60%;
+  height: 68%;
+  object-fit: cover;
+}
+.posterIPad {
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  width: 38%;
+  height: 50%;
+  object-fit: cover;
+}
+.IPad {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+}
+@media (max-width: 600px) {
+}

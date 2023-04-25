@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.inp:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+input[type='range'].inp {
+  width: 50%;
+}
+
+input[type='range'].inp::-webkit-slider-runnable-track {
+  height: 10px;
+}
+
+.name {
+  margin-bottom: 5px;
+  color: var(--gray-72);
+}

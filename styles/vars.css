@@ -1,0 +1,36 @@
+:root {
+  --main-background-color: #100e19;
+  --pink-light: #c447ff;
+  --pink: #ea003d;
+  --pink-hover: #ff0f4d;
+  --pink-active: #c10032;
+  --pink--linear-gradient: linear-gradient(270deg, #ea003d 0, #c447ff 100%);
+  --gray: #312b45;
+  --gray-hover: #352f4b;
+  --gray-active: #2a253c;
+  --gray-light: #a5a1b2;
+  --gray-798: #7e798f;
+  --gray-08: rgba(255, 255, 255, 0.08);
+  --gray-16: rgba(255, 255, 255, 0.16);
+  --gray-24: rgba(7, 5, 14, 0.24);
+  --gray-32: rgba(255, 255, 255, 0.32);
+  --gray-light-32: rgba(126, 121, 143, 0.32);
+  --gray-48: rgba(255, 255, 255, 0.48);
+  --gray-60: rgba(31, 27, 46, 0.6);
+  --gray-72: rgba(255, 255, 255, 0.72);
+  --gray-88: rgba(31, 27, 46, 0.88);
+  --gray-96: rgba(7, 5, 14, 0.96);
+  --gray-drop: rgba(16, 14, 25, 0.8);
+  --dark-gray: #1f1b2e;
+  --gray-524: #191524;
+  --gray-shadow: #12101b;
+  --gray-shadow-24: rgba(255, 255, 255, 0.24);
+  --dark-gray-hover: #2e2844;
+  --dark-gray-active: #0e0c14;
+  --gray-7e0: #d9d7e0;
+  --white: #fff;
+  --green: #73a32f;
+  --main-border-radius: 8px;
+  --secondary-border-radius: 16px;
+  --third-border-radius: 6px;
+}

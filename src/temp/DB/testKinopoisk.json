@@ -1,0 +1,2289 @@
+[
+  {
+    "videos": {
+      "trailers": [
+        {
+          "url": "https://www.youtube.com/watch?v=jL3vytC1140",
+          "name": "Тизер (сезон 1)",
+          "site": "youtube"
+        }
+      ],
+      "teasers": []
+    },
+    "id": 1111765,
+    "type": "anime",
+    "externalId": { "kpHD": null, "imdb": "tt0856162", "tmdb": 74091 },
+    "name": "Страна самоцветов",
+    "rating": {
+      "kp": 7.711,
+      "imdb": 7.9,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "description": "В далёком будущем после серии катаклизмов Земля окружена шестью лунами и почти полностью покрыта океаном. На крохотном островке суши обитают 28 представителей новой расы — самоцветов, которые вынуждены непрерывно бороться за существование с обитателями лун.",
+    "votes": {
+      "kp": 2490,
+      "imdb": 1763,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "distributors": { "distributor": null, "distributorRelease": null },
+    "premiere": { "country": "Япония", "world": "2017-10-07T00:00:00.000Z" },
+    "slogan": null,
+    "year": 2017,
+    "poster": {
+      "url": "https://st.kp.yandex.net/images/film_big/1111765.jpg",
+      "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_1111765.jpg"
+    },
+    "facts": null,
+    "genres": [
+      { "name": "аниме" },
+      { "name": "мультфильм" },
+      { "name": "приключения" },
+      { "name": "фэнтези" }
+    ],
+    "countries": [{ "name": "Япония" }],
+    "seasonsInfo": [{ "number": 1, "episodesCount": 12 }],
+    "persons": [
+      {
+        "id": 2752034,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2752034.jpg",
+        "name": "Микако Комацу",
+        "enName": "Mikako Komatsu",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2313151,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2313151.jpg",
+        "name": "Томоё Куросава",
+        "enName": "Tomoyo Kurosawa",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1235051,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1235051.jpg",
+        "name": "Юко Санпэй",
+        "enName": "Yuko Sanpei",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 409389,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_409389.jpg",
+        "name": "Риэ Кугимия",
+        "enName": "Rie Kugimiya",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1545551,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1545551.jpg",
+        "name": "Ито Канаэ",
+        "enName": "Ito Kanae",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1547154,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1547154.jpg",
+        "name": "Мария Исэ",
+        "enName": "Mariya Ise",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2796784,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2796784.jpg",
+        "name": "Аянэ Сакура",
+        "enName": "Ayane Sakura",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2496885,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2496885.jpg",
+        "name": "Аи Каяно",
+        "enName": "Ai Kayano",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 483199,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_483199.jpg",
+        "name": "Мамико Ното",
+        "enName": "Mamiko Noto",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1686651,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1686651.jpg",
+        "name": "Саори Хаями",
+        "enName": "Saori Hayami",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3482058,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3482058.jpg",
+        "name": "Ёсиаки Фудзисава",
+        "enName": "Yoshiaki Fujisawa",
+        "profession": "композиторы",
+        "enProfession": "composer"
+      },
+      {
+        "id": 5251846,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5251846.jpg",
+        "name": "Хисако Акаги",
+        "enName": "Hisako Akagi",
+        "profession": "художники",
+        "enProfession": "designer"
+      },
+      {
+        "id": 2811084,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2811084.jpg",
+        "name": "Такахико Кёгоку",
+        "enName": "Takahiko Kyogoku",
+        "profession": "режиссеры",
+        "enProfession": "director"
+      }
+    ],
+    "images": { "postersCount": 5, "backdropsCount": 4, "framesCount": 31 },
+    "lists": [],
+    "spokenLanguages": [{ "name": "日本語", "nameEn": "Japanese" }],
+    "productionCompanies": [
+      {
+        "name": "Orange",
+        "url": "https://www.themoviedb.org/t/p/original/cp27UOmwl39GhReASLlGOekc2OB.png",
+        "previewUrl": "https://www.themoviedb.org/t/p/w500/cp27UOmwl39GhReASLlGOekc2OB.png"
+      }
+    ],
+    "typeNumber": 4,
+    "alternativeName": "Houseki no Kuni",
+    "backdrop": { "url": null, "previewUrl": null },
+    "budget": {},
+    "enName": null,
+    "movieLength": 24,
+    "names": [{ "name": "Страна самоцветов" }, { "name": "Houseki no Kuni" }],
+    "networks": [
+      {
+        "name": "MBS",
+        "url": "https://www.themoviedb.org/t/p/original/7RNXnyiMbjgqtPAjja13wchcrGI.png",
+        "previewUrl": "https://www.themoviedb.org/t/p/w500/7RNXnyiMbjgqtPAjja13wchcrGI.png"
+      },
+      {
+        "name": "AT-X",
+        "url": "https://www.themoviedb.org/t/p/original/fERjndErEpveJmQZccJbJDi93rj.png",
+        "previewUrl": "https://www.themoviedb.org/t/p/w500/fERjndErEpveJmQZccJbJDi93rj.png"
+      },
+      {
+        "name": "Tokyo MX",
+        "url": "https://www.themoviedb.org/t/p/original/3qFArHw6nrFIdkH2tPht701sNhs.png",
+        "previewUrl": "https://www.themoviedb.org/t/p/w500/3qFArHw6nrFIdkH2tPht701sNhs.png"
+      },
+      {
+        "name": "BS11",
+        "url": "https://www.themoviedb.org/t/p/original/JQ5bx6n7Qmdmyqz6sqjo5Fz2iR.png",
+        "previewUrl": "https://www.themoviedb.org/t/p/w500/JQ5bx6n7Qmdmyqz6sqjo5Fz2iR.png"
+      }
+    ],
+    "status": "completed",
+    "subType": "Сценарированный",
+    "updateDates": [],
+    "fees": { "world": {}, "russia": {}, "usa": {} },
+    "updatedAt": "2023-04-17T11:01:20.125Z",
+    "ratingMpaa": null,
+    "shortDescription": null,
+    "technology": { "hasImax": false, "has3D": false },
+    "ticketsOnSale": false,
+    "similarMovies": [],
+    "sequelsAndPrequels": [],
+    "ageRating": null,
+    "logo": { "url": null },
+    "watchability": { "items": null },
+    "releaseYears": [{ "start": 2017, "end": 2017 }],
+    "top10": null,
+    "top250": null
+  },
+  {
+    "status": null,
+    "externalId": {
+      "kpHD": "493bde0be5a3d691944d4b9b4fab1bf4",
+      "imdb": "tt8637440",
+      "tmdb": 595931
+    },
+    "rating": {
+      "kp": 6.278,
+      "imdb": 6.7,
+      "filmCritics": 7.8,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "votes": {
+      "kp": 434,
+      "imdb": 4910,
+      "filmCritics": 122,
+      "russianFilmCritics": 0,
+      "await": 34
+    },
+    "backdrop": {
+      "url": "https://avatars.mds.yandex.net/get-ott/2419418/2a00000172e5be1696484c9a1a3471b0cd18/orig",
+      "previewUrl": "https://avatars.mds.yandex.net/get-ott/2419418/2a00000172e5be1696484c9a1a3471b0cd18/x1000"
+    },
+    "movieLength": 98,
+    "images": { "framesCount": 10 },
+    "productionCompanies": [
+      {
+        "name": "Topic Studios",
+        "url": "https://www.themoviedb.org/t/p/original/lFMRxW463eOrpupVjnMtYnMmhJo.png",
+        "previewUrl": "https://www.themoviedb.org/t/p/w500/lFMRxW463eOrpupVjnMtYnMmhJo.png"
+      },
+      { "name": "Watch This Ready", "url": null, "previewUrl": null }
+    ],
+    "spokenLanguages": [{ "name": "English", "nameEn": "English" }],
+    "id": 1168534,
+    "type": "movie",
+    "name": "Восхождение",
+    "description": "Двое лучших друзей Кайл и Майк едут на велосипедах среди гористых склонов французского юга. Майку, который профессионально занимается этим спортом, велопрогулка даётся без усилий, что не скажешь о Кайле, для которого эта вылазка становится настоящим испытанием. Однако он не унывает и даже рад, что лучший друг взял его с собой. Во-первых, это отличная возможность проводить больше времени вместе, да к тому же он совсем не прочь подтянуться перед грядущей свадьбой с любимой девушкой. Весь романтичный настрой портит невзначай брошенная фраза Майка, что они с Авой спали и не только до её знакомства с Кайлом. Эта новость становится поворотным моментом в отношении лучших друзей.",
+    "distributors": { "distributor": null, "distributorRelease": null },
+    "premiere": {
+      "country": "Франция",
+      "world": "2019-05-17T00:00:00.000Z",
+      "russia": "2021-01-18T00:00:00.000Z",
+      "digital": "2021-01-18T00:00:00.000Z"
+    },
+    "slogan": null,
+    "year": 2019,
+    "poster": {
+      "url": "https://st.kp.yandex.net/images/film_big/1168534.jpg",
+      "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_1168534.jpg"
+    },
+    "facts": [],
+    "genres": [
+      { "name": "аниме" },
+      { "name": "мультфильм" },
+      { "name": "приключения" },
+      { "name": "фэнтези" }
+    ],
+    "countries": [{ "name": "США" }],
+    "videos": {
+      "trailers": [
+        {
+          "url": "http://trailers.s3.mds.yandex.net/video_original/166401-39701dea091644f5bb13c8009275629a.mov",
+          "name": "Фрагмент «Bunny Slopes»",
+          "site": "unknown"
+        },
+        {
+          "url": "http://www.youtube.com/v/Mr4MKhV5QVw",
+          "name": "Трейлер",
+          "site": "youtube"
+        },
+        {
+          "url": "https://www.youtube.com/embed/Mr4MKhV5QVw",
+          "name": "Official Trailer",
+          "site": "youtube",
+          "type": "TRAILER"
+        }
+      ],
+      "teasers": []
+    },
+    "seasonsInfo": [],
+    "persons": [
+      {
+        "id": 3424944,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3424944.jpg",
+        "name": "Кайл Марвин",
+        "enName": "Kyle Marvin",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1954033,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1954033.jpg",
+        "name": "Майкл Анджело Ковино",
+        "enName": "Michael Angelo Covino",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2549128,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2549128.jpg",
+        "name": "Гэйл Ранкин",
+        "enName": "Gayle Rankin",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 59035,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_59035.jpg",
+        "name": "Талия Болсам",
+        "enName": "Talia Balsam",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 7892,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_7892.jpg",
+        "name": "Джордж Уэндт",
+        "enName": "George Wendt",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 29036,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_29036.jpg",
+        "name": "Жюдит Годреш",
+        "enName": "Judith Godrèche",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3242825,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3242825.jpg",
+        "name": "Даниэлла Ковино",
+        "enName": "Daniella Covino",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1638421,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1638421.jpg",
+        "name": "Иден Мэлин",
+        "enName": "Eden Malyn",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2256940,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2256940.jpg",
+        "name": "Кристофер Аведисьян",
+        "enName": "Kris Avedisian",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 95730,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_95730.jpg",
+        "name": "Сондра Джеймс",
+        "enName": "Sondra James",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3161,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3161.jpg",
+        "name": "Тодд Бэрри",
+        "enName": "Todd Barry",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2400450,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2400450.jpg",
+        "name": "Мередит Холцман",
+        "enName": "Meredith Holzman",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1193720,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1193720.jpg",
+        "name": "Эрик Памфри",
+        "enName": "Eric Pumphrey",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627483,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627483.jpg",
+        "name": null,
+        "enName": "Jason Baxter",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1652294,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1652294.jpg",
+        "name": "Дэвид Нил Левин",
+        "enName": "David Neal Levin",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1321083,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1321083.jpg",
+        "name": "Зина Уайлд",
+        "enName": "Zina Wilde",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 482947,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_482947.jpg",
+        "name": "Майкл Массимино",
+        "enName": "Mike Massimino",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627484,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627484.jpg",
+        "name": null,
+        "enName": "Daniel O'Callahan",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627485,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627485.jpg",
+        "name": null,
+        "enName": "William Bellis",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3254402,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3254402.jpg",
+        "name": "Фил Бургерс",
+        "enName": "Phil Burgers",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1600446,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1600446.jpg",
+        "name": "Лайонел Тавера",
+        "enName": "Lionel Tavera",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627486,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627486.jpg",
+        "name": null,
+        "enName": "Otis McKee",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 236955,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_236955.jpg",
+        "name": "Александр Блэйз",
+        "enName": "Alexander Blaise",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3031702,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3031702.jpg",
+        "name": "Рэйчел Килиан",
+        "enName": "Rachel Kylian",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3671167,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3671167.jpg",
+        "name": "Джон Динелло",
+        "enName": "John Dinello",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1972396,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1972396.jpg",
+        "name": "Кори Пиерно",
+        "enName": "Corey Pierno",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 95576,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_95576.jpg",
+        "name": "Марк Уэбстер",
+        "enName": "Marc Webster",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 22551,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_22551.jpg",
+        "name": "Фентон Лоулесс",
+        "enName": "Fenton Lawless",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627487,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627487.jpg",
+        "name": null,
+        "enName": "Janaya Lindsey",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4282223,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4282223.jpg",
+        "name": "Джэззи Уильямс",
+        "enName": "Jazzy Kae",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4262695,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4262695.jpg",
+        "name": "Катрин Хойт",
+        "enName": "Katrine Hoyt",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4035149,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4035149.jpg",
+        "name": "Жюли Шатовер",
+        "enName": "Julie Chateauvert",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1258626,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1258626.jpg",
+        "name": "Том Стрэтфорд",
+        "enName": "Tom Stratford",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5381140,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5381140.jpg",
+        "name": null,
+        "enName": "Warren Ray Davis",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4729766,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4729766.jpg",
+        "name": null,
+        "enName": "Kevin A. Wall",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5471872,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5471872.jpg",
+        "name": null,
+        "enName": "Anthony Paglia",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627488,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627488.jpg",
+        "name": null,
+        "enName": "Leonard Ford",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627489,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627489.jpg",
+        "name": null,
+        "enName": "James Reeder",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627490,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627490.jpg",
+        "name": null,
+        "enName": "Bernard Taylor",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627491,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627491.jpg",
+        "name": null,
+        "enName": "Gerard Burrell",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627492,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627492.jpg",
+        "name": null,
+        "enName": "Sergei Pobedinski",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2256214,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2256214.jpg",
+        "name": null,
+        "enName": "Valeriy Zhmud",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4435581,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4435581.jpg",
+        "name": null,
+        "enName": "Andrei Solodenko",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627493,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627493.jpg",
+        "name": null,
+        "enName": "Ali McKee",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627494,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627494.jpg",
+        "name": null,
+        "enName": "Thibault Athane",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627495,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627495.jpg",
+        "name": null,
+        "enName": "Marshall Opel",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627496,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627496.jpg",
+        "name": null,
+        "enName": "Thomas Navarro",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627497,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627497.jpg",
+        "name": null,
+        "enName": "Frederic Giovagnini",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627498,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627498.jpg",
+        "name": null,
+        "enName": "Aurélie Chapon",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627499,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627499.jpg",
+        "name": null,
+        "enName": "Andres Cerezo",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627500,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627500.jpg",
+        "name": null,
+        "enName": "Jonathan Cordero",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627501,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627501.jpg",
+        "name": null,
+        "enName": "Michel Kazi",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6627502,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6627502.jpg",
+        "name": null,
+        "enName": "Luis Scattareggi",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6809292,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6809292.jpg",
+        "name": null,
+        "enName": "Dillon Egyes",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4541087,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4541087.jpg",
+        "name": "Кортни Гонсалес",
+        "enName": "Courtney Gonzalez",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5616620,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5616620.jpg",
+        "name": null,
+        "enName": "Cobie Jane",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5017945,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5017945.jpg",
+        "name": "Пол Тавчиньски",
+        "enName": "Paul Tawczynski",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4347171,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4347171.jpg",
+        "name": "Алисса Мария Апп",
+        "enName": "Alyssa Maria App",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3232668,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3232668.jpg",
+        "name": "Моника Эйрс",
+        "enName": "Monica Ayres",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4032548,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4032548.jpg",
+        "name": null,
+        "enName": "Bob Donlon",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5661960,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5661960.jpg",
+        "name": "Остин Феррис",
+        "enName": "Austin Ferris",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4841619,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4841619.jpg",
+        "name": null,
+        "enName": "Andrew Geher",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1419232,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1419232.jpg",
+        "name": "Розмари Ховард",
+        "enName": "Rosemary Howard",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5377248,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5377248.jpg",
+        "name": null,
+        "enName": "Necole Milone",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3927183,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3927183.jpg",
+        "name": "Адриан М. Момпойнт",
+        "enName": "Adrian M. Mompoint",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4047730,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4047730.jpg",
+        "name": null,
+        "enName": "Lady Lallaine Medina Reed",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5511277,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5511277.jpg",
+        "name": null,
+        "enName": "Albert Skowronski",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5045410,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5045410.jpg",
+        "name": "Винни Велес",
+        "enName": "Vinnie Velez",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5653291,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5653291.jpg",
+        "name": null,
+        "enName": "Martin Mabz",
+        "profession": "композиторы",
+        "enProfession": "composer"
+      },
+      {
+        "id": 4045080,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4045080.jpg",
+        "name": "Джон Натчез",
+        "enName": "Jon Natchez",
+        "profession": "композиторы",
+        "enProfession": "composer"
+      },
+      {
+        "id": 3906673,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3906673.jpg",
+        "name": "Кайли Коркоран",
+        "enName": "Kaili Corcoran",
+        "profession": "художники",
+        "enProfession": "designer"
+      },
+      {
+        "id": 6137909,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6137909.jpg",
+        "name": null,
+        "enName": "Leo Swartz",
+        "profession": "художники",
+        "enProfession": "designer"
+      },
+      {
+        "id": 2316869,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2316869.jpg",
+        "name": "Каллэн Стоукс",
+        "enName": "Callan Stokes",
+        "profession": "художники",
+        "enProfession": "designer"
+      },
+      {
+        "id": 3739018,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3739018.jpg",
+        "name": "Кэти Лобел",
+        "enName": "Katie Lobel",
+        "profession": "художники",
+        "enProfession": "designer"
+      },
+      {
+        "id": 1954033,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1954033.jpg",
+        "name": "Майкл Анджело Ковино",
+        "enName": "Michael Angelo Covino",
+        "profession": "режиссеры",
+        "enProfession": "director"
+      },
+      {
+        "id": 2473980,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2473980.jpg",
+        "name": "Сара Шоу",
+        "enName": "Sara Shaw",
+        "profession": "монтажеры",
+        "enProfession": "editor"
+      },
+      {
+        "id": 2215380,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2215380.jpg",
+        "name": "Зак Куперстайн",
+        "enName": "Zach Kuperstein",
+        "profession": "операторы",
+        "enProfession": "operator"
+      },
+      {
+        "id": 1954033,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1954033.jpg",
+        "name": "Майкл Анджело Ковино",
+        "enName": "Michael Angelo Covino",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 3038313,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3038313.jpg",
+        "name": "Ной Лэнг",
+        "enName": "Noah Lang",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 3424944,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3424944.jpg",
+        "name": "Кайл Марвин",
+        "enName": "Kyle Marvin",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 2053506,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2053506.jpg",
+        "name": "Себастьен Обер",
+        "enName": "Sébastien Aubert",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 1954033,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1954033.jpg",
+        "name": "Майкл Анджело Ковино",
+        "enName": "Michael Angelo Covino",
+        "profession": "редакторы",
+        "enProfession": "writer"
+      },
+      {
+        "id": 3424944,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3424944.jpg",
+        "name": "Кайл Марвин",
+        "enName": "Kyle Marvin",
+        "profession": "редакторы",
+        "enProfession": "writer"
+      }
+    ],
+    "lists": [],
+    "typeNumber": 1,
+    "alternativeName": "The Climb",
+    "enName": null,
+    "names": [
+      { "name": "Восхождение" },
+      { "name": "The Climb" },
+      { "name": "Изкачването", "language": "BG", "type": null },
+      { "name": "Virsune", "language": "LT", "type": null },
+      { "name": "Pod górkę", "language": "PL", "type": null },
+      { "name": "A Amizade", "language": "PT", "type": null },
+      { "name": "Сходження", "language": "UA", "type": null },
+      { "name": "Az emelkedő", "language": "HU", "type": null }
+    ],
+    "budget": {},
+    "networks": null,
+    "subType": null,
+    "ageRating": 18,
+    "ratingMpaa": "r",
+    "updateDates": [],
+    "fees": {
+      "world": { "value": 711639, "currency": "$" },
+      "usa": { "value": 234429, "currency": "$" }
+    },
+    "updatedAt": "2023-04-20T05:11:14.973Z",
+    "similarMovies": [],
+    "sequelsAndPrequels": [
+      {
+        "id": 1112228,
+        "name": "Восхождение",
+        "enName": "The Climb",
+        "alternativeName": "The Climb",
+        "type": "remake",
+        "poster": {
+          "url": "https://st.kp.yandex.net/images/film_big/1112228.jpg",
+          "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_1112228.jpg"
+        }
+      }
+    ],
+    "shortDescription": "Двое друзей пробуют спасти отношения после роковой ошибки. Свежий, отчаянно смешной взгляд на жанр бадди-муви",
+    "technology": { "hasImax": false, "has3D": false },
+    "ticketsOnSale": false,
+    "imagesInfo": { "framesCount": 10 },
+    "logo": {
+      "url": "https://avatars.mds.yandex.net/get-ott/239697/2a00000172e5bdddcfd0bc90ebe2eb1b9c91/orig"
+    },
+    "watchability": {
+      "items": [
+        {
+          "name": "Wink",
+          "logo": {
+            "url": "https://avatars.mds.yandex.net/get-ott/1672343/54096cbe-cc3b-41c9-8e44-990ebbca8d61/orig"
+          },
+          "url": "https://wink.ru/media_items/107504953?utm_source=yandex&utm_medium=koldunschick&utm_content=name"
+        }
+      ]
+    },
+    "top10": null,
+    "top250": null
+  },
+  {
+    "videos": {
+      "trailers": [
+        {
+          "url": "https://www.youtube.com/v/3mM23stLzOA",
+          "name": "Трейлер",
+          "site": "youtube"
+        },
+        {
+          "url": "https://www.youtube.com/embed/KNGbre6uGeo",
+          "name": "Live-action film \"Strobe Edge\" Trailer",
+          "site": "youtube",
+          "type": "TRAILER"
+        }
+      ],
+      "teasers": []
+    },
+    "status": null,
+    "externalId": { "kpHD": null, "imdb": "tt3872958", "tmdb": 283831 },
+    "rating": {
+      "kp": 6.313,
+      "imdb": 6,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "votes": {
+      "kp": 429,
+      "imdb": 933,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 3
+    },
+    "backdrop": { "url": null, "previewUrl": null },
+    "movieLength": 115,
+    "images": { "framesCount": 0 },
+    "productionCompanies": [
+      { "name": "Toho Pictures, Inc.", "url": null, "previewUrl": null }
+    ],
+    "spokenLanguages": [{ "name": "日本語", "nameEn": "Japanese" }],
+    "id": 867367,
+    "type": "movie",
+    "name": "Ослеплена тобой!",
+    "description": "15-летняя Нинако никогда не была влюблена, но вот столкнулась в поезде с самым популярным парнем школы Рэном. Ребята сближаются, и девушка влюбляется, но ей придётся научиться справляться со своими чувствами, ведь у Рэна уже давно есть подружка.",
+    "distributors": { "distributor": null, "distributorRelease": null },
+    "premiere": { "country": "Япония", "world": "2015-03-14T00:00:00.000Z" },
+    "slogan": null,
+    "year": 2015,
+    "poster": {
+      "url": "https://st.kp.yandex.net/images/film_big/867367.jpg",
+      "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_867367.jpg"
+    },
+    "facts": [],
+    "genres": [
+      { "name": "аниме" },
+      { "name": "мультфильм" },
+      { "name": "приключения" },
+      { "name": "фэнтези" }
+    ],
+    "countries": [{ "name": "Япония" }],
+    "seasonsInfo": [],
+    "persons": [
+      {
+        "id": 2384732,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2384732.jpg",
+        "name": "Касуми Аримура",
+        "enName": "Kasumi Arimura",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2641581,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2641581.jpg",
+        "name": "Сота Фукуси",
+        "enName": "Sota Fukushi",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1591396,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1591396.jpg",
+        "name": "Дзинги Ириэ",
+        "enName": "Jingi Irie",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3040140,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3040140.jpg",
+        "name": "Аюри Конно",
+        "enName": "Ayuri Konno",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2710960,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2710960.jpg",
+        "name": "Эна Косино",
+        "enName": "Ena Koshino",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3643821,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3643821.jpg",
+        "name": "Юина Куросима",
+        "enName": "Yuina Kuroshima",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5683366,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5683366.jpg",
+        "name": "Каору Мацуо",
+        "enName": "Kaoru Matsuo",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2640514,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2640514.jpg",
+        "name": "Ариса Сато",
+        "enName": "Arisa Satô",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2379220,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2379220.jpg",
+        "name": "Юки Ямада",
+        "enName": "Yuki Yamada",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2195898,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2195898.jpg",
+        "name": "Хироко Сэбу",
+        "enName": "Hiroko Sebu",
+        "profession": "композиторы",
+        "enProfession": "composer"
+      },
+      {
+        "id": 399745,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_399745.jpg",
+        "name": "Рюити Хироки",
+        "enName": "Ryûichi Hiroki",
+        "profession": "режиссеры",
+        "enProfession": "director"
+      },
+      {
+        "id": 1977519,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1977519.jpg",
+        "name": "Хисаси Усуи",
+        "enName": "Hisashi Usui",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 2897879,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2897879.jpg",
+        "name": "Саяка Кувамура",
+        "enName": "Sayaka Kuwamura",
+        "profession": "редакторы",
+        "enProfession": "writer"
+      },
+      {
+        "id": 3732847,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3732847.jpg",
+        "name": "Ио Сакисака",
+        "enName": "Io Sakisaka",
+        "profession": "редакторы",
+        "enProfession": "writer"
+      }
+    ],
+    "lists": [],
+    "typeNumber": 1,
+    "alternativeName": "Sutorobo ejji",
+    "enName": null,
+    "names": [{ "name": "Ослеплена тобой!" }, { "name": "Sutorobo ejji" }],
+    "ageRating": null,
+    "budget": {},
+    "ratingMpaa": null,
+    "updateDates": [],
+    "updatedAt": "2023-04-16T08:40:04.526Z",
+    "fees": { "world": {}, "russia": {}, "usa": {} },
+    "imagesInfo": { "framesCount": 0 },
+    "shortDescription": null,
+    "technology": { "hasImax": false, "has3D": false },
+    "ticketsOnSale": false,
+    "sequelsAndPrequels": [],
+    "similarMovies": [],
+    "logo": { "url": null },
+    "watchability": { "items": null },
+    "top10": null,
+    "top250": null
+  },
+  {
+    "videos": {
+      "trailers": [
+        {
+          "url": "https://www.youtube.com/v/2zBXa0-InoU",
+          "name": "Трейлер",
+          "site": "youtube"
+        }
+      ],
+      "teasers": []
+    },
+    "status": null,
+    "externalId": { "kpHD": null, "imdb": "tt5719222", "tmdb": 462653 },
+    "rating": {
+      "kp": 7.077,
+      "imdb": 5.7,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "votes": {
+      "kp": 884,
+      "imdb": 1821,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "backdrop": { "url": null, "previewUrl": null },
+    "movieLength": 99,
+    "images": { "postersCount": 4, "backdropsCount": 2, "framesCount": 0 },
+    "productionCompanies": [],
+    "spokenLanguages": [{ "name": "Türkçe", "nameEn": "Turkish" }],
+    "id": 1032571,
+    "type": "movie",
+    "name": "Второй шанс",
+    "description": "Однажды пересекаются пути учительницы математики Ясемин и харизматичного владельца ресторана Джемаля. Ясемин с осторожностью делает каждый шаг, пытаясь залечить раны после неудачного брака. Джемаль - общительный, беззаботный человек, который хочет избавиться от своего прошлого. Несмотря на то, что их знакомство начинается с ссоры, этим людям суждено полюбить друг друга. Каждый опустится на дно своего прошлого и поймёт, что им обоим нужен второй шанс.",
+    "distributors": { "distributor": null, "distributorRelease": null },
+    "premiere": { "country": "Турция", "world": "2016-11-18T00:00:00.000Z" },
+    "slogan": null,
+    "year": 2016,
+    "poster": {
+      "url": "https://st.kp.yandex.net/images/film_big/1032571.jpg",
+      "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_1032571.jpg"
+    },
+    "facts": [],
+    "genres": [
+      { "name": "аниме" },
+      { "name": "мультфильм" },
+      { "name": "приключения" },
+      { "name": "фэнтези" }
+    ],
+    "countries": [{ "name": "Турция" }],
+    "seasonsInfo": [],
+    "persons": [
+      {
+        "id": 520415,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_520415.jpg",
+        "name": "Озджан Дениз",
+        "enName": "Özcan Deniz",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 390430,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_390430.jpg",
+        "name": "Нургюль Ешилчай",
+        "enName": "Nurgül Yesilçay",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4635393,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4635393.jpg",
+        "name": "Афра Сарачоглу",
+        "enName": "Afra Saraçoglu",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4635394,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4635394.jpg",
+        "name": null,
+        "enName": "Mesut Can Tomay",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3872700,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3872700.jpg",
+        "name": "Айбике Туран",
+        "enName": "Aybike Turan",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3443724,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3443724.jpg",
+        "name": "Беррин Арысой Акхасанолу",
+        "enName": "Berrin Arisoy",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 520701,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_520701.jpg",
+        "name": "Фюсун Эрбулак",
+        "enName": "Füsun Erbulak",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 520415,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_520415.jpg",
+        "name": "Озджан Дениз",
+        "enName": "Özcan Deniz",
+        "profession": "режиссеры",
+        "enProfession": "director"
+      },
+      {
+        "id": 1962023,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1962023.jpg",
+        "name": "Олджай Огуз",
+        "enName": "Olcay Oguz",
+        "profession": "операторы",
+        "enProfession": "operator"
+      },
+      {
+        "id": 1055773,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1055773.jpg",
+        "name": "Шюкрю Авшар",
+        "enName": "Sukru Avsar",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 520415,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_520415.jpg",
+        "name": "Озджан Дениз",
+        "enName": "Özcan Deniz",
+        "profession": "редакторы",
+        "enProfession": "writer"
+      },
+      {
+        "id": 2984555,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2984555.jpg",
+        "name": "Авни Туна Диллигиль",
+        "enName": "Avni Tuna Dilligil",
+        "profession": "редакторы",
+        "enProfession": "writer"
+      }
+    ],
+    "lists": [],
+    "typeNumber": 1,
+    "alternativeName": "Ikinci Sans",
+    "enName": null,
+    "names": [{ "name": "Второй шанс" }, { "name": "Ikinci Sans" }],
+    "fees": { "world": {}, "russia": {}, "usa": {} },
+    "updatedAt": "2023-04-17T19:46:12.588Z",
+    "ratingMpaa": null,
+    "shortDescription": null,
+    "technology": { "hasImax": false, "has3D": false },
+    "ticketsOnSale": false,
+    "sequelsAndPrequels": [],
+    "similarMovies": [],
+    "budget": {},
+    "ageRating": null,
+    "logo": { "url": null },
+    "watchability": { "items": null },
+    "top10": null,
+    "top250": null
+  },
+  {
+    "status": null,
+    "externalId": { "kpHD": null, "imdb": "tt11810418", "tmdb": 675595 },
+    "rating": {
+      "kp": 6.137,
+      "imdb": 6.8,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "votes": {
+      "kp": 107,
+      "imdb": 2056,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "backdrop": { "url": null, "previewUrl": null },
+    "movieLength": 71,
+    "images": { "postersCount": 2, "backdropsCount": 0, "framesCount": 0 },
+    "productionCompanies": [],
+    "spokenLanguages": [{ "name": "English", "nameEn": "English" }],
+    "id": 1354948,
+    "type": "movie",
+    "name": "Марк Марон: Конец веселым временам",
+    "description": "В своем выступлении комик говорит про вселенную Марвел как новую религию, отношения между мужчинами и женщинами и грядущий апокалипсис.",
+    "distributors": { "distributor": null, "distributorRelease": null },
+    "premiere": {
+      "country": "Корея Южная",
+      "world": "2020-03-10T00:00:00.000Z",
+      "digital": "2020-03-10T00:00:00.000Z"
+    },
+    "slogan": null,
+    "year": 2020,
+    "poster": {
+      "url": "https://st.kp.yandex.net/images/film_big/1354948.jpg",
+      "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_1354948.jpg"
+    },
+    "facts": [],
+    "genres": [
+      { "name": "аниме" },
+      { "name": "мультфильм" },
+      { "name": "приключения" },
+      { "name": "фэнтези" }
+    ],
+    "countries": [{ "name": "США" }],
+    "videos": {
+      "trailers": [
+        {
+          "url": "https://www.youtube.com/embed/PdgrEGFu44E",
+          "name": "Marc Maron: End Times Fun | Official Trailer | Netflix Stand-Up Comedy Special",
+          "site": "youtube",
+          "type": "TRAILER"
+        }
+      ],
+      "teasers": []
+    },
+    "seasonsInfo": [],
+    "persons": [
+      {
+        "id": 7255,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_7255.jpg",
+        "name": "Марк Мэрон",
+        "enName": "Marc Maron",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1023684,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1023684.jpg",
+        "name": "Линн Шелтон",
+        "enName": "Lynn Shelton",
+        "profession": "режиссеры",
+        "enProfession": "director"
+      },
+      {
+        "id": 635392,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_635392.jpg",
+        "name": "Дилан Санфорд",
+        "enName": "Dylan Sanford",
+        "profession": "операторы",
+        "enProfession": "operator"
+      },
+      {
+        "id": 4841182,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4841182.jpg",
+        "name": "Мелисса Чепмен",
+        "enName": "Melissa Chapman",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 2405147,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2405147.jpg",
+        "name": null,
+        "enName": "Philip Joncas",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 1508820,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1508820.jpg",
+        "name": "Нил А. Шеридан",
+        "enName": "Neil A. Sheridan",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 3025183,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3025183.jpg",
+        "name": "Келли Ван Валкенбург",
+        "enName": "Kelly Van Valkenburg",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 7255,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_7255.jpg",
+        "name": "Марк Мэрон",
+        "enName": "Marc Maron",
+        "profession": "редакторы",
+        "enProfession": "writer"
+      }
+    ],
+    "lists": [],
+    "typeNumber": 1,
+    "alternativeName": "Marc Maron: End Times Fun",
+    "enName": null,
+    "names": [
+      { "name": "Марк Марон: Конец веселым временам" },
+      { "name": "Marc Maron: End Times Fun" }
+    ],
+    "fees": { "world": {}, "russia": {}, "usa": {} },
+    "updatedAt": "2023-04-20T05:39:52.588Z",
+    "ratingMpaa": null,
+    "shortDescription": null,
+    "technology": { "hasImax": false, "has3D": false },
+    "ticketsOnSale": false,
+    "sequelsAndPrequels": [],
+    "similarMovies": [],
+    "budget": {},
+    "ageRating": null,
+    "logo": { "url": null },
+    "watchability": { "items": null },
+    "top10": null,
+    "top250": null
+  },
+  {
+    "videos": { "trailers": [], "teasers": [] },
+    "id": 838649,
+    "type": "movie",
+    "externalId": { "kpHD": null, "imdb": "tt3618126" },
+    "name": "Капитан Америка: Зимний солдат",
+    "rating": {
+      "kp": 6.609,
+      "imdb": 8.2,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 95.66
+    },
+    "description": null,
+    "votes": {
+      "kp": 473,
+      "imdb": 101,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 255
+    },
+    "distributors": { "distributor": null, "distributorRelease": null },
+    "premiere": { "country": "США", "world": "2014-03-23T00:00:00.000Z" },
+    "slogan": "Here's what the blockbuster film won't tell you.",
+    "year": 2014,
+    "poster": {
+      "url": "https://st.kp.yandex.net/images/film_big/838649.jpg",
+      "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_838649.jpg"
+    },
+    "facts": null,
+    "genres": [{ "name": "короткометражка" }, { "name": "приключения" }],
+    "countries": [{ "name": "США" }],
+    "seasonsInfo": [],
+    "persons": [
+      {
+        "id": 3227685,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3227685.jpg",
+        "name": "Джереми Лонг",
+        "enName": "Jeremy Long",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3634411,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3634411.jpg",
+        "name": "Курт Леар",
+        "enName": "Curt Lear",
+        "profession": "режиссеры",
+        "enProfession": "director"
+      },
+      {
+        "id": 3634411,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3634411.jpg",
+        "name": "Курт Леар",
+        "enName": "Curt Lear",
+        "profession": "монтажеры",
+        "enProfession": "editor"
+      },
+      {
+        "id": 3634411,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3634411.jpg",
+        "name": "Курт Леар",
+        "enName": "Curt Lear",
+        "profession": "операторы",
+        "enProfession": "operator"
+      },
+      {
+        "id": 3634412,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3634412.jpg",
+        "name": "Майк Дженслер",
+        "enName": "Mike Gensler",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 3634411,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3634411.jpg",
+        "name": "Курт Леар",
+        "enName": "Curt Lear",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 3227685,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3227685.jpg",
+        "name": "Джереми Лонг",
+        "enName": "Jeremy Long",
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 3634412,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3634412.jpg",
+        "name": "Майк Дженслер",
+        "enName": "Mike Gensler",
+        "profession": "редакторы",
+        "enProfession": "writer"
+      },
+      {
+        "id": 3227685,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3227685.jpg",
+        "name": "Джереми Лонг",
+        "enName": "Jeremy Long",
+        "profession": "редакторы",
+        "enProfession": "writer"
+      },
+      {
+        "id": 3634413,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3634413.jpg",
+        "name": null,
+        "enName": "Andy Neidigh",
+        "profession": "редакторы",
+        "enProfession": "writer"
+      }
+    ],
+    "images": { "framesCount": 0 },
+    "lists": [],
+    "spokenLanguages": [],
+    "productionCompanies": [],
+    "typeNumber": 1,
+    "ageRating": null,
+    "alternativeName": "Comic Book Origins: Captain America - Winter Soldier",
+    "budget": { "value": 0, "currency": "$" },
+    "enName": null,
+    "movieLength": 12,
+    "names": [
+      { "name": "Капитан Америка: Зимний солдат" },
+      { "name": "Comic Book Origins: Captain America - Winter Soldier" }
+    ],
+    "ratingMpaa": null,
+    "updateDates": [],
+    "shortDescription": null,
+    "technology": { "hasImax": false, "has3D": false },
+    "ticketsOnSale": false,
+    "updatedAt": "2023-04-16T09:34:01.799Z",
+    "fees": { "world": {}, "russia": {}, "usa": {} },
+    "similarMovies": [],
+    "sequelsAndPrequels": [],
+    "backdrop": { "url": null, "previewUrl": null },
+    "logo": { "url": null },
+    "watchability": { "items": null },
+    "top10": null,
+    "top250": null,
+    "status": null
+  },
+  {
+    "videos": {
+      "trailers": [
+        {
+          "url": "https://widgets.kinopoisk.ru/discovery/trailer/94279?onlyPlayer=1&autoplay=1&cover=1",
+          "name": "ТВ-ролик №1",
+          "site": "kinopoisk_widget"
+        },
+        {
+          "url": "https://widgets.kinopoisk.ru/discovery/trailer/94280?onlyPlayer=1&autoplay=1&cover=1",
+          "name": "ТВ-ролик №2",
+          "site": "kinopoisk_widget"
+        },
+        {
+          "url": "https://widgets.kinopoisk.ru/discovery/trailer/94281?onlyPlayer=1&autoplay=1&cover=1",
+          "name": "ТВ-ролик №3",
+          "site": "kinopoisk_widget"
+        },
+        {
+          "url": "https://www.youtube.com/embed/e6M1WoZFyaw",
+          "name": "Трейлер к видеролику \"Ладога\"",
+          "site": "youtube",
+          "type": "TRAILER"
+        },
+        {
+          "url": "https://www.youtube.com/embed/fnQyBz_xo_o",
+          "name": "Ладога",
+          "site": "youtube",
+          "type": "TRAILER"
+        },
+        {
+          "url": "https://www.youtube.com/embed/ZezeK-6eqTc",
+          "name": "Сериал Ладога 2014  трейлер",
+          "site": "youtube",
+          "type": "TRAILER"
+        },
+        {
+          "url": "https://www.youtube.com/embed/iBVrJ3N8wyU",
+          "name": "Ладога, 2014 сериал трейлер",
+          "site": "youtube",
+          "type": "TRAILER"
+        }
+      ],
+      "teasers": []
+    },
+    "id": 820679,
+    "type": "tv-series",
+    "externalId": {
+      "kpHD": "4b86c6cc9d6bc5b7a9f05e21995c21a1",
+      "imdb": "tt3529738",
+      "tmdb": 60962
+    },
+    "name": "Ладога",
+    "rating": {
+      "kp": 7.598,
+      "imdb": 7.2,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "description": "Блокадный Ленинград. Зима 1942-го. Советская контрразведка узнает, что немцы готовят диверсию на «Дороге жизни» – единственном пути, по которому в город доставляется продовольствие и другие грузы. Скорее всего, диверсант - один из водителей «полуторок», работающих на замерзшем Ладожском озере. Найти и остановить врага должен капитан НКВД Сергиенко…",
+    "votes": {
+      "kp": 10095,
+      "imdb": 95,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 1
+    },
+    "distributors": {
+      "distributor": null,
+      "distributorRelease": "Lizard Cinema Trade"
+    },
+    "premiere": {
+      "russia": "2014-01-27T00:00:00.000Z",
+      "cinema": "2014-01-27T00:00:00.000Z",
+      "dvd": "2014-11-25T00:00:00.000Z"
+    },
+    "slogan": null,
+    "year": 2013,
+    "poster": {
+      "url": "https://st.kp.yandex.net/images/film_big/820679.jpg",
+      "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_820679.jpg"
+    },
+    "facts": [],
+    "genres": [
+      { "name": "военный" },
+      { "name": "драма" },
+      { "name": "приключения" }
+    ],
+    "countries": [{ "name": "Россия" }],
+    "seasonsInfo": [{ "number": 1, "episodesCount": 4 }],
+    "persons": [
+      {
+        "id": 238515,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_238515.jpg",
+        "name": "Ксения Раппопорт",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 251184,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_251184.jpg",
+        "name": "Алексей Серебряков",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 476576,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_476576.jpg",
+        "name": "Андрей Мерзликин",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 273292,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_273292.jpg",
+        "name": "Дмитрий Назаров",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 75866,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_75866.jpg",
+        "name": "Юрий Кузнецов",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 969067,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_969067.jpg",
+        "name": "Виталий Коваленко",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1625357,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1625357.jpg",
+        "name": "Яков Шамшин",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 3675966,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3675966.jpg",
+        "name": "Анна Блинова",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1700503,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1700503.jpg",
+        "name": "Филипп Ершов",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1623955,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1623955.jpg",
+        "name": "Олег Фёдоров",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 1055436,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1055436.jpg",
+        "name": "Алексей Зубарев",
+        "enName": null,
+        "profession": "композиторы",
+        "enProfession": "composer"
+      },
+      {
+        "id": 2008028,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2008028.jpg",
+        "name": "Константин Пахотин",
+        "enName": null,
+        "profession": "художники",
+        "enProfession": "designer"
+      },
+      {
+        "id": 2001912,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2001912.jpg",
+        "name": "Александра Весельчакова",
+        "enName": null,
+        "profession": "художники",
+        "enProfession": "designer"
+      },
+      {
+        "id": 3676004,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3676004.jpg",
+        "name": "Николай Ершов",
+        "enName": null,
+        "profession": "художники",
+        "enProfession": "designer"
+      },
+      {
+        "id": 3676006,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3676006.jpg",
+        "name": "Степан Блохин",
+        "enName": null,
+        "profession": "художники",
+        "enProfession": "designer"
+      },
+      {
+        "id": 539453,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_539453.jpg",
+        "name": "Александр Велединский",
+        "enName": null,
+        "profession": "режиссеры",
+        "enProfession": "director"
+      },
+      {
+        "id": 266153,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_266153.jpg",
+        "name": "Алла Стрельникова",
+        "enName": null,
+        "profession": "монтажеры",
+        "enProfession": "editor"
+      },
+      {
+        "id": 1574979,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1574979.jpg",
+        "name": "Эдуард Мошкович",
+        "enName": null,
+        "profession": "операторы",
+        "enProfession": "operator"
+      },
+      {
+        "id": 231311,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_231311.jpg",
+        "name": "Валерий Тодоровский",
+        "enName": null,
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 231318,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_231318.jpg",
+        "name": "Максим Коропцов",
+        "enName": null,
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 3672560,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3672560.jpg",
+        "name": "Анастасия Бирюкова",
+        "enName": null,
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 3674871,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3674871.jpg",
+        "name": "Елена Горбунова",
+        "enName": null,
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 1333823,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_1333823.jpg",
+        "name": "Олег Маловичко",
+        "enName": null,
+        "profession": "редакторы",
+        "enProfession": "writer"
+      },
+      {
+        "id": 700810,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_700810.jpg",
+        "name": "Алёна Званцова",
+        "enName": null,
+        "profession": "редакторы",
+        "enProfession": "writer"
+      }
+    ],
+    "images": { "framesCount": 11 },
+    "lists": [],
+    "spokenLanguages": [],
+    "productionCompanies": [],
+    "typeNumber": 2,
+    "alternativeName": null,
+    "budget": {},
+    "enName": null,
+    "names": [{ "name": "Ладога" }],
+    "updateDates": [],
+    "ageRating": 12,
+    "movieLength": 52,
+    "ratingMpaa": null,
+    "fees": { "world": {}, "russia": {}, "usa": {} },
+    "updatedAt": "2023-04-18T10:01:33.497Z",
+    "shortDescription": "Поставки продуктов в блокадный Ленинград оказываются под угрозой из-за диверсии. Напряженная военная драма",
+    "technology": { "hasImax": false, "has3D": false },
+    "ticketsOnSale": false,
+    "similarMovies": [
+      {
+        "id": 87214,
+        "name": "Ленинград",
+        "enName": null,
+        "alternativeName": null,
+        "type": "tv-series",
+        "poster": {
+          "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/8176381e-049c-4301-8263-e79ec5841fe2/orig",
+          "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/8176381e-049c-4301-8263-e79ec5841fe2/x1000"
+        }
+      },
+      {
+        "id": 494306,
+        "name": "Ленинград",
+        "enName": null,
+        "alternativeName": null,
+        "type": "movie",
+        "poster": {
+          "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/dca59af0-9270-4bb3-8be1-c3a1dd4e9aa7/orig",
+          "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/dca59af0-9270-4bb3-8be1-c3a1dd4e9aa7/x1000"
+        }
+      }
+    ],
+    "sequelsAndPrequels": [],
+    "imagesInfo": { "framesCount": 11 },
+    "backdrop": {
+      "url": "https://avatars.mds.yandex.net/get-ott/212840/2a000001661b5527217ab9d9dfa577d35c3c/orig",
+      "previewUrl": "https://avatars.mds.yandex.net/get-ott/212840/2a000001661b5527217ab9d9dfa577d35c3c/x1000"
+    },
+    "logo": {
+      "url": "https://avatars.mds.yandex.net/get-ott/2385704/2a00000176b037315740c875851105debd5c/orig"
+    },
+    "watchability": {
+      "items": [
+        {
+          "name": "Okko",
+          "logo": {
+            "url": "https://avatars.mds.yandex.net/get-ott/239697/7713e586-17d1-42d1-ac62-53e9ef1e70c3/orig"
+          },
+          "url": "https://okko.tv/serial/ladoga-626316?utm_medium=referral&utm_source=yandex_search&utm_campaign=new_search_feed"
+        },
+        {
+          "name": "START",
+          "logo": {
+            "url": "https://avatars.mds.yandex.net/get-ott/239697/1a632675-0d99-4268-bd5e-d5f3dd800174/orig"
+          },
+          "url": "https://start.ru/watch/ladoga?utm_source=kinopoisk&utm_medium=feed_watch&utm_campaign=ladoga"
+        },
+        {
+          "name": "Wink",
+          "logo": {
+            "url": "https://avatars.mds.yandex.net/get-ott/1672343/54096cbe-cc3b-41c9-8e44-990ebbca8d61/orig"
+          },
+          "url": "https://wink.ru/media_items/94690623?utm_source=yandex&utm_medium=koldunschick&utm_content=name"
+        },
+        {
+          "name": "Большое ТВ",
+          "logo": {
+            "url": "https://avatars.mds.yandex.net/get-ott/2439731/17c7ebcf-41aa-48b6-9366-621a85f1307a/orig"
+          },
+          "url": "https://bolshoe.tv/promo/web/movie/28809?segment=yandex_feed&group=peoples&utm_campaign=ya_feed&utm_medium=ya_feed"
+        },
+        {
+          "name": "24ТВ",
+          "logo": {
+            "url": "https://avatars.mds.yandex.net/get-ott/2439731/85e83b8d-1159-4781-bad5-ce0a809b3843/orig"
+          },
+          "url": "https://24h.tv/contents/2013-ladoga-546332340796784659"
+        }
+      ]
+    },
+    "releaseYears": [{ "start": 2013, "end": 2013 }],
+    "top10": null,
+    "top250": null,
+    "status": "completed"
+  },
+  {
+    "id": 5196005,
+    "externalId": { "kpHD": "41c5156ab3ef6895ac87255d65c89645" },
+    "name": "Агашки по вызову 2: Начало",
+    "alternativeName": "Ағашки по вызову 2: Начало",
+    "enName": null,
+    "names": [
+      { "name": "Агашки по вызову 2: Начало" },
+      { "name": "Ағашки по вызову 2: Начало" }
+    ],
+    "type": "movie",
+    "typeNumber": 1,
+    "description": "Жизнь Максата, обаятельного массажиста, кардинально меняется после встречи с Турсыном, основателем школы харизмы. Турсын становится для парня настоящим учителем в мире взаимоотношений с женщинами, с чего и начинается карьера будущего альфонса Фернандо.",
+    "shortDescription": "Максат учится искусству обольщения, чтобы манипулировать женщинами. Эксцентрическая комедия из Казахстана",
+    "slogan": null,
+    "rating": {
+      "kp": 6.708,
+      "imdb": 0,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "votes": {
+      "kp": 7894,
+      "imdb": 0,
+      "filmCritics": 0,
+      "russianFilmCritics": 0,
+      "await": 0
+    },
+    "movieLength": 85,
+    "ratingMpaa": null,
+    "poster": {
+      "url": "https://st.kp.yandex.net/images/film_big/5196005.jpg",
+      "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_5196005.jpg"
+    },
+    "backdrop": {
+      "url": "https://avatars.mds.yandex.net/get-ott/2419418/2a00000185649a28a8fb21d3f4f39921af18/orig",
+      "previewUrl": "https://avatars.mds.yandex.net/get-ott/2419418/2a00000185649a28a8fb21d3f4f39921af18/x1000"
+    },
+    "genres": [{ "name": "комедия" }],
+    "countries": [{ "name": "Казахстан" }],
+    "persons": [
+      {
+        "id": 281163,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_281163.jpg",
+        "name": "Жан Байжанбаев",
+        "enName": "Zhan Baizhanbayev",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5043604,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5043604.jpg",
+        "name": "Олжас Альжанов",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 4534228,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4534228.jpg",
+        "name": "Асель Акбарова",
+        "enName": "Asel Akbarova",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6697561,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6697561.jpg",
+        "name": "Динара Сатжан",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6383084,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6383084.jpg",
+        "name": "Ерболат Алкожа",
+        "enName": "Yerbolat Alkozha",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6881357,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6881357.jpg",
+        "name": "Жанкош Тураров",
+        "enName": "Janqosh Turarov",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6890710,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6890710.jpg",
+        "name": "Рано Умарова",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 482624,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_482624.jpg",
+        "name": "Дильназ Ахмадиева",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 2889076,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_2889076.jpg",
+        "name": "Рустем Жаныаманов",
+        "enName": "Rustem Zhanyamanov",
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 5915066,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_5915066.jpg",
+        "name": "Ерлан Примбетов",
+        "enName": null,
+        "profession": "актеры",
+        "enProfession": "actor"
+      },
+      {
+        "id": 6433727,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6433727.jpg",
+        "name": "Абай Акбаев",
+        "enName": null,
+        "profession": "композиторы",
+        "enProfession": "composer"
+      },
+      {
+        "id": 7080184,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_7080184.jpg",
+        "name": "Никита Годин",
+        "enName": null,
+        "profession": "художники",
+        "enProfession": "designer"
+      },
+      {
+        "id": 4719759,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_4719759.jpg",
+        "name": "Ален Ниязбеков",
+        "enName": "Alen Niyazbekov",
+        "profession": "режиссеры",
+        "enProfession": "director"
+      },
+      {
+        "id": 3622524,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_3622524.jpg",
+        "name": "Канат Мырзагалиев",
+        "enName": "Kanat Mirzagaliev",
+        "profession": "операторы",
+        "enProfession": "operator"
+      },
+      {
+        "id": 6825272,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6825272.jpg",
+        "name": "Ерлан Бухарбаев",
+        "enName": null,
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 7042352,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_7042352.jpg",
+        "name": "Бибижамал Бекенова",
+        "enName": null,
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 7080146,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_7080146.jpg",
+        "name": "Акбота Кайсенова",
+        "enName": null,
+        "profession": "продюсеры",
+        "enProfession": "producer"
+      },
+      {
+        "id": 6825275,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6825275.jpg",
+        "name": "Нуржан Еркинулы",
+        "enName": null,
+        "profession": "редакторы",
+        "enProfession": "writer"
+      },
+      {
+        "id": 6825276,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_6825276.jpg",
+        "name": "Медет Калибеков",
+        "enName": null,
+        "profession": "редакторы",
+        "enProfession": "writer"
+      }
+    ],
+    "budget": {},
+    "fees": { "world": {}, "russia": {}, "usa": {} },
+    "watchability": { "items": null },
+    "top10": null,
+    "top250": null,
+    "facts": [],
+    "spokenLanguages": [],
+    "seasonsInfo": [],
+    "collections": [],
+    "productionCompanies": [],
+    "similarMovies": [],
+    "sequelsAndPrequels": [
+      {
+        "id": 4953248,
+        "name": "Агашки по вызову",
+        "enName": null,
+        "alternativeName": "Ағашки по вызову",
+        "type": "movie",
+        "poster": {
+          "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/fa8775a3-1912-4e74-9698-3dd2412bd3f3/orig",
+          "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/fa8775a3-1912-4e74-9698-3dd2412bd3f3/x1000"
+        }
+      }
+    ],
+    "releaseYears": [],
+    "createdAt": "2022-11-20T03:52:42.902Z",
+    "updatedAt": "2023-04-19T21:19:24.385Z",
+    "year": 2022,
+    "ageRating": 12,
+    "status": null,
+    "premiere": { "world": "2022-11-03T00:00:00.000Z" },
+    "ticketsOnSale": false
+  }
+]

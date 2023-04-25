@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.wrapper:hover .banner {
+  transform: scale(1.05);
+}
+.wrapper:hover .bannerHover {
+  display: block;
+}
+
+.banner {
+  position: relative;
+  height: 100%;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.bannerMain {
+  height: 100%;
+}
+.pic {
+  height: 100%;
+}
+.bannerHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.age {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}

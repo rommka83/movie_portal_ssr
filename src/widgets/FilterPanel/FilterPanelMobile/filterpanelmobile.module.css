@@ -1,0 +1,126 @@
+.openButton {
+  width: fit-content;
+  gap: 7px;
+  margin-left: 10px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  padding: 16px;
+  z-index: 1003;
+}
+
+.closeButtonIcon {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gray-light);
+}
+
+.filterPanelMobile {
+  display: grid;
+  grid-template-columns: 100%;
+  height: 100%;
+  padding-top: 40px;
+  min-height: 100%;
+}
+
+.filterWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.contentScroll {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 0 24px 32px;
+}
+
+.contentTitle {
+  margin-bottom: 40px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-top: 60px;
+  visibility: visible;
+  -webkit-font-smoothing: antialiased;
+}
+
+.titleFixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 700;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  background: var(--gray-drop);
+  box-shadow: 0 20px 40px var(--gray-24);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  color: var(--white);
+  visibility: hidden;
+  -webkit-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  transition: transform 200ms ease, -webkit-transform 200ms ease,
+    -o-transform 200ms ease;
+  z-index: 1;
+}
+
+.titleFixed.show {
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.carousel {
+  margin: 0 -24px;
+  padding: 0 24px;
+}
+
+.title {
+  padding-left: 14px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.countriesButtonContainer {
+  display: inline-block;
+  padding: 0 4px;
+}
+
+.countriesButton.countriesButton {
+  display: inline-block;
+  width: fit-content;
+  color: var(--white);
+  padding: 8px 16px;
+}
+
+.buttonsBlock {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  gap: 16px;
+  width: 100%;
+  padding: 0 24px 32px;
+  margin-top: auto;
+}
+
+.filterButton {
+  height: 40px;
+  width: 100%;
+}

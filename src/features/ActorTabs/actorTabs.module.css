@@ -1,0 +1,25 @@
+.tabsList {
+    border-bottom: 1px solid var(--gray-16);
+    display: flex;
+}
+
+.tabsItem {
+    padding-bottom: 10px;
+    width: fit-content;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--gray-light);
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.tabsItem:hover {
+    color: var(--white);
+}
+
+.tabsItem.active {
+    border-bottom: 4px solid var(--pink-active);
+    color: var(--white);
+}

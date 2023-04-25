@@ -1,0 +1,1 @@
+export { FilterPanelDesktop } from './FilterPanelDesktop';

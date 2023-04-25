@@ -1,0 +1,1 @@
+export { HeaderMoviesFilter } from "./HeaderMoviesFilter";

@@ -1,0 +1,1 @@
+export { AllDevaicePoster } from './AllDevaicePoster';

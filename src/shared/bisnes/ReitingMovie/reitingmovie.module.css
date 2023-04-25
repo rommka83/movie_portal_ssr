@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.left {
+  font-size: 25px;
+  font-weight: 900;
+}
+.right {
+  font-size: 22px;
+  font-weight: 900;
+}
