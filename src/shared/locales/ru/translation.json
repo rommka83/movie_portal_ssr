@@ -42,10 +42,6 @@
     "Profile": "Профиль",
     "More": "Ещё"
   },
-  "topChart": {
-    "Our": "Наша",
-    "grade": "оценка"
-  },
   "header": {
     "MyIvi": "Мой Иви",
     "WhatsNew": "Что нового",
@@ -54,14 +50,6 @@
     "Cartoons": "Мультфильмы",
     "TvChannels": "ТВ-каналы",
     "Watch30DaysForFree": "Смотреть 30 дней бесплатно"
-  },
-  "Grading": {
-    "Portal rating": "Рейтинг портала",
-    "estimate": "оценить",
-    "ratings": "оценок"
-  },
-  "Player": {
-    "trailer": "трейлер"
   },
   "ActorsCreators": "Актёры и создатели",
   "more": "ещё",
@@ -107,6 +95,8 @@
     "SubscriptionNews": "Новинки подписки"
   },
   "topChart": {
+    "Our": "Наша",
+    "grade": "оценка",
     "spectacularity": "эффектность",
     "actors": "актеры",
     "plot": "сюжет",

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import styles from './filterpaneldesktop.module.css';
 import classNames from 'classnames';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../../i18n';
 import { countries, genres } from '../constants';
 import { FilterDropdown } from 'features/FilterDropdown';
 import { FilterDropdownList } from 'features/FilterDropdown/FilterDropdownList';

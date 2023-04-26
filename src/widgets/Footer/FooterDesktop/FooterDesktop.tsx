@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './footerdesktop.module.css';
 import classNames from 'classnames';
-import { Link } from 'shared/ui/Link/MyLink';
-import { useTranslation } from 'react-i18next';
+import Link from 'shared/ui/Link';
+import { useTranslation } from '../../../i18n';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import { SvgIcon } from 'shared/ui/SvgIcon';
 
@@ -14,7 +14,7 @@ export const FooterDesktop = () => {
         <div
           className={classNames(styles.footerContent, styles.containerBorder)}
         >
-          {/* <div className={classNames(styles.column, styles.columnNarrow)}>
+          <div className={classNames(styles.column, styles.columnNarrow)}>
             <p className={styles.columnTitle}>{t('footer.AboutUs')}</p>
             <ul className={styles.linkList}>
               <li className={styles.linkItem}>
@@ -158,9 +158,9 @@ export const FooterDesktop = () => {
                 {t('footer.AnswersOnQuestions')}
               </p>
             </div>
-          </div> */}
+          </div>
 
-          {/* <div
+          <div
             className={classNames(
               styles.column,
               styles.columnNarrow,
@@ -187,7 +187,7 @@ export const FooterDesktop = () => {
             >
               {t('footer.WatchMoviesWithoutAds')}
             </Link>
-          </div> */}
+          </div>
         </div>
 
         <div className={styles.footerContent}>

@@ -15,7 +15,7 @@ import Back from 'shared/ui/Back';
 import { declension } from './lib/helpers/declension ';
 
 import { fetchActor } from 'app/store/ActorReducers/ActionCreators';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../i18n';
 
 interface IProps {
   id: string;

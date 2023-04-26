@@ -1,7 +1,7 @@
 import { MouseEvent, useState } from 'react';
 import styles from './headermoviesfilter.module.css';
 import { CardTitle } from 'shared/ui/CardTitle/CardTitle';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../i18n';
 import { Link } from 'shared/ui/Link/MyLink';
 import classNames from 'classnames';
 
@@ -28,7 +28,7 @@ export function HeaderMoviesFilter() {
   };
   return (
     <div className={styles.filterContainer}>
-      {/* <div className={styles.wrapper}>
+      <div className={styles.wrapper}>
         <div className={styles.doubleColumn}>
           <CardTitle className={styles.title}>
             {t('headerMoviesFilter.Genres')}
@@ -157,7 +157,7 @@ export function HeaderMoviesFilter() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

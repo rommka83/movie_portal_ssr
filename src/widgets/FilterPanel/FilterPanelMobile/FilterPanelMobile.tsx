@@ -3,7 +3,7 @@ import styles from './filterpanelmobile.module.css';
 import { Modal } from 'shared/ui/Modal';
 import { FilterGenreCard } from 'shared/ui/FilterGenreCard';
 import { countries, estimates, genres, ratings } from '../constants';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../../i18n';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import { FilterDropdownSearch } from 'features/FilterDropdown/FilterDropdownSearch';
 import { Carousel } from 'shared/ui/Carousel';

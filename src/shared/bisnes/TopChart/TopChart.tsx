@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import styles from './topchart.module.css';
-import { number } from 'prop-types';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../../i18n';
 import { IFilm } from 'shared/types/IFilm';
 
 interface IProps {

@@ -41,10 +41,6 @@
     "Profile": "Profile",
     "More": "More"
   },
-  "topChart": {
-    "Our": "Our",
-    "grade": "grade"
-  },
   "header": {
     "MyIvi": "My Ivi",
     "WhatsNew": "What's new",
@@ -53,14 +49,6 @@
     "Cartoons": "Cartoons",
     "TvChannels": "TV-channels",
     "Watch30DaysForFree": "Watch 30 days for free"
-  },
-  "Grading": {
-    "Portal rating": "Portal rating",
-    "estimate": "estimate",
-    "ratings": "ratings"
-  },
-  "Player": {
-    "trailer": "trailer"
   },
   "ActorsCreators": "Actors and Creators",
   "more": "more",
@@ -107,6 +95,8 @@
     "SubscriptionNews": "Subscription news"
   },
   "topChart": {
+    "Our": "Our",
+    "grade": "grade",
     "spectacularity": "spectacularity",
     "actors": "actors",
     "plot": "plot",

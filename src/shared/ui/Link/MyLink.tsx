@@ -1,15 +1,18 @@
 import React, { AnchorHTMLAttributes } from 'react';
 import styles from './link.module.css';
 import classNames from 'classnames';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
-// eslint-disable-next-line react/display-name
-const MyLink = React.memo<LinkProps>(
+export const Link = React.memo<LinkProps>(
   ({ className, to, children, ...props }) => {
     return (
-      <Link {...props} className={classNames(styles.link, className)} href={to}>
+      <NextLink
+        {...props}
+        className={classNames(styles.link, className)}
+        href={to}
+      >
         {children}
-      </Link>
+      </NextLink>
     );
   }
 );
@@ -17,5 +20,3 @@ const MyLink = React.memo<LinkProps>(
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   to: string;
 };
-
-export { Link };
