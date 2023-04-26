@@ -2,12 +2,14 @@ import React, { FC, HTMLAttributes, useMemo } from 'react';
 import styles from './generaldataoncommentsforthefilm.module.css';
 import classNames from 'classnames';
 import { useAppSelector } from 'app/store/hooks';
+import { useTranslation } from 'react-i18next';
 
 export const GeneralDataOnCommentsForTheFilm: FC<
   HTMLAttributes<HTMLUListElement>
 > = ({ className }) => {
   const { comments } = useAppSelector((state) => state.filmComents);
-  console.log(comments);
+  const { t } = useTranslation();
+
   const {
     positive,
     neutral,
@@ -33,11 +35,13 @@ export const GeneralDataOnCommentsForTheFilm: FC<
       }
     });
 
-    let positiveProcent = ((positive * 100) / comments.total).toFixed(2) + ' %';
-    let negativeProcent = ((negative * 100) / comments.total).toFixed(2) + ' %';
-    let neutralProcent = ((neutral * 100) / comments.total).toFixed(2) + ' %';
+    let positiveProcent =
+      ((positive * 100) / comments.docs.length).toFixed(2) + ' %';
+    let negativeProcent =
+      ((negative * 100) / comments.docs.length).toFixed(2) + ' %';
+    let neutralProcent =
+      ((neutral * 100) / comments.docs.length).toFixed(2) + ' %';
 
-    console.log(positiveProcent, negativeProcent, neutralProcent);
     return {
       positive,
       neutral,
@@ -52,30 +56,38 @@ export const GeneralDataOnCommentsForTheFilm: FC<
     <ul className={classNames(className, styles.list)}>
       <li className={styles.item}>
         <p className={classNames(styles.total, styles.bigNumber)}>
-          {comments.total}
+          {comments.docs.length}
         </p>
-        <p className={styles.type}>всего</p>
+        <p className={styles.type}>
+          {t('GeneralDataOnCommentsForTheFilm.total')}
+        </p>
       </li>
       <li className={styles.item}>
         <span className={classNames(styles.positive, styles.bigNumber)}>
           {positive}
         </span>
         <span className={styles.procent}> {positiveProcent}</span>
-        <p className={styles.type}>Положительные</p>
+        <p className={styles.type}>
+          {t('GeneralDataOnCommentsForTheFilm.positive')}
+        </p>
       </li>
       <li className={styles.item}>
         <span className={classNames(styles.negative, styles.bigNumber)}>
           {negative}
         </span>
         <span className={styles.procent}> {negativeProcent}</span>
-        <p className={styles.type}>Отрицательные</p>
+        <p className={styles.type}>
+          {t('GeneralDataOnCommentsForTheFilm.negative')}
+        </p>
       </li>
       <li className={styles.item}>
         <span className={classNames(styles.neutral, styles.bigNumber)}>
           {neutral}
         </span>
         <span className={styles.procent}> {neutralProcent}</span>
-        <p className={styles.type}>Нейтральные</p>
+        <p className={styles.type}>
+          {t('GeneralDataOnCommentsForTheFilm.neutral')}
+        </p>
       </li>
     </ul>
   );

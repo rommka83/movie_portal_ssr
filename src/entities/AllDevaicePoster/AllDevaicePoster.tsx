@@ -6,29 +6,38 @@ import ipad from './ipad-without-poster.png';
 import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 interface IProps {
   poster: string;
   name: string;
+  enName: string | null;
 }
 
 export const AllDevaicePoster: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({
   className,
   poster,
   name,
+  enName,
 }) => {
+  const { t, i18n } = useTranslation();
+  const lng = i18n.language;
+
   return (
     <div className={classNames(styles.root, className)}>
       <div className={styles.offerЕoСonnect}>
         <SectionTitle>
-          {<p>Смотреть «{name}» на всех устройствах</p>}
+          {
+            <p>
+              {t('AllDevaicePoster.look')} «
+              {lng === 'ru' ? name : enName ?? name}»{' '}
+              {t('AllDevaicePoster.onAlldevices')}
+            </p>
+          }
         </SectionTitle>
-        <p className={styles.offerVariants}>
-          Приложение доступно для скачивания на iOS, Android, SmartTV и
-          приставках
-        </p>
+        <p className={styles.offerVariants}>{t('AllDevaicePoster.content')}</p>
         <ButtonOrLink className={styles.offerBtn}>
-          {<span>Подключить устройства</span>}
+          {<span>{t('AllDevaicePoster.connectDevices')}</span>}
         </ButtonOrLink>
       </div>
       <div className={styles.posters}>

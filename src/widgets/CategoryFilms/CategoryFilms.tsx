@@ -92,7 +92,7 @@ export const CategoryFilms: FC<props> = ({
 
   return (
     <section className={classNames(styles.root, className)}>
-      <SectionTitle>{title}</SectionTitle>
+      <SectionTitle className={styles.sectionTitle}>{title}</SectionTitle>
       <div className={styles.sliderWrapper}>
         <div className={styles.window}>
           <ul

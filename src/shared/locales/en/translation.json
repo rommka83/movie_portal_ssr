@@ -147,7 +147,26 @@
   },
 
   "sectionTitle": {
-    "movie commentary": "Movie commentary"
+    "MovieCommentary": "Movie commentary",
+    "WithFilm": "With film",
+    "watching": "watching",
+    "additionalMaterials": "Trailers and additional materials",
+    "WriteAreview": "write a review",
+    "AddComment": "add comment",
+    "Healthy": "healthy",
+    "No": "no"
+  },
+  "GeneralDataOnCommentsForTheFilm": {
+    "total": "total",
+    "positive": "positive",
+    "negative": "negative",
+    "neutral": "neutral"
+  },
+  "AllDevaicePoster": {
+    "look": "look",
+    "onAlldevices": "on all devices",
+    "content": "the application is available for download on iOS, Android, SmartTV and set-top boxes",
+    "connectDevices": "connect devices"
   },
   "Back": "Back"
 }
