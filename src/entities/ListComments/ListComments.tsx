@@ -15,7 +15,6 @@ export const ListComments: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({
 }) => {
   const comments = useAppSelector((state) => state.filmComents.comments);
   const mobile = UseMedia('(max-width:600px)');
-  console.log(comments);
   if (comments?.total === 0)
     return (
       <p className={styles.message}>К данному фильму, пока нет комментариев</p>
