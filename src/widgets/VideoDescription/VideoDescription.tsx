@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { ActorsList } from 'entities/ActorsList';
 import { Grading } from 'features/Grading';
 import { IFilm } from 'shared/types/IFilm';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../i18n';
 import { HTMLAttributes } from 'react';
 import { ContentText } from 'shared/ui/ContentText';
 

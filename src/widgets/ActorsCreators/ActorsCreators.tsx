@@ -8,7 +8,7 @@ import { useAppDispatch } from 'app/store/hooks';
 import { openClose } from 'app/store/ActorsCreatorsModalSlice';
 import { HTMLAttributes } from 'react';
 import { IPerson } from 'shared/types/IPerson';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../i18n';
 import Image from 'next/image';
 
 interface IProps {

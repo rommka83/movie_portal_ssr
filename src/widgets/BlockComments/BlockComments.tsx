@@ -31,7 +31,7 @@ export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({
         }
       </SectionTitle>
       <ButtonOrLink variant='third' large={false} className={styles.commentAdd}>
-        {<span className={styles.btnAddText}>Написать отзыв</span>}
+        <span className={styles.btnAddText}>Написать отзыв</span>
       </ButtonOrLink>
       <div className={styles.blocCommentMain}>
         <ListComments className={styles.listComments} />

@@ -127,12 +127,12 @@ export const CategoryFilms: FC<props> = ({
                         height: '100%',
                       }}
                     >
-                      {/* <Link to={`/MoviePage/${obj.id}/${obj.name}`}> */}
-                      <PosterCards
-                        src={obj.poster.url ? obj.poster.url : ''}
-                        name={obj.name}
-                      />
-                      {/* </Link> */}
+                      <Link href={`/MoviePage/${obj.id}/${obj.name}`}>
+                        <PosterCards
+                          src={obj.poster.url ? obj.poster.url : ''}
+                          name={obj.name}
+                        />
+                      </Link>
                     </div>
                   </li>
                 );

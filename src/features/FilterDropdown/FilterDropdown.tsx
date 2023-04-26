@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useCallback, useRef, useState } from 'react';
 import styles from './filterdropdown.module.css';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import classNames from 'classnames';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../i18n';
 import { useOutsideClick } from 'shared/hooks/useOutsideClick';
 
 export type FilterType =

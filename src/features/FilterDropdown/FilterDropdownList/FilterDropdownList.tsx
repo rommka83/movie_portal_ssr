@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './filterdropdownlist.module.css';
 import classNames from 'classnames';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../../../i18n';
 
 interface IFilterDropdownList {
   array: string[];

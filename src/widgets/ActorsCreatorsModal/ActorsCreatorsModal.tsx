@@ -13,12 +13,13 @@ export function ActorsCreatorsModal() {
   return isOpen ? (
     <div className={styles.root}>
       <Back
-        children={'Назад'}
         className={styles.back}
         f={() => {
           dispatch(openClose());
         }}
-      />
+      >
+        Назад
+      </Back>
       <div className={styles.wrapper}>
         <h2>jhgjhgjhgjhg</h2>
       </div>
