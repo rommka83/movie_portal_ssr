@@ -1,6 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import styles from './postercards.module.css';
 import classNames from 'classnames';
+import Image from 'next/image';
 
 interface IProps {
   src: string;
@@ -8,10 +9,16 @@ interface IProps {
 }
 type props = HTMLAttributes<HTMLDivElement> & IProps;
 
-export const PosterCards = React.memo<props>(({ src, name, className }) => {
+export const PosterCards = ({ src, name, className }: props) => {
   return (
     <div className={classNames(styles.wrapper, className)}>
-      <img src={src} alt={name} className={styles.pic} />
+      <Image
+        width={100}
+        height={200}
+        src={src}
+        alt={name}
+        className={styles.pic}
+      />
     </div>
   );
-});
+};

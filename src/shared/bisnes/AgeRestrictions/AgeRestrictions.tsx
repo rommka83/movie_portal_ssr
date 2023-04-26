@@ -8,10 +8,10 @@ interface IProps {
 
 type props = HTMLAttributes<HTMLDivElement> & IProps;
 
-export const AgeRestrictions = React.memo<props>(({ age, className }) => {
+export const AgeRestrictions = ({ age, className }: props) => {
   return (
     <div className={classNames(styles.wrapper, className)}>
       <span className={styles.text}>{age ? age : 0} +</span>
     </div>
   );
-});
+};

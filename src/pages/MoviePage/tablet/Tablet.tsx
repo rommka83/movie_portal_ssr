@@ -1,4 +1,3 @@
-import { useNavigate, useParams } from 'react-router-dom';
 import styles from './tablet.module.css';
 import { VideoPlayer } from 'entities/VideoPlayer';
 import { useMemo } from 'react';
@@ -18,10 +17,12 @@ import { ActorsList } from 'entities/ActorsList';
 import { Grading } from 'features/Grading';
 import { ContentText } from 'shared/ui/ContentText';
 
-export function Tablet() {
-  const { id } = useParams();
+interface IProps {
+  id: string;
+}
+
+export function Tablet({ id }: IProps) {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   const film = useMemo(() => {
     if (id === undefined) return;
@@ -30,7 +31,7 @@ export function Tablet() {
 
   return film === undefined ? null : (
     <div className='container'>
-      <Back children={t('Back')} f={() => navigate(-1)} />
+      <Back f={() => {}}>{t('Back')}</Back>
       <VideoDescription short film={film} className={styles.description} />
       <VideoPlayer
         trailer={
@@ -42,7 +43,9 @@ export function Tablet() {
         className={styles.player}
       />
       <ActorsList actors={film.persons} reiting={film.rating.kp} />
-      <ContentText children={film.description} className={styles.contentText} />
+      <ContentText className={styles.contentText}>
+        {film.description}
+      </ContentText>
       <Grading grading={film.rating.kp} className={styles.grading} />
 
       {film.similarMovies.length > 0 && (

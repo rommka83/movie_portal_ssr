@@ -5,6 +5,7 @@ import tv from './tv-without-poster.png';
 import ipad from './ipad-without-poster.png';
 import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
+import Image from 'next/image';
 
 interface IProps {
   poster: string;
@@ -19,21 +20,22 @@ export const AllDevaicePoster: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({
   return (
     <div className={classNames(styles.root, className)}>
       <div className={styles.offerЕoСonnect}>
-        <SectionTitle children={<p>Смотреть «{name}» на всех устройствах</p>} />
+        <SectionTitle>
+          {<p>Смотреть «{name}» на всех устройствах</p>}
+        </SectionTitle>
         <p className={styles.offerVariants}>
           Приложение доступно для скачивания на iOS, Android, SmartTV и
           приставках
         </p>
-        <ButtonOrLink
-          children={<span>Подключить устройства</span>}
-          className={styles.offerBtn}
-        />
+        <ButtonOrLink className={styles.offerBtn}>
+          {<span>Подключить устройства</span>}
+        </ButtonOrLink>
       </div>
       <div className={styles.posters}>
-        <img src={poster} alt='' className={styles.posterTv} />
-        <img src={tv} alt='' className={styles.tv} />
-        <img src={poster} alt='' className={styles.posterIPad} />
-        <img src={ipad} alt='' className={styles.IPad} />
+        <Image src={poster} alt='' className={styles.posterTv} />
+        <Image src='./tv-without-poster.png' alt='' className={styles.tv} />
+        <Image src={poster} alt='' className={styles.posterIPad} />
+        <Image src='./ipad-without-poster.png' alt='' className={styles.IPad} />
       </div>
     </div>
   );

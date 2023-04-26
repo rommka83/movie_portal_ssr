@@ -30,16 +30,13 @@ export function MovieBadge({ film }: IProps) {
         </div>
         <BannerHover film={film} className={styles.bannerHover} />
       </div>
-      <CardTitle
-        children={
-          lng === 'ru'
-            ? film.name
-            : film.enName === ''
-            ? film.name
-            : film.enName
-        }
-        className={styles.title}
-      />
+      <CardTitle className={styles.title}>
+        {lng === 'ru'
+          ? film.name
+          : film.enName === ''
+          ? film.name
+          : film.enName}
+      </CardTitle>
       <PriceBadge
         price={film.rating.kp > 7 ? true : false}
         className={styles.statusPrice}

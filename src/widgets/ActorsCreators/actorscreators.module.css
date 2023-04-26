@@ -1,5 +1,3 @@
-.root {
-}
 .title {
   margin-bottom: 30px;
   opacity: 0.5;
@@ -53,8 +51,6 @@
   font-weight: 500;
   color: var(--gray-7e0);
   text-align: center;
-}
-.name {
 }
 .surName {
   overflow: hidden;

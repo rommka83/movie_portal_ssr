@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import { SvgIcon } from 'shared/ui/SvgIcon';
 
-export const FooterDesktop = React.memo(() => {
+export const FooterDesktop = () => {
   const { t } = useTranslation();
   return (
     <footer className={styles.footer}>
@@ -14,7 +14,7 @@ export const FooterDesktop = React.memo(() => {
         <div
           className={classNames(styles.footerContent, styles.containerBorder)}
         >
-          <div className={classNames(styles.column, styles.columnNarrow)}>
+          {/* <div className={classNames(styles.column, styles.columnNarrow)}>
             <p className={styles.columnTitle}>{t('footer.AboutUs')}</p>
             <ul className={styles.linkList}>
               <li className={styles.linkItem}>
@@ -158,9 +158,9 @@ export const FooterDesktop = React.memo(() => {
                 {t('footer.AnswersOnQuestions')}
               </p>
             </div>
-          </div>
+          </div> */}
 
-          <div
+          {/* <div
             className={classNames(
               styles.column,
               styles.columnNarrow,
@@ -187,7 +187,7 @@ export const FooterDesktop = React.memo(() => {
             >
               {t('footer.WatchMoviesWithoutAds')}
             </Link>
-          </div>
+          </div> */}
         </div>
 
         <div className={styles.footerContent}>
@@ -311,4 +311,4 @@ export const FooterDesktop = React.memo(() => {
       </div>
     </footer>
   );
-});
+};

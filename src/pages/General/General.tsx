@@ -8,7 +8,7 @@ export const General: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
   return (
     <div className={styles.general}>
       <Head>
-        <title>MOVIE PORTAL SSR</title>
+        <title>Movie portal ssr</title>
         <link
           rel='icon'
           type='image/svg+xml'

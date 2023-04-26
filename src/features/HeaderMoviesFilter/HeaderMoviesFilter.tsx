@@ -28,7 +28,7 @@ export function HeaderMoviesFilter() {
   };
   return (
     <div className={styles.filterContainer}>
-      <div className={styles.wrapper}>
+      {/* <div className={styles.wrapper}>
         <div className={styles.doubleColumn}>
           <CardTitle className={styles.title}>
             {t('headerMoviesFilter.Genres')}
@@ -157,7 +157,7 @@ export function HeaderMoviesFilter() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

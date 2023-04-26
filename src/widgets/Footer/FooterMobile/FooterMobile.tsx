@@ -3,11 +3,11 @@ import { Link } from 'shared/ui/Link/MyLink';
 import styles from './footermobile.module.css';
 import { useTranslation } from 'react-i18next';
 
-export const FooterMobile = React.memo(() => {
+export const FooterMobile = () => {
   const { t } = useTranslation();
   return (
     <footer className={styles.container}>
-      <div className={styles.tabBar}>
+      {/* <div className={styles.tabBar}>
         <Link to='/' className={styles.tabBarItem}>
           <span className='icon-home_20__0' />
           <span className={styles.linkText}>{t('footer.MyIvi')}</span>
@@ -31,7 +31,7 @@ export const FooterMobile = React.memo(() => {
           <span className='icon-more_20__0' />
           <span className={styles.linkText}>{t('footer.More')}</span>
         </Link>
-      </div>
+      </div> */}
     </footer>
   );
-});
+};

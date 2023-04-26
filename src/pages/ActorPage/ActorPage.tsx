@@ -1,8 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 
 import styles from './actorpage.module.css';
 
-import { useNavigate, useParams } from 'react-router';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 
 import { IActorFilms } from 'shared/types/IActorFilms';
@@ -17,7 +17,11 @@ import { declension } from './lib/helpers/declension ';
 import { fetchActor } from 'app/store/ActorReducers/ActionCreators';
 import { useTranslation } from 'react-i18next';
 
-export function ActorPage() {
+interface IProps {
+  id: string;
+}
+
+export function ActorPage({ id }: IProps) {
   const [movies, setMovies] = useState<IActorFilms[]>([]);
   const [moreMovies, setMoreMovies] = useState<IActorFilms[]>();
   const [showMoreMovies, setShowMoreMovies] = useState<boolean>(false);
@@ -26,13 +30,11 @@ export function ActorPage() {
     (state) => state.actorReduser
   );
 
-  const { id } = useParams();
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
   const { t } = useTranslation();
   useEffect(() => {
     if (id) dispatch(fetchActor(id));
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     if (actor.movies) {
@@ -55,11 +57,9 @@ export function ActorPage() {
   return (
     <section className={styles.actorPage}>
       <div className='container'>
-        <Back
-          children={t('Back')}
-          f={() => navigate(-1)}
-          className={styles.back}
-        />
+        <Back f={() => {}} className={styles.back}>
+          {t('Back')}
+        </Back>
         <div className={styles.container}>
           {!isLoading ? (
             <>
