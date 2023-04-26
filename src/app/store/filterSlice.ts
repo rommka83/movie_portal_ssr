@@ -19,9 +19,7 @@ const filters = createSlice({
   initialState,
   reducers: {
     addFilters(state, obj: PayloadAction<IFilter>) {
-      console.log('до:', { ...state });
       state = obj.payload;
-      console.log('после', { ...state });
     },
   },
 });

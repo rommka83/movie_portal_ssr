@@ -22,7 +22,9 @@ export function MovieBadge({ film }: IProps) {
           <PosterCards
             src={film.poster.url ? film.poster.url : ''}
             name={
-              lng === 'ru' ? film.name : film.enName ? film.enName : film.name
+              lng === 'ru'
+                ? film.name ?? film.alternativeName
+                : film.enName ?? film.name
             }
             className={styles.pic}
           />
@@ -32,10 +34,8 @@ export function MovieBadge({ film }: IProps) {
       </div>
       <CardTitle className={styles.title}>
         {lng === 'ru'
-          ? film.name
-          : film.enName === ''
-          ? film.name
-          : film.enName}
+          ? film.name ?? film.alternativeName
+          : film.enName ?? film.name}
       </CardTitle>
       <PriceBadge
         price={film.rating.kp > 7 ? true : false}

@@ -1,6 +1,6 @@
 import React, { FC, HTMLAttributes } from 'react';
 import styles from './controlsvideocontent.module.css';
-import { changeTrailerPlayer } from 'app/store/trailerPlayerSlice';
+import { changeTrailerPlayer } from 'app/store/trailerPlayerSliceDELET';
 import classNames from 'classnames';
 import { useTranslation } from '../../i18n';
 import { useAppDispatch } from 'app/store/hooks';

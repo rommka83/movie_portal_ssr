@@ -4,19 +4,23 @@ import { UseMedia } from 'shared/hooks/useMedia';
 import { Mobile } from './mobile/Mobile';
 import { useAppSelector } from 'app/store/hooks';
 import styles from './listcomments.module.css';
+import { IOneComment } from 'shared/types/IOneComment';
+import { IReviev } from 'shared/types/IReviev';
+import axios from 'axios';
 
-export const ListComments: FC<HTMLAttributes<HTMLUListElement>> = ({
+interface IProps {}
+
+export const ListComments: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({
   className,
 }) => {
+  const comments = useAppSelector((state) => state.filmComents.comments);
   const mobile = UseMedia('(max-width:600px)');
-  const { comments, error } = useAppSelector((store) => store.filmComents);
-
-  if (error) return <p className={styles.message}>Произошла ошибка</p>;
-  if (comments.total === 0)
+  console.log(comments);
+  if (comments?.total === 0)
     return (
       <p className={styles.message}>К данному фильму, пока нет комментариев</p>
     );
-
+  if (comments === undefined) return null;
   return mobile ? (
     <Mobile comments={comments} />
   ) : (

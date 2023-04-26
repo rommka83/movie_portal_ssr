@@ -18,7 +18,7 @@ const initialState = {
 
 export const getComments = createAsyncThunk(
   'comments/comments-request',
-  async (id: number) => {
+  async (id: string) => {
     const response = await axios.get(
       `https://api.kinopoisk.dev/v1/review?page=1&limit=100&movieId=${id}`,
       {

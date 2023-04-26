@@ -14,7 +14,7 @@ import Back from 'shared/ui/Back';
 
 import { declension } from './lib/helpers/declension ';
 
-import { fetchActor } from 'app/store/ActorReducers/ActionCreators';
+import { fetchActor } from 'app/store/ActorReducersDELET/ActionCreators';
 import { useTranslation } from '../../i18n';
 
 interface IProps {

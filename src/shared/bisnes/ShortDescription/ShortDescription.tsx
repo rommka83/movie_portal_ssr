@@ -13,7 +13,7 @@ export const ShortDescription: FC<IProps> = ({ obj }) => {
     return (countries += el.name);
   });
   const hours = Math.floor(obj.movieLength / 60);
-  const min = obj.movieLength - hours;
+  const min = obj.movieLength - hours * 60;
   return (
     <div className={styles.root}>
       <p className={styles.yearСountry}>

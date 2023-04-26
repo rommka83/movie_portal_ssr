@@ -25,6 +25,9 @@ html,
 body {
   background: #100e19;
 }
+body::-webkit-scrollbar {
+  width: 0;
+}
 
 #root {
   height: 100%;
@@ -60,11 +63,7 @@ body {
 
 .swiper-slide-active {
   max-width: 80vw !important;
-
 }
-
-
-
 
 input[type='range'] {
   overflow: hidden;

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import styles from './trailerPlayer.module.css';
 import { useAppSelector, useAppDispatch } from 'app/store/hooks';
-import { changeTrailerPlayer } from 'app/store/trailerPlayerSlice';
+import { changeTrailerPlayer } from 'app/store/trailerPlayerSliceDELET';
 import classNames from 'classnames';
 
 export function TrailerPlayer() {

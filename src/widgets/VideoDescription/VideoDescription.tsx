@@ -24,7 +24,7 @@ export function VideoDescription({ film, className, short = false }: props) {
   return (
     <div className={classNames(styles.root, className)}>
       <h2 className={styles.title}>
-        {lng === 'ru' ? film.name : film.enName ? film.enName : film.name}
+        {lng === 'ru' ? film.name : film.enName ?? film.name}
       </h2>
       <ul className={styles.atributes}>
         <li className={styles.atributesItem}>

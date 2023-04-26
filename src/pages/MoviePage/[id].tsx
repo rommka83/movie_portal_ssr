@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useMemo } from 'react';
 import styles from './moviepage.module.css';
 import { Desktop } from './desktop/Desktop';
@@ -5,36 +6,49 @@ import { UseMedia } from 'shared/hooks/useMedia';
 import { Tablet } from './tablet/Tablet';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { getComments } from 'app/store/commentsRequest';
-import test from '../../temp/DB/testKinopoisk.json';
+import axios from 'axios';
+import { IFilm } from 'shared/types/IFilm';
+import { IReviev } from 'shared/types/IReviev';
 
 export async function getServerSideProps(context: any) {
   const { id } = context.params;
 
+  const film = await axios.get(`https://api.kinopoisk.dev/v1.3/movie/${id}`, {
+    headers: {
+      Accept: 'application/json',
+      'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
+    },
+  });
+
+  if (!film) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
-    props: { id },
+    props: { film: film.data, id: id },
   };
 }
 
 interface IProps {
+  film: IFilm;
   id: string;
 }
 
-export default function MoviePage({ id }: IProps) {
-  const film = useMemo(() => {
-    if (id === undefined) return;
-    return test.find((el) => el.id === +id);
-  }, [id]);
-
+export default function MoviePage({ film, id }: IProps) {
   const tablet = UseMedia('(max-width: 1160px)');
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     window.scrollTo(0, 0);
     if (film === undefined) return;
-  }, [film]);
+    dispatch(getComments(id));
+  }, [film, id]);
 
-  // if (tablet) {
-  //   return <Tablet />;
-  // }
+  if (tablet) {
+    return <Tablet film={film} />;
+  }
 
   return film === undefined ? null : <Desktop film={film} />;
 }

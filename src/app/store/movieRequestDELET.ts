@@ -36,7 +36,6 @@ export const movie = createSlice({
       .addCase(getFilm.fulfilled, (state, { payload }) => {
         state.pending = false;
         state.muvie = payload.data;
-        console.log(payload);
       })
       .addCase(getFilm.rejected, (state) => {
         state.pending = false;
