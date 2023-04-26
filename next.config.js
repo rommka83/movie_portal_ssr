@@ -7,7 +7,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'st.kp.yandex.net',
         port: '',
-        pathname: '/images/actor_iphone/**',
+        pathname: '/images/**',
       },
     ],
   },
