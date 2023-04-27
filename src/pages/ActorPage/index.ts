@@ -1,1 +1,2 @@
-export { ActorPage as default } from './ActorPage';
+import ActorPage from './[id]';
+export default ActorPage;

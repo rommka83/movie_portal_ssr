@@ -27,17 +27,14 @@ export const AllDevaicePoster: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({
     <div className={classNames(styles.root, className)}>
       <div className={styles.offerЕoСonnect}>
         <SectionTitle>
-          {
-            <p>
-              {t('AllDevaicePoster.look')} «
-              {lng === 'ru' ? name : enName ?? name}»{' '}
-              {t('AllDevaicePoster.onAlldevices')}
-            </p>
-          }
+          <p>
+            {t('AllDevaicePoster.look')} «{lng === 'ru' ? name : enName ?? name}
+            » {t('AllDevaicePoster.onAlldevices')}
+          </p>
         </SectionTitle>
         <p className={styles.offerVariants}>{t('AllDevaicePoster.content')}</p>
         <ButtonOrLink className={styles.offerBtn}>
-          {<span>{t('AllDevaicePoster.connectDevices')}</span>}
+          <span>{t('AllDevaicePoster.connectDevices')}</span>
         </ButtonOrLink>
       </div>
       <div className={styles.posters}>

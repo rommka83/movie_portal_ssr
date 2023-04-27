@@ -1,7 +1,6 @@
 .list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .item {
   display: flex;
@@ -29,4 +28,9 @@
 }
 .lastLink {
   opacity: 1;
+}
+@media (max-width: 1160px) {
+  .list {
+    justify-content: center;
+  }
 }
