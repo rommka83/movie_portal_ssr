@@ -93,6 +93,11 @@
     "storybook": "^7.0.4",
     "webpack": "^5.79.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   }
