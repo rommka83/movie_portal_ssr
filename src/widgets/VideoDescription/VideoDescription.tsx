@@ -19,7 +19,7 @@ export function VideoDescription({ film, className, short = false }: props) {
   const { i18n } = useTranslation();
   const lng = i18n.language;
   const hours = Math.floor(film.movieLength / 60);
-  const min = film.movieLength - hours;
+  const min = film.movieLength - hours * 60;
 
   return (
     <div className={classNames(styles.root, className)}>

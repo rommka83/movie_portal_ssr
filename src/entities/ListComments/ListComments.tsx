@@ -8,9 +8,7 @@ import { IOneComment } from 'shared/types/IOneComment';
 import { IReviev } from 'shared/types/IReviev';
 import axios from 'axios';
 
-interface IProps {}
-
-export const ListComments: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({
+export const ListComments: FC<HTMLAttributes<HTMLUListElement>> = ({
   className,
 }) => {
   const comments = useAppSelector((state) => state.filmComents.comments);
