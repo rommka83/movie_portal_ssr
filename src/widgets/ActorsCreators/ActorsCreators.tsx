@@ -10,6 +10,7 @@ import { HTMLAttributes } from 'react';
 import { IPerson } from 'shared/types/IPerson';
 import { useTranslation } from '../../i18n';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface IProps {
   persons: IPerson[];
@@ -40,26 +41,23 @@ export function ActorsCreators({ persons, className }: props) {
 
             return (
               <li className={styles.item} key={nanoid()}>
-                {/* <Link
-                  to={`/ActorPage/${el.id}/${el.name}`}
-                  className={styles.link}
-                > */}
-                {el.photo !== '' ? (
-                  <Image
-                    width={60}
-                    height={60}
-                    src={el.photo}
-                    alt={el.name}
-                    className={styles.pic}
-                  />
-                ) : (
-                  <div className={classNames(styles.noPhoto, 'icon-person_56__0')}></div>
-                )}
+                <Link href={`/ActorPage/${el.id}`} className={styles.link}>
+                  {el.photo !== '' ? (
+                    <Image
+                      width={60}
+                      height={60}
+                      src={el.photo}
+                      alt={el.name}
+                      className={styles.pic}
+                    />
+                  ) : (
+                    <div className={classNames(styles.noPhoto, 'icon-person_56__0')}></div>
+                  )}
 
-                <p className={styles.name}>{name}</p>
-                <p className={classNames(styles.name, styles.surName)}>{surName}</p>
-                <p className={styles.position}>{el.profession}</p>
-                {/* </Link> */}
+                  <p className={styles.name}>{name}</p>
+                  <p className={classNames(styles.name, styles.surName)}>{surName}</p>
+                  <p className={styles.position}>{el.profession}</p>
+                </Link>
               </li>
             );
           })}

@@ -11,13 +11,16 @@ interface IProps {
 
 export const OneComment: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ className, comment }) => {
   const { t } = useTranslation();
+  const name = comment.author.split(' ').slice(0, 1);
+  const surName = comment.author.split(' ').slice(1);
 
   return (
     <article className={classNames(styles.root, className)}>
       <div className={styles.head}>
         <UserPhoto />
-        <div className={styles.userInfo}>
-          <p className={styles.name}>{comment.author}</p>
+        <div className={styles.author}>
+          <p className={styles.name}>{name}</p>
+          <p className={styles.name}>{surName}</p>
         </div>
         <p className={styles.data}>{new Date(comment.date).toLocaleDateString()}</p>
       </div>

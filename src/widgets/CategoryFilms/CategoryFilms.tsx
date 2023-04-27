@@ -110,8 +110,8 @@ export const CategoryFilms: FC<props> = ({ title, movies, children, simulyrMovie
                         height: '100%',
                       }}
                     >
-                      <Link href={`/MoviePage/${obj.id}/${obj.name}`}>
-                        <PosterCards src={obj.poster.url ? obj.poster.url : ''} name={obj.name} />
+                      <Link href={`/MoviePage/${obj.id}`}>
+                        <PosterCards src={obj.poster.url ?? ''} name={obj.name} />
                       </Link>
                     </div>
                   </li>
