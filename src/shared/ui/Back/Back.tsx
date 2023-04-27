@@ -14,7 +14,7 @@ export const Back: FC<IProps> = ({ className, children, f, ...props }) => {
   return (
     <button
       className={classNames(styles.btn, className, 'icon-arrowLeft_8x20__0')}
-      onClick={() => router.back()}
+      onClick={() => f ?? router.back()}
     >
       <span>{children}</span>
     </button>

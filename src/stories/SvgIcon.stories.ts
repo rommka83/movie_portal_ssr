@@ -6,7 +6,11 @@ const meta = {
   title: 'Example/SvgIcon',
   component: SvgIcon,
   tags: ['autodocs'],
-  args: { type: 'Bookmark' || 'Magic' || 'Star' || 'DashCircle', size: 20 },
+  args: {
+    type:
+      'Google' || 'AppleLogo' || 'VK' || 'OK' || 'Twitter' || 'Viber' || 'Linkedin' || 'Telegram',
+    size: 20,
+  },
 
   parameters: {
     layout: 'centered',

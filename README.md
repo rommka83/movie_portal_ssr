@@ -7,3 +7,5 @@
 ##### в случае, если вы уверены в коде, используйте команду:
 
 ###### "git commit -m [message] --no-verify"
+
+# yo react-ts-component-dir [component_name] [path] [--styles] [--less] [--sass]
