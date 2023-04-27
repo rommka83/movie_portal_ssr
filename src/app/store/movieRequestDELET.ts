@@ -19,7 +19,7 @@ export const getFilm = createAsyncThunk('film/film-request', async () => {
         Accept: 'application/json',
         'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
       },
-    }
+    },
   );
   return response.data;
 });

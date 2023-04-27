@@ -30,14 +30,9 @@ export function ActorsCreators({ persons, className }: props) {
 
   return (
     <div className={classNames(styles.root, className)}>
-      <SectionTitle className={styles.title}>
-        {t('ActorsCreators')}
-      </SectionTitle>
+      <SectionTitle className={styles.title}>{t('ActorsCreators')}</SectionTitle>
       <div className={styles.picWrapper}>
-        <ul
-          className={styles.list}
-          style={{ gridAutoColumns: `calc(${widthCardPerson}%)` }}
-        >
+        <ul className={styles.list} style={{ gridAutoColumns: `calc(${widthCardPerson}%)` }}>
           {persons.slice(0, amountCardPerson).map((el) => {
             if (el.name === null) return null;
             const [name] = el.name.split(' ').slice(0, 1);
@@ -58,15 +53,11 @@ export function ActorsCreators({ persons, className }: props) {
                     className={styles.pic}
                   />
                 ) : (
-                  <div
-                    className={classNames(styles.noPhoto, 'icon-person_56__0')}
-                  ></div>
+                  <div className={classNames(styles.noPhoto, 'icon-person_56__0')}></div>
                 )}
 
                 <p className={styles.name}>{name}</p>
-                <p className={classNames(styles.name, styles.surName)}>
-                  {surName}
-                </p>
+                <p className={classNames(styles.name, styles.surName)}>{surName}</p>
                 <p className={styles.position}>{el.profession}</p>
                 {/* </Link> */}
               </li>

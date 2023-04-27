@@ -16,14 +16,14 @@ export const TopChart: FC<IProps> = ({ obj }) => {
       <p className={styles.name}>{t('topChart.grade')}</p>
 
       <input
-        type='range'
+        type="range"
         className={styles.inp}
-        min='0'
-        max='10'
+        min="0"
+        max="10"
         value={obj.rating.kp}
-        step='0,1'
+        step="0,1"
         style={{ width: 'width' }}
-        id='topChart'
+        id="topChart"
         readOnly
       />
     </div>

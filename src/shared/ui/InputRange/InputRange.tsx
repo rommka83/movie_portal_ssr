@@ -8,13 +8,7 @@ interface IInputRange {
   formatter?: (value: string | number) => string | number;
   className?: string;
 }
-export function InputRange({
-  startValue,
-  maxValue,
-  minValue,
-  formatter,
-  className,
-}: IInputRange) {
+export function InputRange({ startValue, maxValue, minValue, formatter, className }: IInputRange) {
   const [value, setValue] = useState(startValue);
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.currentTarget.value);
@@ -27,10 +21,10 @@ export function InputRange({
         <span className={styles.rangeCount}> от {currentValue} </span>
         <input
           className={className}
-          type='range'
+          type="range"
           min={minValue}
           max={maxValue}
-          step='1'
+          step="1"
           value={value}
           default-value={startValue}
           onChange={onChange}

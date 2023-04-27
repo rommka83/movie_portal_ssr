@@ -5,9 +5,7 @@ import { Back } from 'shared/ui/Back/Back';
 import { openClose } from 'app/store/ActorsCreatorsModalSlice';
 
 export function ActorsCreatorsModal() {
-  const isOpen = useAppSelector(
-    (store) => store.ActorsCreatorsModal.data.isOpen
-  );
+  const isOpen = useAppSelector((store) => store.ActorsCreatorsModal.data.isOpen);
   const dispatch = useAppDispatch();
 
   return isOpen ? (

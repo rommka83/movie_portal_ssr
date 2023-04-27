@@ -28,9 +28,7 @@ export function AdditionalMaterials({ className, video }: props) {
   };
   return video.trailers.length > 0 ? (
     <div className={classNames(styles.root, className)}>
-      <SectionTitle className={styles.title}>
-        {t('sectionTitle.additionalMaterials')}
-      </SectionTitle>
+      <SectionTitle className={styles.title}>{t('sectionTitle.additionalMaterials')}</SectionTitle>
       <ul className={styles.list} ref={list}>
         {video.trailers.slice(0, 4).map((el) => {
           return (

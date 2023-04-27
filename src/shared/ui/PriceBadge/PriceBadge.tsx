@@ -10,13 +10,7 @@ type props = HTMLAttributes<HTMLSpanElement> & IProps;
 
 export const PriceBadge = ({ price, className }: props) => {
   return (
-    <span
-      className={cn(
-        styles.priceBadge,
-        price ? styles.pink : styles.gray,
-        className
-      )}
-    >
+    <span className={cn(styles.priceBadge, price ? styles.pink : styles.gray, className)}>
       {price ? 'Подписка' : 'Бесплатно'}
     </span>
   );

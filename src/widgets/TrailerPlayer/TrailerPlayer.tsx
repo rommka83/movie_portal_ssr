@@ -5,9 +5,7 @@ import { changeTrailerPlayer } from 'app/store/trailerPlayerSliceDELET';
 import classNames from 'classnames';
 
 export function TrailerPlayer() {
-  const trailerPlayer = useAppSelector(
-    (state) => state.changeTrailerPlayer.data
-  );
+  const trailerPlayer = useAppSelector((state) => state.changeTrailerPlayer.data);
   const dispatch = useAppDispatch();
   const video = useRef<HTMLVideoElement>(null);
 
@@ -17,9 +15,7 @@ export function TrailerPlayer() {
         className={styles.wrapper}
         onClick={(ev) => {
           if (ev.target !== video.current)
-            dispatch(
-              changeTrailerPlayer({ isOpen: false, age: 0, trailer: '' })
-            );
+            dispatch(changeTrailerPlayer({ isOpen: false, age: 0, trailer: '' }));
         }}
       >
         <div className={classNames(styles.exit, 'icon-close_20__0')}></div>

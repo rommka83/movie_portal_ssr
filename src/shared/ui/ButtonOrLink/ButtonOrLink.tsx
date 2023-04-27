@@ -39,7 +39,7 @@ export const ButtonOrLink = React.memo<ButtonProps>(
         {children}
       </button>
     );
-  }
+  },
 );
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {

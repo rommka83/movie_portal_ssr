@@ -21,7 +21,7 @@ export const GenreBookmarks: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({
     <ul className={classNames(styles.list, className)}>
       {home && (
         <li className={styles.item} key={nanoid()}>
-          <Link href='/' className={styles.link}>
+          <Link href="/" className={styles.link}>
             мой иви
           </Link>
         </li>
@@ -29,7 +29,7 @@ export const GenreBookmarks: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({
       {ganre.map((el) => {
         return (
           <li className={styles.item} key={nanoid()}>
-            <a href='https://www.ivi.ru/movies' className={styles.link}>
+            <a href="https://www.ivi.ru/movies" className={styles.link}>
               {el.name}
             </a>
           </li>
@@ -37,9 +37,7 @@ export const GenreBookmarks: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({
       })}
       {page && (
         <li className={styles.item} key={nanoid()}>
-          <span className={classNames(styles.link, styles.lastLink)}>
-            {page}
-          </span>
+          <span className={classNames(styles.link, styles.lastLink)}>{page}</span>
         </li>
       )}
     </ul>

@@ -31,9 +31,7 @@ export function ActorsList({ actors, reiting }: Iprops) {
                   height={60}
                 />
               ) : (
-                <div
-                  className={classNames(styles.noPerson, 'icon-avatar_56__0')}
-                />
+                <div className={classNames(styles.noPerson, 'icon-avatar_56__0')} />
               )}
               <p className={styles.name} key={nanoid()}>
                 {name}

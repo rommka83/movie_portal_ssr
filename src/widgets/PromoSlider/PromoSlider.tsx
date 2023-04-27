@@ -16,9 +16,7 @@ type PropsType = {
 };
 
 export const PromoSlider: React.FC<PropsType> = ({ movies }) => {
-
-  const brakePoint = UseMedia('(max-width:768px)')
-
+  const brakePoint = UseMedia('(max-width:768px)');
 
   return (
     <Swiper

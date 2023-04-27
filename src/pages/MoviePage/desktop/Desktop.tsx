@@ -44,14 +44,8 @@ export const Desktop = ({ film }: IProps) => {
           className={styles.simulyar}
         />
       )}
-      <ActorsCreators
-        persons={film.persons}
-        className={styles.actorsCreators}
-      />
-      <AdditionalMaterials
-        className={styles.additionalMaterials}
-        video={film.videos}
-      />
+      <ActorsCreators persons={film.persons} className={styles.actorsCreators} />
+      <AdditionalMaterials className={styles.additionalMaterials} video={film.videos} />
       <BlockComments className={styles.comments} />
       <AllDevaicePoster
         name={film.name}
@@ -59,12 +53,7 @@ export const Desktop = ({ film }: IProps) => {
         poster={film.poster.url}
         className={styles.allDvices}
       />
-      <GenreBookmarks
-        home
-        ganre={film.genres}
-        page={film.name}
-        className={styles.crumbs}
-      />
+      <GenreBookmarks home ganre={film.genres} page={film.name} className={styles.crumbs} />
     </div>
   );
 };

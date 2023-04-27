@@ -14,7 +14,7 @@ type PropsType = {
 export const PromoSlide: React.FC<PropsType> = ({ movie }) => {
   return (
     <div className={styles.block}>
-      <Image alt='' className={styles.background} src={movie.poster.url} />
+      <Image alt="" className={styles.background} src={movie.poster.url} />
       {/* <NavLink to='/watch' className={styles.body}> */}
       <div className={styles.content}>
         <div className={styles.logoContainer}>
@@ -23,7 +23,7 @@ export const PromoSlide: React.FC<PropsType> = ({ movie }) => {
         </div>
         <div className={styles.description}>{movie.shortDescription}</div>
         <div className={styles.btnContainer}>
-          <ButtonOrLink className={styles.btn} variant='primary'>
+          <ButtonOrLink className={styles.btn} variant="primary">
             {movie.rating.kp > 5 ? 'Смотреть по подписке' : 'Смотреть'}
           </ButtonOrLink>
         </div>
