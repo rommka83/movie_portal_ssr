@@ -94,6 +94,6 @@
     "webpack": "^5.79.0"
   },
   "lint-staged": {
-    "**/*": "lint prettier --write --ignore-unknown"
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
