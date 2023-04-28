@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { IFilm } from '../../shared/types/IFilm';
 
-let film: IFilm = {
+const film: IFilm = {
   id: 0,
   name: '',
   enName: null,
@@ -53,8 +53,6 @@ let film: IFilm = {
 
 const initialState = {
   film,
-  pending: false,
-  error: false,
 };
 
 export const movie = createSlice({

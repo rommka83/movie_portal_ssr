@@ -1,0 +1,13 @@
+.root {
+}
+.title {
+  margin-bottom: 20px;
+}
+.list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.item {
+  width: 120px;
+}

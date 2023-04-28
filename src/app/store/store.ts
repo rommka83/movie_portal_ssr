@@ -1,6 +1,6 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import filters from './filterSlice';
-import { movie } from './oneFilmSlice';
+import { movie } from './oneFilmSliceDELETE';
 import { filmComents } from './commentsRequest';
 
 export const store = configureStore({
