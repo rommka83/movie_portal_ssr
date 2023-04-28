@@ -3,18 +3,21 @@ import styles from './filterpanelmobile.module.css';
 import { Modal } from 'shared/ui/Modal';
 import { FilterGenreCard } from 'shared/ui/FilterGenreCard';
 import { countries, estimates, genres, ratings } from '../constants';
-import { useTranslation } from '../../../i18n';
+import { useTranslation } from 'react-i18next';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
-import { FilterDropdownSearch } from 'features/FilterDropdown/FilterDropdownSearch';
 import { Carousel } from 'shared/ui/Carousel';
 import { Accordion } from 'shared/ui/Accordion';
 import classNames from 'classnames';
 import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
+import { ModalSearch } from 'features/ModalSearch';
+import { addGenresFilter } from 'app/store/filterSlice';
+import { useAppDispatch } from 'app/store/hooks';
 
 export const FilterPanelMobile = React.memo(() => {
   const { t } = useTranslation();
   const [showHeader, setShowHeader] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const dispatch = useAppDispatch();
 
   const onContentScroll = (event: MouseEvent<HTMLDivElement>) => {
     const scrollTop = event.currentTarget.scrollTop;
@@ -32,6 +35,10 @@ export const FilterPanelMobile = React.memo(() => {
   const onModalShow = useCallback(() => {
     setShowModal(true);
   }, []);
+
+  const onGenreCardClick = (genre: string) => {
+    dispatch(addGenresFilter(genre));
+  };
 
   return (
     <>
@@ -64,7 +71,8 @@ export const FilterPanelMobile = React.memo(() => {
                       key={genre}
                       genre={genre}
                       caption={t(`headerMoviesFilter.${genre}`)}
-                    ></FilterGenreCard>
+                      onClick={onGenreCardClick}
+                    />
                   ))}
                 </Carousel>
 
@@ -104,13 +112,17 @@ export const FilterPanelMobile = React.memo(() => {
                   </Carousel>
                 </Accordion>
 
-                <Accordion textButton={t('FilterPanel.Director')}>
-                  <FilterDropdownSearch placeholderText={t('FilterPanel.Director')} />
-                </Accordion>
+                <ModalSearch
+                  type="Режиссер"
+                  placeholderText={t('FilterPanel.Director')}
+                  title={t('FilterPanel.Director')}
+                />
 
-                <Accordion textButton={t('FilterPanel.Actor')}>
-                  <FilterDropdownSearch placeholderText={t('FilterPanel.Actor')} />
-                </Accordion>
+                <ModalSearch
+                  type="Актер"
+                  placeholderText={t('FilterPanel.Actor')}
+                  title={t('FilterPanel.Actor')}
+                />
               </div>
             </div>
 
@@ -120,6 +132,7 @@ export const FilterPanelMobile = React.memo(() => {
               </ButtonOrLink>
               <ButtonOrLink className={styles.filterButton} variant="primary" transparent large>
                 {t('FilterPanel.ResetFilters')}
+                <div className={styles.filtersCounter}>3</div>
               </ButtonOrLink>
             </div>
           </div>

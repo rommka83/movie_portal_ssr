@@ -2,12 +2,18 @@ import React, { FC, HTMLAttributes, useMemo } from 'react';
 import styles from './generaldataoncommentsforthefilm.module.css';
 import classNames from 'classnames';
 import { useAppSelector } from 'app/store/hooks';
+import { IReviev } from 'shared/types/IReviev';
 import { useTranslation } from 'react-i18next';
 
-export const GeneralDataOnCommentsForTheFilm: FC<HTMLAttributes<HTMLUListElement>> = ({
+interface IGeneralDataOnCommentsForTheFilm {
+  className?: string;
+  comments: IReviev;
+}
+
+export const GeneralDataOnCommentsForTheFilm: FC<IGeneralDataOnCommentsForTheFilm> = ({
   className,
+  comments,
 }) => {
-  const { comments } = useAppSelector((state) => state.filmComents);
   const { t } = useTranslation();
 
   const { positive, neutral, negative, positiveProcent, negativeProcent, neutralProcent } =

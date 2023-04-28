@@ -1,19 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { FC, HTMLAttributes, useEffect } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import styles from './blockcomments.module.css';
 import classNames from 'classnames';
 import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import GeneralDataOnCommentsForTheFilm from 'entities/GeneralDataOnCommentsForTheFilm';
 import { ListComments } from 'entities/ListComments';
-import { getComments } from 'app/store/commentsRequest';
-import { useAppDispatch } from 'app/store/hooks';
-import axios from 'axios';
-import { IOneComment } from 'shared/types/IOneComment';
+import { commentsSelector } from 'app/store/commentsRequest';
+import { useAppSelector } from 'app/store/hooks';
 import { useTranslation } from 'react-i18next';
-
 export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({ className }) => {
   const { t } = useTranslation();
+  const comments = useAppSelector(commentsSelector);
 
   return (
     <section className={classNames(styles.root, className)}>
@@ -30,7 +28,7 @@ export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({ className })
       </ButtonOrLink>
       <div className={styles.blocCommentMain}>
         <ListComments className={styles.listComments} />
-        <GeneralDataOnCommentsForTheFilm className={styles.right} />
+        <GeneralDataOnCommentsForTheFilm className={styles.right} comments={comments} />
       </div>
     </section>
   );
