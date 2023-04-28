@@ -1,1 +1,1 @@
-export { HeaderNav } from "./HeaderNav";
+export { HeaderNav } from './HeaderNav';

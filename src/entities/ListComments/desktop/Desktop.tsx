@@ -9,10 +9,7 @@ interface IProps {
   comments: IReviev;
 }
 
-export const Desktop: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({
-  comments,
-  className,
-}) => {
+export const Desktop: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({ comments, className }) => {
   return (
     <ul className={classNames(styles.listComments, className)}>
       {comments.docs.slice(0, 4).map((el) => {

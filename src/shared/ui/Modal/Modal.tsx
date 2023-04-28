@@ -15,6 +15,6 @@ export const Modal: React.FC<PropsWithChildren<{ className?: string }>> = ({
   }, []);
   return createPortal(
     <div className={classNames(styles.backDrop, className)}>{children}</div>,
-    document.body
+    document.body,
   );
 };

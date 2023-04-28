@@ -2,11 +2,12 @@
   --transform-origin: 5px 70px;
   --width: 10px;
   --height: 45px;
-  color: var(--white);
+  color: var(--pink--linear-gradient);
   display: inline-block;
   position: absolute;
   top: 35%;
   left: 50%;
+  z-index: 99;
 }
 .ldsSpinner div {
   transform-origin: var(--transform-origin);
@@ -21,7 +22,7 @@
   width: var(--width);
   height: var(--height);
   border-radius: 20%;
-  background: var(--white);
+  background: linear-gradient(0deg, var(--white), var(--pink));
 }
 .ldsSpinner div:nth-child(1) {
   transform: rotate(0deg);

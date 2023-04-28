@@ -1,1 +1,1 @@
-export { FooterDesktop } from "./FooterDesktop";
+export { FooterDesktop } from './FooterDesktop';

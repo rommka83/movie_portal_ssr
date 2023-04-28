@@ -12,16 +12,12 @@ const meta = {
     withButton: true,
     children: (
       <>
-        <FilterGenreCard caption='Драма' genre='drama' onClick={() => {}} />
-        <FilterGenreCard caption='Комедии' genre='comedy' onClick={() => {}} />
-        <FilterGenreCard caption='Вестерн' genre='western' onClick={() => {}} />
-        <FilterGenreCard caption='Для детей' genre='kids' onClick={() => {}} />
-        <FilterGenreCard caption='Ужасы' genre='horror' onClick={() => {}} />
-        <FilterGenreCard
-          caption='Военные'
-          genre='military'
-          onClick={() => {}}
-        />
+        <FilterGenreCard caption="Драма" genre="drama" onClick={() => {}} />
+        <FilterGenreCard caption="Комедии" genre="comedy" onClick={() => {}} />
+        <FilterGenreCard caption="Вестерн" genre="western" onClick={() => {}} />
+        <FilterGenreCard caption="Для детей" genre="kids" onClick={() => {}} />
+        <FilterGenreCard caption="Ужасы" genre="horror" onClick={() => {}} />
+        <FilterGenreCard caption="Военные" genre="military" onClick={() => {}} />
       </>
     ),
   },

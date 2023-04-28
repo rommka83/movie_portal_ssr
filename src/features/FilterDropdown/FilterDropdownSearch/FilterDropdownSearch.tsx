@@ -1,10 +1,4 @@
-import React, {
-  MouseEvent,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { InputSearch } from 'shared/ui/InputSearch';
 import styles from './filterdropdownsearch.module.css';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
@@ -35,9 +29,7 @@ export const FilterDropdownSearch = React.memo(
     const pendingPersons = useAppSelector(pendingPersonsSelector);
     const abortRef = useRef<((reason?: string) => void) | null>(null);
     const isDirectorType = type === 'Режиссер';
-    const iconClassName = isDirectorType
-      ? 'icon-films_20__0'
-      : 'icon-person_20__0';
+    const iconClassName = isDirectorType ? 'icon-films_20__0' : 'icon-person_20__0';
     const onChange = useCallback(
       debounce((value: string) => {
         if (abortRef.current) {
@@ -46,12 +38,10 @@ export const FilterDropdownSearch = React.memo(
         if (selectedPerson) {
           setSelectedPerson('');
         }
-        const controller = dispatch(
-          getSearchPersons({ name: value, profession: type })
-        );
+        const controller = dispatch(getSearchPersons({ name: value, profession: type }));
         abortRef.current = controller.abort;
       }, 350),
-      [selectedPerson]
+      [selectedPerson],
     );
 
     const onPersonClick = (event: MouseEvent<HTMLLIElement>) => {
@@ -62,9 +52,7 @@ export const FilterDropdownSearch = React.memo(
     };
 
     const onSearchClick = useCallback(() => {
-      const action = isDirectorType
-        ? addInputSearchDirectorFilter
-        : addInputSearchActorFilter;
+      const action = isDirectorType ? addInputSearchDirectorFilter : addInputSearchActorFilter;
       dispatch(action(selectedPerson));
       onSearch && onSearch();
       dropdownClose && dropdownClose();
@@ -102,14 +90,12 @@ export const FilterDropdownSearch = React.memo(
               })}
               onClick={onPersonClick}
             >
-              <span
-                className={classNames(iconClassName, styles.listItemIcon)}
-              />
+              <span className={classNames(iconClassName, styles.listItemIcon)} />
               {person.name}
             </li>
           ))}
         </ul>
       </div>
     );
-  }
+  },
 );

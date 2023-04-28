@@ -36,10 +36,10 @@ export function InputRange({
         </span>
         <input
           className={className}
-          type='range'
+          type="range"
           min={minValue}
           max={maxValue}
-          step='1'
+          step="1"
           value={value}
           default-value={startValue}
           onChange={onChangeHandler}

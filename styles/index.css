@@ -25,6 +25,9 @@ html,
 body {
   background: #100e19;
 }
+body::-webkit-scrollbar {
+  width: 0;
+}
 
 #root {
   height: 100%;

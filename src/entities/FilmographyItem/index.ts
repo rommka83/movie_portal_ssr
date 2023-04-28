@@ -1,1 +1,1 @@
-export { FilmographyItem } from './FilmographyItem'
+export { FilmographyItem } from './FilmographyItem';

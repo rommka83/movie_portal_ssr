@@ -21,10 +21,11 @@
 .posters {
   grid-column: 2;
   position: relative;
-  width: 400px;
+  width: 100%;
 }
 .tv {
   width: 100%;
+  height: auto;
   opacity: 0.9;
 }
 .posterTv {
@@ -48,6 +49,26 @@
   bottom: 0;
   right: 0;
   width: 40%;
+  height: auto;
 }
 @media (max-width: 600px) {
+  .root {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+  }
+  .posters {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .offerЕoСonnect {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .offerBtn {
+    width: 100%;
+  }
 }

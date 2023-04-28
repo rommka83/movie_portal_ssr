@@ -14,11 +14,7 @@ export function VideoPlayer({ trailer, age, className }: props) {
   return (
     <div className={classNames(styles.root, className)}>
       <video className={styles.video} src={trailer} autoPlay controls></video>
-      <ControlsVideoContent
-        trailer={trailer}
-        age={age}
-        className={styles.list}
-      />
+      <ControlsVideoContent trailer={trailer} age={age} className={styles.list} />
     </div>
   );
 }

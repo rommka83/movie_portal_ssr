@@ -18,7 +18,7 @@ export interface IFilm {
     url: string;
     previewUrl: string;
   };
-  videos?: IVideo;
+  videos: IVideo;
   genres: {
     name: string;
   }[];
@@ -28,7 +28,7 @@ export interface IFilm {
   persons: IPerson[];
   similarMovies: ISimulyarMovies[] | null;
   facts: IFact[] | null;
-  // alternativeName: string | null;
+  alternativeName: string | null;
   // votes: {
   //   kp: number;
   //   imdb: number;

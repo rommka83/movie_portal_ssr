@@ -8,15 +8,9 @@ interface IAccordion {
   textButton: string | null;
   selectedItem?: string;
 }
-export function Accordion({
-  textButton,
-  children,
-  selectedItem,
-}: PropsWithChildren<IAccordion>) {
+export function Accordion({ textButton, children, selectedItem }: PropsWithChildren<IAccordion>) {
   const [expanded, setExpanded] = useState(false);
-  const iconClass = expanded
-    ? 'icon-arrowUpSquare_16__0'
-    : 'icon-arrowDownSquare_16__0';
+  const iconClass = expanded ? 'icon-arrowUpSquare_16__0' : 'icon-arrowDownSquare_16__0';
 
   const onToggleClick = () => {
     setExpanded((prev) => !prev);

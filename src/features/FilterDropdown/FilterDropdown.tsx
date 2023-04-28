@@ -13,13 +13,7 @@ import {
 } from 'app/store/filterSlice';
 import { FilterDropdownProvider } from './FilterDropdownContext';
 
-export type FilterType =
-  | 'Genres'
-  | 'Countries'
-  | 'Rating'
-  | 'Estimated'
-  | 'Director'
-  | 'Actor';
+export type FilterType = 'Genres' | 'Countries' | 'Rating' | 'Estimated' | 'Director' | 'Actor';
 interface IFilterDropdown {
   title: string;
   type: FilterType;
@@ -28,21 +22,12 @@ interface IFilterDropdown {
 }
 
 export const FilterDropdown = React.memo(
-  ({
-    title,
-    type,
-    position,
-    children,
-    className,
-  }: PropsWithChildren<IFilterDropdown>) => {
+  ({ title, type, position, children, className }: PropsWithChildren<IFilterDropdown>) => {
     const { t } = useTranslation();
     const [expanded, setExpanded] = useState(false);
     const [hide, setHide] = useState(false);
     const containerRef = useRef(null);
-    const iconClass =
-      expanded && !hide
-        ? 'icon-arrowUpSquare_16__0'
-        : 'icon-arrowDownSquare_16__0';
+    const iconClass = expanded && !hide ? 'icon-arrowUpSquare_16__0' : 'icon-arrowDownSquare_16__0';
 
     const selectedFilter = useAppSelector(getSelectedFilterSelector(type, t));
 
@@ -65,16 +50,8 @@ export const FilterDropdown = React.memo(
     }, [expanded, onClose]);
 
     return (
-      <div
-        ref={containerRef}
-        className={classNames(styles.filterDropdownContainer, className)}
-      >
-        <ButtonOrLink
-          className={styles.filterButton}
-          variant='third'
-          large
-          onClick={onToggleClick}
-        >
+      <div ref={containerRef} className={classNames(styles.filterDropdownContainer, className)}>
+        <ButtonOrLink className={styles.filterButton} variant="third" large onClick={onToggleClick}>
           <div className={styles.textWrapper}>
             <span className={styles.textTop}>{t(`${title}.${type}`)}</span>
             <span className={styles.textUnder}>{selectedFilter}</span>
@@ -100,5 +77,5 @@ export const FilterDropdown = React.memo(
         )}
       </div>
     );
-  }
+  },
 );

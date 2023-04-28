@@ -1,1 +1,1 @@
-export { FooterMobile } from "./FooterMobile";
+export { FooterMobile } from './FooterMobile';

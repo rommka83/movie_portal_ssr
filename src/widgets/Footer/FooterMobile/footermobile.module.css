@@ -1,37 +1,37 @@
 .container {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 1001;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
 }
 
 .tabBar {
-	display: flex;
-	justify-content: center;
-	height: calc(48px + env(safe-area-inset-bottom));
-	padding: 8px 0px 4px;
-	backdrop-filter: blur(8px);
-	background-color: var(--gray-88);
-	box-shadow: 0 -20px 40px var(--gray-24);
+  display: flex;
+  justify-content: center;
+  height: calc(48px + env(safe-area-inset-bottom));
+  padding: 8px 0px 4px;
+  backdrop-filter: blur(8px);
+  background-color: var(--gray-88);
+  box-shadow: 0 -20px 40px var(--gray-24);
 }
 
 .tabBarItem {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	max-width: 120px;
-	font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 120px;
+  font-size: 20px;
 }
 
 .tabBarItem span {
-	color: var(--gray-light);
+  color: var(--gray-light);
 }
 
 .linkText {
-	font-size: 10px;
-	line-height: 12px;
-	font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
 }

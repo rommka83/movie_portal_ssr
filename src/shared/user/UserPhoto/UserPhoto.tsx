@@ -6,14 +6,10 @@ interface IProps {
   src?: string;
 }
 
-export const UserPhoto: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({
-  src,
-}) => {
+export const UserPhoto: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ src }) => {
   return src ? (
-    <img src={src} alt='' className={classNames(styles.pic)} />
+    <img src={src} alt="" className={classNames(styles.pic)} />
   ) : (
-    <div
-      className={classNames(styles.pic, styles.noUser, 'icon-avatar_20__0 ')}
-    ></div>
+    <div className={classNames(styles.pic, styles.noUser, 'icon-avatar_20__0 ')}></div>
   );
 };

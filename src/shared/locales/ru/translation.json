@@ -104,8 +104,8 @@
   },
   "Grading": {
     "PortalRating": "Рейтинг портала",
-    "estimate": "оценить",
-    "ratings": "оценок"
+    "Estimate": "оценить",
+    "Ratings": "оценок"
   },
   "Player": {
     "trailer": "трейлер"
@@ -149,7 +149,26 @@
   },
 
   "sectionTitle": {
-    "movie commentary": "Коментарии к фильму"
+    "MovieCommentary": "Коментарии к фильму",
+    "WithFilm": "С фильмом",
+    "watching": "смотрят",
+    "additionalMaterials": "Трейлеры и доп.материалы",
+    "WriteAreview": "написать отзыв",
+    "AddComment": "добавить коментарий",
+    "Healthy": "полезно",
+    "No": "нет"
+  },
+  "GeneralDataOnCommentsForTheFilm": {
+    "total": "всего",
+    "positive": "положительные",
+    "negative": "отрицательные",
+    "neutral": "нейтральные"
+  },
+  "AllDevaicePoster": {
+    "look": "смотреть",
+    "onAlldevices": "на всех устройствах",
+    "content": "приложение доступно для скачивания на iOS, Android, SmartTV и приставках",
+    "connectDevices": "подключить устройства"
   },
   "Back": "Назад"
 }

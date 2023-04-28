@@ -1,10 +1,4 @@
-import {
-  PropsWithChildren,
-  useEffect,
-  useRef,
-  useState,
-  MouseEvent,
-} from 'react';
+import { PropsWithChildren, useEffect, useRef, useState, MouseEvent } from 'react';
 import styles from './carousel.module.css';
 import classNames from 'classnames';
 
@@ -45,8 +39,7 @@ export function Carousel({
 
   const onContentScroll = (event: MouseEvent<HTMLDivElement>) => {
     const scrollLeft = event.currentTarget.scrollLeft;
-    const scrollWidth =
-      event.currentTarget.scrollWidth - contentWidthRef.current;
+    const scrollWidth = event.currentTarget.scrollWidth - contentWidthRef.current;
 
     if (scrollLeft > 0) {
       setShowPrevButton(true);
@@ -68,14 +61,9 @@ export function Carousel({
         if (entry.borderBoxSize) {
           carouselContentWidth = entry.borderBoxSize[0].inlineSize;
           contentWidthRef.current = carouselContentWidth;
-          const carouselItemWidth =
-            entry.target.children[0].getBoundingClientRect().width;
-          const visibleItemsCount = Math.floor(
-            carouselContentWidth / carouselItemWidth
-          );
-          const scrollItemsCount = scrollMultipleItems
-            ? visibleItemsCount - LAST_ITEM_COUNT
-            : 1;
+          const carouselItemWidth = entry.target.children[0].getBoundingClientRect().width;
+          const visibleItemsCount = Math.floor(carouselContentWidth / carouselItemWidth);
+          const scrollItemsCount = scrollMultipleItems ? visibleItemsCount - LAST_ITEM_COUNT : 1;
           const currentOffset = carouselItemWidth * scrollItemsCount;
           offsetRef.current = currentOffset;
         }

@@ -10,9 +10,9 @@ export const General: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
       <Head>
         <title>Movie portal ssr</title>
         <link
-          rel='icon'
-          type='image/svg+xml'
-          href='https://gambit-parent.dfs.ivi.ru/static/23.04.06/images/favicon/favicon.svg'
+          rel="icon"
+          type="image/svg+xml"
+          href="https://gambit-parent.dfs.ivi.ru/static/23.04.06/images/favicon/favicon.svg"
         />
       </Head>
       <Header />

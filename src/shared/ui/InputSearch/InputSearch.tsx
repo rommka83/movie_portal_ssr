@@ -33,10 +33,10 @@ export function InputSearch({
       <label className={styles.inputContainer}>
         <input
           className={classNames({ className }, styles.inputSearch)}
-          type='text'
+          type="text"
           onChange={onChangeHandler}
           value={value}
-          placeholder=' '
+          placeholder=" "
         />
         <button
           className={classNames('icon-search_20__0', styles.searchButton, {

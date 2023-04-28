@@ -10,12 +10,16 @@ import { AllDevaicePoster } from 'entities/AllDevaicePoster';
 // import test from '../../../temp/DB/testKinopoisk.json';
 import classNames from 'classnames';
 import { IFilm } from 'shared/types/IFilm';
+import { useTranslation } from 'react-i18next';
 
 interface IProps {
   film: IFilm;
 }
 
 export const Desktop = ({ film }: IProps) => {
+  const { t, i18n } = useTranslation();
+  const lng = i18n.language;
+
   return (
     <div className={classNames(styles.root, 'container')}>
       <GenreBookmarks ganre={film.genres} className={styles.head} />
@@ -33,28 +37,23 @@ export const Desktop = ({ film }: IProps) => {
       </div>
       {film.similarMovies && film.similarMovies.length > 0 && (
         <CategoryFilms
-          title={`С фильмом «${film.name}» смотрят:`}
+          title={`${t('sectionTitle.WithFilm')} «${
+            lng === 'ru' ? film.name : film.enName ?? film.name
+          }» ${t('sectionTitle.watching')}:`}
           simulyrMovie={film.similarMovies}
           className={styles.simulyar}
         />
       )}
-      <ActorsCreators
-        persons={film.persons}
-        className={styles.ActorsCreators}
-      />
-      <AdditionalMaterials className={styles.additionalMaterials} />
+      <ActorsCreators persons={film.persons} className={styles.actorsCreators} />
+      <AdditionalMaterials className={styles.additionalMaterials} video={film.videos} />
       <BlockComments className={styles.comments} />
       <AllDevaicePoster
         name={film.name}
+        enName={film.enName}
         poster={film.poster.url}
         className={styles.allDvices}
       />
-      <GenreBookmarks
-        home
-        ganre={film.genres}
-        page={film.name}
-        className={styles.crumbs}
-      />
+      <GenreBookmarks home ganre={film.genres} page={film.name} className={styles.crumbs} />
     </div>
   );
 };

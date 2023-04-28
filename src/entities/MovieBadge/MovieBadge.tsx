@@ -21,9 +21,7 @@ export function MovieBadge({ film }: IProps) {
         <div className={styles.bannerMain}>
           <PosterCards
             src={film.poster.url ? film.poster.url : ''}
-            name={
-              lng === 'ru' ? film.name : film.enName ? film.enName : film.name
-            }
+            name={lng === 'ru' ? film.name ?? film.alternativeName : film.enName ?? film.name}
             className={styles.pic}
           />
           <AgeRestrictions age={film.ageRating} className={styles.age} />
@@ -31,16 +29,9 @@ export function MovieBadge({ film }: IProps) {
         <BannerHover film={film} className={styles.bannerHover} />
       </div>
       <CardTitle className={styles.title}>
-        {lng === 'ru'
-          ? film.name
-          : film.enName === ''
-          ? film.name
-          : film.enName}
+        {lng === 'ru' ? film.name ?? film.alternativeName : film.enName ?? film.name}
       </CardTitle>
-      <PriceBadge
-        price={film.rating.kp > 7 ? true : false}
-        className={styles.statusPrice}
-      />
+      <PriceBadge price={film.rating.kp > 7 ? true : false} className={styles.statusPrice} />
     </article>
   );
 }

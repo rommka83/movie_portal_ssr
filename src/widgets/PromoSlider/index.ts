@@ -1,1 +1,1 @@
-export { PromoSlider } from "./PromoSlider";
+export { PromoSlider } from './PromoSlider';

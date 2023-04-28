@@ -1,23 +1,24 @@
-.slider {}
+.slider {
+}
 
 .slide {
-    position: relative;
+  position: relative;
 }
 
-@media (max-width:768px) {
-    .slide {
-        height: 300px !important;
-    }
+@media (max-width: 768px) {
+  .slide {
+    height: 300px !important;
+  }
 }
 
-@media (max-width:600px) {
-    .slide {
-        height: 600px !important;
-    }
+@media (max-width: 600px) {
+  .slide {
+    height: 600px !important;
+  }
 }
 
-@media (max-width:425px) {
-    .slide {
-        height: 300px !important;
-    }
+@media (max-width: 425px) {
+  .slide {
+    height: 300px !important;
+  }
 }
