@@ -26,18 +26,10 @@ export const FilterPanelDesktop = React.memo(() => {
     <section className={styles.filterDesktop}>
       <div className={classNames(styles.container, 'container')}>
         <div className={styles.plankList}>
-          <FilterDropdown
-            title='headerMoviesFilter'
-            type='Genres'
-            position='left'
-          >
+          <FilterDropdown title="headerMoviesFilter" type="Genres" position="left">
             <div className={styles.listWrapper}>
               {!tablet && (
-                <Carousel
-                  className={styles.carousel}
-                  withButton
-                  scrollMultipleItems
-                >
+                <Carousel className={styles.carousel} withButton scrollMultipleItems>
                   {genres.map((genre) => (
                     <FilterGenreCard
                       containerClassName={styles.genreCardContainer}
@@ -53,25 +45,18 @@ export const FilterPanelDesktop = React.memo(() => {
               <FilterDropdownList
                 className={styles.list}
                 array={genres}
-                title='headerMoviesFilter'
+                title="headerMoviesFilter"
               />
             </div>
           </FilterDropdown>
 
-          <FilterDropdown title='FilterPanel' type='Countries' position='left'>
+          <FilterDropdown title="FilterPanel" type="Countries" position="left">
             <div className={styles.listWrapper}>
               {!tablet && (
                 <Carousel className={styles.carousel} withButton>
                   {countries.map((country) => (
-                    <div
-                      className={styles.countriesButtonContainer}
-                      key={country}
-                    >
-                      <ButtonOrLink
-                        className={styles.countriesButton}
-                        variant='third'
-                        large
-                      >
+                    <div className={styles.countriesButtonContainer} key={country}>
+                      <ButtonOrLink className={styles.countriesButton} variant="third" large>
                         {t(`FilterPanel.${country}`)}
                       </ButtonOrLink>
                     </div>
@@ -79,56 +64,52 @@ export const FilterPanelDesktop = React.memo(() => {
                 </Carousel>
               )}
             </div>
-            <FilterDropdownList
-              className={styles.list}
-              array={countries}
-              title='FilterPanel'
-            />
+            <FilterDropdownList className={styles.list} array={countries} title="FilterPanel" />
           </FilterDropdown>
 
           <FilterDropdown
-            title='FilterPanel'
-            type='Rating'
-            position='left'
+            title="FilterPanel"
+            type="Rating"
+            position="left"
             className={styles.dropdownRating}
           >
             <InputRange
-              startValue='71'
-              maxValue='100'
-              minValue='61'
+              startValue="71"
+              maxValue="100"
+              minValue="61"
               formatter={formatterRating}
               className={styles.inputRating}
             />
           </FilterDropdown>
 
           <FilterDropdown
-            title='FilterPanel'
-            type='Estimated'
-            position='left'
+            title="FilterPanel"
+            type="Estimated"
+            position="left"
             className={styles.dropdownVotes}
           >
             <InputRange
-              startValue='300'
-              maxValue='1000'
-              minValue='200'
+              startValue="300"
+              maxValue="1000"
+              minValue="200"
               formatter={formatterVotes}
               className={styles.inputRating}
             />
           </FilterDropdown>
 
           <FilterDropdown
-            title='FilterPanel'
-            type='Director'
-            position='right'
+            title="FilterPanel"
+            type="Director"
+            position="right"
             className={styles.dropdownSearch}
           >
             <FilterDropdownSearch placeholderText={t('FilterPanel.Director')} />
           </FilterDropdown>
 
           <FilterDropdown
-            title='FilterPanel'
-            type='Actor'
-            position='right'
+            title="FilterPanel"
+            type="Actor"
+            position="right"
             className={styles.dropdownSearch}
           >
             <FilterDropdownSearch placeholderText={t('FilterPanel.Actor')} />
@@ -137,9 +118,7 @@ export const FilterPanelDesktop = React.memo(() => {
         <div className={styles.buttonContainer}>
           <button className={styles.resetButton}>
             <div className={styles.resetButtonContainer}>
-              <span
-                className={classNames('icon-close_16__0', styles.resetIcon)}
-              />
+              <span className={classNames('icon-close_16__0', styles.resetIcon)} />
               <span>{t('FilterPanel.ResetFilters')}</span>
             </div>
           </button>

@@ -18,21 +18,10 @@ export const BannerHover: FC<props> = ({ film, className }) => {
     <div className={classNames(styles.bannerHover, className)}>
       <div className={styles.bannerHoverWrapper}>
         <ul className={styles.bannerHoverList}>
-          <li
-            className={classNames(
-              styles.bannerHoverItem,
-              'icon-favoriteAdd_20__0'
-            )}
-          ></li>
-          <li
-            className={classNames(styles.bannerHoverItem, 'icon-similar_20__0')}
-          ></li>
-          <li
-            className={classNames(styles.bannerHoverItem, 'icon-rating_20__0')}
-          ></li>
-          <li
-            className={classNames(styles.bannerHoverItem, 'icon-dislike_20__0')}
-          ></li>
+          <li className={classNames(styles.bannerHoverItem, 'icon-favoriteAdd_20__0')}></li>
+          <li className={classNames(styles.bannerHoverItem, 'icon-similar_20__0')}></li>
+          <li className={classNames(styles.bannerHoverItem, 'icon-rating_20__0')}></li>
+          <li className={classNames(styles.bannerHoverItem, 'icon-dislike_20__0')}></li>
         </ul>
         <div className={styles.bannerHoverReiting}>
           <TopChart obj={film} />

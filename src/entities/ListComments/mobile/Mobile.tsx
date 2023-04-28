@@ -9,22 +9,13 @@ interface IProps {
   comments: IReviev;
 }
 
-export const Mobile: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({
-  comments,
-  className,
-}) => {
+export const Mobile: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({ comments, className }) => {
   return (
     <div className={styles.root}>
       <div className={styles.coruselWrapper}>
         <Carousel withButton scrollMultipleItems className={styles.corusel}>
           {comments.docs.map((el) => {
-            return (
-              <OneComment
-                comment={el}
-                className={styles.ItemComments}
-                key={nanoid()}
-              />
-            );
+            return <OneComment comment={el} className={styles.ItemComments} key={nanoid()} />;
           })}
         </Carousel>
       </div>

@@ -17,7 +17,8 @@ export async function getServerSideProps(context: any) {
   const actor = await axios.get(`https://api.kinopoisk.dev/v1/person/${id}`, {
     headers: {
       Accept: 'application/json',
-      'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
+      // 'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
+      'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
     },
   });
 
@@ -59,25 +60,20 @@ function ActorPage({ actor }: IProps) {
 
   return (
     <section className={styles.actorPage}>
-      <div className='container'>
+      <div className="container">
         <Back f={() => {}} className={styles.back}>
           {t('Back')}
         </Back>
         <div className={styles.container}>
-          <PersonHeader
-            name={actor.name}
-            photo={actor.photo}
-            enName={actor.enName}
-          />
+          <PersonHeader name={actor.name} photo={actor.photo} enName={actor.enName} />
           <div className={styles.filmography}>
             <div className={styles.content}>
               <div className={styles.title}>
                 Полная фильмография
                 <span className={styles.lable}>
                   {declension(
-                    actor?.movies &&
-                      actor?.movies.filter((item) => item.name !== null).length,
-                    'фильм'
+                    actor?.movies && actor?.movies.filter((item) => item.name !== null).length,
+                    'фильм',
                   )}
                 </span>
               </div>
@@ -86,25 +82,16 @@ function ActorPage({ actor }: IProps) {
             <div className={styles.filmographyList}>
               <div className={styles.filmographyContent}>
                 {movies.map(
-                  (movie) =>
-                    movie.name && (
-                      <FilmographyItem key={movie.id} movie={movie} />
-                    )
+                  (movie) => movie.name && <FilmographyItem key={movie.id} movie={movie} />,
                 )}
                 {!showMoreMovies && moreMovies && (
-                  <button
-                    className={styles.btn}
-                    onClick={() => setShowMoreMovies(true)}
-                  >
+                  <button className={styles.btn} onClick={() => setShowMoreMovies(true)}>
                     Еще {declension(moreMovies.length, 'фильм')}
                   </button>
                 )}
                 {showMoreMovies &&
                   moreMovies?.map(
-                    (movie) =>
-                      movie.name && (
-                        <FilmographyItem key={movie.id} movie={movie} />
-                      )
+                    (movie) => movie.name && <FilmographyItem key={movie.id} movie={movie} />,
                   )}
               </div>
             </div>

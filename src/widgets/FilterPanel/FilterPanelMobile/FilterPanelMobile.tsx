@@ -35,23 +35,14 @@ export const FilterPanelMobile = React.memo(() => {
 
   return (
     <>
-      <ButtonOrLink
-        className={styles.openButton}
-        variant='third'
-        large
-        onClick={onModalShow}
-      >
-        <span
-          className={classNames(styles.iconFilters, 'icon-filter_16__0')}
-        ></span>
+      <ButtonOrLink className={styles.openButton} variant="third" large onClick={onModalShow}>
+        <span className={classNames(styles.iconFilters, 'icon-filter_16__0')}></span>
         {t('FilterPanel.Filters')}
       </ButtonOrLink>
       {showModal && (
         <Modal className={styles.modal}>
           <button className={styles.closeButton} onClick={onModalClose}>
-            <span
-              className={classNames('icon-close_20__0', styles.closeButtonIcon)}
-            />
+            <span className={classNames('icon-close_20__0', styles.closeButtonIcon)} />
           </button>
 
           <div className={styles.filterPanelMobile}>
@@ -67,10 +58,7 @@ export const FilterPanelMobile = React.memo(() => {
                 >
                   {t('FilterPanel.Filters')}
                 </p>
-                <Carousel
-                  className={styles.carousel}
-                  title={t('headerMoviesFilter.Genres')}
-                >
+                <Carousel className={styles.carousel} title={t('headerMoviesFilter.Genres')}>
                   {genres.map((genre) => (
                     <FilterGenreCard
                       key={genre}
@@ -83,15 +71,8 @@ export const FilterPanelMobile = React.memo(() => {
                 <Accordion textButton={t('headerMoviesFilter.Countries')}>
                   <Carousel className={styles.carousel}>
                     {countries.map((country) => (
-                      <div
-                        className={styles.countriesButtonContainer}
-                        key={country}
-                      >
-                        <ButtonOrLink
-                          className={styles.countriesButton}
-                          variant='third'
-                          large
-                        >
+                      <div className={styles.countriesButtonContainer} key={country}>
+                        <ButtonOrLink className={styles.countriesButton} variant="third" large>
                           {t(`FilterPanel.${country}`)}
                         </ButtonOrLink>
                       </div>
@@ -102,15 +83,8 @@ export const FilterPanelMobile = React.memo(() => {
                 <Accordion textButton={t('FilterPanel.Rating')}>
                   <Carousel className={styles.carousel}>
                     {ratings.map((rating) => (
-                      <div
-                        className={styles.countriesButtonContainer}
-                        key={rating}
-                      >
-                        <ButtonOrLink
-                          className={styles.countriesButton}
-                          variant='third'
-                          large
-                        >
+                      <div className={styles.countriesButtonContainer} key={rating}>
+                        <ButtonOrLink className={styles.countriesButton} variant="third" large>
                           {t(`FilterPanel.${rating}`)}
                         </ButtonOrLink>
                       </div>
@@ -121,15 +95,8 @@ export const FilterPanelMobile = React.memo(() => {
                 <Accordion textButton={t('FilterPanel.Estimated')}>
                   <Carousel className={styles.carousel}>
                     {estimates.map((estimate) => (
-                      <div
-                        className={styles.countriesButtonContainer}
-                        key={estimate}
-                      >
-                        <ButtonOrLink
-                          className={styles.countriesButton}
-                          variant='third'
-                          large
-                        >
+                      <div className={styles.countriesButtonContainer} key={estimate}>
+                        <ButtonOrLink className={styles.countriesButton} variant="third" large>
                           {t(`FilterPanel.${estimate}`)}
                         </ButtonOrLink>
                       </div>
@@ -138,33 +105,20 @@ export const FilterPanelMobile = React.memo(() => {
                 </Accordion>
 
                 <Accordion textButton={t('FilterPanel.Director')}>
-                  <FilterDropdownSearch
-                    placeholderText={t('FilterPanel.Director')}
-                  />
+                  <FilterDropdownSearch placeholderText={t('FilterPanel.Director')} />
                 </Accordion>
 
                 <Accordion textButton={t('FilterPanel.Actor')}>
-                  <FilterDropdownSearch
-                    placeholderText={t('FilterPanel.Actor')}
-                  />
+                  <FilterDropdownSearch placeholderText={t('FilterPanel.Actor')} />
                 </Accordion>
               </div>
             </div>
 
             <div className={styles.buttonsBlock}>
-              <ButtonOrLink
-                className={styles.filterButton}
-                variant='primary'
-                large
-              >
+              <ButtonOrLink className={styles.filterButton} variant="primary" large>
                 {t('FilterPanel.ShowResults')}
               </ButtonOrLink>
-              <ButtonOrLink
-                className={styles.filterButton}
-                variant='primary'
-                transparent
-                large
-              >
+              <ButtonOrLink className={styles.filterButton} variant="primary" transparent large>
                 {t('FilterPanel.ResetFilters')}
               </ButtonOrLink>
             </div>

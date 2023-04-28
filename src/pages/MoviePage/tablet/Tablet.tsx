@@ -24,7 +24,7 @@ export function Tablet({ film }: IProps) {
   const { t } = useTranslation();
 
   return film === undefined ? null : (
-    <div className='container'>
+    <div className="container">
       <Back f={() => {}}>{t('Back')}</Back>
       <VideoDescription short film={film} className={styles.description} />
       <VideoPlayer
@@ -37,9 +37,7 @@ export function Tablet({ film }: IProps) {
         className={styles.player}
       />
       <ActorsList actors={film.persons} reiting={film.rating.kp} />
-      <ContentText className={styles.contentText}>
-        {film.description}
-      </ContentText>
+      <ContentText className={styles.contentText}>{film.description}</ContentText>
       <Grading grading={film.rating.kp} className={styles.grading} />
 
       {film.similarMovies && film.similarMovies.length > 0 && (
@@ -49,14 +47,8 @@ export function Tablet({ film }: IProps) {
           className={styles.simulyar}
         />
       )}
-      <ActorsCreators
-        persons={film.persons}
-        className={styles.actorsCreators}
-      />
-      <AdditionalMaterials
-        className={styles.additionalMaterials}
-        video={film.videos}
-      />
+      <ActorsCreators persons={film.persons} className={styles.actorsCreators} />
+      <AdditionalMaterials className={styles.additionalMaterials} video={film.videos} />
       <BlockComments className={styles.comments} />
       <AllDevaicePoster
         name={film.name}

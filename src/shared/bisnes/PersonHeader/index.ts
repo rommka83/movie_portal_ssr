@@ -1,1 +1,1 @@
-export { PersonHeader } from './PersonHeader'
+export { PersonHeader } from './PersonHeader';

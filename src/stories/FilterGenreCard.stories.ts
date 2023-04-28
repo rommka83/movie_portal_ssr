@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { FilterGenreCard } from "shared/ui/FilterGenreCard";
+import type { Meta, StoryObj } from '@storybook/react';
+import { FilterGenreCard } from 'shared/ui/FilterGenreCard';
 
 const meta = {
-	title: "Example/FilterGenreCard",
-	component: FilterGenreCard,
-	tags: ["autodocs"],
+  title: 'Example/FilterGenreCard',
+  component: FilterGenreCard,
+  tags: ['autodocs'],
 
-	args: {
-		caption: "Драма",
-		genre: "drama",
-	},
+  args: {
+    caption: 'Драма',
+    genre: 'drama',
+  },
 
-	parameters: {
-		layout: "centered",
-	},
+  parameters: {
+    layout: 'centered',
+  },
 } satisfies Meta<typeof FilterGenreCard>;
 
 export default meta;

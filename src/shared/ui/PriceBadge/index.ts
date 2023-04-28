@@ -1,1 +1,1 @@
-export { PriceBadge as default } from "./PriceBadge";
+export { PriceBadge as default } from './PriceBadge';

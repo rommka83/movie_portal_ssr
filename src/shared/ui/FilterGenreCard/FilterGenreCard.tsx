@@ -17,13 +17,7 @@ export function FilterGenreCard({
   return (
     <div className={classNames(styles.container, containerClassName)}>
       <div className={classNames(styles.containerInner, className)}>
-        <div
-          className={classNames(
-            styles.icon,
-            `icon-genre_${genre}_24__0`,
-            iconClassName
-          )}
-        />
+        <div className={classNames(styles.icon, `icon-genre_${genre}_24__0`, iconClassName)} />
         <span className={styles.caption}>{caption}</span>
       </div>
     </div>

@@ -27,9 +27,7 @@ export const FilmographyItem: React.FC<PropsType> = ({ movie }) => {
           {movie.rating && (
             <div className={styles.filmographyRating}>
               Рейтинг Иви:
-              <span className={styles.filmographyRatingSpan}>
-                {movie.rating}
-              </span>
+              <span className={styles.filmographyRatingSpan}>{movie.rating}</span>
             </div>
           )}
         </div>

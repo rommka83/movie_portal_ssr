@@ -9,6 +9,7 @@ import { getComments } from 'app/store/commentsRequest';
 import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
 import { IReviev } from 'shared/types/IReviev';
+import { addFilm } from 'app/store/oneFilmSlice';
 
 export async function getServerSideProps(context: any) {
   const { id } = context.params;
@@ -16,7 +17,8 @@ export async function getServerSideProps(context: any) {
   const film = await axios.get(`https://api.kinopoisk.dev/v1.3/movie/${id}`, {
     headers: {
       Accept: 'application/json',
-      'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
+      // 'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
+      'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
     },
   });
 
@@ -43,6 +45,7 @@ export default function MoviePage({ film, id }: IProps) {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (film === undefined) return;
+    dispatch(addFilm(film));
     dispatch(getComments(id));
   }, [film, id]);
 

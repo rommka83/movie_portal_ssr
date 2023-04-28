@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  HTMLAttributes,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { FC, HTMLAttributes, useEffect, useMemo, useRef, useState } from 'react';
 import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
 import { MovieBadge } from 'entities/MovieBadge';
 import { nanoid } from '@reduxjs/toolkit';
@@ -24,13 +17,7 @@ interface IProps {
 }
 type props = HTMLAttributes<HTMLElement> & IProps;
 
-export const CategoryFilms: FC<props> = ({
-  title,
-  movies,
-  children,
-  simulyrMovie,
-  className,
-}) => {
+export const CategoryFilms: FC<props> = ({ title, movies, children, simulyrMovie, className }) => {
   const list = useRef<HTMLUListElement>(null);
   const [ofset, setOfset] = useState(0);
   const [widthList, setWidthList] = useState(0);
@@ -95,11 +82,7 @@ export const CategoryFilms: FC<props> = ({
       <SectionTitle className={styles.sectionTitle}>{title}</SectionTitle>
       <div className={styles.sliderWrapper}>
         <div className={styles.window}>
-          <ul
-            className={styles.list}
-            ref={list}
-            style={{ transform: `translateX(${ofset}px)` }}
-          >
+          <ul className={styles.list} ref={list} style={{ transform: `translateX(${ofset}px)` }}>
             {movies !== undefined &&
               movies.map((obj) => {
                 return (
@@ -127,11 +110,8 @@ export const CategoryFilms: FC<props> = ({
                         height: '100%',
                       }}
                     >
-                      <Link href={`/MoviePage/${obj.id}/${obj.name}`}>
-                        <PosterCards
-                          src={obj.poster.url ? obj.poster.url : ''}
-                          name={obj.name}
-                        />
+                      <Link href={`/MoviePage/${obj.id}`}>
+                        <PosterCards src={obj.poster.url ?? ''} name={obj.name} />
                       </Link>
                     </div>
                   </li>
@@ -140,8 +120,7 @@ export const CategoryFilms: FC<props> = ({
           </ul>
         </div>
       </div>
-      {Math.round(ofset - cardWidth * amountCards - 20 * (amountCards - 1)) !==
-        -scrollWidth && (
+      {Math.round(ofset - cardWidth * amountCards - 20 * (amountCards - 1)) !== -scrollWidth && (
         <div
           className={`${styles.controlR} ${styles.control}  icon-arrowRight_8x20__0`}
           onClick={moveLeft}

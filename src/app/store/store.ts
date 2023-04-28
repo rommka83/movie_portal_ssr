@@ -1,15 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import filters from './filterSlice';
-import changeTrailerPlayer from './trailerPlayerSliceDELET';
-import ActorsCreatorsModal from './ActorsCreatorsModalSlice';
-import { movie } from './movieRequestDELET';
+import { movie } from './oneFilmSlice';
 import { filmComents } from './commentsRequest';
 
 export const store = configureStore({
   reducer: {
     filters: filters.reducer,
-    changeTrailerPlayer: changeTrailerPlayer.reducer,
-    ActorsCreatorsModal: ActorsCreatorsModal.reducer,
     movie: movie.reducer,
     filmComents: filmComents.reducer,
   },

@@ -23,24 +23,20 @@ export function VideoDescription({ film, className, short = false }: props) {
 
   return (
     <div className={classNames(styles.root, className)}>
-      <h2 className={styles.title}>
-        {lng === 'ru' ? film.name : film.enName ?? film.name}
-      </h2>
+      <h2 className={styles.title}>{lng === 'ru' ? film.name : film.enName ?? film.name}</h2>
       <ul className={styles.atributes}>
         <li className={styles.atributesItem}>
-          <a href='https://www.ivi.ru/series' className={styles.atributesLink}>
+          <a href="https://www.ivi.ru/series" className={styles.atributesLink}>
             {film.year}
           </a>
         </li>
         <li className={styles.atributesItem}>
-          <a href='https://www.ivi.ru/series' className={styles.atributesLink}>
-            {hours < 0
-              ? film.movieLength + ' мин'
-              : hours + ' ч ' + min + ' мин'}
+          <a href="https://www.ivi.ru/series" className={styles.atributesLink}>
+            {hours < 0 ? film.movieLength + ' мин' : hours + ' ч ' + min + ' мин'}
           </a>
         </li>
         <li className={styles.atributesItem}>
-          <a href='https://www.ivi.ru/series' className={styles.atributesLink}>
+          <a href="https://www.ivi.ru/series" className={styles.atributesLink}>
             {film.ageRating ? film.ageRating : 0} +
           </a>
         </li>
@@ -50,21 +46,14 @@ export function VideoDescription({ film, className, short = false }: props) {
       </div>
       <ul className={styles.quality}>
         <li className={styles.qualityVideo}>FullHD</li>
-        <li
-          className={classNames(
-            styles.qualityAudio,
-            'icon-player_volumeMidRegular_16__0'
-          )}
-        >
+        <li className={classNames(styles.qualityAudio, 'icon-player_volumeMidRegular_16__0')}>
           Рус
         </li>
       </ul>
       {!short && (
         <>
           <ActorsList actors={film.persons} reiting={film.rating.kp} />
-          <ContentText className={styles.description}>
-            {film.description}
-          </ContentText>
+          <ContentText className={styles.description}>{film.description}</ContentText>
           <Grading grading={film.rating.kp} />
         </>
       )}

@@ -1,1 +1,1 @@
-import { ActorTabs } from './ActorTabs'
+import { ActorTabs } from './ActorTabs';

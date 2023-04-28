@@ -28,8 +28,8 @@ export const AllDevaicePoster: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({
       <div className={styles.offerЕoСonnect}>
         <SectionTitle>
           <p>
-            {t('AllDevaicePoster.look')} «{lng === 'ru' ? name : enName ?? name}
-            » {t('AllDevaicePoster.onAlldevices')}
+            {t('AllDevaicePoster.look')} «{lng === 'ru' ? name : enName ?? name}»{' '}
+            {t('AllDevaicePoster.onAlldevices')}
           </p>
         </SectionTitle>
         <p className={styles.offerVariants}>{t('AllDevaicePoster.content')}</p>
@@ -38,28 +38,10 @@ export const AllDevaicePoster: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({
         </ButtonOrLink>
       </div>
       <div className={styles.posters}>
-        <Image
-          width={100}
-          height={100}
-          src={poster}
-          alt=''
-          className={styles.posterTv}
-        />
-        <Image width={100} height={100} src={tv} alt='' className={styles.tv} />
-        <Image
-          width={100}
-          height={100}
-          src={poster}
-          alt=''
-          className={styles.posterIPad}
-        />
-        <Image
-          width={100}
-          height={100}
-          src={ipad}
-          alt=''
-          className={styles.IPad}
-        />
+        <Image width={100} height={100} src={poster} alt="" className={styles.posterTv} />
+        <Image width={100} height={100} src={tv} alt="" className={styles.tv} />
+        <Image width={100} height={100} src={poster} alt="" className={styles.posterIPad} />
+        <Image width={100} height={100} src={ipad} alt="" className={styles.IPad} />
       </div>
     </div>
   );

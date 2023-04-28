@@ -34,14 +34,10 @@ export function Header() {
       <div className={styles.headerWrapper}>
         <div className={classNames(styles.container, 'container')}>
           <div className={styles.content}>
-            <Link href='/' className={styles.logo}>
+            <Link href="/" className={styles.logo}>
               <Logo className={styles.logoImg} />
             </Link>
-            <HeaderNav
-              type={type}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-            />
+            <HeaderNav type={type} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} />
           </div>
 
           <div className={styles.wideArea}>
@@ -52,14 +48,12 @@ export function Header() {
               <ChangeTheLanguage />
               <ButtonOrLink
                 className={styles.avatarButton}
-                variant='secondary'
+                variant="secondary"
                 round
                 small
                 transparent
               >
-                <span
-                  className={classNames('icon-avatar_20__0', styles.adminIcon)}
-                />
+                <span className={classNames('icon-avatar_20__0', styles.adminIcon)} />
               </ButtonOrLink>
             </div>
           </div>

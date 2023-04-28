@@ -1,9 +1,9 @@
 .link {
-	color: var(--gray-48);
-	font-size: 15px;
-	line-height: 20px;
+  color: var(--gray-48);
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .link:hover {
-	color: var(--white);
+  color: var(--white);
 }

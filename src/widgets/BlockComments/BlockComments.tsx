@@ -12,9 +12,7 @@ import axios from 'axios';
 import { IOneComment } from 'shared/types/IOneComment';
 import { useTranslation } from 'react-i18next';
 
-export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({
-  className,
-}) => {
+export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({ className }) => {
   const { t } = useTranslation();
 
   return (
@@ -23,14 +21,12 @@ export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({
         {
           <div className={styles.title}>
             <span>{t('sectionTitle.MovieCommentary')}</span>
-            <div className='icon-arrowRight_6x16__0'></div>
+            <div className="icon-arrowRight_6x16__0"></div>
           </div>
         }
       </SectionTitle>
-      <ButtonOrLink variant='third' large={false} className={styles.commentAdd}>
-        <span className={styles.btnAddText}>
-          {t('sectionTitle.WriteAreview')}
-        </span>
+      <ButtonOrLink variant="third" large={false} className={styles.commentAdd}>
+        <span className={styles.btnAddText}>{t('sectionTitle.WriteAreview')}</span>
       </ButtonOrLink>
       <div className={styles.blocCommentMain}>
         <ListComments className={styles.listComments} />

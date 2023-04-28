@@ -12,13 +12,7 @@ type props = HTMLAttributes<HTMLDivElement> & IProps;
 export const PosterCards = ({ src, name, className }: props) => {
   return (
     <div className={classNames(styles.wrapper, className)}>
-      <Image
-        width={200}
-        height={300}
-        src={src}
-        alt={name}
-        className={styles.pic}
-      />
+      <Image width={200} height={300} src={src} alt={name} className={styles.pic} />
     </div>
   );
 };
