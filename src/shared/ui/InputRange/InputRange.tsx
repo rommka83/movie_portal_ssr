@@ -1,5 +1,6 @@
 import { useState, ChangeEvent } from 'react';
 import styles from './inputrange.module.css';
+import { useTranslation } from 'react-i18next';
 
 interface IInputRange {
   startValue: string | number;
@@ -7,6 +8,7 @@ interface IInputRange {
   minValue: string | number;
   formatter?: (value: string | number) => string | number;
   className?: string;
+  onChange: (value: string) => void;
 }
 export function InputRange({
   startValue,
@@ -14,17 +16,24 @@ export function InputRange({
   minValue,
   formatter,
   className,
+  onChange,
 }: IInputRange) {
+  const { t } = useTranslation();
   const [value, setValue] = useState(startValue);
-  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.currentTarget.value);
+  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.currentTarget.value;
+    setValue(value);
+    onChange(value);
   };
 
   const currentValue = formatter ? formatter(value) : value;
+
   return (
     <div className={styles.container}>
       <label className={styles.label}>
-        <span className={styles.rangeCount}> от {currentValue} </span>
+        <span className={styles.rangeCount}>
+          {t('FilterPanel.from')} {currentValue}
+        </span>
         <input
           className={className}
           type='range'
@@ -33,7 +42,7 @@ export function InputRange({
           step='1'
           value={value}
           default-value={startValue}
-          onChange={onChange}
+          onChange={onChangeHandler}
         />
       </label>
     </div>

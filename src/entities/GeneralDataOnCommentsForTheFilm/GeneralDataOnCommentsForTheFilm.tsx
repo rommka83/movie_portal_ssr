@@ -2,12 +2,16 @@ import React, { FC, HTMLAttributes, useMemo } from 'react';
 import styles from './generaldataoncommentsforthefilm.module.css';
 import classNames from 'classnames';
 import { useAppSelector } from 'app/store/hooks';
+import { IReviev } from 'shared/types/IReviev';
+
+interface IGeneralDataOnCommentsForTheFilm {
+  className?: string;
+  comments: IReviev;
+}
 
 export const GeneralDataOnCommentsForTheFilm: FC<
-  HTMLAttributes<HTMLUListElement>
-> = ({ className }) => {
-  const { comments } = useAppSelector((state) => state.filmComents);
-  console.log(comments);
+  IGeneralDataOnCommentsForTheFilm
+> = ({ className, comments }) => {
   const {
     positive,
     neutral,

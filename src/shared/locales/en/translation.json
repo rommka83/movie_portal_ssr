@@ -143,7 +143,9 @@
     "from800к": "from 500к",
     "from900к": "from 500к",
     "Filters": "Filters",
-    "ShowResults": "Show results"
+    "ShowResults": "Show results",
+    "Apply": "Apply",
+    "from": "from"
   },
 
   "sectionTitle": {

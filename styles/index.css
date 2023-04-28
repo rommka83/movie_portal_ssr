@@ -60,11 +60,7 @@ body {
 
 .swiper-slide-active {
   max-width: 80vw !important;
-
 }
-
-
-
 
 input[type='range'] {
   overflow: hidden;
@@ -108,4 +104,22 @@ input[type='range']::-ms-fill-lower {
 
 input[type='range']::-ms-fill-upper {
   border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-06);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-48);
 }

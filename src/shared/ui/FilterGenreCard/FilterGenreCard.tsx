@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './filtergenrecard.module.css';
 import classNames from 'classnames';
 interface IFilterGenreCard {
@@ -6,26 +7,36 @@ interface IFilterGenreCard {
   className?: string;
   iconClassName?: string;
   containerClassName?: string;
+  onClick: (genre: string) => void;
 }
-export function FilterGenreCard({
-  caption,
-  genre,
-  className,
-  iconClassName,
-  containerClassName,
-}: IFilterGenreCard) {
-  return (
-    <div className={classNames(styles.container, containerClassName)}>
-      <div className={classNames(styles.containerInner, className)}>
-        <div
-          className={classNames(
-            styles.icon,
-            `icon-genre_${genre}_24__0`,
-            iconClassName
-          )}
-        />
-        <span className={styles.caption}>{caption}</span>
+export const FilterGenreCard = React.memo(
+  ({
+    caption,
+    genre,
+    className,
+    iconClassName,
+    containerClassName,
+    onClick,
+  }: IFilterGenreCard) => {
+    const onClickHandler = () => {
+      onClick(genre);
+    };
+    return (
+      <div
+        className={classNames(styles.container, containerClassName)}
+        onClick={onClickHandler}
+      >
+        <div className={classNames(styles.containerInner, className)}>
+          <div
+            className={classNames(
+              styles.icon,
+              `icon-genre_${genre}_24__0`,
+              iconClassName
+            )}
+          />
+          <span className={styles.caption}>{caption}</span>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+);

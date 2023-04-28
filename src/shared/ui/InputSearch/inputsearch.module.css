@@ -4,7 +4,7 @@
 
 .inputSearch {
   height: 40px;
-  width: 270px;
+  width: 100%;
   border-radius: 8px;
   color: var(--dark-gray);
   background-color: var(--gray-7e0);
@@ -19,13 +19,22 @@
   color: var(--gray-light-32);
 }
 
-.icon {
+.searchButton {
   position: absolute;
   top: -5px;
   right: 12px;
   font-size: 16px;
   line-height: 1;
   color: var(--gray-32);
+}
+
+.searchButton.activeIcon {
+  color: var(--pink);
+}
+
+.searchButton:active {
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .textPlaceholder {
@@ -39,6 +48,7 @@
   transition: all 150ms linear;
 }
 
+.inputSearch:not(:placeholder-shown) ~ .textPlaceholder,
 .inputSearch:focus ~ .textPlaceholder {
   font-size: 12px;
   line-height: 1;

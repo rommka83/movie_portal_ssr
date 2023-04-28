@@ -7,13 +7,14 @@ import { t } from 'i18next';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import GeneralDataOnCommentsForTheFilm from 'entities/GeneralDataOnCommentsForTheFilm';
 import { ListComments } from 'entities/ListComments';
-import { getComments } from 'app/store/commentsRequest';
-import { useAppDispatch } from 'app/store/hooks';
+import { commentsSelector, getComments } from 'app/store/commentsRequest';
+import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 
 export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({
   className,
 }) => {
   const dispatch = useAppDispatch();
+  const comments = useAppSelector(commentsSelector);
 
   // useEffect(() => {
   //   if (id === undefined) return;
@@ -35,7 +36,10 @@ export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({
       </ButtonOrLink>
       <div className={styles.blocCommentMain}>
         <ListComments className={styles.listComments} />
-        <GeneralDataOnCommentsForTheFilm className={styles.right} />
+        <GeneralDataOnCommentsForTheFilm
+          className={styles.right}
+          comments={comments}
+        />
       </div>
     </section>
   );

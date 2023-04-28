@@ -1,4 +1,7 @@
 .ldsSpinner {
+  --transform-origin: 5px 70px;
+  --width: 10px;
+  --height: 45px;
   color: var(--white);
   display: inline-block;
   position: absolute;
@@ -6,16 +9,17 @@
   left: 50%;
 }
 .ldsSpinner div {
-  transform-origin: 5px 70px;
+  transform-origin: var(--transform-origin);
   animation: ldsSpinner 1.2s linear infinite;
 }
+
 .ldsSpinner div:after {
   content: ' ';
   display: block;
   position: absolute;
   top: 3px;
-  width: 10px;
-  height: 45px;
+  width: var(--width);
+  height: var(--height);
   border-radius: 20%;
   background: var(--white);
 }

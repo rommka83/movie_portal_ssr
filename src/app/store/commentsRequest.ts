@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { IReviev } from 'shared/types/IReviev';
+import { RootState } from './store';
 
 let comments: IReviev = {
   docs: [],
@@ -53,3 +54,6 @@ export const filmComents = createSlice({
 });
 
 export default filmComents.reducer;
+
+export const commentsSelector = (state: RootState) =>
+  state.filmComents.comments;

@@ -1,0 +1,51 @@
+.container {
+  height: 100%;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: fit-content;
+  padding-left: 14px;
+}
+
+.buttonText {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.select {
+  font-size: 13px;
+  line-height: 1;
+  color: var(--gray-light);
+}
+
+.closeButton {
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  padding: 16px;
+  z-index: 1003;
+}
+
+.closeButtonIcon {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-light);
+  transition-delay: 0s;
+}
+
+.modalContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 60px 16px 0;
+  width: 100%;
+}

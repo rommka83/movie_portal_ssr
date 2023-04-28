@@ -4,6 +4,14 @@ import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import classNames from 'classnames';
 import { useTranslation } from '../../i18n';
 import { useOutsideClick } from 'shared/hooks/useOutsideClick';
+import { useAppSelector } from 'app/store/hooks';
+import {
+  actorSelector,
+  countriesSelector,
+  directorSelector,
+  getSelectedFilterSelector,
+} from 'app/store/filterSlice';
+import { FilterDropdownProvider } from './FilterDropdownContext';
 
 export type FilterType =
   | 'Genres'
@@ -36,6 +44,8 @@ export const FilterDropdown = React.memo(
         ? 'icon-arrowUpSquare_16__0'
         : 'icon-arrowDownSquare_16__0';
 
+    const selectedFilter = useAppSelector(getSelectedFilterSelector(type, t));
+
     const onClose = useCallback(() => {
       setHide(true);
       setTimeout(() => {
@@ -67,7 +77,7 @@ export const FilterDropdown = React.memo(
         >
           <div className={styles.textWrapper}>
             <span className={styles.textTop}>{t(`${title}.${type}`)}</span>
-            <span className={styles.textUnder}>Выбранный жанр</span>
+            <span className={styles.textUnder}>{selectedFilter}</span>
           </div>
 
           <span className={iconClass} />
@@ -81,7 +91,11 @@ export const FilterDropdown = React.memo(
               [styles.left]: position === 'left',
             })}
           >
-            <div className={styles.filterDropdownContent}>{children}</div>
+            <div className={styles.filterDropdownContent}>
+              <FilterDropdownProvider value={onClose}>
+                {children}
+              </FilterDropdownProvider>
+            </div>
           </div>
         )}
       </div>

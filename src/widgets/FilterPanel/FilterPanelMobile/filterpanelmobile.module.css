@@ -16,6 +16,7 @@
   font-size: 20px;
   font-weight: 600;
   color: var(--gray-light);
+  transition-delay: 0s;
 }
 
 .filterPanelMobile {
@@ -123,4 +124,21 @@
 .filterButton {
   height: 40px;
   width: 100%;
+  gap: 8px;
+}
+
+.filtersCounter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: var(--gray-798);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition-duration: 0.4s;
 }

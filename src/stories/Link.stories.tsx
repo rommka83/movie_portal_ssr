@@ -4,20 +4,13 @@ import Link from 'shared/ui/Link';
 const meta = {
   title: 'Example/Link',
   component: Link,
-  decorators: [
-    // (Story) => (
-    // 	<MemoryRouter>
-    // 		<Story />
-    // 	</MemoryRouter>
-    // ),
-  ],
   tags: ['autodocs'],
   argTypes: {
-    // to: { to: "link" },
+    to: { to: 'link' },
   },
   args: {
     children: 'Link',
-    // to: "#",
+    to: '#',
   },
   parameters: {
     layout: 'centered',
@@ -27,4 +20,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// export const LinkPrimary: Story = {};
+export const LinkPrimary: Story = {};

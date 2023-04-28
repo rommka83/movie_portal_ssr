@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import OneComment from '../entities/OneComment';
 import { IOneComment } from 'shared/types/IOneComment';
 
-const comment: IOneComment = {
+export const comment: IOneComment = {
   id: 1,
   movieId: 0,
   title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
