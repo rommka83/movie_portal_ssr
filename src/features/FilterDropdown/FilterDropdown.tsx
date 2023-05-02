@@ -5,12 +5,7 @@ import classNames from 'classnames';
 import { useTranslation } from '../../i18n';
 import { useOutsideClick } from 'shared/hooks/useOutsideClick';
 import { useAppSelector } from 'app/store/hooks';
-import {
-  actorSelector,
-  countriesSelector,
-  directorSelector,
-  getSelectedFilterSelector,
-} from 'app/store/filterSlice';
+import { getSelectedFilterSelector } from 'app/store/filterSlice';
 import { FilterDropdownProvider } from './FilterDropdownContext';
 
 export type FilterType = 'Genres' | 'Countries' | 'Rating' | 'Estimated' | 'Director' | 'Actor';
@@ -69,9 +64,7 @@ export const FilterDropdown = React.memo(
             })}
           >
             <div className={styles.filterDropdownContent}>
-              <FilterDropdownProvider value={onClose}>
-                {children}
-              </FilterDropdownProvider>
+              <FilterDropdownProvider value={onClose}>{children}</FilterDropdownProvider>
             </div>
           </div>
         )}

@@ -4,19 +4,20 @@ import styles from './filterdropdownsearch.module.css';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { debounce } from 'shared/utils/debounse';
 import {
-  addInputSearchDirectorFilter,
-  personsSelector,
+  personsListSelector,
   getSearchPersons,
   pendingPersonsSelector,
-  addInputSearchActorFilter,
+  clearPersonsList,
+  addInputSearchPersonFilter,
 } from 'app/store/filterSlice';
 import classNames from 'classnames';
 import { Loader } from 'shared/ui/Loader';
 import { useDropdownContext } from '../FilterDropdownContext';
 
+export type FilterDropdownSearchType = 'director' | 'actor';
 export interface IFilterDropdownSearch {
   placeholderText: string;
-  type: 'Режиссер' | 'Актер';
+  type: FilterDropdownSearchType;
   className?: string;
   onSearch?: () => void;
 }
@@ -25,10 +26,10 @@ export const FilterDropdownSearch = React.memo(
     const [selectedPerson, setSelectedPerson] = useState('');
     const dropdownClose = useDropdownContext();
     const dispatch = useAppDispatch();
-    const personsList = useAppSelector(personsSelector);
+    const personsList = useAppSelector(personsListSelector);
     const pendingPersons = useAppSelector(pendingPersonsSelector);
     const abortRef = useRef<((reason?: string) => void) | null>(null);
-    const isDirectorType = type === 'Режиссер';
+    const isDirectorType = type === 'director';
     const iconClassName = isDirectorType ? 'icon-films_20__0' : 'icon-person_20__0';
     const onChange = useCallback(
       debounce((value: string) => {
@@ -41,7 +42,7 @@ export const FilterDropdownSearch = React.memo(
         const controller = dispatch(getSearchPersons({ name: value, profession: type }));
         abortRef.current = controller.abort;
       }, 350),
-      [selectedPerson],
+      [selectedPerson, abortRef, dispatch],
     );
 
     const onPersonClick = (event: MouseEvent<HTMLLIElement>) => {
@@ -52,19 +53,19 @@ export const FilterDropdownSearch = React.memo(
     };
 
     const onSearchClick = useCallback(() => {
-      const action = isDirectorType ? addInputSearchDirectorFilter : addInputSearchActorFilter;
-      dispatch(action(selectedPerson));
+      dispatch(addInputSearchPersonFilter({ type, value: selectedPerson }));
       onSearch && onSearch();
       dropdownClose && dropdownClose();
-    }, [dispatch, selectedPerson, onSearch]);
+    }, [dispatch, selectedPerson, onSearch, dropdownClose, type]);
 
     useEffect(() => {
       return () => {
         if (abortRef.current) {
           abortRef.current();
         }
+        dispatch(clearPersonsList());
       };
-    }, []);
+    }, [dispatch, abortRef]);
 
     return (
       <div className={classNames(styles.container, className)}>

@@ -1,7 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .accordionButton {
@@ -12,8 +11,11 @@
 }
 
 .textButton {
-  padding-left: 14px;
   font-size: 15px;
   line-height: 20px;
   font-weight: 600;
+}
+
+.content {
+  position: relative;
 }

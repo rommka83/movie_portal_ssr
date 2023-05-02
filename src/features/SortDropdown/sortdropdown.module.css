@@ -1,0 +1,62 @@
+.sortList {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--gray-box-shadow);
+  background-color: var(--dark-gray);
+  min-width: 250px;
+  animation: dropdownShow 0.25s forwards;
+  z-index: 2;
+}
+
+.sortListFirstItem {
+  color: var(--gray-light);
+  padding: 14px 20px;
+}
+
+.sortListItem {
+  position: relative;
+  cursor: pointer;
+  padding: 16px 20px;
+  font-weight: 600;
+}
+
+.sortListItem.active::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  background-color: var(--pink);
+  width: 4px;
+}
+
+.sortListItem:hover {
+  background-color: var(--gray);
+}
+
+.sortList.hide {
+  animation: dropdownHide 0.25s forwards;
+  pointer-events: none;
+}
+
+@keyframes dropdownShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dropdownHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

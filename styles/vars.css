@@ -4,7 +4,9 @@
   --pink: #ea003d;
   --pink-hover: #ff0f4d;
   --pink-active: #c10032;
+  --pink-shadow: 0 2px 8px rgba(234, 0, 61, 0.8);
   --pink--linear-gradient: linear-gradient(270deg, #ea003d 0, #c447ff 100%);
+  --gray-box-shadow: 0 20px 40px rgba(7, 5, 14, 0.4);
   --gray: #312b45;
   --gray-hover: #352f4b;
   --gray-active: #2a253c;
@@ -29,6 +31,7 @@
   --dark-gray-hover: #2e2844;
   --dark-gray-active: #0e0c14;
   --gray-7e0: #d9d7e0;
+  --gray-51: #352e51;
   --white: #fff;
   --green: #73a32f;
   --main-border-radius: 8px;

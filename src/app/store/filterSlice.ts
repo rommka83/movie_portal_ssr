@@ -1,49 +1,60 @@
-import { estimates } from './../../widgets/FilterPanel/constants';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
 import axios from 'axios';
 import { FilterType } from 'features/FilterDropdown/FilterDropdown';
 import { TFunction } from 'i18next';
 import { formatterVotes } from 'shared/utils/formatterVotes';
+import { FilterDropdownSearchType } from 'features/FilterDropdown/FilterDropdownSearch';
+import { InputRangeType } from 'widgets/FilterPanel/FilterPanelDesktop/FilterInputRange';
 
 interface IFilter {
-  genres: string[];
-  countries: string[];
-  rating: number | null;
-  votes: number | null;
-  director: string | null;
-  actor: string | null;
+  filters: {
+    genres: string[];
+    countries: string[];
+    rating: number | null;
+    votes: number | null;
+    director: string | null;
+    actor: string | null;
+  };
   personsList: Persons[];
   personsPending: boolean;
+  sortTypes: string | null;
 }
 
 type Persons = { name: string; id: number };
 type PersonsResponse = { docs: Persons[] };
-export const getSearchPersons = createAsyncThunk<Persons[], { name: string; profession: string }>(
-  'filters/director-request',
-  async ({ name, profession }) => {
-    const response = await axios.get<PersonsResponse>(
-      `https://api.kinopoisk.dev/v1/person?selectFields=name%20id&sortField=name&sortType=1%20&limit=10&name=${name}&profession.value=${profession}`,
-      {
-        headers: {
-          Accept: 'application/json',
-          'X-API-KEY': 'DMGDYW0-0FC4Z7T-N7R9K0N-HFPEH3J',
-        },
+export const getSearchPersons = createAsyncThunk<
+  Persons[],
+  { name: string; profession: FilterDropdownSearchType }
+>('filters/director-request', async ({ name, profession }) => {
+  if (!name) {
+    return [];
+  }
+  const currentProfession = profession === 'director' ? 'Режиссер' : 'Актер';
+  const response = await axios.get<PersonsResponse>(
+    `https://api.kinopoisk.dev/v1/person?selectFields=name%20id&sortField=name&sortType=1%20&limit=10&name=${name}&profession.value=${currentProfession}`,
+    {
+      headers: {
+        Accept: 'application/json',
+        'X-API-KEY': 'DMGDYW0-0FC4Z7T-N7R9K0N-HFPEH3J',
       },
-    );
-    return response.data.docs;
-  },
-);
+    },
+  );
+  return response.data.docs;
+});
 
 const initialState: IFilter = {
-  genres: [],
-  countries: [],
-  rating: null,
-  votes: null,
-  director: null,
-  actor: null,
+  filters: {
+    genres: [],
+    countries: [],
+    rating: null,
+    votes: null,
+    director: null,
+    actor: null,
+  },
   personsList: [],
   personsPending: false,
+  sortTypes: null,
 };
 
 const filters = createSlice({
@@ -51,19 +62,44 @@ const filters = createSlice({
   initialState,
   reducers: {
     addGenresFilter(state, action: PayloadAction<string>) {
-      state.genres.push(action.payload);
+      state.filters.genres.push(action.payload);
     },
+    removeGenresFilter(state, action: PayloadAction<string>) {
+      state.filters.genres = state.filters.genres.filter((genre) => genre !== action.payload);
+    },
+
     addCountriesFilter(state, action: PayloadAction<string>) {
-      state.countries.push(action.payload);
+      state.filters.countries.push(action.payload);
     },
-    addInputRangeFilter(state, action: PayloadAction<{ type: 'rating' | 'votes'; value: number }>) {
-      state[action.payload.type] = action.payload.value;
+    removeCountriesFilter(state, action: PayloadAction<string>) {
+      state.filters.countries = state.filters.countries.filter(
+        (country) => country !== action.payload,
+      );
     },
-    addInputSearchDirectorFilter(state, action: PayloadAction<string>) {
-      state.director = action.payload;
+
+    addInputRangeFilter(state, action: PayloadAction<{ type: InputRangeType; value: number }>) {
+      state.filters[action.payload.type] = action.payload.value;
     },
-    addInputSearchActorFilter(state, action: PayloadAction<string>) {
-      state.actor = action.payload;
+    removeInputRangeFilter(state, action: PayloadAction<InputRangeType>) {
+      state.filters[action.payload] = null;
+    },
+    addInputSearchPersonFilter(
+      state,
+      action: PayloadAction<{ type: FilterDropdownSearchType; value: string }>,
+    ) {
+      state.filters[action.payload.type] = action.payload.value;
+    },
+    addSortTypesSort(state, action: PayloadAction<string>) {
+      state.sortTypes = action.payload;
+    },
+    removeSortTypesSort(state) {
+      state.sortTypes = null;
+    },
+    clearPersonsList(state) {
+      state.personsList = [];
+    },
+    resetFilters() {
+      return initialState;
     },
   },
   extraReducers(builder) {
@@ -88,33 +124,56 @@ const filters = createSlice({
 
 export const {
   addGenresFilter,
+  removeGenresFilter,
   addCountriesFilter,
+  removeCountriesFilter,
   addInputRangeFilter,
-  addInputSearchDirectorFilter,
-  addInputSearchActorFilter,
+  removeInputRangeFilter,
+  addInputSearchPersonFilter,
+  clearPersonsList,
+  resetFilters,
+  addSortTypesSort,
+  removeSortTypesSort,
 } = filters.actions;
 export default filters;
 
 export const filtersSelector = (state: RootState) => state.filters;
-export const personsSelector = (state: RootState) => state.filters.personsList;
-export const countriesSelector = (state: RootState) => state.filters.countries;
+export const personsListSelector = (state: RootState) => state.filters.personsList;
+export const countriesSelector = (state: RootState) => state.filters.filters.countries;
 export const pendingPersonsSelector = (state: RootState) => state.filters.personsPending;
 export const getSelectedFilterSelector = (type: FilterType, t: TFunction) => (state: RootState) => {
   const filters = state.filters;
   switch (type) {
     case 'Actor':
-      return filters.actor;
+      return filters.filters.actor;
     case 'Director':
-      return filters.director;
+      return filters.filters.director;
     case 'Countries':
-      return filters.countries.map((country) => t(`FilterPanel.${country}`)).join(', ');
+      return filters.filters.countries.map((country) => t(`FilterPanel.${country}`)).join(', ');
     case 'Estimated':
-      return filters.votes ? formatterVotes(filters.votes / 1000) : '';
+      return filters.filters.votes ? formatterVotes(filters.filters.votes / 1000) : '';
     case 'Genres':
-      return filters.genres.map((genre) => t(`headerMoviesFilter.${genre}`)).join(', ');
+      return filters.filters.genres.map((genre) => t(`headerMoviesFilter.${genre}`)).join(', ');
     case 'Rating':
-      return filters.rating;
+      return filters.filters.rating;
   }
 };
-export const directorSelector = (state: RootState) => state.filters.director;
-export const actorSelector = (state: RootState) => state.filters.actor;
+export const personSelector = (person: FilterDropdownSearchType) => (state: RootState) =>
+  state.filters.filters[person];
+export const isGenreSelectedSelector = (genre: string) => (state: RootState) =>
+  state.filters.filters.genres.includes(genre);
+export const genresSelectedSelector = (t: TFunction) => (state: RootState) =>
+  state.filters.filters.genres.map((genre) => t(`headerMoviesFilter.${genre}`));
+export const isCountrySelectedSelector = (country: string) => (state: RootState) =>
+  state.filters.filters.countries.includes(country);
+export const countriesSelectedSelector = (t: TFunction) => (state: RootState) =>
+  state.filters.filters.countries.map((country) => t(`FilterPanel.${country}`));
+export const isInputRangeSelectedSelector =
+  (type: 'rating' | 'votes', value: number) => (state: RootState) =>
+    state.filters.filters[type] === value;
+export const filtersCountSelector = (state: RootState) =>
+  Object.values(state.filters.filters)
+    .flatMap((filter) => filter)
+    .filter(Boolean).length;
+
+export const sortTypesSelectedSelector = (state: RootState) => state.filters.sortTypes;

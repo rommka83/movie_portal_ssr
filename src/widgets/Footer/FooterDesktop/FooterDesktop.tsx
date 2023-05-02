@@ -70,9 +70,7 @@ export const FooterDesktop = () => {
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link target="_blank" to="/MovieList">
-                  {t('footer.Movies')}
-                </Link>
+                <Link to="/CatalogPage">{t('footer.Movies')}</Link>
               </li>
               <li className={styles.linkItem}>
                 <Link target="_blank" to="https://www.ivi.ru/series">

@@ -1,1 +1,2 @@
-export * from './FilterPanel';
+export * from './FilterPanelDesktop';
+export * from './FilterPanelMobile';

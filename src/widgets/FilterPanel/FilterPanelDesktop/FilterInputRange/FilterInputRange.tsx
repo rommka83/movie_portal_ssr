@@ -7,26 +7,20 @@ import { useAppDispatch } from 'app/store/hooks';
 import { addInputRangeFilter } from 'app/store/filterSlice';
 import { useDropdownContext } from 'features/FilterDropdown/FilterDropdownContext';
 
+export type InputRangeType = 'rating' | 'votes';
 interface IFilterInputRange {
   formatter: (value: string | number) => string | number;
   className: string;
   startValue: string;
   maxValue: string;
   minValue: string;
-  type: 'rating' | 'votes';
+  type: InputRangeType;
 }
 export const FilterInputRange = React.memo(
-  ({
-    formatter,
-    className,
-    startValue,
-    maxValue,
-    minValue,
-    type,
-  }: IFilterInputRange) => {
+  ({ formatter, className, startValue, maxValue, minValue, type }: IFilterInputRange) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState(startValue);
     const dropdownClose = useDropdownContext();
     const onChange = (value: string) => {
       setValue(value);
@@ -35,7 +29,7 @@ export const FilterInputRange = React.memo(
     const onClick = () => {
       const formattedValue = type === 'rating' ? +value / 10 : +value * 1000;
       dispatch(addInputRangeFilter({ type, value: formattedValue }));
-      setValue('');
+      setValue(startValue);
       dropdownClose && dropdownClose();
     };
 
@@ -64,5 +58,5 @@ export const FilterInputRange = React.memo(
         </button>
       </div>
     );
-  }
+  },
 );

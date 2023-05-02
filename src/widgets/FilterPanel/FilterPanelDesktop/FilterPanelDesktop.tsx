@@ -1,73 +1,54 @@
 import React, { useCallback } from 'react';
 import styles from './filterpaneldesktop.module.css';
-import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { countries, genres } from '../constants';
 import { FilterDropdown } from 'features/FilterDropdown';
 import { FilterDropdownList } from 'features/FilterDropdown/FilterDropdownList';
 import { FilterDropdownSearch } from 'features/FilterDropdown/FilterDropdownSearch';
-import { Carousel } from 'shared/ui/Carousel';
-import { FilterGenreCard } from 'shared/ui/FilterGenreCard';
-import { UseMedia } from 'shared/hooks/useMedia';
-import { useAppDispatch } from 'app/store/hooks';
-import { addGenresFilter } from 'app/store/filterSlice';
-import { FilterButton } from './FilterButton';
 import { FilterInputRange } from './FilterInputRange';
 import { formatterVotes } from 'shared/utils/formatterVotes';
+import { FilterPanelCarousel } from '../FilterPanelCarousel';
+import { FilterPanelDesktopResetButton } from './FilterPanelDesktopResetButton';
 
 export const FilterPanelDesktop = React.memo(() => {
   const { t } = useTranslation();
-  const tablet = UseMedia('(max-width: 900px)');
-  const dispatch = useAppDispatch();
-
   const formatterRating = useCallback((value: string | number) => {
     return (+value / 10).toPrecision(2);
   }, []);
 
-  const onGenreCardClick = (genre: string) => {
-    dispatch(addGenresFilter(genre));
-  };
-
   return (
     <section className={styles.filterDesktop}>
-      <div className={classNames(styles.container, 'container')}>
+      <div className={styles.container}>
         <div className={styles.plankList}>
           <FilterDropdown title="headerMoviesFilter" type="Genres" position="left">
-            <div className={styles.listWrapper}>
-              {!tablet && (
-                <Carousel className={styles.carousel} withButton scrollMultipleItems>
-                  {genres.map((genre) => (
-                    <FilterGenreCard
-                      containerClassName={styles.genreCardContainer}
-                      className={styles.card}
-                      iconClassName={styles.iconCard}
-                      key={genre}
-                      genre={genre}
-                      caption={t(`headerMoviesFilter.${genre}`)}
-                      onClick={onGenreCardClick}
-                    />
-                  ))}
-                </Carousel>
-              )}
-              <FilterDropdownList
-                className={styles.list}
-                array={genres}
-                title="headerMoviesFilter"
-              />
-            </div>
+            <FilterPanelCarousel
+              array={genres}
+              type="genres"
+              carouselContainerClassName={styles.carouselContainer}
+              withButton
+            />
+            <FilterDropdownList
+              className={styles.list}
+              array={genres}
+              title="headerMoviesFilter"
+              type="genres"
+            />
           </FilterDropdown>
 
           <FilterDropdown title="FilterPanel" type="Countries" position="left">
-            <div className={styles.listWrapper}>
-              {!tablet && (
-                <Carousel className={styles.carousel} withButton>
-                  {countries.map((country) => (
-                    <FilterButton key={country} title={country} />
-                  ))}
-                </Carousel>
-              )}
-            </div>
-            <FilterDropdownList className={styles.list} array={countries} title="FilterPanel" />
+            <FilterPanelCarousel
+              array={countries}
+              type="countries"
+              carouselContainerClassName={styles.carouselContainer}
+              withButton
+            />
+
+            <FilterDropdownList
+              className={styles.list}
+              array={countries}
+              title="FilterPanel"
+              type="countries"
+            />
           </FilterDropdown>
 
           <FilterDropdown
@@ -108,7 +89,7 @@ export const FilterPanelDesktop = React.memo(() => {
             position="right"
             className={styles.dropdownSearch}
           >
-            <FilterDropdownSearch placeholderText={t('FilterPanel.Director')} type="Режиссер" />
+            <FilterDropdownSearch placeholderText={t('FilterPanel.Director')} type="director" />
           </FilterDropdown>
 
           <FilterDropdown
@@ -117,17 +98,10 @@ export const FilterPanelDesktop = React.memo(() => {
             position="right"
             className={styles.dropdownSearch}
           >
-            <FilterDropdownSearch placeholderText={t('FilterPanel.Actor')} type="Актер" />
+            <FilterDropdownSearch placeholderText={t('FilterPanel.Actor')} type="actor" />
           </FilterDropdown>
         </div>
-        <div className={styles.buttonContainer}>
-          <button className={styles.resetButton}>
-            <div className={styles.resetButtonContainer}>
-              <span className={classNames('icon-close_16__0', styles.resetIcon)} />
-              <span>{t('FilterPanel.ResetFilters')}</span>
-            </div>
-          </button>
-        </div>
+        <FilterPanelDesktopResetButton />
       </div>
     </section>
   );

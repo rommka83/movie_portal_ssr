@@ -5,8 +5,8 @@ import classNames from 'classnames';
 interface ICarousel {
   title?: string | null;
   className?: string;
+  carouselContainerClassName?: string;
   scrollMultipleItems?: boolean;
-
   withButton?: boolean;
 }
 
@@ -15,6 +15,7 @@ const CORRECT_COEFFICIENT = 5;
 export function Carousel({
   title,
   className,
+  carouselContainerClassName,
   scrollMultipleItems,
   withButton,
   children,
@@ -79,7 +80,7 @@ export function Carousel({
   }, [carouselContentRef, offsetRef, scrollMultipleItems]);
 
   return (
-    <div className={styles.carouselContainer}>
+    <div className={classNames(styles.carouselContainer, carouselContainerClassName)}>
       {title && <h2 className={styles.title}>{title}</h2>}
       <div className={styles.wrapper}>
         {withButton && showPrevButton && (
