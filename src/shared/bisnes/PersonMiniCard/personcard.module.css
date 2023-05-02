@@ -1,0 +1,59 @@
+.root:hover .name {
+  opacity: 1;
+}
+.root:hover .position {
+  opacity: 1;
+}
+.root:hover .pic {
+  transform: scale(1.05);
+}
+.link {
+  width: 100%;
+}
+.pic {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+.noPhoto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+  background-color: var(--gray-60);
+  font-size: 40px;
+  color: var(--pink);
+}
+
+.name,
+.surName {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--gray-7e0);
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+.surName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.position {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--gray-light);
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}

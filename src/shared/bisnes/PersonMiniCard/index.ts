@@ -1,0 +1,1 @@
+export { PersonMiniCard } from './PersonMiniCard';
