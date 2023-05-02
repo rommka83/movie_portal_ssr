@@ -9,7 +9,7 @@ import { getComments } from 'app/store/commentsRequest';
 import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
 import { IReviev } from 'shared/types/IReviev';
-import { addFilm } from 'app/store/oneFilmSlice';
+import { addFilm } from 'app/store/oneFilmSliceDELETE';
 
 export async function getServerSideProps(context: any) {
   const { id } = context.params;
@@ -45,7 +45,7 @@ export default function MoviePage({ film, id }: IProps) {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (film === undefined) return;
-    dispatch(addFilm(film));
+    localStorage.setItem('oneFilm', JSON.stringify(film));
     dispatch(getComments(id));
   }, [film, id]);
 

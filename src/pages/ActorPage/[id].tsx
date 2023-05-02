@@ -61,9 +61,7 @@ function ActorPage({ actor }: IProps) {
   return (
     <section className={styles.actorPage}>
       <div className="container">
-        <Back f={() => {}} className={styles.back}>
-          {t('Back')}
-        </Back>
+        <Back className={styles.back}>{t('Back')}</Back>
         <div className={styles.container}>
           <PersonHeader name={actor.name} photo={actor.photo} enName={actor.enName} />
           <div className={styles.filmography}>

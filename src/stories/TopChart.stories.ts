@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { TopChart } from '../shared/bisnes/TopChart';
 import film from './testOneFilm.json';
