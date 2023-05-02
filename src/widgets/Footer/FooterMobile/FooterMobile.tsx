@@ -12,7 +12,7 @@ export const FooterMobile = () => {
           <span className="icon-home_20__0" />
           <span className={styles.linkText}>{t('footer.MyIvi')}</span>
         </Link>
-        <Link to="/MovieList" className={styles.tabBarItem}>
+        <Link to="/CatalogPage" className={styles.tabBarItem}>
           <span className="icon-catalog_20__0" />
           <span className={styles.linkText}>{t('footer.Catalog')}</span>
         </Link>

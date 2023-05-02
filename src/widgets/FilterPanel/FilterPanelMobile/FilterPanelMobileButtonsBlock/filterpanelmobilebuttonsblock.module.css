@@ -1,0 +1,31 @@
+.buttonsBlock {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  gap: 16px;
+  width: 100%;
+  padding: 0 24px 32px;
+  margin-top: auto;
+}
+
+.filterButton {
+  height: 40px;
+  width: 100%;
+  gap: 8px;
+}
+
+.filtersCounter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: var(--gray-798);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition-duration: 0.4s;
+}

@@ -1,9 +1,8 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes, MouseEvent } from 'react';
 import styles from './buttonorlink.module.css';
 import classNames from 'classnames';
 import Link from 'next/link';
 
-// eslint-disable-next-line react/display-name
 export const ButtonOrLink = React.memo<ButtonProps>(
   ({
     className,
@@ -25,6 +24,7 @@ export const ButtonOrLink = React.memo<ButtonProps>(
       [styles.large]: large,
       [styles.transparent]: transparent,
       [styles.small]: small,
+      [styles.disabled]: props.disabled,
     });
 
     if (to != null) {
@@ -49,5 +49,5 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   small?: boolean;
   round?: boolean;
   to?: string;
-  onClick?: () => void;
+  onClick?: (event: MouseEvent<HTMLElement>) => void;
 };

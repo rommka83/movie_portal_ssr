@@ -29,7 +29,7 @@ export function HeaderNav({ onMouseEnter, onMouseLeave, type }: IHeaderNav) {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          <Link to="/MovieList">{t('header.Movies')}</Link>
+          <Link to="/CatalogPage">{t('header.Movies')}</Link>
         </li>
         <li className={styles.item}>
           <Link to="https://www.ivi.ru/series">{t('header.Series')}</Link>

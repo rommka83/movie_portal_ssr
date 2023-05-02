@@ -41,6 +41,6 @@ export const countries = [
   'Italy',
 ];
 
-export const ratings = ['Over9', 'Over8', 'Over7', 'Over6'];
+export const ratings = ['9', '8', '7', '6'];
 
-export const estimates = ['from500к', 'from600к', 'from700к', 'from800к', 'from900к'];
+export const estimates = ['500000', '600000', '700000', '800000', '900000'];

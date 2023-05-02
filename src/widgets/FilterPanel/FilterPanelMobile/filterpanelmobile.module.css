@@ -1,9 +1,36 @@
-.openButton {
-  width: fit-content;
-  gap: 7px;
-  margin-left: 10px;
+.container {
+  display: none;
+  margin-top: 16px;
 }
 
+@media (max-width: 768px) {
+  .container {
+    display: block;
+  }
+}
+
+.openButton {
+  position: relative;
+  width: fit-content;
+  gap: 7px;
+}
+
+.iconFilters {
+  color: var(--gray-light);
+}
+
+.openButton.active::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 28px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--pink);
+  box-shadow: var(--pink-shadow);
+}
 .closeButton {
   position: absolute;
   top: 2px;
@@ -80,11 +107,6 @@
   transform: translateY(0);
 }
 
-.carousel {
-  margin: 0 -24px;
-  padding: 0 24px;
-}
-
 .title {
   padding-left: 14px;
   font-size: 15px;
@@ -98,46 +120,6 @@
   gap: 16px;
 }
 
-.countriesButtonContainer {
-  display: inline-block;
-  padding: 0 4px;
-}
-
-.countriesButton.countriesButton {
-  display: inline-block;
-  width: fit-content;
-  color: var(--white);
-  padding: 8px 16px;
-}
-
-.buttonsBlock {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
-  gap: 16px;
-  width: 100%;
-  padding: 0 24px 32px;
-  margin-top: auto;
-}
-
-.filterButton {
-  height: 40px;
-  width: 100%;
-  gap: 8px;
-}
-
-.filtersCounter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 13px;
-  line-height: 16px;
-  font-weight: 500;
-  white-space: nowrap;
-  color: var(--white);
-  background-color: var(--gray-798);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  transition-duration: 0.4s;
+.carouselContainer {
+  margin-top: 10px;
 }

@@ -1,0 +1,27 @@
+.resetButton {
+  width: fit-content;
+  padding: 8px;
+  font-size: 15px;
+  line-height: 20px;
+  opacity: 1;
+}
+
+.resetButton:disabled {
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.resetButtonContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.resetIcon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.resetButton:hover span {
+  color: var(--pink);
+  font-weight: 500;
+}

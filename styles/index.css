@@ -126,3 +126,8 @@ input[type='range']::-ms-fill-upper {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gray-48);
 }
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}

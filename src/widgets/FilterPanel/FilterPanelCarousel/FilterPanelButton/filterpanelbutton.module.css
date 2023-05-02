@@ -1,0 +1,27 @@
+.filterButtonContainer {
+  display: inline-block;
+  padding: 0 4px;
+}
+
+.filterButton.filterButton.active {
+  color: var(--white);
+  background-color: var(--gray-798);
+}
+
+@media (min-width: 900px) {
+  .filterButton.filterButton.active {
+    color: var(--white);
+    background-color: var(--gray-798);
+    border-color: var(--gray-798);
+  }
+
+  .filterButton.filterButton {
+    border: 1px solid var(--white);
+  }
+
+  .filterButton.filterButton:hover {
+    color: var(--white);
+    background-color: var(--gray-798);
+    border-color: var(--gray-798);
+  }
+}

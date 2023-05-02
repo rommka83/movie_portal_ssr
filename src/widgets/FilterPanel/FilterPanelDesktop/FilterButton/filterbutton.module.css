@@ -1,8 +1,0 @@
-.countriesButtonContainer {
-  display: inline-block;
-  padding: 0 4px;
-}
-
-.countriesButton.countriesButton {
-  border: 1px solid var(--white);
-}

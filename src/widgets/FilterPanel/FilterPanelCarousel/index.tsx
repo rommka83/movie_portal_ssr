@@ -1,0 +1,1 @@
+export { FilterPanelCarousel } from './FilterPanelCarousel';

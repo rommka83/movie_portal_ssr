@@ -31,8 +31,16 @@
   cursor: pointer;
 }
 
-.filterDropInput {
-  display: none;
+.filterDropInput:checked ~ .filterDropInputText {
+  color: var(--white);
+}
+
+.filterDropInput:checked ~ .filterDropCheckbox {
+  opacity: 1;
+}
+
+.filterDropInput:checked ~ .filterDropCheckbox .checkmark {
+  color: var(--pink);
 }
 
 .filterDropInputText {

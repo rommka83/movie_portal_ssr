@@ -15,6 +15,7 @@
   will-change: transform, height;
   transition-duration: 250ms;
   pointer-events: none;
+  padding: 0px 8px;
 }
 
 .headerDropdownBody.show {

@@ -1,0 +1,27 @@
+.container {
+  height: 100%;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: fit-content;
+  padding-left: 14px;
+}
+
+.buttonText {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.select {
+  font-size: 13px;
+  line-height: 1;
+  color: var(--gray-light);
+}
