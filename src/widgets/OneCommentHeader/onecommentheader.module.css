@@ -1,0 +1,28 @@
+.head {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--gray-08);
+}
+.author {
+  width: 60%;
+  margin-left: 20px;
+}
+.name {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.name:not(:last-child) {
+  margin-bottom: 10px;
+}
+.data {
+  margin-left: auto;
+  font-size: 14px;
+  opacity: 0.5;
+}
+@media (max-width: 600px) {
+  .data {
+    display: none;
+  }
+}

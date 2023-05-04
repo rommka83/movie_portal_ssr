@@ -1,9 +1,12 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes, useState } from 'react';
 import styles from './onecomment.module.css';
 import classNames from 'classnames';
-import UserPhoto from 'shared/user/UserPhoto';
 import { IOneComment } from 'shared/types/IOneComment';
 import { useTranslation } from 'react-i18next';
+import { Modal } from 'shared/ui/Modal';
+import { OneCommentHeader } from 'widgets/OneCommentHeader';
+import { OneCommentBody } from 'widgets/OneCommentBody';
+import ButtonOrLink from 'shared/ui/ButtonOrLink';
 
 interface IProps {
   comment: IOneComment;
@@ -11,36 +14,62 @@ interface IProps {
 
 export const OneComment: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ className, comment }) => {
   const { t } = useTranslation();
-  const name = comment.author.split(' ').slice(0, 1);
-  const surName = comment.author.split(' ').slice(1);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
-    <article className={classNames(styles.root, className)}>
-      <div className={styles.head}>
-        <UserPhoto />
-        <div className={styles.author}>
-          <p className={styles.name}>{name}</p>
-          <p className={styles.name}>{surName}</p>
+    <>
+      <article className={classNames(styles.root, className)}>
+        <OneCommentHeader comment={comment} />
+        <OneCommentBody comment={comment} />
+        <div className={styles.commentFooter}>
+          <ButtonOrLink
+            large
+            variant="third"
+            className={classNames(styles.commentBtn, styles.open, 'icon-message_20__0')}
+            onClick={() => setModalIsOpen(true)}
+          >
+            <span>{t('sectionTitle.AddComment')}</span>
+          </ButtonOrLink>
+          <ButtonOrLink
+            large
+            variant="third"
+            className={classNames(styles.commentBtn, styles.like, 'icon-thumbUp_16__0')}
+          >
+            <span>{t('sectionTitle.Healthy')}</span>
+            <span>20</span>
+          </ButtonOrLink>
+          <ButtonOrLink
+            large
+            variant="third"
+            className={classNames(styles.commentBtn, styles.like, 'icon-thumbDown_16__0')}
+          >
+            <span>{t('sectionTitle.No')}</span>
+            <span>5</span>
+          </ButtonOrLink>
         </div>
-        <p className={styles.data}>{new Date(comment.date).toLocaleDateString()}</p>
-      </div>
-      <div className={styles.commentBody}>
-        <h5 className={styles.commentTitle}>{comment.title}</h5>
-        <p className={styles.commentContent}>{comment.review}</p>
-      </div>
-      <div className={styles.commentFooter}>
-        <button className={classNames(styles.commentBtn, styles.open, 'icon-message_20__0')}>
-          <span>{t('sectionTitle.AddComment')}</span>
-        </button>
-        <button className={classNames(styles.commentBtn, styles.like, 'icon-thumbUp_16__0')}>
-          <span>{t('sectionTitle.Healthy')}</span>
-          <span>20</span>
-        </button>
-        <button className={classNames(styles.commentBtn, styles.like, 'icon-thumbDown_16__0')}>
-          <span>{t('sectionTitle.No')}</span>
-          <span>5</span>
-        </button>
-      </div>
-    </article>
+      </article>
+      {modalIsOpen && (
+        <Modal>
+          <div className={classNames(styles.modal, 'container')}>
+            <OneCommentHeader comment={comment} className={styles.modalHead} />
+            <OneCommentBody comment={comment} className={styles.modalComment} />
+            <textarea className={styles.myComment} placeholder="Оставте ваш коментарий" />
+            <div className={styles.modalBlockBtn}>
+              <ButtonOrLink large variant="third" onClick={() => {}} className={styles.modalBtn}>
+                Комментировать
+              </ButtonOrLink>
+              <ButtonOrLink
+                large
+                variant="third"
+                onClick={() => setModalIsOpen(false)}
+                className={styles.modalBtn}
+              >
+                Закрыть
+              </ButtonOrLink>
+            </div>
+          </div>
+        </Modal>
+      )}
+    </>
   );
 };

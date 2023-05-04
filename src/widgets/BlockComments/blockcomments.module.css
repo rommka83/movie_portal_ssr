@@ -18,7 +18,7 @@
 .commentAdd {
   display: flex;
   align-items: center;
-  width: fit-content;
+  width: fit-content !important;
   opacity: 0.5;
   transition: opacity 0.3s ease-in-out;
 }
@@ -48,6 +48,48 @@
   top: 20px;
 }
 
+.modal {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 50px;
+  box-shadow: 0px 0px 20px 0px rgba(224, 231, 236, 0.6) inset;
+  border-radius: 8px;
+}
+.modalHead {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid var(--gray-hover);
+  border-radius: 8px;
+}
+.modalHeadName {
+  margin-left: 20px;
+}
+.modalHeadBtn {
+  margin-left: auto;
+}
+.categoryComment {
+  margin-bottom: 20px;
+}
+.inpTitle,
+.textComment {
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;
+  border: 1px solid var(--gray-hover);
+  border-radius: 8px;
+}
+.textComment::placeholder,
+.inpTitle::placeholder {
+  color: var(--white);
+}
+.textComment {
+  height: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  resize: none;
+}
 @media (max-width: 600px) {
   .listComments {
     flex-direction: row;
