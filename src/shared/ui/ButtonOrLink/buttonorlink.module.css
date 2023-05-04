@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
@@ -13,6 +12,8 @@
   color: #fff;
   transition-duration: 0.4s;
   cursor: pointer;
+  width: fit-content;
+  height: fit-content;
 }
 
 .button.primary {

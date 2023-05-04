@@ -1,0 +1,40 @@
+.root {
+  position: relative;
+}
+.head {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid var(--gray-hover);
+  border-radius: 8px;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.inp {
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;
+  pointer-events: none;
+}
+.dropdownList {
+  position: absolute;
+  top: 110%;
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--gray-hover);
+}
+.dropdownItem {
+  padding: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+.dropdownItem:hover {
+  opacity: 1;
+}
+.dropdownItem:not(:last-child) {
+  border-bottom: 1px solid var(--gray-light);
+}

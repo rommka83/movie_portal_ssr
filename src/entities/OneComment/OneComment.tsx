@@ -1,12 +1,12 @@
 import React, { FC, HTMLAttributes, useState } from 'react';
 import styles from './onecomment.module.css';
 import classNames from 'classnames';
-import UserPhoto from 'shared/user/UserPhoto';
 import { IOneComment } from 'shared/types/IOneComment';
 import { useTranslation } from 'react-i18next';
 import { Modal } from 'shared/ui/Modal';
 import { OneCommentHeader } from 'widgets/OneCommentHeader';
 import { OneCommentBody } from 'widgets/OneCommentBody';
+import ButtonOrLink from 'shared/ui/ButtonOrLink';
 
 interface IProps {
   comment: IOneComment;
@@ -22,20 +22,30 @@ export const OneComment: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ classN
         <OneCommentHeader comment={comment} />
         <OneCommentBody comment={comment} />
         <div className={styles.commentFooter}>
-          <button
+          <ButtonOrLink
+            large
+            variant="third"
             className={classNames(styles.commentBtn, styles.open, 'icon-message_20__0')}
             onClick={() => setModalIsOpen(true)}
           >
             <span>{t('sectionTitle.AddComment')}</span>
-          </button>
-          <button className={classNames(styles.commentBtn, styles.like, 'icon-thumbUp_16__0')}>
+          </ButtonOrLink>
+          <ButtonOrLink
+            large
+            variant="third"
+            className={classNames(styles.commentBtn, styles.like, 'icon-thumbUp_16__0')}
+          >
             <span>{t('sectionTitle.Healthy')}</span>
             <span>20</span>
-          </button>
-          <button className={classNames(styles.commentBtn, styles.like, 'icon-thumbDown_16__0')}>
+          </ButtonOrLink>
+          <ButtonOrLink
+            large
+            variant="third"
+            className={classNames(styles.commentBtn, styles.like, 'icon-thumbDown_16__0')}
+          >
             <span>{t('sectionTitle.No')}</span>
             <span>5</span>
-          </button>
+          </ButtonOrLink>
         </div>
       </article>
       {modalIsOpen && (
@@ -43,14 +53,19 @@ export const OneComment: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ classN
           <div className={classNames(styles.modal, 'container')}>
             <OneCommentHeader comment={comment} className={styles.modalHead} />
             <OneCommentBody comment={comment} className={styles.modalComment} />
-            <textarea className={styles.myComment} />
+            <textarea className={styles.myComment} placeholder="Оставте ваш коментарий" />
             <div className={styles.modalBlockBtn}>
-              <button onClick={() => {}} className={styles.modalBtn}>
+              <ButtonOrLink large variant="third" onClick={() => {}} className={styles.modalBtn}>
                 Комментировать
-              </button>
-              <button onClick={() => setModalIsOpen(false)} className={styles.modalBtn}>
+              </ButtonOrLink>
+              <ButtonOrLink
+                large
+                variant="third"
+                onClick={() => setModalIsOpen(false)}
+                className={styles.modalBtn}
+              >
                 Закрыть
-              </button>
+              </ButtonOrLink>
             </div>
           </div>
         </Modal>
