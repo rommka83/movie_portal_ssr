@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { FC, HTMLAttributes, useEffect, useState } from 'react';
+import React, { FC, HTMLAttributes, useState } from 'react';
 import styles from './blockcomments.module.css';
 import classNames from 'classnames';
 import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
@@ -26,10 +26,6 @@ export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({ className })
   const assignAcommentCategory = (value: string) => {
     setValueSelect(value);
   };
-
-  // useEffect(() => {
-  //   console.log(valueTitleComment);
-  // }, [valueTitleComment]);
 
   return (
     <>
