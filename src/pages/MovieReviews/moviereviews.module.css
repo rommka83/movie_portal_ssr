@@ -1,0 +1,16 @@
+.blocCommentMain {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr, 100px;
+  grid-gap: 20px;
+  align-items: start;
+  margin-top: 20px;
+}
+.listComments {
+  grid-column: 1;
+}
+.right {
+  grid-column: 2;
+  position: sticky;
+  top: 20px;
+}

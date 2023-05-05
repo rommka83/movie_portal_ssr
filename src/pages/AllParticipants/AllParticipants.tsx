@@ -65,9 +65,7 @@ const emptyFilm: IFilm = {
   alternativeName: null,
 };
 
-interface IProps {
-  // film?: IFilm;
-}
+interface IProps {}
 
 const AllParticipants: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ className }) => {
   const [film, setFilm] = useState<IFilm>(emptyFilm);
@@ -162,7 +160,6 @@ const AllParticipants: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ classNam
           <PosterCards src={film.poster.url} name={film.name} />
           <div className={styles.rating}>
             <ReitingMovie grade={film.rating.kp} className={styles.ratingValue} />
-            {/* <TopChart obj={film} /> */}
             <BlockChart width={50} obj={film.rating} />
           </div>
           <ShortDescription obj={film} className={styles.shortDescription} allGenres />
@@ -173,15 +170,3 @@ const AllParticipants: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ classNam
 };
 
 export default AllParticipants;
-
-// Режисёры   Directors
-// Актёры   Actors
-// Продюсеры   Producers
-// Операторы  Operators
-// Сценаристы   Screenwriters
-// Композиторы  Composers
-
-// "художники" artists
-// "монтажеры"  installatior
-// "актеры дубляжа"  dubbingActors
-// "редакторы"  editors
