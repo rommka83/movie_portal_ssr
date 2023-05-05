@@ -15,7 +15,7 @@
 @media (max-width: 768px) {
   .headerWrapper {
     width: 100%;
-    padding: 0 12px;
+    padding: var(--padding-mobile);
   }
 }
 
@@ -27,7 +27,7 @@
 }
 
 @media (max-width: 768px) {
-  .container {
+  .container.container {
     width: 100%;
   }
 }

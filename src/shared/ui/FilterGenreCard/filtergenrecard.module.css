@@ -1,20 +1,27 @@
 .container {
+  --containerWidth: 25%;
   display: inline-block;
-  width: 25%;
+  width: var(--containerWidth);
   min-width: 80px;
   padding: 0 6px;
   cursor: pointer;
 }
 
+@media (max-width: 1200px) {
+  .container {
+    --containerWidth: 37%;
+  }
+}
+
 @media (max-width: 500px) {
   .container {
-    width: 33%;
+    --containerWidth: 33%;
   }
 }
 
 @media (max-width: 408px) {
   .container {
-    width: 50%;
+    --containerWidth: 50%;
   }
 }
 

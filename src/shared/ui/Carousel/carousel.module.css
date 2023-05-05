@@ -1,14 +1,26 @@
 .carouselContainer {
+  --fz: 15px;
+  --lh: 20px;
+  --fw: 600;
+  --right: -15px;
+  --left: -14px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
 .title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
   padding-left: 14px;
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: 600;
+  font-size: var(--fz);
+  line-height: var(--lh);
+  font-weight: var(--fw);
+}
+
+.iconStyle {
+  font-size: 16px;
 }
 
 .wrapper {
@@ -28,19 +40,26 @@
   display: none;
 }
 
-.prevButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -14px;
-  font-size: 16px;
-}
-
+.prevButton,
 .nextButton {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  right: -15px;
-  font-size: 16px;
   width: 16px;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+.prevButton {
+  left: var(--left);
+}
+
+.nextButton {
+  right: var(--right);
+}
+
+@media (max-width: 768px) {
+  .prevButton,
+  .nextButton {
+    display: none;
+  }
 }

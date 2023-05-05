@@ -30,9 +30,9 @@ export const getSearchPersons = createAsyncThunk<
   if (!name) {
     return [];
   }
-  const currentProfession = profession === 'director' ? 'Режиссер' : 'Актер';
+
   const response = await axios.get<PersonsResponse>(
-    `https://api.kinopoisk.dev/v1/person?selectFields=name%20id&sortField=name&sortType=1%20&limit=10&name=${name}&profession.value=${currentProfession}`,
+    `https://api.kinopoisk.dev/v1/person?selectFields=name%20id&sortField=name&sortType=1%20&limit=10&name=${name}&movies.enProfession=${profession}`,
     {
       headers: {
         Accept: 'application/json',

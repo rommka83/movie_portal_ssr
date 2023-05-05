@@ -8,6 +8,7 @@ interface ICarousel {
   carouselContainerClassName?: string;
   scrollMultipleItems?: boolean;
   withButton?: boolean;
+  iconStyle?: string;
 }
 
 const LAST_ITEM_COUNT = 1;
@@ -19,6 +20,7 @@ export function Carousel({
   scrollMultipleItems,
   withButton,
   children,
+  iconStyle,
 }: PropsWithChildren<ICarousel>) {
   const carouselContentRef = useRef<HTMLDivElement | null>(null);
   const offsetRef = useRef(0);
@@ -81,7 +83,11 @@ export function Carousel({
 
   return (
     <div className={classNames(styles.carouselContainer, carouselContainerClassName)}>
-      {title && <h2 className={styles.title}>{title}</h2>}
+      {title && (
+        <h2 className={styles.title}>
+          {title} <span className={classNames(iconStyle, styles.iconStyle)} />
+        </h2>
+      )}
       <div className={styles.wrapper}>
         {withButton && showPrevButton && (
           <button

@@ -7,12 +7,12 @@ interface IFilterGenreCard {
   className?: string;
   iconClassName?: string;
   containerClassName?: string;
-  onClick: (genre: string) => void;
+  onClick?: (genre: string) => void;
 }
 export const FilterGenreCard = React.memo(
   ({ caption, genre, className, iconClassName, containerClassName, onClick }: IFilterGenreCard) => {
     const onClickHandler = () => {
-      onClick(genre);
+      onClick && onClick(genre);
     };
     return (
       <div className={classNames(styles.container, containerClassName)} onClick={onClickHandler}>

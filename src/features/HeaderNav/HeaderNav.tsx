@@ -8,9 +8,10 @@ import { HeaderDropdownType } from 'widgets/Header/Header';
 interface IHeaderNav {
   onMouseEnter: (event: MouseEvent<HTMLLIElement>) => void;
   onMouseLeave: (event: MouseEvent<HTMLLIElement>) => void;
+  onItemClick: (event: MouseEvent<HTMLLIElement>) => void;
   type: HeaderDropdownType | '';
 }
-export function HeaderNav({ onMouseEnter, onMouseLeave, type }: IHeaderNav) {
+export function HeaderNav({ onMouseEnter, onMouseLeave, type, onItemClick }: IHeaderNav) {
   const { t } = useTranslation();
   return (
     <nav className={styles.nav}>
@@ -28,6 +29,7 @@ export function HeaderNav({ onMouseEnter, onMouseLeave, type }: IHeaderNav) {
           })}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
+          onClick={onItemClick}
         >
           <Link to="/CatalogPage">{t('header.Movies')}</Link>
         </li>
