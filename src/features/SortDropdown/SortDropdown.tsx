@@ -5,22 +5,23 @@ import classNames from 'classnames';
 import { sortTypes } from './constants';
 import { SortDropdownItem } from './SortDropdownItem';
 import { useOutsideClick } from 'shared/hooks/useOutsideClick';
+import { useAccordionContext } from 'shared/ui/Accordion/AccordionContext';
 
-interface ISortDropdown {
-  onCloseSortDropdown: () => void;
-}
-export const SortDropdown = ({ onCloseSortDropdown }: ISortDropdown) => {
+export const SortDropdown = () => {
   const { t } = useTranslation();
   const [hide, setHide] = useState(false);
   const containerRef = useRef(null);
+  const dropdownClose = useAccordionContext();
 
   const onClose = useCallback(() => {
     setHide(true);
     setTimeout(() => {
-      onCloseSortDropdown();
+      dropdownClose && dropdownClose();
     }, 250);
-  }, []);
+  }, [dropdownClose]);
+
   useOutsideClick(containerRef, onClose);
+
   return (
     <ul
       ref={containerRef}

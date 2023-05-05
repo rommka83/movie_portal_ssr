@@ -23,3 +23,9 @@
   visibility: visible;
   pointer-events: initial;
 }
+
+@media (max-width: 1253px) {
+  .headerDropdownBody {
+    display: none;
+  }
+}

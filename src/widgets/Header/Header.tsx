@@ -25,6 +25,11 @@ export function Header() {
       setShow(false);
     }, 250);
   }, []);
+
+  const onDropdownClose = useCallback(() => {
+    setShow(false);
+  }, []);
+
   const onHeaderDropdownClose = useCallback(() => {
     setType('');
   }, []);
@@ -37,7 +42,12 @@ export function Header() {
             <Link href="/" className={styles.logo}>
               <Logo className={styles.logoImg} />
             </Link>
-            <HeaderNav type={type} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} />
+            <HeaderNav
+              type={type}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              onItemClick={onDropdownClose}
+            />
           </div>
 
           <div className={styles.wideArea}>
