@@ -12,26 +12,29 @@ interface IProps {
 
 export function PersonMiniCard({
   person,
-  position = false,
+  position,
   className,
 }: PropsWithChildren<HTMLAttributes<HTMLDivElement> & IProps>) {
-  if (person.name === null) return null;
-  const [name] = person.name.split(' ').slice(0, 1);
-  const [surName] = person.name.split(' ').slice(1);
+  const personName = person.name ?? person.enName;
+  if (!personName) return null;
+  const [name] = personName.split(' ').slice(0, 1);
+  const [surName] = personName.split(' ').slice(1);
 
   return (
     <Link href={`/ActorPage/${person.id}`} className={styles.link}>
       <div className={classNames(styles.root, className)}>
-        {person.photo !== '' ? (
+        {person.photo != null ? (
           <Image
             width={60}
             height={60}
             src={person.photo}
-            alt={person.name}
+            alt={personName}
             className={styles.pic}
           />
         ) : (
-          <div className={classNames(styles.noPhoto, 'icon-person_56__0')}></div>
+          <div className={styles.noPhoto}>
+            <span className={classNames(styles.noPhotoIcon, 'icon-person_56__0')} />
+          </div>
         )}
         <p className={styles.name}>{name}</p>
         <p className={classNames(styles.name, styles.surName)}>{surName}</p>

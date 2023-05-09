@@ -1,7 +1,7 @@
 import React, { AnchorHTMLAttributes } from 'react';
 import styles from './link.module.css';
 import classNames from 'classnames';
-import NextLink from 'next/link';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 
 export const Link = React.memo<LinkProps>(({ className, to, children, ...props }) => {
   return (
@@ -11,6 +11,7 @@ export const Link = React.memo<LinkProps>(({ className, to, children, ...props }
   );
 });
 
-type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
-  to: string;
-};
+type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  Omit<NextLinkProps, 'href'> & {
+    to: string;
+  };

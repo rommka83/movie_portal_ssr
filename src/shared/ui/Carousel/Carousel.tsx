@@ -8,7 +8,7 @@ interface ICarousel {
   carouselContainerClassName?: string;
   scrollMultipleItems?: boolean;
   withButton?: boolean;
-  iconStyle?: string;
+  withArrow?: boolean;
 }
 
 const LAST_ITEM_COUNT = 1;
@@ -20,7 +20,7 @@ export function Carousel({
   scrollMultipleItems,
   withButton,
   children,
-  iconStyle,
+  withArrow,
 }: PropsWithChildren<ICarousel>) {
   const carouselContentRef = useRef<HTMLDivElement | null>(null);
   const offsetRef = useRef(0);
@@ -60,22 +60,21 @@ export function Carousel({
     const carouselContent = carouselContentRef.current;
     let carouselContentWidth = 0;
     const resizeObserver = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.borderBoxSize) {
-          carouselContentWidth = entry.borderBoxSize[0].inlineSize;
+      for (const carouselContentEntry of entries) {
+        if (carouselContentEntry.borderBoxSize) {
+          carouselContentWidth = carouselContentEntry.borderBoxSize[0].inlineSize;
           contentWidthRef.current = carouselContentWidth;
-          const carouselItemWidth = entry.target.children[0].getBoundingClientRect().width;
+          const carouselItemWidth =
+            carouselContentEntry.target.children[0].getBoundingClientRect().width;
           const visibleItemsCount = Math.floor(carouselContentWidth / carouselItemWidth);
           const scrollItemsCount = scrollMultipleItems ? visibleItemsCount - LAST_ITEM_COUNT : 1;
-          const currentOffset = carouselItemWidth * scrollItemsCount;
-          offsetRef.current = currentOffset;
+          offsetRef.current = carouselItemWidth * scrollItemsCount;
         }
       }
     });
     if (carouselContent) {
       resizeObserver.observe(carouselContent);
     }
-
     return () => {
       carouselContent && resizeObserver.unobserve(carouselContent);
     };
@@ -85,7 +84,10 @@ export function Carousel({
     <div className={classNames(styles.carouselContainer, carouselContainerClassName)}>
       {title && (
         <h2 className={styles.title}>
-          {title} <span className={classNames(iconStyle, styles.iconStyle)} />
+          {title}
+          {withArrow && (
+            <span className={classNames('icon-arrowRight_6x16__0', styles.iconStyle)} />
+          )}
         </h2>
       )}
       <div className={styles.wrapper}>

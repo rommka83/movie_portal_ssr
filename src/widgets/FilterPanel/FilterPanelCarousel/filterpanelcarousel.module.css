@@ -1,20 +1,33 @@
-.carousel {
-  margin: 0 -24px;
-  padding: 0 24px;
+.carouselCountries {
+  grid-template-columns: auto;
+  grid-auto-columns: auto;
 }
 
 @media (min-width: 900px) {
   .carousel {
     border-bottom: 1px solid var(--gray-light);
-    padding: 12px;
+    padding: 12px 0;
     margin: 0;
+  }
+  .carouselGenres {
+    --viewed-elements-count: 4;
   }
 }
 
-@media (max-width: 1125px) {
-  .genreCardContainer {
-    width: 40%;
+@media (max-width: 1200px) {
+  .carouselGenres {
+    --viewed-elements-count: 3;
   }
+}
+
+@media (max-width: 450px) {
+  .carouselGenres {
+    --viewed-elements-count: 2;
+  }
+}
+
+.genreCardContainer {
+  width: 100%;
 }
 
 @media (min-width: 900px) {

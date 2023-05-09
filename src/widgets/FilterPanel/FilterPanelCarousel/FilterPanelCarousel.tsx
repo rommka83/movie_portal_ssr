@@ -3,6 +3,7 @@ import styles from './filterpanelcarousel.module.css';
 import { Carousel } from 'shared/ui/Carousel';
 import { CarouselGenreCard } from './CarouselGenreCard';
 import { FilterPanelButton, FilterPanelButtonType } from './FilterPanelButton';
+import classNames from 'classnames';
 
 interface IFilterPanelCarousel {
   array: string[];
@@ -18,7 +19,10 @@ export const FilterPanelCarousel = ({
 }: IFilterPanelCarousel) => {
   return (
     <Carousel
-      className={styles.carousel}
+      className={classNames(styles.carousel, {
+        [styles.carouselGenres]: type === 'genres',
+        [styles.carouselCountries]: type === 'countries',
+      })}
       carouselContainerClassName={carouselContainerClassName}
       withButton={withButton}
       scrollMultipleItems

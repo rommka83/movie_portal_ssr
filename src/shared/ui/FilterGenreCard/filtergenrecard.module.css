@@ -1,28 +1,8 @@
 .container {
-  --containerWidth: 25%;
-  display: inline-block;
-  width: var(--containerWidth);
+  width: 100%;
   min-width: 80px;
   padding: 0 6px;
   cursor: pointer;
-}
-
-@media (max-width: 1200px) {
-  .container {
-    --containerWidth: 37%;
-  }
-}
-
-@media (max-width: 500px) {
-  .container {
-    --containerWidth: 33%;
-  }
-}
-
-@media (max-width: 408px) {
-  .container {
-    --containerWidth: 50%;
-  }
 }
 
 .containerInner {
