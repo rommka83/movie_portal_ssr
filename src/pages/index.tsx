@@ -6,7 +6,7 @@ import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
 
 export const getStaticProps = async () => {
-  const response = await axios.get('https://api.kinopoisk.dev/v1.3/movie?&page=1&limit=50', {
+  const response = await axios.get('https://api.kinopoisk.dev/v1.3/movie?&page=1&limit=40', {
     headers: {
       Accept: 'application/json',
       // 'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',

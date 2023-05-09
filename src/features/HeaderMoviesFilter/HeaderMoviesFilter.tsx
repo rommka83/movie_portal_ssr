@@ -33,19 +33,19 @@ export function HeaderMoviesFilter() {
           <CardTitle className={styles.title}>{t('headerMoviesFilter.Genres')}</CardTitle>
           <ul className={styles.filmLinkList}>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.biography')}</Link>
+              <Link to="/CatalogPage/биография">{t('headerMoviesFilter.biography')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.actions')}</Link>
+              <Link to="/CatalogPage/боевик">{t('headerMoviesFilter.actions')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.western')}</Link>
+              <Link to="/CatalogPage/вестерн">{t('headerMoviesFilter.western')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.military')}</Link>
+              <Link to="/CatalogPage/военные">{t('headerMoviesFilter.military')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.detectives')}</Link>
+              <Link to="/CatalogPage/детектив">{t('headerMoviesFilter.detectives')}</Link>
             </li>
             <li className={styles.filmListItem}>
               <Link to="">{t('headerMoviesFilter.family')}</Link>
@@ -57,7 +57,7 @@ export function HeaderMoviesFilter() {
               <Link to="">{t('headerMoviesFilter.documentaries')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.drama')}</Link>
+              <Link to="/CatalogPage/драма">{t('headerMoviesFilter.drama')}</Link>
             </li>
             <li className={styles.filmListItem}>
               <Link to="">{t('headerMoviesFilter.historical')}</Link>

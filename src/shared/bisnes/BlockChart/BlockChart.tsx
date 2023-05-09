@@ -19,7 +19,7 @@ export const BlockChart: FC<IProps> = ({ obj, width }) => {
         className={styles.inp}
         min="0"
         max="10"
-        value={obj.await}
+        value={obj.await ?? ''}
         step="0,1"
         style={{ width: width }}
         readOnly
@@ -29,7 +29,7 @@ export const BlockChart: FC<IProps> = ({ obj, width }) => {
         className={styles.inp}
         min="0"
         max="10"
-        value={obj.filmCritics}
+        value={obj.filmCritics ?? ''}
         step="0,1"
         style={{ width: width }}
         readOnly
@@ -39,7 +39,7 @@ export const BlockChart: FC<IProps> = ({ obj, width }) => {
         className={styles.inp}
         min="0"
         max="10"
-        value={obj.imdb}
+        value={obj.imdb ?? ''}
         step="0,1"
         style={{ width: width }}
         readOnly
@@ -49,7 +49,7 @@ export const BlockChart: FC<IProps> = ({ obj, width }) => {
         className={styles.inp}
         min="0"
         max="10"
-        value={obj.russianFilmCritics}
+        value={obj.russianFilmCritics ?? ''}
         step="0,1"
         style={{ width: width }}
         readOnly

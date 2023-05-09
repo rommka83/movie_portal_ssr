@@ -1,6 +1,6 @@
 export interface IPerson {
   id: number;
-  photo: string;
+  photo: string | null;
   name: string | null;
   enName: string | null;
   description?: string | null;
