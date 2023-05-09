@@ -1,5 +1,6 @@
 .filterButtonContainer {
   padding: 0 4px;
+  white-space: nowrap;
 }
 
 .filterButton.filterButton.active {
