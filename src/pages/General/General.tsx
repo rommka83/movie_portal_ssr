@@ -17,7 +17,6 @@ export const General: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
       </Head>
       <Header />
       <main className={styles.main}>{children}</main>
-
       <Footer />
     </div>
   );

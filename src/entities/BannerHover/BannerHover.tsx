@@ -25,8 +25,8 @@ export const BannerHover: FC<props> = ({ film, className }) => {
         </ul>
         <div className={styles.bannerHoverReiting}>
           <TopChart obj={film} />
-          <ReitingMovie grade={film.rating.kp} />
-          <BlockChart obj={film.rating} width={35} />
+          <ReitingMovie grade={film.rating ? film.rating.kp : 0} />
+          {film.rating && <BlockChart obj={film.rating} width={35} />}
           <ShortDescription obj={film} />
         </div>
       </div>

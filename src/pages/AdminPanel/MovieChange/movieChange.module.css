@@ -1,0 +1,77 @@
+.instruction {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--pink);
+}
+.label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.labelText {
+  margin-bottom: 5px;
+  padding-left: 10px;
+  opacity: 0.5;
+}
+.inp {
+  padding: 5px 20px;
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+
+  height: fit-content;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.inpDropdawnList {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--gray);
+  z-index: 2;
+  border-radius: 8px;
+}
+.inpDropdawnItem {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.inpDropdawnItem:not(:last-child) {
+  border-bottom: 1px solid var(--white);
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+.checkbox > span {
+  margin-right: 10px;
+}
+.blockInp {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  background-color: var(--gray-06);
+}
+.blockInpTitle {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.blockInBlock {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  background-color: var(--main-background-color);
+}
+.blockBtnSubmit {
+  display: flex;
+}
+.submit {
+  margin-right: 20px;
+}
