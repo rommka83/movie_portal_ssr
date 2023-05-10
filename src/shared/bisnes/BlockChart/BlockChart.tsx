@@ -15,42 +15,42 @@ export const BlockChart: FC<IProps> = ({ obj, width }) => {
   return (
     <div className={styles.root}>
       <input
-        type="range"
+        type='range'
         className={styles.inp}
-        min="0"
-        max="10"
-        value={obj.await ?? ''}
-        step="0,1"
+        min='0'
+        max='10'
+        value={obj.await ?? 0}
+        step='0,1'
         style={{ width: width }}
         readOnly
       />
       <input
-        type="range"
+        type='range'
         className={styles.inp}
-        min="0"
-        max="10"
-        value={obj.filmCritics ?? ''}
-        step="0,1"
+        min='0'
+        max='10'
+        value={obj.filmCritics ?? 0}
+        step='0,1'
         style={{ width: width }}
         readOnly
       />
       <input
-        type="range"
+        type='range'
         className={styles.inp}
-        min="0"
-        max="10"
-        value={obj.imdb ?? ''}
-        step="0,1"
+        min='0'
+        max='10'
+        value={obj.imdb ?? 0}
+        step='0,1'
         style={{ width: width }}
         readOnly
       />
       <input
-        type="range"
+        type='range'
         className={styles.inp}
-        min="0"
-        max="10"
-        value={obj.russianFilmCritics ?? ''}
-        step="0,1"
+        min='0'
+        max='10'
+        value={obj.russianFilmCritics ?? 0}
+        step='0,1'
         style={{ width: width }}
         readOnly
       />

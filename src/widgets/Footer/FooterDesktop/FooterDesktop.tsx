@@ -51,9 +51,7 @@ export const FooterDesktop = () => {
                 </Link>
               </li>
               <li className={styles.linkItem}>
-                <Link target="_blank" to="https://www.ivi.ru/info/goryachaya-liniya-komplaens">
-                  {t('footer.Compliance')}
-                </Link>
+                <Link to="/AdminPanel">{t('footer.AdminPanel')}</Link>
               </li>
             </ul>
           </div>

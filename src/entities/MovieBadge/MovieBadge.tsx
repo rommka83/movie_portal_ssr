@@ -31,7 +31,7 @@ export function MovieBadge({ film }: IProps) {
       <CardTitle className={styles.title}>
         {lng === 'ru' ? film.name ?? film.alternativeName : film.enName ?? film.name}
       </CardTitle>
-      <PriceBadge price={film.rating.kp > 7 ? true : false} className={styles.statusPrice} />
+      {film.rating && <PriceBadge price={film.rating.kp > 7 ? true : false} className={styles.statusPrice} />}
     </article>
   );
 }

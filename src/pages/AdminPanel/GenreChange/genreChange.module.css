@@ -1,0 +1,45 @@
+.blockInp {
+  display: flex;
+
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  background-color: var(--gray-06);
+}
+
+.label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-right: 10px;
+}
+.labelText {
+  margin-bottom: 5px;
+  padding-left: 10px;
+  opacity: 0.5;
+}
+.inputs {
+  display: flex;
+  width: 100%;
+}
+.inp {
+  width: 100%;
+  margin-right: 10px;
+  padding: 2px 20px;
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  height: fit-content;
+  line-height: 1.5;
+  font-size: 16px;
+  background-color: var(--main-background-color);
+}
+.submit {
+  padding: 5px 10px;
+  background-color: var(--pink);
+  border-radius: 8px;
+  cursor: pointer;
+}

@@ -11,7 +11,7 @@ export interface IFilm {
   year: number;
   description: string | null;
   shortDescription: string | null;
-  rating: IRating;
+  rating: IRating | null;
   movieLength: number;
   ageRating: number | null;
   poster: {

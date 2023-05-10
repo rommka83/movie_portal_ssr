@@ -1,0 +1,34 @@
+.wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.blockTab {
+  display: flex;
+  align-items: flex-end;
+}
+.tab {
+  padding: 10px 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: 1px solid var(--white);
+  cursor: pointer;
+  background-color: var(--gray-light);
+  transition: all 0.3s ease-in-out;
+}
+.tabActive {
+  border-bottom: none;
+  background-color: transparent;
+}
+.topBorder {
+  width: 100%;
+  border-bottom: 1px solid var(--white);
+}
+.body {
+  height: 100%;
+  padding: 20px;
+  border-right: 1px solid var(--white);
+  border-bottom: 1px solid var(--white);
+  border-left: 1px solid var(--white);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}

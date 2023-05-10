@@ -19,6 +19,7 @@
 * {
   color: var(--white);
   font-family: 'iviSans', Arial, Helvetica, Helvetica Neue, FreeSans, sans-serif;
+  user-select: none;
 }
 
 html,

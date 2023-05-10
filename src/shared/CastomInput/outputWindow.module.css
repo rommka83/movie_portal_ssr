@@ -1,0 +1,17 @@
+.label {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.labelText {
+  margin-bottom: 5px;
+  padding-left: 10px;
+  opacity: 0.5;
+}
+.content {
+  padding: 5px 20px;
+  background-color: var(--main-background-color);
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  height: fit-content;
+  line-height: 1.5;
+}
