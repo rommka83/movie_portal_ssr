@@ -1,0 +1,1 @@
+export { ButtonsWithPadarkas } from './ButtonsWithPadarkas';

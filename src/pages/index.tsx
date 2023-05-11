@@ -4,6 +4,8 @@ import { CategoryFilms } from 'widgets/CategoryFilms';
 import { PromoSlider } from 'widgets/PromoSlider';
 import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
+import { MoviesCarousel } from 'widgets/MoviesCarousel';
+import { ButtonsWithPadarkas } from 'features/ButtonsWithPadarkas';
 
 export const getStaticProps = async () => {
   try {
@@ -35,18 +37,23 @@ interface Iprops {
   movies: IFilm[];
 }
 export default function Home({ movies }: Iprops) {
-  let { adventures, fantasy } = useMemo(() => {
+  let { adventures, fantasy, biography } = useMemo(() => {
     const adventures = movies.filter((el) => el.genres.find((e) => e.name === 'приключения'));
     const fantasy = movies.filter((el) => el.genres.find((e) => e.name === 'фэнтези'));
-    return { adventures, fantasy };
-  }, [movies]);
+    const biography = movies.filter((el) => el.genres.find((e) => e.name === 'биография'));
 
+    return { adventures, fantasy, biography };
+  }, [movies]);
   return (
     <>
       {/* <PromoSlider movies={testKinopoisk} /> */}
       <div className='container'>
-        <CategoryFilms title={'Приключения'} movies={adventures} />
-        <CategoryFilms title={'Фэнтези'} movies={fantasy} />
+        <div className={styles.wrapper}>
+          <ButtonsWithPadarkas />
+          <MoviesCarousel title={'Фэнтези'} movies={fantasy} />
+          <MoviesCarousel title={'Приключения'} movies={adventures} />
+          <MoviesCarousel title={'Биография'} movies={biography} />
+        </div>
       </div>
     </>
   );

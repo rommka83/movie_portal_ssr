@@ -11,6 +11,7 @@ import { AllDevaicePoster } from 'entities/AllDevaicePoster';
 import classNames from 'classnames';
 import { IFilm } from 'shared/types/IFilm';
 import { useTranslation } from 'react-i18next';
+import { MoviesCarousel } from 'widgets/MoviesCarousel';
 
 interface IProps {
   film: IFilm;

@@ -4,6 +4,7 @@ import { Carousel } from 'shared/ui/Carousel';
 import { IFilm } from 'shared/types/IFilm';
 import Link from 'next/link';
 import { MovieBadge } from 'entities/MovieBadge';
+import classNames from 'classnames';
 
 interface IMoviesCarousel {
   title: string;
@@ -13,7 +14,7 @@ export const MoviesCarousel = React.memo(({ title, movies }: IMoviesCarousel) =>
   return (
     <Carousel
       carouselContainerClassName={styles.carousel}
-      className={styles.movieBadgeCarouselContent}
+      className={classNames(styles.movieBadgeCarouselContent)}
       title={title}
       withArrow
       withButton

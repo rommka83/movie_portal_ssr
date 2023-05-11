@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  gap: 20px;
+}
+.btn {
+  width: 100%;
+}
+.btnGrad {
+  background-image: url(https://solea-parent.dfs.ivi.ru/picture/bypass/teaserTilePattern_a.svg);
+}
+.text {
+  margin-left: 10px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
