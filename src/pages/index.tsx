@@ -6,23 +6,29 @@ import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
 
 export const getStaticProps = async () => {
-  const response = await axios.get('https://api.kinopoisk.dev/v1.3/movie?&page=1&limit=40', {
-    headers: {
-      Accept: 'application/json',
-      // 'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
-      'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
-    },
-  });
+  try {
+    const response = await axios.get('https://api.kinopoisk.dev/v1.3/movie?&page=1&limit=40', {
+      headers: {
+        Accept: 'application/json',
+        // 'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
+        'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
+      },
+    });
 
-  if (!response) {
+    if (!response) {
+      return {
+        notFound: true,
+      };
+    }
+
     return {
-      notFound: true,
+      props: { movies: response.data.docs },
+    };
+  } catch {
+    return {
+      props: { movies: null },
     };
   }
-
-  return {
-    props: { movies: response.data.docs },
-  };
 };
 
 interface Iprops {
@@ -38,7 +44,7 @@ export default function Home({ movies }: Iprops) {
   return (
     <>
       {/* <PromoSlider movies={testKinopoisk} /> */}
-      <div className="container">
+      <div className='container'>
         <CategoryFilms title={'Приключения'} movies={adventures} />
         <CategoryFilms title={'Фэнтези'} movies={fantasy} />
       </div>
