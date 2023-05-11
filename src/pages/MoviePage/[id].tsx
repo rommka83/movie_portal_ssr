@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useMemo } from 'react';
 import styles from './moviepage.module.css';
-import { Desktop } from './desktop/Desktop';
+import Desktop from '../../widgets/MoviePageWigets/desktop/Desktop';
 import { UseMedia } from 'shared/hooks/useMedia';
-import { Tablet } from './tablet/Tablet';
+import Tablet from '../../widgets/MoviePageWigets/tablet/Tablet';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { getComments } from 'app/store/commentsRequest';
 import axios from 'axios';

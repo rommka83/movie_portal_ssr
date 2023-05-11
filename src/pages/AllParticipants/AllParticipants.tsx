@@ -159,8 +159,18 @@ const AllParticipants: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ classNam
         <div className={styles.poster} onClick={() => router.back()}>
           <PosterCards src={film.poster.url} name={film.name} />
           <div className={styles.rating}>
-            <ReitingMovie grade={film.rating.kp} className={styles.ratingValue} />
-            <BlockChart width={50} obj={film.rating} />
+            <ReitingMovie grade={film.rating ? film.rating.kp : 0} className={styles.ratingValue} />
+            <BlockChart
+              width={50}
+              obj={
+                film.rating ?? {
+                  await: 0,
+                  filmCritics: 0,
+                  imdb: 0,
+                  russianFilmCritics: 0,
+                }
+              }
+            />
           </div>
           <ShortDescription obj={film} className={styles.shortDescription} allGenres />
         </div>

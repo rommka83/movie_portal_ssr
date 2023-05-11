@@ -1,1 +1,2 @@
-export { General as default } from './General';
+import General from './General';
+export default General;

@@ -5,7 +5,7 @@ import GeneralDataOnCommentsForTheFilm from 'entities/GeneralDataOnCommentsForTh
 import { useAppSelector } from 'app/store/hooks';
 import classNames from 'classnames';
 
-export function MovieReviews() {
+export default function MovieReviews() {
   const comments = useAppSelector((state) => state.filmComents.comments);
 
   return (

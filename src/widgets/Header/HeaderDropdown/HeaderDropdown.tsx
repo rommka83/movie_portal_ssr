@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { PropsWithChildren, useState, useCallback, useEffect } from 'react';
 import styles from './headerdropdown.module.css';
 import classNames from 'classnames';

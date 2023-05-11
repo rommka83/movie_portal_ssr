@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { FC, HTMLAttributes, useMemo } from 'react';
 import styles from './generaldataoncommentsforthefilm.module.css';
 import classNames from 'classnames';
@@ -10,44 +11,40 @@ interface IGeneralDataOnCommentsForTheFilm {
   comments: IReviev;
 }
 
-export const GeneralDataOnCommentsForTheFilm: FC<IGeneralDataOnCommentsForTheFilm> = ({
-  className,
-  comments,
-}) => {
+export const GeneralDataOnCommentsForTheFilm: FC<IGeneralDataOnCommentsForTheFilm> = ({ className, comments }) => {
   const { t } = useTranslation();
 
-  const { positive, neutral, negative, positiveProcent, negativeProcent, neutralProcent } =
-    useMemo(() => {
-      let positive = 0;
-      let negative = 0;
-      let neutral = 0;
+  const { positive, neutral, negative, positiveProcent, negativeProcent, neutralProcent } = useMemo(() => {
+    let positive = 0;
+    let negative = 0;
+    let neutral = 0;
 
-      comments.docs.map((el) => {
-        switch (el.type) {
-          case 'Позитивный':
-            return positive++;
-          case 'Нейтральный':
-            return neutral++;
-          case 'Негативный':
-            return negative++;
-          default:
-            return el;
-        }
-      });
+    comments.docs.map((el) => {
+      switch (el.type) {
+        case 'Позитивный':
+          return positive++;
+        case 'Нейтральный':
+          return neutral++;
+        case 'Негативный':
+          return negative++;
+        default:
+          return el;
+      }
+    });
 
-      let positiveProcent = ((positive * 100) / comments.docs.length).toFixed(2) + ' %';
-      let negativeProcent = ((negative * 100) / comments.docs.length).toFixed(2) + ' %';
-      let neutralProcent = ((neutral * 100) / comments.docs.length).toFixed(2) + ' %';
+    let positiveProcent = ((positive * 100) / comments.docs.length).toFixed(2) + ' %';
+    let negativeProcent = ((negative * 100) / comments.docs.length).toFixed(2) + ' %';
+    let neutralProcent = ((neutral * 100) / comments.docs.length).toFixed(2) + ' %';
 
-      return {
-        positive,
-        neutral,
-        negative,
-        positiveProcent,
-        negativeProcent,
-        neutralProcent,
-      };
-    }, [comments.docs, comments.total]);
+    return {
+      positive,
+      neutral,
+      negative,
+      positiveProcent,
+      negativeProcent,
+      neutralProcent,
+    };
+  }, [comments.docs, comments.total]);
 
   return comments.total === 0 ? null : (
     <ul className={classNames(className, styles.list)}>

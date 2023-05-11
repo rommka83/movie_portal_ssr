@@ -36,7 +36,7 @@ export const emptyFilm: IFilm = {
   alternativeName: null,
 };
 
-export function MovieChange() {
+export default function MovieChange() {
   const dispatch = useAppDispatch();
   const { films, filmSearchPending } = useAppSelector((store) => store.movieTitleSearch);
   const [oneFilm, setOneFilm] = useState(emptyFilm);

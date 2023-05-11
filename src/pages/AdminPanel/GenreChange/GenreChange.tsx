@@ -30,7 +30,7 @@ const genres = [
   { name: 'фэнтези', enName: 'fantasy' },
 ];
 
-export function GenreChange() {
+export default function GenreChange() {
   // понадобиться при получении жанров с бэка
   // const dispatch = useAppDispatch();
   // useEffect(() => {

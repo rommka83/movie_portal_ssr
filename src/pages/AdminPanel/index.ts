@@ -1,1 +1,2 @@
-export { AdminPanel as default } from './AdminPanel';
+import AdminPanel from './AdminPanel';
+export default AdminPanel;

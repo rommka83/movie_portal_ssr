@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { InputSearch } from 'shared/ui/InputSearch';
 import styles from './filterdropdownsearch.module.css';

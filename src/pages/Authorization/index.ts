@@ -1,1 +1,2 @@
-export { Authorization as default } from './Authorization';
+import Authorization from './Authorization';
+export default Authorization;

@@ -8,6 +8,7 @@ const meta = {
 
   args: {
     placeholderText: 'Что ищем',
+    searchValue: 'string',
   },
 
   parameters: {
