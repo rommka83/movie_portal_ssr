@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from './adminpanel.module.css';
 import classNames from 'classnames';
-import { MovieChange } from './MovieChange/MovieChange';
-import { GenreChange } from './GenreChange/GenreChange';
+import MovieChange from './MovieChange/MovieChange';
+import GenreChange from './GenreChange/GenreChange';
 
-export function AdminPanel() {
+function AdminPanel() {
   const [activ, setActiv] = useState<'Movie' | 'Genre'>('Movie');
 
   return (
@@ -33,3 +33,4 @@ export function AdminPanel() {
     </div>
   );
 }
+export default AdminPanel;

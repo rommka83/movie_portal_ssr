@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './authorization.module.css';
 
-export function Authorization() {
+export default function Authorization() {
   return <div>Authorization</div>;
 }

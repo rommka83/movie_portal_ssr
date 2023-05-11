@@ -13,32 +13,28 @@ export const FilmographyItem: React.FC<PropsType> = ({ movie }) => {
   const brakePoint = UseMedia('(max-width:380px)');
 
   return (
-    <Link href={`/MoviePage/${movie.id}`} className={styles.filmographyItem}>
-      <div className={styles.filmographyPhoto}>
-        <div className={styles.filmographyImg}></div>
-      </div>
-      <div className={styles.filmographyBody}>
-        <div className={styles.filmographyInfo}>
-          <div className={styles.filmographyTitle}>
-            {movie.name && brakePoint && movie.name.length > 16
-              ? movie.name.slice(0, 16) + '...'
-              : movie.name}
-          </div>
-          {movie.rating && (
-            <div className={styles.filmographyRating}>
-              Рейтинг Иви:
-              <span className={styles.filmographyRatingSpan}>{movie.rating}</span>
-            </div>
-          )}
+    <>
+      <Link href={`/MoviePage/${movie.id}`} className={styles.filmographyItem}>
+        <div className={styles.filmographyPhoto}>
+          <div className={styles.filmographyImg}></div>
         </div>
-        <ButtonOrLink
-          to={`/MoviePage/${movie.id}/${movie.name}`}
-          className={styles.btn}
-          variant={'secondary'}
-        >
-          Смотреть
-        </ButtonOrLink>
-      </div>
-    </Link>
+        <div className={styles.filmographyBody}>
+          <div className={styles.filmographyInfo}>
+            <div className={styles.filmographyTitle}>
+              {movie.name && brakePoint && movie.name.length > 16 ? movie.name.slice(0, 16) + '...' : movie.name}
+            </div>
+            {movie.rating && (
+              <div className={styles.filmographyRating}>
+                Рейтинг Иви:
+                <span className={styles.filmographyRatingSpan}>{movie.rating}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </Link>
+      <ButtonOrLink to={`/MoviePage/${movie.id}/${movie.name}`} className={styles.btn} variant={'secondary'}>
+        Смотреть
+      </ButtonOrLink>
+    </>
   );
 };

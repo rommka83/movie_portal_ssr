@@ -1,4 +1,4 @@
-export const declension = (int: number, word: string) => {
+const declension = (int: number, word: string) => {
   const str = String(int);
   const arr = [];
   for (let i = 0; i < str.length; i++) {
@@ -18,3 +18,5 @@ export const declension = (int: number, word: string) => {
     return `${int} ${word}а`;
   }
 };
+
+export default declension;

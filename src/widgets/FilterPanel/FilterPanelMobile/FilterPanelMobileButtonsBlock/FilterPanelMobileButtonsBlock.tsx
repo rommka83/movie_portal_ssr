@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback } from 'react';
 import styles from './filterpanelmobilebuttonsblock.module.css';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
@@ -22,20 +23,14 @@ export const FilterPanelMobileButtonsBlock = ({ onCloseModal }: IFilterPanelMobi
     <div className={styles.buttonsBlock}>
       <ButtonOrLink
         className={styles.filterButton}
-        variant="primary"
+        variant='primary'
         large
         disabled={!filtersCount}
         onClick={onApplyClick}
       >
         {t('FilterPanel.ShowResults')}
       </ButtonOrLink>
-      <ButtonOrLink
-        className={styles.filterButton}
-        variant="primary"
-        transparent
-        large
-        onClick={onClickReset}
-      >
+      <ButtonOrLink className={styles.filterButton} variant='primary' transparent large onClick={onClickReset}>
         {t('FilterPanel.ResetFilters')}
         {!!filtersCount && <div className={styles.filtersCounter}>{filtersCount}</div>}
       </ButtonOrLink>

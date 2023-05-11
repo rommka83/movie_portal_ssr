@@ -20,25 +20,21 @@ interface IProps {
   film: IFilm;
 }
 
-export function Tablet({ film }: IProps) {
+export default function Tablet({ film }: IProps) {
   const { t } = useTranslation();
 
   return film === undefined ? null : (
-    <div className="container">
+    <div className='container'>
       <Back f={() => {}}>{t('Back')}</Back>
       <VideoDescription short film={film} className={styles.description} />
       <VideoPlayer
-        trailer={
-          film.videos !== undefined && film.videos.trailers.length > 0
-            ? film.videos.trailers[0].url
-            : '#'
-        }
+        trailer={film.videos !== undefined && film.videos.trailers.length > 0 ? film.videos.trailers[0].url : '#'}
         age={film.ageRating ? film.ageRating : 0}
         className={styles.player}
       />
-      <ActorsList actors={film.persons} reiting={film.rating.kp} />
+      <ActorsList actors={film.persons} reiting={film.rating ? film.rating.kp : 0} />
       <ContentText className={styles.contentText}>{film.description}</ContentText>
-      <Grading grading={film.rating.kp} className={styles.grading} />
+      <Grading grading={film.rating ? film.rating.kp : 0} className={styles.grading} />
 
       {film.similarMovies && film.similarMovies.length > 0 && (
         <CategoryFilms
@@ -50,12 +46,7 @@ export function Tablet({ film }: IProps) {
       <ActorsCreators persons={film.persons} className={styles.actorsCreators} />
       <AdditionalMaterials className={styles.additionalMaterials} video={film.videos} />
       <BlockComments className={styles.comments} />
-      <AllDevaicePoster
-        name={film.name}
-        enName={film.enName}
-        poster={film.poster.url}
-        className={styles.allDvices}
-      />
+      <AllDevaicePoster name={film.name} enName={film.enName} poster={film.poster.url} className={styles.allDvices} />
     </div>
   );
 }

@@ -16,7 +16,7 @@ interface IProps {
   film: IFilm;
 }
 
-export const Desktop = ({ film }: IProps) => {
+const Desktop = ({ film }: IProps) => {
   const { t, i18n } = useTranslation();
   const lng = i18n.language;
 
@@ -26,20 +26,16 @@ export const Desktop = ({ film }: IProps) => {
       <div className={styles.playerAndDescription}>
         <VideoPlayer
           className={styles.player}
-          trailer={
-            film.videos !== undefined && film.videos.trailers.length > 0
-              ? film.videos.trailers[0].url
-              : '#'
-          }
+          trailer={film.videos !== undefined && film.videos.trailers.length > 0 ? film.videos.trailers[0].url : '#'}
           age={film.ageRating ? film.ageRating : 0}
         />
         <VideoDescription film={film} className={styles.description} />
       </div>
       {film.similarMovies && film.similarMovies.length > 0 && (
         <CategoryFilms
-          title={`${t('sectionTitle.WithFilm')} «${
-            lng === 'ru' ? film.name : film.enName ?? film.name
-          }» ${t('sectionTitle.watching')}:`}
+          title={`${t('sectionTitle.WithFilm')} «${lng === 'ru' ? film.name : film.enName ?? film.name}» ${t(
+            'sectionTitle.watching',
+          )}:`}
           simulyrMovie={film.similarMovies}
           className={styles.simulyar}
         />
@@ -47,13 +43,10 @@ export const Desktop = ({ film }: IProps) => {
       <ActorsCreators persons={film.persons} className={styles.actorsCreators} />
       <AdditionalMaterials className={styles.additionalMaterials} video={film.videos} />
       <BlockComments className={styles.comments} />
-      <AllDevaicePoster
-        name={film.name}
-        enName={film.enName}
-        poster={film.poster.url}
-        className={styles.allDvices}
-      />
+      <AllDevaicePoster name={film.name} enName={film.enName} poster={film.poster.url} className={styles.allDvices} />
       <GenreBookmarks home ganre={film.genres} page={film.name} className={styles.crumbs} />
     </div>
   );
 };
+
+export default Desktop;
