@@ -96,12 +96,12 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
               y2='1.973'
               gradientUnits='userSpaceOnUse'
             >
-              <stop offset='.042' stop-color='#FFA800' />
-              <stop offset='.196' stop-color='#ED6700' />
-              <stop offset='.369' stop-color='#D2610A' />
-              <stop offset='.544' stop-color='#ED6700' />
-              <stop offset='.829' stop-color='#FF9800' />
-              <stop offset='1' stop-color='#FFC700' />
+              <stop offset='.042' stopColor='#FFA800' />
+              <stop offset='.196' stopColor='#ED6700' />
+              <stop offset='.369' stopColor='#D2610A' />
+              <stop offset='.544' stopColor='#ED6700' />
+              <stop offset='.829' stopColor='#FF9800' />
+              <stop offset='1' stopColor='#FFC700' />
             </linearGradient>
             <linearGradient
               id='paint1_linear_5732_9771'
@@ -111,8 +111,8 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
               y2='27.775'
               gradientUnits='userSpaceOnUse'
             >
-              <stop stop-color='#FFDE2E' />
-              <stop offset='.711' stop-color='#FFE853' />
+              <stop stopColor='#FFDE2E' />
+              <stop offset='.711' stopColor='#FFE853' />
             </linearGradient>
             <linearGradient
               id='paint2_linear_5732_9771'
@@ -122,9 +122,9 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
               y2='21.09'
               gradientUnits='userSpaceOnUse'
             >
-              <stop offset='.114' stop-color='#F1A104' />
-              <stop offset='.402' stop-color='#F87B08' />
-              <stop offset='.754' stop-color='#FFBD00' />
+              <stop offset='.114' stopColor='#F1A104' />
+              <stop offset='.402' stopColor='#F87B08' />
+              <stop offset='.754' stopColor='#FFBD00' />
             </linearGradient>
           </defs>
         </svg>
@@ -135,83 +135,83 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         <svg xmlns='http://www.w3.org/2000/svg' width='56' height='32' viewBox='0 0 56 32'>
           <defs>
             <linearGradient id='b' x1='50%' x2='50.198%' y1='8.485%' y2='85.275%'>
-              <stop offset='0%' stop-color='#EC174F' />
-              <stop offset='36.771%' stop-color='#850D2D' />
-              <stop offset='75.994%' stop-color='#850D2D' />
-              <stop offset='100%' stop-color='#EC174F' />
+              <stop offset='0%' stopColor='#EC174F' />
+              <stop offset='36.771%' stopColor='#850D2D' />
+              <stop offset='75.994%' stopColor='#850D2D' />
+              <stop offset='100%' stopColor='#EC174F' />
             </linearGradient>
             <linearGradient id='d' x1='68.363%' x2='32.999%' y1='5.079%' y2='95.467%'>
-              <stop offset='0%' stop-color='#EC174F' />
-              <stop offset='2.869%' stop-color='#C1103F' />
-              <stop offset='16.599%' stop-color='#EC174F' />
-              <stop offset='70.4%' stop-color='#EC174F' />
-              <stop offset='97.766%' stop-color='#C1103F' />
-              <stop offset='100%' stop-color='#EC174F' />
+              <stop offset='0%' stopColor='#EC174F' />
+              <stop offset='2.869%' stopColor='#C1103F' />
+              <stop offset='16.599%' stopColor='#EC174F' />
+              <stop offset='70.4%' stopColor='#EC174F' />
+              <stop offset='97.766%' stopColor='#C1103F' />
+              <stop offset='100%' stopColor='#EC174F' />
             </linearGradient>
             <linearGradient id='j' x1='91.754%' x2='102.417%' y1='50%' y2='50%'>
-              <stop offset='0%' stop-color='#EC174F' stop-opacity='0' />
-              <stop offset='100%' stop-color='#850D2D' />
+              <stop offset='0%' stopColor='#EC174F' stopOpacity='0' />
+              <stop offset='100%' stopColor='#850D2D' />
             </linearGradient>
             <linearGradient id='k' x1='64.536%' x2='100%' y1='50%' y2='50%'>
-              <stop offset='0%' stop-color='#EC174F' stop-opacity='0' />
-              <stop offset='83.938%' stop-color='#FF829B' stop-opacity='.7' />
-              <stop offset='100%' stop-color='#EC174F' stop-opacity='0' />
+              <stop offset='0%' stopColor='#EC174F' stopOpacity='0' />
+              <stop offset='83.938%' stopColor='#FF829B' stopOpacity='.7' />
+              <stop offset='100%' stopColor='#EC174F' stopOpacity='0' />
             </linearGradient>
             <linearGradient id='m' x1='57.723%' x2='35.705%' y1='50%' y2='56.954%'>
-              <stop offset='0%' stop-color='#EC174F' stop-opacity='0' />
-              <stop offset='100%' stop-color='#850D2D' />
+              <stop offset='0%' stopColor='#EC174F' stopOpacity='0' />
+              <stop offset='100%' stopColor='#850D2D' />
             </linearGradient>
             <linearGradient id='o' x1='24.955%' x2='56.996%' y1='0%' y2='35.995%'>
-              <stop offset='0%' stop-color='#850D2D' />
-              <stop offset='100%' stop-color='#EC174F' />
+              <stop offset='0%' stopColor='#850D2D' />
+              <stop offset='100%' stopColor='#EC174F' />
             </linearGradient>
             <linearGradient id='p' x1='64.847%' x2='76.89%' y1='74.724%' y2='86.037%'>
-              <stop offset='0%' stop-color='#EC174F' stop-opacity='0' />
-              <stop offset='16.438%' stop-color='#850D2D' />
-              <stop offset='100%' stop-color='#EC174F' />
+              <stop offset='0%' stopColor='#EC174F' stopOpacity='0' />
+              <stop offset='16.438%' stopColor='#850D2D' />
+              <stop offset='100%' stopColor='#EC174F' />
             </linearGradient>
             <linearGradient id='r' x1='147.837%' x2='35.571%' y1='32.503%' y2='42.858%'>
-              <stop offset='0%' stop-color='#850D2D' />
-              <stop offset='100%' stop-color='#EC174F' />
+              <stop offset='0%' stopColor='#850D2D' />
+              <stop offset='100%' stopColor='#EC174F' />
             </linearGradient>
             <linearGradient id='s' x1='22.987%' x2='12.473%' y1='34.396%' y2='80.77%'>
-              <stop offset='0%' stop-color='#EC174F' stop-opacity='0' />
-              <stop offset='60.03%' stop-color='#FF829B' />
-              <stop offset='100%' stop-color='#EC174F' stop-opacity='0' />
+              <stop offset='0%' stopColor='#EC174F' stopOpacity='0' />
+              <stop offset='60.03%' stopColor='#FF829B' />
+              <stop offset='100%' stopColor='#EC174F' stopOpacity='0' />
             </linearGradient>
             <linearGradient id='v' x1='77.511%' x2='37.236%' y1='71.999%' y2='47.307%'>
-              <stop offset='0%' stop-color='#850D2D' />
-              <stop offset='100%' stop-color='#EC174F' />
+              <stop offset='0%' stopColor='#850D2D' />
+              <stop offset='100%' stopColor='#EC174F' />
             </linearGradient>
             <linearGradient id='x' x1='53.325%' x2='46.729%' y1='41.409%' y2='64.505%'>
-              <stop offset='0%' stop-color='#EC174F' />
-              <stop offset='55.223%' stop-color='#FF829B' />
-              <stop offset='100%' stop-color='#EC174F' />
+              <stop offset='0%' stopColor='#EC174F' />
+              <stop offset='55.223%' stopColor='#FF829B' />
+              <stop offset='100%' stopColor='#EC174F' />
             </linearGradient>
             <linearGradient id='z' x1='42.26%' x2='36.125%' y1='27.98%' y2='19.09%'>
-              <stop offset='0%' stop-color='#EC174F' stop-opacity='0' />
-              <stop offset='100%' stop-color='#850D2D' />
+              <stop offset='0%' stopColor='#EC174F' stopOpacity='0' />
+              <stop offset='100%' stopColor='#850D2D' />
             </linearGradient>
             <linearGradient id='A' x1='60.229%' x2='36.344%' y1='50%' y2='17.645%'>
-              <stop offset='0%' stop-color='#EC174F' stop-opacity='0' />
-              <stop offset='82.402%' stop-color='#FF829B' stop-opacity='.7' />
-              <stop offset='100%' stop-color='#EC174F' stop-opacity='0' />
+              <stop offset='0%' stopColor='#EC174F' stopOpacity='0' />
+              <stop offset='82.402%' stopColor='#FF829B' stopOpacity='.7' />
+              <stop offset='100%' stopColor='#EC174F' stopOpacity='0' />
             </linearGradient>
             <linearGradient id='E' x1='43.432%' x2='58.302%' y1='9.188%' y2='108.034%'>
-              <stop offset='0%' stop-color='#EC174F' stop-opacity='0' />
-              <stop offset='36.554%' stop-color='#C1103F' />
-              <stop offset='58.977%' stop-color='#C1103F' />
-              <stop offset='100%' stop-color='#EC174F' stop-opacity='0' />
+              <stop offset='0%' stopColor='#EC174F' stopOpacity='0' />
+              <stop offset='36.554%' stopColor='#C1103F' />
+              <stop offset='58.977%' stopColor='#C1103F' />
+              <stop offset='100%' stopColor='#EC174F' stopOpacity='0' />
             </linearGradient>
             <linearGradient id='F' x1='42.739%' x2='54.443%' y1='42.254%' y2='78.935%'>
-              <stop offset='0%' stop-color='#FF829B' stop-opacity='0' />
-              <stop offset='69.513%' stop-color='#FF829B' />
-              <stop offset='100%' stop-color='#FF829B' stop-opacity='0' />
-              <stop offset='100%' stop-color='#FF829B' stop-opacity='0' />
+              <stop offset='0%' stopColor='#FF829B' stopOpacity='0' />
+              <stop offset='69.513%' stopColor='#FF829B' />
+              <stop offset='100%' stopColor='#FF829B' stopOpacity='0' />
+              <stop offset='100%' stopColor='#FF829B' stopOpacity='0' />
             </linearGradient>
             <linearGradient id='H' x1='65.301%' x2='33.835%' y1='38.045%' y2='86.738%'>
-              <stop offset='0%' stop-color='#EC174F' stop-opacity='0' />
-              <stop offset='100%' stop-color='#850D2D' />
+              <stop offset='0%' stopColor='#EC174F' stopOpacity='0' />
+              <stop offset='100%' stopColor='#850D2D' />
             </linearGradient>
             <path id='a' d='M37.598 4.078H42.064V27.483H37.598z' />
             <path
@@ -267,8 +267,8 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
               fy='46.04%'
               gradientTransform='matrix(.88608 .32415 -3.73535 4.99308 1.782 -2.016)'
             >
-              <stop offset='0%' stop-color='#850D2D' />
-              <stop offset='100%' stop-color='#EC174F' stop-opacity='0' />
+              <stop offset='0%' stopColor='#850D2D' />
+              <stop offset='100%' stopColor='#EC174F' stopOpacity='0' />
             </radialGradient>
             <radialGradient
               id='h'
@@ -279,9 +279,9 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
               fy='47.435%'
               gradientTransform='matrix(.8854 .32505 -2.15489 2.87028 1.083 -1.06)'
             >
-              <stop offset='0%' stop-color='#400615' />
-              <stop offset='100%' stop-color='#850D2D' stop-opacity='0' />
-              <stop offset='100%' stop-color='#850D2D' stop-opacity='0' />
+              <stop offset='0%' stopColor='#400615' />
+              <stop offset='100%' stopColor='#850D2D' stopOpacity='0' />
+              <stop offset='100%' stopColor='#850D2D' stopOpacity='0' />
             </radialGradient>
             <radialGradient
               id='l'
@@ -292,8 +292,8 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
               fy='42.238%'
               gradientTransform='matrix(-.17924 .97206 -2.55303 -.80737 1.415 .486)'
             >
-              <stop offset='0%' stop-color='#850D2D' />
-              <stop offset='100%' stop-color='#EC174F' stop-opacity='0' />
+              <stop offset='0%' stopColor='#850D2D' />
+              <stop offset='100%' stopColor='#EC174F' stopOpacity='0' />
             </radialGradient>
             <radialGradient
               id='t'
@@ -304,8 +304,8 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
               fy='16.624%'
               gradientTransform='matrix(0 1 -5.87626 0 1.847 -.704)'
             >
-              <stop offset='0%' stop-color='#850D2D' />
-              <stop offset='100%' stop-color='#850D2D' stop-opacity='0' />
+              <stop offset='0%' stopColor='#850D2D' />
+              <stop offset='100%' stopColor='#850D2D' stopOpacity='0' />
             </radialGradient>
             <radialGradient
               id='B'
@@ -316,8 +316,8 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
               fy='87.586%'
               gradientTransform='matrix(-.78808 .51637 -2.11726 -2.27382 3.357 2.434)'
             >
-              <stop offset='0%' stop-color='#850D2D' />
-              <stop offset='100%' stop-color='#EC174F' stop-opacity='0' />
+              <stop offset='0%' stopColor='#850D2D' />
+              <stop offset='100%' stopColor='#EC174F' stopOpacity='0' />
             </radialGradient>
             <radialGradient
               id='D'
@@ -328,8 +328,8 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
               fy='6.177%'
               gradientTransform='matrix(-.9106 .1498 -2.51856 -2.01126 .383 .168)'
             >
-              <stop offset='0%' stop-color='#850D2D' />
-              <stop offset='100%' stop-color='#EC174F' stop-opacity='0' />
+              <stop offset='0%' stopColor='#850D2D' />
+              <stop offset='100%' stopColor='#EC174F' stopOpacity='0' />
             </radialGradient>
             <radialGradient
               id='I'
@@ -340,11 +340,11 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
               fy='25.932%'
               gradientTransform='matrix(.78814 .54097 -1.41873 1.5967 .542 -.6)'
             >
-              <stop offset='0%' stop-color='#FF829B' />
-              <stop offset='100%' stop-color='#FF829B' stop-opacity='0' />
+              <stop offset='0%' stopColor='#FF829B' />
+              <stop offset='100%' stopColor='#FF829B' stopOpacity='0' />
             </radialGradient>
           </defs>
-          <g fill='none' fill-rule='evenodd'>
+          <g fill='none' fillRule='evenodd'>
             <path
               fill='#110D2B'
               d='M26.428 11.267c.193.078.385.163.574.255L33.197.792c.25-.434.805-.583 1.238-.332l18.43 10.64c.434.25.583.805.332 1.238l-10.64 18.43c-.25.434-.805.582-1.238.332l-18.43-10.64c-.434-.25-.583-.805-.332-1.238l3.263-5.653c-.483-.588-1.014-1.143-1.519-1.62-.408.291-.836.672-1.285 1.143-2.071 2.175-3.676 4.473-6.395 5.269-1.498.439-3.593.696-6.284.772l-.208.024c-.388.029-.756.028-1.106-.002l-.453.002.22-.026c-1.1-.14-1.998-.59-2.693-1.346-1.437-1.567-2.09-1.987-2.977-3.016-.591-.687-1.631-1.381-3.12-2.085l2.233-2.504c1.515.78 2.757 1.654 3.728 2.62 1.456 1.45 2.583 2.467 3.948 4.02.546.62 1.202 1.102 1.97 1.444.62-.304 1.16-.677 1.623-1.12 1.728-1.657 2.932-2.893 4.336-4.589 1.98-2.391 4.896-2.81 8.745-1.256-.052-.013-.103-.024-.155-.032z'
@@ -404,7 +404,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
             <use fill='#EC174F' xlinkHref='#C' />
             <use fill='url(#D)' xlinkHref='#C' />
             <use fill='url(#E)' xlinkHref='#C' />
-            <use fill='url(#F)' fill-opacity='.62' xlinkHref='#C' />
+            <use fill='url(#F)' fillOpacity='.62' xlinkHref='#C' />
             <use fill='#EC174F' xlinkHref='#G' />
             <use fill='url(#H)' xlinkHref='#G' />
             <use fill='url(#I)' xlinkHref='#G' />

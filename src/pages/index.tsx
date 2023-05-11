@@ -6,6 +6,7 @@ import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
 import { MoviesCarousel } from 'widgets/MoviesCarousel';
 import { ButtonsWithPadarkas } from 'features/ButtonsWithPadarkas';
+import { AboutUs } from 'widgets/AboutUs';
 
 export const getStaticProps = async () => {
   try {
@@ -50,6 +51,7 @@ export default function Home({ movies }: Iprops) {
       <div className='container'>
         <div className={styles.wrapper}>
           <ButtonsWithPadarkas />
+          <AboutUs />
           <MoviesCarousel title={'Фэнтези'} movies={fantasy} />
           <MoviesCarousel title={'Приключения'} movies={adventures} />
           <MoviesCarousel title={'Биография'} movies={biography} />

@@ -9,7 +9,7 @@ interface IProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 export function ButtonsWithPadarkas({ className }: IProps) {
   return (
-    <div className={classNames(styles.root, className)}>
+    <section className={classNames(styles.root, className)}>
       <ButtonOrLink className={classNames(styles.btnGrad, styles.btn)} variant='secondary'>
         <SvgIcon type={'winamp'} />
         <span className={styles.text}>30 дней подписки за 1 ₽</span>
@@ -18,6 +18,6 @@ export function ButtonsWithPadarkas({ className }: IProps) {
         <SvgIcon type={'padarka'} />
         <span className={styles.text}>Активировать сертификат</span>
       </ButtonOrLink>
-    </div>
+    </section>
   );
 }
