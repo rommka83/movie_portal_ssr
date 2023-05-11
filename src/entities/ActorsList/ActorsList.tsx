@@ -22,7 +22,7 @@ export function ActorsList({ actors, reiting }: Iprops) {
         return (
           <li className={styles.item} key={nanoid()}>
             <Link href={`/ActorPage/${el.id}`} className={styles.link}>
-              {el.photo !== '' ? (
+              {el.photo && el.photo !== '' ? (
                 <Image
                   src={el.photo}
                   alt={el.name ? el.name : 'фото артиста'}
