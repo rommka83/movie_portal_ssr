@@ -17,3 +17,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+@media (max-width: 650px) {
+  .root {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

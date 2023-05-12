@@ -193,5 +193,13 @@
   },
   "GenrePage": {
     "ShowMore": "Show more"
+  },
+  "AboutUs": {
+    "title": "Evie Online Cinema: Movies in good quality are always a real pleasure",
+    "text": "Every day, millions of people search for movies online, and no one wants to make things difficult for themselves - and you must be one of them! And if so, then Evie is exactly the resource that you need. You are literally one click away from the best films in HD quality. We do not just free you from the need to go to the cinema or study the TV program - visitors to our resource have much more opportunities. Ivy's video library is a constantly growing collection in RuNet, which has more than 60 thousand domestic and foreign content available for viewing online. We were the first in Russia to sign contracts with the largest Hollywood studios (Walt Disney, Warner Bros., Sony, 20th Century Fox, Universal, Paramount, MGM and others) and we constantly cooperate with the largest Russian companies and TV channels."
+  },
+  "ButtonsWithPadarkas": {
+    "subscription": "30 days subscription for 1 ₽",
+    "certificate": "Activate Certificate"
   }
 }
