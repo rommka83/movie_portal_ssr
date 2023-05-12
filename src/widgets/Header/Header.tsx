@@ -39,7 +39,7 @@ export function Header() {
       <div className={styles.headerWrapper}>
         <div className={classNames(styles.container, 'container')}>
           <div className={styles.content}>
-            <Link href="/" className={styles.logo}>
+            <Link href='/' className={styles.logo}>
               <Logo className={styles.logoImg} />
             </Link>
             <HeaderNav
@@ -52,17 +52,9 @@ export function Header() {
 
           <div className={styles.wideArea}>
             <div className={styles.wideAreaInner}>
-              <ButtonOrLink className={styles.wideAreaButton}>
-                {t('header.Watch30DaysForFree')}
-              </ButtonOrLink>
+              <ButtonOrLink className={styles.wideAreaButton}>{t('header.PayForASubscription')}</ButtonOrLink>
               <ChangeTheLanguage />
-              <ButtonOrLink
-                className={styles.avatarButton}
-                variant="secondary"
-                round
-                small
-                transparent
-              >
+              <ButtonOrLink className={styles.avatarButton} variant='secondary' round small transparent>
                 <span className={classNames('icon-avatar_20__0', styles.adminIcon)} />
               </ButtonOrLink>
             </div>

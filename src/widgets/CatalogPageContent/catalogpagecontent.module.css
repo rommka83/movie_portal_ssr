@@ -96,9 +96,7 @@
 }
 
 .personCardContainer {
-  display: inline-flex;
-  align-items: flex-start;
-  padding: 4px 0px 0px 14px;
+  padding-left: 14px;
 }
 
 .carousel.carousel {

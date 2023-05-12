@@ -64,11 +64,20 @@ export function Carousel({
         if (carouselContentEntry.borderBoxSize) {
           carouselContentWidth = carouselContentEntry.borderBoxSize[0].inlineSize;
           contentWidthRef.current = carouselContentWidth;
-          const carouselItemWidth =
-            carouselContentEntry.target.children[0].getBoundingClientRect().width;
+          const carouselItemWidth = carouselContentEntry.target.children[0].getBoundingClientRect().width;
           const visibleItemsCount = Math.floor(carouselContentWidth / carouselItemWidth);
           const scrollItemsCount = scrollMultipleItems ? visibleItemsCount - LAST_ITEM_COUNT : 1;
           offsetRef.current = carouselItemWidth * scrollItemsCount;
+          if (withButton) {
+            const scrollWidth = carouselContentEntry.target.scrollWidth;
+            const scrollLeft = carouselContentEntry.target.scrollLeft;
+
+            if (Math.ceil(carouselContentWidth) >= scrollWidth) {
+              setShowNextButton(false);
+            } else if (scrollLeft + CORRECT_COEFFICIENT < scrollWidth - carouselContentWidth) {
+              setShowNextButton(true);
+            }
+          }
         }
       }
     });
@@ -78,24 +87,19 @@ export function Carousel({
     return () => {
       carouselContent && resizeObserver.unobserve(carouselContent);
     };
-  }, [carouselContentRef, offsetRef, scrollMultipleItems]);
+  }, [carouselContentRef, offsetRef, scrollMultipleItems, withButton]);
 
   return (
     <div className={classNames(styles.carouselContainer, carouselContainerClassName)}>
       {title && (
         <h2 className={styles.title}>
           {title}
-          {withArrow && (
-            <span className={classNames('icon-arrowRight_6x16__0', styles.iconStyle)} />
-          )}
+          {withArrow && <span className={classNames('icon-arrowRight_6x16__0', styles.iconStyle)} />}
         </h2>
       )}
       <div className={styles.wrapper}>
         {withButton && showPrevButton && (
-          <button
-            className={classNames(styles.prevButton, 'icon-arrowLeft_8x20__0')}
-            onClick={onPrevCLick}
-          />
+          <button className={classNames(styles.prevButton, 'icon-arrowLeft_8x20__0')} onClick={onPrevCLick} />
         )}
         <div
           ref={carouselContentRef}
@@ -105,10 +109,7 @@ export function Carousel({
           {children}
         </div>
         {withButton && showNextButton && (
-          <button
-            className={classNames(styles.nextButton, 'icon-arrowRight_8x20__0')}
-            onClick={onNextCLick}
-          />
+          <button className={classNames(styles.nextButton, 'icon-arrowRight_8x20__0')} onClick={onNextCLick} />
         )}
       </div>
     </div>

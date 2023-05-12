@@ -21,7 +21,7 @@ export const FilterPanelCarousel = ({
     <Carousel
       className={classNames(styles.carousel, {
         [styles.carouselGenres]: type === 'genres',
-        [styles.carouselCountries]: type === 'countries',
+        [styles.carouselButtons]: type !== 'genres',
       })}
       carouselContainerClassName={carouselContainerClassName}
       withButton={withButton}
