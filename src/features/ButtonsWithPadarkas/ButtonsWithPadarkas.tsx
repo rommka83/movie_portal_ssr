@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './buttonswithpadarkas.module.css';
 import classNames from 'classnames';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
-import Image from 'next/image';
 import { SvgIcon } from 'shared/ui/SvgIcon';
 import { useTranslation } from 'react-i18next';
 

@@ -41,3 +41,10 @@
 .crumbs {
   margin-bottom: 30px;
 }
+
+.carousel.carousel {
+  --fz: 24px;
+  --lh: 28px;
+  --left: -18px;
+  --right: -21px;
+}

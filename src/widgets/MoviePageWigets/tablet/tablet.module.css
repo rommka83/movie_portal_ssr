@@ -30,3 +30,9 @@
 .allDvices {
   margin-bottom: 70px;
 }
+.carousel.carousel {
+  --fz: 24px;
+  --lh: 28px;
+  --left: -18px;
+  --right: -21px;
+}

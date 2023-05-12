@@ -1,27 +1,27 @@
 import styles from './tablet.module.css';
 import { VideoPlayer } from 'entities/VideoPlayer';
-import { useMemo } from 'react';
 import { VideoDescription } from 'widgets/VideoDescription';
 import { ActorsCreators } from 'widgets/ActorsCreators';
-import { GenreBookmarks } from 'shared/bisnes/GenreBookmarks';
-import { CategoryFilms } from 'widgets/CategoryFilms';
 import AdditionalMaterials from 'entities/AdditionalMaterials';
 import { BlockComments } from 'widgets/BlockComments/BlockComments';
 import { AllDevaicePoster } from 'entities/AllDevaicePoster';
-import classNames from 'classnames';
 import { Back } from 'shared/ui/Back/Back';
 import { useTranslation } from 'react-i18next';
 import { ActorsList } from 'entities/ActorsList';
 import { Grading } from 'features/Grading';
 import { ContentText } from 'shared/ui/ContentText';
 import { IFilm } from 'shared/types/IFilm';
+import PosterCards from 'shared/bisnes/PosterCards';
+import { Carousel } from 'shared/ui/Carousel';
+import Link from 'next/link';
 
 interface IProps {
   film: IFilm;
 }
 
 export default function Tablet({ film }: IProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lng = i18n.language;
 
   return film === undefined ? null : (
     <div className='container'>
@@ -35,14 +35,27 @@ export default function Tablet({ film }: IProps) {
       <ActorsList actors={film.persons} reiting={film.rating ? film.rating.kp : 0} />
       <ContentText className={styles.contentText}>{film.description}</ContentText>
       <Grading grading={film.rating ? film.rating.kp : 0} className={styles.grading} />
-
       {film.similarMovies && film.similarMovies.length > 0 && (
-        <CategoryFilms
-          title={`С фильмом «${film.name}» смотрят:`}
-          simulyrMovie={film.similarMovies}
-          className={styles.simulyar}
-        />
+        <Carousel
+          carouselContainerClassName={styles.carousel}
+          className='movieBadgeCarouselContent'
+          title={`${t('sectionTitle.WithFilm')} «${lng === 'ru' ? film.name : film.enName ?? film.name}» ${t(
+            'sectionTitle.watching',
+          )}:`}
+          withArrow
+          withButton
+          scrollMultipleItems
+        >
+          {film.similarMovies?.map((movie) => (
+            <div key={movie.id} className='movieBadgeContainer'>
+              <Link href={`/MoviePage/${movie.id}`}>
+                <PosterCards src={movie.poster.url ?? ''} name={movie.name} />
+              </Link>
+            </div>
+          ))}
+        </Carousel>
       )}
+
       <ActorsCreators persons={film.persons} className={styles.actorsCreators} />
       <AdditionalMaterials className={styles.additionalMaterials} video={film.videos} />
       <BlockComments className={styles.comments} />
