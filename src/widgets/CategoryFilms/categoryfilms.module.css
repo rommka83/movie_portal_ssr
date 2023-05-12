@@ -1,0 +1,47 @@
+.root {
+  position: relative;
+}
+.sectionTitle {
+  opacity: 0.5;
+}
+.sliderWrapper {
+  width: 100%;
+  overflow: auto;
+}
+.sliderWrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.window {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+}
+.list {
+  height: 100%;
+  display: flex;
+  transition: translate;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.item {
+  margin-right: 20px;
+}
+.control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+.control:hover {
+  opacity: 1;
+}
+.controlR {
+  right: -30px;
+}
+.controlL {
+  left: -30px;
+}
