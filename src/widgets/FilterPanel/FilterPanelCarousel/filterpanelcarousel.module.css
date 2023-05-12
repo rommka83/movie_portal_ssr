@@ -1,6 +1,6 @@
-.carousel.carouselCountries {
-  grid-template-columns: auto;
-  grid-auto-columns: auto;
+.carousel.carouselButtons {
+  grid-template-columns: min-content;
+  grid-auto-columns: min-content;
 }
 
 @media (min-width: 900px) {

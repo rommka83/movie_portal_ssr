@@ -11,6 +11,9 @@ interface IMoviesCarousel {
   movies: IFilm[];
 }
 export const MoviesCarousel = React.memo(({ title, movies }: IMoviesCarousel) => {
+  if (movies.length === 0) {
+    return null;
+  }
   return (
     <Carousel
       carouselContainerClassName={styles.carousel}

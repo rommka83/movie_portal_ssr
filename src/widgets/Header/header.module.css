@@ -50,6 +50,12 @@
   display: flex;
 }
 
+.wideAreaButton.wideAreaButton {
+  background: var(--pink--linear-gradient);
+  border: none;
+  font-weight: 600;
+}
+
 @media (max-width: 599px) {
   .wideAreaButton.wideAreaButton {
     font-size: 10px;
