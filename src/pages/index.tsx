@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import styles from '../../styles/home.module.css';
-import { CategoryFilms } from 'widgets/CategoryFilms';
 import { PromoSlider } from 'widgets/PromoSlider';
 import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
