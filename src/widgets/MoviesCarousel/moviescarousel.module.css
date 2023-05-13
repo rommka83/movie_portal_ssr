@@ -4,3 +4,53 @@
   --left: -18px;
   --right: -21px;
 }
+.movieBadgeCarouselContent {
+  padding-top: 5px;
+  --viewed-elements-count: 7;
+}
+
+@media (max-width: 1050px) {
+  .movieBadgeCarouselContent {
+    --viewed-elements-count: 5;
+  }
+}
+
+@media (max-width: 900px) {
+  .movieBadgeCarouselContent {
+    --viewed-elements-count: 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .movieBadgeCarouselContent {
+    --viewed-elements-count: 4;
+  }
+}
+
+@media (max-width: 650px) {
+  .movieBadgeCarouselContent {
+    --viewed-elements-count: 3;
+  }
+}
+
+@media (max-width: 453px) {
+  .movieBadgeCarouselContent {
+    --viewed-elements-count: 2;
+  }
+}
+
+.movieBadgeContainer {
+  padding: 0px 8px;
+}
+
+@media (max-width: 768px) {
+  .movieBadgeContainer {
+    padding: 0px 20px 0px 0px;
+  }
+}
+
+@media (max-width: 650px) {
+  .movieBadgeContainer {
+    padding: 0px 8px 0px 0px;
+  }
+}
