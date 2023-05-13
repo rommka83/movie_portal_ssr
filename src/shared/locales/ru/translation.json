@@ -201,5 +201,10 @@
   "ButtonsWithPadarkas": {
     "subscription": "30 дней подписки за 1 ₽",
     "certificate": "Активировать сертификат"
+  },
+
+  "404": {
+    "Error": "Ошибка",
+    "TheRequestedPageDoesNotExist": "Запрашиваемой страницы не существует"
   }
 }

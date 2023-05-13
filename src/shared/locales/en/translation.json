@@ -201,5 +201,10 @@
   "ButtonsWithPadarkas": {
     "subscription": "30 days subscription for 1 ₽",
     "certificate": "Activate Certificate"
+  },
+
+  "404": {
+    "Error": "Error",
+    "TheRequestedPageDoesNotExist": "The requested page does not exist"
   }
 }
