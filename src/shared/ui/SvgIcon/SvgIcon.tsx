@@ -15,16 +15,17 @@ export interface ISvgProps {
     | 'winamp'
     | 'padarka'
     | 'top'
-    | 1
-    | 2
-    | 3
-    | 4
-    | 5
-    | 6
-    | 7
-    | 8
-    | 9
-    | 0;
+    | 'number1'
+    | 'number2'
+    | 'number3'
+    | 'number4'
+    | 'number5'
+    | 'number6'
+    | 'number7'
+    | 'number8'
+    | 'number9'
+    | 'number0'
+    | string;
 }
 
 export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
@@ -433,7 +434,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         </svg>
       );
 
-    case 1:
+    case 'number1':
       return (
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'>
           <path
@@ -456,7 +457,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         </svg>
       );
 
-    case 2:
+    case 'number2':
       return (
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'>
           <path
@@ -479,7 +480,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         </svg>
       );
 
-    case 3:
+    case 'number3':
       return (
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'>
           <path
@@ -502,7 +503,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         </svg>
       );
 
-    case 4:
+    case 'number4':
       return (
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'>
           <path
@@ -525,7 +526,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         </svg>
       );
 
-    case 5:
+    case 'number5':
       return (
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'>
           <path
@@ -548,7 +549,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         </svg>
       );
 
-    case 6:
+    case 'number6':
       return (
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'>
           <path
@@ -571,7 +572,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         </svg>
       );
 
-    case 7:
+    case 'number7':
       return (
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'>
           <path
@@ -594,7 +595,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         </svg>
       );
 
-    case 8:
+    case 'number8':
       return (
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'>
           <path
@@ -617,7 +618,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         </svg>
       );
 
-    case 9:
+    case 'number9':
       return (
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'>
           <path
@@ -640,7 +641,7 @@ export function SvgIcon({ type, color = '#fff', size }: ISvgProps) {
         </svg>
       );
 
-    case 0:
+    case 'number0':
       return (
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='44' viewBox='0 0 32 44'>
           <path
