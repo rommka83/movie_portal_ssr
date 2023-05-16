@@ -12,6 +12,8 @@ import {
   removeInputRangeFilter,
 } from 'app/store/filterSlice';
 import classNames from 'classnames';
+import { useRouter } from 'next/router';
+import { generatesParamsString } from 'shared/utils/generatesParamsString';
 
 export type FilterPanelButtonType = 'countries' | 'rating' | 'votes';
 interface IFilterButton {
@@ -20,6 +22,7 @@ interface IFilterButton {
 }
 export const FilterPanelButton = React.memo(({ item, type }: IFilterButton) => {
   const { t } = useTranslation();
+  const router = useRouter();
   const dispatch = useAppDispatch();
   const isFilterSelectedSelector =
     type === 'countries'
@@ -42,7 +45,13 @@ export const FilterPanelButton = React.memo(({ item, type }: IFilterButton) => {
 
   const onClick = useCallback(() => {
     dispatch(action());
-  }, [dispatch, action]);
+    generatesParamsString({
+      router,
+      isElementSelected: isFilterSelected,
+      selectedElement: item,
+      type: type,
+    });
+  }, [dispatch, action, router, isFilterSelected, type, item]);
 
   const getFilterTitle = useCallback(
     (item: string) => (type === 'countries' ? item : type + item),

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './catalogpage.module.css';
 import { CatalogPageHeader } from 'widgets/CatalogPageHeader';
 import { useTranslation } from 'i18n';
@@ -12,6 +12,11 @@ import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { MovieBadge } from 'entities/MovieBadge';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
+import { Breadcrumbs } from 'shared/ui/Breadcrumbs';
+import { useRouter } from 'next/router';
+import { useAppDispatch, useAppSelector } from 'app/store/hooks';
+import { addAllFilters, genresSelectedSelector } from 'app/store/filterSlice';
+import { getFilters, restoreParams } from 'shared/utils/generatesParamsString';
 
 export const getServerSideProps: GetServerSideProps<{ movies: IFilm[] }> = async (context) => {
   const genre = context.params?.slug?.[0];
@@ -38,9 +43,24 @@ interface IGenrePage {
 
 const GenrePage = ({ movies }: IGenrePage) => {
   const { t } = useTranslation();
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+  const genres = useAppSelector(genresSelectedSelector(t));
+
+  useEffect(() => {
+    restoreParams(router);
+    dispatch(addAllFilters(getFilters(router)));
+  }, [router, dispatch]);
 
   return (
     <div className={styles.container}>
+      <Breadcrumbs
+        className='container'
+        crumbs={[
+          { title: t('CatalogPage.Movies'), link: '/CatalogPage' },
+          { title: genres.length ? genres.join(', ') : t(`CatalogPageHeader.AllGenres`) },
+        ]}
+      />
       <CatalogPageHeader titleText={t(`CatalogPageHeader.MoviesWatchOnline`)} showSelectedFilters />
 
       <div className={classNames('container', styles.catalogContentContainer)}>

@@ -206,5 +206,9 @@
   "404": {
     "Error": "Ошибка",
     "TheRequestedPageDoesNotExist": "Запрашиваемой страницы не существует"
+  },
+
+  "CatalogPage": {
+    "Movies": "Фильмы"
   }
 }
