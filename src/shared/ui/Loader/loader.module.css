@@ -4,7 +4,7 @@
   --height: 45px;
   color: var(--pink--linear-gradient);
   display: inline-block;
-  position: absolute;
+  position: fixed;
   top: 35%;
   left: 50%;
   z-index: 99;
