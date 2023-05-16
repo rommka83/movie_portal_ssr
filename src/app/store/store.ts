@@ -4,6 +4,7 @@ import { movie } from './oneFilmSliceDELETE';
 import { filmComents } from './commentsRequest';
 import movieTitleSearch from './movieTitleSearchSlice';
 import { allGenres } from './allGenresRequest';
+import authSlice from './authReducer/authSlice'
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     filmComents: filmComents.reducer,
     movieTitleSearch: movieTitleSearch,
     allGenres: allGenres.reducer,
+    authSlice
   },
 });
 

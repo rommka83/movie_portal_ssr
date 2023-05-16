@@ -1,8 +1,25 @@
 import React from 'react';
 import styles from './authorization.module.css';
 import { useForm } from 'react-hook-form';
+import { fetchRegister } from 'app/store/authReducer/authCreators';
+import { useDispatch } from 'react-redux';
+import { UserType } from 'app/store/authReducer/authSlice';
+
+// 1.Сделать красивие
+// 2.Разбить на компоненты
+// 3.Сделать авторизацию
+// 4.чтобы при регистрации проиходил редирект и авторизация
+// 5.Сделать лайблы к инпута
+// 
+// 
+
+
+
 
 export function Authorization() {
+
+  const dispatch = useDispatch()
+
 
   const { register, handleSubmit, setError, reset, formState: { errors, isValid } } = useForm({
     defaultValues: {
@@ -10,23 +27,23 @@ export function Authorization() {
       password: '',
       name: '',
       surname: '',
-      phone: '',
-      selDescription: '',
+      phoneNumber: '',
+      selfDescription: '',
 
     },
-    mode: 'onChange'
+    mode: 'onBlur'
   })
 
-  const onSubmit = async (values: any) => {
-    // const data = await dispatch(fetchRegister(values))
-    // if (!data.payload) {
-    // alert('Не удалось зарегистрироваться')
-    // }
+  const onSubmit = async (values: UserType) => {
+    // @ts-ignore
+    const data = await dispatch(fetchRegister(values))
+    if (!data.payload) {
+      alert('Не удалось зарегистрироваться')
+    }
 
     // if ('token' in data.payload) {
     // window.localStorage.setItem('token', data.payload.token)
     // }
-    console.log(values);
     reset()
   }
 
@@ -51,7 +68,7 @@ export function Authorization() {
         className={styles.input}
         type="password"
         placeholder='Введите пароль'
-        {...register('password', { required: 'Введите пароль' })}
+        {...register('password', { required: 'Введите пароль', minLength: { value: 8, message: 'Слишком короткий пароль' } })}
       />
       {errors.password && <p className={styles.error}>{errors.password.message}</p>}
       <input
@@ -72,13 +89,13 @@ export function Authorization() {
         className={styles.input}
         type="number"
         placeholder='Введите телефон'
-        {...register('phone')}
+        {...register('phoneNumber')}
       />
       <input
         className={styles.input}
         type="text"
         placeholder='О себе'
-        {...register('selDescription')}
+        {...register('selfDescription')}
       />
       <button className={styles.btn}>Войти</button>
     </form>
