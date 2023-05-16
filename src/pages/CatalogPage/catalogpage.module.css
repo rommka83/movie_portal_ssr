@@ -9,6 +9,7 @@
   .catalogContentContainer {
     width: 100%;
     padding: var(--padding-mobile);
+    margin-top: 16px;
   }
 }
 

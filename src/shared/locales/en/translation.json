@@ -206,5 +206,9 @@
   "404": {
     "Error": "Error",
     "TheRequestedPageDoesNotExist": "The requested page does not exist"
+  },
+
+  "CatalogPage": {
+    "Movies": "Movies"
   }
 }

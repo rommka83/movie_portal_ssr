@@ -101,6 +101,9 @@ const filters = createSlice({
     resetFilters() {
       return initialState;
     },
+    addAllFilters(state, action: PayloadAction<IFilter['filters']>) {
+      state.filters = action.payload;
+    },
   },
   extraReducers(builder) {
     builder.addCase(getSearchPersons.pending, (state) => {
@@ -134,6 +137,7 @@ export const {
   resetFilters,
   addSortTypesSort,
   removeSortTypesSort,
+  addAllFilters,
 } = filters.actions;
 export default filters;
 

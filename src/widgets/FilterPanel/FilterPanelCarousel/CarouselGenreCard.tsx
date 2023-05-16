@@ -9,20 +9,30 @@ import {
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { useTranslation } from 'i18n';
 import classNames from 'classnames';
+import { useRouter } from 'next/router';
+import { generatesParamsString } from 'shared/utils/generatesParamsString';
 
 interface ICarouselGenreCard {
   genre: string;
 }
 export const CarouselGenreCard = ({ genre }: ICarouselGenreCard) => {
+  const router = useRouter();
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const isGenreSelected = useAppSelector(isGenreSelectedSelector(genre));
+
   const onGenreCardClick = useCallback(
     (genre: string) => {
       const action = !isGenreSelected ? addGenresFilter : removeGenresFilter;
       dispatch(action(genre));
+      generatesParamsString({
+        router,
+        isElementSelected: isGenreSelected,
+        selectedElement: genre,
+        type: 'genre',
+      });
     },
-    [isGenreSelected, dispatch],
+    [isGenreSelected, dispatch, router, genre],
   );
   return (
     <FilterGenreCard

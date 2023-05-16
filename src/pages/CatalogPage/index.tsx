@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import styles from './catalogpage.module.css';
 import classNames from 'classnames';
 import { CatalogPageHeader } from 'widgets/CatalogPageHeader';
@@ -8,6 +8,11 @@ import { CatalogPageContent } from 'widgets/CatalogPageContent';
 import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
 import { IPerson } from 'shared/types/IPerson';
+import { Breadcrumbs } from 'shared/ui/Breadcrumbs';
+import { useAppDispatch } from 'app/store/hooks';
+import { resetFilters } from 'app/store/filterSlice';
+import { clearParams } from 'shared/utils/generatesParamsString';
+import { useRouter } from 'next/router';
 
 export const getStaticProps = async () => {
   const [responseMovies, responseActors] = await Promise.all([
@@ -41,13 +46,19 @@ interface ICatalogPage {
 }
 function CatalogPage({ movies, actors }: ICatalogPage) {
   const { t } = useTranslation();
-  const adventures = useMemo(
-    () => movies?.filter((el) => el.genres.find((e) => e.name === 'приключения')),
-    [movies],
-  );
+  const adventures = useMemo(() => movies?.filter((el) => el.genres.find((e) => e.name === 'приключения')), [movies]);
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(resetFilters());
+    clearParams(router, false);
+  }, [router, dispatch]);
 
   return (
     <div className={styles.container}>
+      <Breadcrumbs className='container' crumbs={[{ title: t('CatalogPage.Movies') }]} />
+
       <CatalogPageHeader titleText={t(`CatalogPageHeader.MoviesWatchOnline`)} />
 
       <div className={classNames('container', styles.catalogContentContainer)}>
