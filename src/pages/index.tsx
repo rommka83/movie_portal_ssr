@@ -7,6 +7,7 @@ import { MoviesCarousel } from 'widgets/MoviesCarousel';
 import { ButtonsWithPadarkas } from 'features/ButtonsWithPadarkas';
 import { AboutUs } from 'widgets/AboutUs';
 import { TopSection } from 'widgets/TopSection';
+import Image from 'next/image';
 
 export const getStaticProps = async () => {
   try {
@@ -47,7 +48,7 @@ export default function Home({ movies }: Iprops) {
   }, [movies]);
   return (
     <>
-      {/* <PromoSlider movies={testKinopoisk} /> */}
+      <PromoSlider />
       <div className='container'>
         <div className={styles.wrapper}>
           <ButtonsWithPadarkas />
