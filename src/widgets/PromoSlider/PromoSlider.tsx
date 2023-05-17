@@ -5,6 +5,9 @@ import { UseMedia } from 'shared/hooks/useMedia';
 import DB from '../../../static/promo_DB.json';
 import classNames from 'classnames';
 
+const CARD_HEIGHT_COEFFICIENT_TABLET = 1.45;
+const CARD_HEIGHT_COEFFICIENT_DESKTOP = 0.45;
+
 export const PromoSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const tablet = UseMedia('(max-width:800px)');
@@ -12,6 +15,8 @@ export const PromoSlider = () => {
   const [cardWidth, setCardWidth] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(false);
   const [scrollRight, setScrolRight] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   const { prevImgIndex, nextImgIndex, lastImgIndex } = useMemo(() => {
     let prevImgIndex;
@@ -36,6 +41,7 @@ export const PromoSlider = () => {
       return res;
     });
   };
+
   const hendleScrollRight = function () {
     setActiveIndex((current) => {
       const res = current ? current - 1 : DB.length - 1;
@@ -44,7 +50,7 @@ export const PromoSlider = () => {
   };
 
   const sliderHight = useMemo(() => {
-    return tablet ? cardWidth * 1.45 : cardWidth * 0.45;
+    return tablet ? cardWidth * CARD_HEIGHT_COEFFICIENT_TABLET : cardWidth * CARD_HEIGHT_COEFFICIENT_DESKTOP;
   }, [tablet, cardWidth]);
 
   useEffect(() => {
@@ -63,6 +69,22 @@ export const PromoSlider = () => {
       setScrollLeft(false);
       hendleScrollLeft();
     }, 8000);
+
+    if (touchStart - touchEnd > 100) {
+      clearInterval(interval);
+      hendleScrollLeft();
+      interval = setInterval(() => {
+        hendleScrollLeft();
+      }, 8000);
+    }
+
+    if (touchEnd - touchStart > 100) {
+      clearInterval(interval);
+      hendleScrollRight();
+      interval = setInterval(() => {
+        hendleScrollLeft();
+      }, 8000);
+    }
 
     if (scrollLeft) {
       clearInterval(interval);
@@ -86,7 +108,7 @@ export const PromoSlider = () => {
       widthContainer && resizeObserver.unobserve(widthContainer);
       clearInterval(interval);
     };
-  }, [cardWidth, scrollLeft, scrollRight]);
+  }, [cardWidth, scrollLeft, scrollRight, tablet, touchEnd, touchStart]);
 
   return (
     <section className={styles.root}>
@@ -94,15 +116,20 @@ export const PromoSlider = () => {
         <div key={prevImgIndex} className={classNames(styles.sliderImg, styles.sliderImgPrev)}>
           <PromoSlide
             title={DB[prevImgIndex].title}
-            picture={tablet ? DB[prevImgIndex].pictureMobile : DB[prevImgIndex].picture}
+            picture={!tablet ? DB[prevImgIndex].picture : DB[prevImgIndex].pictureMobile}
             description={DB[prevImgIndex].description}
             width={cardWidth}
           />
         </div>
-        <div key={activeIndex} className={classNames(styles.sliderImg, styles.currentSlideImg)}>
+        <div
+          key={activeIndex}
+          className={classNames(styles.sliderImg, styles.currentSlideImg)}
+          onTouchStart={(e) => setTouchStart(e.changedTouches[0].clientX)}
+          onTouchEnd={(e) => setTouchEnd(e.changedTouches[0].clientX)}
+        >
           <PromoSlide
             title={DB[activeIndex].title}
-            picture={tablet ? DB[activeIndex].pictureMobile : DB[activeIndex].picture}
+            picture={!tablet ? DB[activeIndex].picture : DB[activeIndex].pictureMobile}
             description={DB[activeIndex].description}
             width={cardWidth}
           />
@@ -110,7 +137,7 @@ export const PromoSlider = () => {
         <div key={nextImgIndex} className={classNames(styles.sliderImg, styles.sliderImgNext)}>
           <PromoSlide
             title={DB[nextImgIndex].title}
-            picture={tablet ? DB[nextImgIndex].pictureMobile : DB[nextImgIndex].picture}
+            picture={!tablet ? DB[nextImgIndex].picture : DB[nextImgIndex].pictureMobile}
             description={DB[nextImgIndex].description}
             width={cardWidth}
           />
@@ -118,19 +145,19 @@ export const PromoSlider = () => {
         <div key={lastImgIndex} className={classNames(styles.sliderImg, styles.sliderImgLast)}>
           <PromoSlide
             title={DB[lastImgIndex].title}
-            picture={tablet ? DB[lastImgIndex].pictureMobile : DB[lastImgIndex].picture}
+            picture={tablet ? DB[lastImgIndex].picture : DB[lastImgIndex].pictureMobile}
             description={DB[lastImgIndex].description}
             width={cardWidth}
           />
         </div>
-        <div
+        <button
           className={classNames(styles.btnControls, styles.btnControlsLeft, 'icon-arrowLeft_12x32__0')}
           onClick={() => setScrollLeft(true)}
-        ></div>
-        <div
+        ></button>
+        <button
           className={classNames(styles.btnControls, styles.btnControlsRight, 'icon-arrowRight_12x32__0')}
           onClick={() => setScrolRight(true)}
-        ></div>
+        ></button>
       </div>
     </section>
   );
