@@ -16,7 +16,7 @@ export const PromoSlide = ({ title, picture, description, width, className }: Pr
   return (
     <div className={classNames(styles.root, className)}>
       <Link href='/CatalogPage' style={{ width: `${width}px` }}>
-        <Image src={picture} alt='' width={1600} height={900} className={styles.pic} />
+        <Image src={picture} alt={picture} width={1600} height={900} className={styles.pic} />
         <div className={styles.content}>
           <h2 className={styles.title}>{title}</h2>
           <div className={styles.description}>{description}</div>

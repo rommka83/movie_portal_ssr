@@ -46,10 +46,15 @@
   right: -50px;
 }
 @media (max-width: 800px) {
-  .btnControlsLeft {
-    left: -10%;
+  .sliderImgPrev {
+    transform: translateX(-105%);
   }
-  .btnControlsRight {
-    right: -10%;
+
+  .sliderImgNext {
+    transform: translateX(105%);
+  }
+
+  .btnControls {
+    display: none;
   }
 }
