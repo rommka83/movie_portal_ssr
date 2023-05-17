@@ -16,7 +16,7 @@ export const PromoSlider = () => {
   const [scrollLeft, setScrollLeft] = useState(false);
   const [scrollRight, setScrolRight] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  const [touchEnd, setTouchEnd] = useState<-1 | 0 | 1>(0);
 
   const { prevImgIndex, nextImgIndex, lastImgIndex } = useMemo(() => {
     let prevImgIndex;
@@ -70,20 +70,26 @@ export const PromoSlider = () => {
       hendleScrollLeft();
     }, 8000);
 
-    if (touchStart - touchEnd > 100) {
+    if (touchEnd === 1) {
       clearInterval(interval);
+
       hendleScrollLeft();
       interval = setInterval(() => {
         hendleScrollLeft();
       }, 8000);
+      setTouchStart(0);
+      setTouchEnd(0);
     }
 
-    if (touchEnd - touchStart > 100) {
+    if (touchEnd === -1) {
       clearInterval(interval);
+
       hendleScrollRight();
       interval = setInterval(() => {
         hendleScrollLeft();
       }, 8000);
+      setTouchStart(0);
+      setTouchEnd(0);
     }
 
     if (scrollLeft) {
@@ -108,7 +114,7 @@ export const PromoSlider = () => {
       widthContainer && resizeObserver.unobserve(widthContainer);
       clearInterval(interval);
     };
-  }, [cardWidth, scrollLeft, scrollRight, tablet, touchEnd, touchStart]);
+  }, [cardWidth, scrollLeft, scrollRight, tablet, touchEnd]);
 
   return (
     <section className={styles.root}>
@@ -125,7 +131,9 @@ export const PromoSlider = () => {
           key={activeIndex}
           className={classNames(styles.sliderImg, styles.currentSlideImg)}
           onTouchStart={(e) => setTouchStart(e.changedTouches[0].clientX)}
-          onTouchEnd={(e) => setTouchEnd(e.changedTouches[0].clientX)}
+          onTouchEnd={(e) => {
+            touchStart > e.changedTouches[0].clientX ? setTouchEnd(1) : setTouchEnd(-1);
+          }}
         >
           <PromoSlide
             title={DB[activeIndex].title}
