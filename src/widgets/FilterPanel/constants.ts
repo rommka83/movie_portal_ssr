@@ -1,4 +1,5 @@
 export const genres = [
+  'anime',
   'biography',
   'actions',
   'western',
@@ -7,18 +8,25 @@ export const genres = [
   'kids',
   'documentaries',
   'drama',
+  'play',
   'historical',
   'comedy',
+  'shortFilm',
   'criminal',
   'melodrama',
-  'musical',
+  'music',
   'cartoons',
+  'musical',
+  'news',
   'adventures',
+  'realTv',
   'family',
   'sport',
+  'talkShow',
   'thrillers',
   'horror',
   'fantastic',
+  'noir',
   'fantasy',
 ];
 
@@ -43,4 +51,4 @@ export const countries = [
 
 export const ratings = ['9', '8', '7', '6'];
 
-export const estimates = ['500000', '600000', '700000', '800000', '900000'];
+export const estimates = ['300000', '400000', '500000', '600000', '700000', '800000', '900000', '1000000'];

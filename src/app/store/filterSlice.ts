@@ -23,25 +23,25 @@ interface IFilter {
 
 type Persons = { name: string; id: number };
 type PersonsResponse = { docs: Persons[] };
-export const getSearchPersons = createAsyncThunk<
-  Persons[],
-  { name: string; profession: FilterDropdownSearchType }
->('filters/director-request', async ({ name, profession }) => {
-  if (!name) {
-    return [];
-  }
+export const getSearchPersons = createAsyncThunk<Persons[], { name: string; profession: FilterDropdownSearchType }>(
+  'filters/director-request',
+  async ({ name, profession }) => {
+    if (!name) {
+      return [];
+    }
 
-  const response = await axios.get<PersonsResponse>(
-    `https://api.kinopoisk.dev/v1/person?selectFields=name%20id&sortField=name&sortType=1%20&limit=10&name=${name}&movies.enProfession=${profession}`,
-    {
-      headers: {
-        Accept: 'application/json',
-        'X-API-KEY': 'DMGDYW0-0FC4Z7T-N7R9K0N-HFPEH3J',
+    const response = await axios.get<PersonsResponse>(
+      `https://api.kinopoisk.dev/v1/person?selectFields=name%20id&sortField=name&sortType=1%20&limit=10&name=${name}&movies.enProfession=${profession}`,
+      {
+        headers: {
+          Accept: 'application/json',
+          'X-API-KEY': 'DMGDYW0-0FC4Z7T-N7R9K0N-HFPEH3J',
+        },
       },
-    },
-  );
-  return response.data.docs;
-});
+    );
+    return response.data.docs;
+  },
+);
 
 const initialState: IFilter = {
   filters: {
@@ -72,9 +72,7 @@ const filters = createSlice({
       state.filters.countries.push(action.payload);
     },
     removeCountriesFilter(state, action: PayloadAction<string>) {
-      state.filters.countries = state.filters.countries.filter(
-        (country) => country !== action.payload,
-      );
+      state.filters.countries = state.filters.countries.filter((country) => country !== action.payload);
     },
 
     addInputRangeFilter(state, action: PayloadAction<{ type: InputRangeType; value: number }>) {
@@ -83,13 +81,10 @@ const filters = createSlice({
     removeInputRangeFilter(state, action: PayloadAction<InputRangeType>) {
       state.filters[action.payload] = null;
     },
-    addInputSearchPersonFilter(
-      state,
-      action: PayloadAction<{ type: FilterDropdownSearchType; value: string }>,
-    ) {
+    addInputSearchPersonFilter(state, action: PayloadAction<{ type: FilterDropdownSearchType; value: string }>) {
       state.filters[action.payload.type] = action.payload.value;
     },
-    addSortTypesSort(state, action: PayloadAction<string>) {
+    addSortTypesSort(state, action: PayloadAction<string | null>) {
       state.sortTypes = action.payload;
     },
     removeSortTypesSort(state) {
@@ -141,40 +136,49 @@ export const {
 } = filters.actions;
 export default filters;
 
-export const filtersSelector = (state: RootState) => state.filters;
 export const personsListSelector = (state: RootState) => state.filters.personsList;
-export const countriesSelector = (state: RootState) => state.filters.filters.countries;
 export const pendingPersonsSelector = (state: RootState) => state.filters.personsPending;
 export const getSelectedFilterSelector = (type: FilterType, t: TFunction) => (state: RootState) => {
   const filters = state.filters;
   switch (type) {
-    case 'Actor':
+    case 'actor':
       return filters.filters.actor;
-    case 'Director':
+    case 'director':
       return filters.filters.director;
-    case 'Countries':
+    case 'countries':
       return filters.filters.countries.map((country) => t(`FilterPanel.${country}`)).join(', ');
-    case 'Estimated':
+    case 'votes':
       return filters.filters.votes ? formatterVotes(filters.filters.votes / 1000) : '';
-    case 'Genres':
-      return filters.filters.genres.map((genre) => t(`headerMoviesFilter.${genre}`)).join(', ');
-    case 'Rating':
+    case 'genres':
+      return filters.filters.genres.map((genre) => t(`headerDropdownNavigation.${genre}`)).join(', ');
+    case 'rating':
       return filters.filters.rating;
   }
 };
-export const personSelector = (person: FilterDropdownSearchType) => (state: RootState) =>
-  state.filters.filters[person];
+export const personSelector = (person: FilterDropdownSearchType) => (state: RootState) => state.filters.filters[person];
 export const isGenreSelectedSelector = (genre: string) => (state: RootState) =>
   state.filters.filters.genres.includes(genre);
-export const genresSelectedSelector = (t: TFunction) => (state: RootState) =>
-  state.filters.filters.genres.map((genre) => t(`headerMoviesFilter.${genre}`));
 export const isCountrySelectedSelector = (country: string) => (state: RootState) =>
   state.filters.filters.countries.includes(country);
-export const countriesSelectedSelector = (t: TFunction) => (state: RootState) =>
-  state.filters.filters.countries.map((country) => t(`FilterPanel.${country}`));
-export const isInputRangeSelectedSelector =
-  (type: 'rating' | 'votes', value: number) => (state: RootState) =>
-    state.filters.filters[type] === value;
+export const isInputRangeSelectedSelector = (type: 'rating' | 'votes', value: number) => (state: RootState) => {
+  const filterState = state.filters.filters[type];
+  if (type === 'votes') {
+    if (filterState == null) return false;
+    const votesNumberDigit = 100_000;
+    const extremeValueVotes = 10;
+    const firstClassUnitFilterState = Math.trunc(filterState / votesNumberDigit);
+    const firstClassUnitValue = Math.trunc(value / votesNumberDigit);
+
+    if (firstClassUnitFilterState === firstClassUnitValue) return true;
+    if (firstClassUnitFilterState > extremeValueVotes && extremeValueVotes === firstClassUnitValue) {
+      return true;
+    }
+    return false;
+  } else {
+    return Math.trunc(filterState ?? 0) === value;
+  }
+};
+
 export const filtersCountSelector = (state: RootState) =>
   Object.values(state.filters.filters)
     .flatMap((filter) => filter)

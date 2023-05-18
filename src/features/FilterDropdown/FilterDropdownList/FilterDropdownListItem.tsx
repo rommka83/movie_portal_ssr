@@ -13,6 +13,7 @@ import {
   removeCountriesFilter,
   removeGenresFilter,
 } from 'app/store/filterSlice';
+import { useGenerateParamsString } from 'shared/utils/generatesParamsString';
 
 export interface IFilterDropdownListItem {
   title: string;
@@ -21,6 +22,7 @@ export interface IFilterDropdownListItem {
 }
 export const FilterDropdownListItem = ({ title, item, type }: IFilterDropdownListItem) => {
   const { t } = useTranslation();
+  const generatesParamsString = useGenerateParamsString();
   const isGenres = type === 'genres';
   const checkedSelector = isGenres ? isGenreSelectedSelector : isCountrySelectedSelector;
   const checked = useAppSelector(checkedSelector(item));
@@ -35,13 +37,18 @@ export const FilterDropdownListItem = ({ title, item, type }: IFilterDropdownLis
     } else {
       dispatch(removeAction(item));
     }
+    generatesParamsString({
+      isElementSelected: checked,
+      selectedElement: item,
+      type,
+    });
   };
   return (
     <li className={styles.filterDropListItem}>
       <label className={styles.filterDropLabel}>
         <input
           className={classNames(styles.filterDropInput, 'visually-hidden')}
-          type="checkbox"
+          type='checkbox'
           onChange={onChange}
           checked={checked}
         />

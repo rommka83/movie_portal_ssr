@@ -15,8 +15,8 @@ import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import { Breadcrumbs } from 'shared/ui/Breadcrumbs';
 import { useRouter } from 'next/router';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
-import { addAllFilters, genresSelectedSelector } from 'app/store/filterSlice';
-import { getFilters, restoreParams } from 'shared/utils/generatesParamsString';
+import { addAllFilters, addSortTypesSort, getSelectedFilterSelector } from 'app/store/filterSlice';
+import { getFilters, getSortType, restoreParams } from 'shared/utils/generatesParamsString';
 
 export const getServerSideProps: GetServerSideProps<{ movies: IFilm[] }> = async (context) => {
   const genre = context.params?.slug?.[0];
@@ -45,11 +45,12 @@ const GenrePage = ({ movies }: IGenrePage) => {
   const { t } = useTranslation();
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const genres = useAppSelector(genresSelectedSelector(t));
+  const genres = useAppSelector(getSelectedFilterSelector('genres', t));
 
   useEffect(() => {
     restoreParams(router);
     dispatch(addAllFilters(getFilters(router)));
+    dispatch(addSortTypesSort(getSortType(router)));
   }, [router, dispatch]);
 
   return (
@@ -57,8 +58,8 @@ const GenrePage = ({ movies }: IGenrePage) => {
       <Breadcrumbs
         className='container'
         crumbs={[
-          { title: t('CatalogPage.Movies'), link: '/CatalogPage' },
-          { title: genres.length ? genres.join(', ') : t(`CatalogPageHeader.AllGenres`) },
+          { title: t('CatalogPage.Movies'), link: 'CatalogPage' },
+          { title: typeof genres === 'string' ? genres : t(`CatalogPageHeader.AllGenres`) },
         ]}
       />
       <CatalogPageHeader titleText={t(`CatalogPageHeader.MoviesWatchOnline`)} showSelectedFilters />

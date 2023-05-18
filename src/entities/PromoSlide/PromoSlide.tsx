@@ -1,5 +1,5 @@
 import React from 'react';
-import { UseMedia } from 'shared/hooks/useMedia';
+import { useMedia } from 'shared/hooks/useMedia';
 
 import styles from './promoSlide.module.css';
 

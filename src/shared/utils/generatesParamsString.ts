@@ -1,5 +1,8 @@
+import { FilterDropdownListType } from 'features/FilterDropdown/FilterDropdownList/FilterDropdownList';
 import { FilterDropdownSearchType } from 'features/FilterDropdown/FilterDropdownSearch';
-import { NextRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
+import { useCallback } from 'react';
+import { useMedia } from 'shared/hooks/useMedia';
 import { FilterPanelButtonType } from 'widgets/FilterPanel/FilterPanelCarousel/FilterPanelButton';
 import { InputRangeType } from 'widgets/FilterPanel/FilterPanelDesktop/FilterInputRange';
 
@@ -17,15 +20,14 @@ interface IPathHandler {
 }
 
 interface IParamsHandler {
-  type: 'rating' | 'votes' | 'director' | 'actor';
+  type: 'rating' | 'votes' | 'director' | 'actor' | 'sort' | FilterDropdownListType;
   selectedParam: string | undefined;
 }
 
 interface IGeneratesParamsString {
-  router: NextRouter;
   isElementSelected: boolean;
   selectedElement?: string;
-  type: 'genre' | FilterPanelButtonType | FilterDropdownSearchType | InputRangeType;
+  type: FilterPanelButtonType | FilterDropdownSearchType | InputRangeType | 'sort' | FilterDropdownListType;
 }
 
 const pathHandler = ({ prevParams, selectedParam, isElementSelected, defaultParams }: IPathHandler) => {
@@ -40,6 +42,7 @@ const pathHandler = ({ prevParams, selectedParam, isElementSelected, defaultPara
 };
 
 const queryParams = new URLSearchParams();
+
 const paramsHandler = ({ type, selectedParam }: IParamsHandler) => {
   if (queryParams.get(type) === selectedParam) {
     queryParams.delete(type);
@@ -74,13 +77,12 @@ export const clearParams = (router: NextRouter, isPushed = true) => {
   isPushed && router.push(DEFAULT_GENRES_PARAMS, undefined, { shallow: true });
 };
 
-export const generatesParamsString = ({ router, isElementSelected, type, selectedElement }: IGeneratesParamsString) => {
-  const prevParams = router.query.slug;
-  const prevGenreParam = prevParams?.[typeParamsIndex.genre];
-  const prevCountryParam = prevParams?.[typeParamsIndex.countries];
+export const generatesParamsString = ({ isElementSelected, type, selectedElement }: IGeneratesParamsString) => {
+  const prevGenreParam = currentParams?.[typeParamsIndex.genre];
+  const prevCountryParam = currentParams?.[typeParamsIndex.countries];
 
   switch (type) {
-    case 'genre':
+    case 'genres':
       currentParams[typeParamsIndex.genre] =
         pathHandler({
           prevParams: prevGenreParam,
@@ -103,14 +105,31 @@ export const generatesParamsString = ({ router, isElementSelected, type, selecte
         type,
       });
   }
-  const queryParamsString = queryParams.toString();
+};
 
+export const applyFilterParams = (router: NextRouter) => {
+  const queryParamsString = queryParams.toString();
+  const prevParams = router.query.slug;
   router.push(
     `${prevParams ? '' : 'CatalogPage/'}${currentParams.join('/')}${queryParamsString ? '?' + queryParamsString : ''}`,
     undefined,
     {
       shallow: true,
     },
+  );
+};
+
+export const useGenerateParamsString = (allDevices?: boolean) => {
+  const router = useRouter();
+  const mobile = useMedia('(max-width: 768px)');
+  return useCallback(
+    ({ isElementSelected, type, selectedElement }: Omit<IGeneratesParamsString, 'router'>) => {
+      generatesParamsString({ isElementSelected, type, selectedElement });
+      if (allDevices || !mobile) {
+        applyFilterParams(router);
+      }
+    },
+    [router, mobile],
   );
 };
 
@@ -124,4 +143,8 @@ export const getFilters = (router: NextRouter) => {
     director: !Array.isArray(router.query['director']) ? router.query['director'] ?? '' : null,
     actor: !Array.isArray(router.query['actor']) ? router.query['actor'] ?? '' : null,
   };
+};
+
+export const getSortType = (router: NextRouter) => {
+  return !Array.isArray(router.query['sort']) ? router.query['sort'] ?? '' : null;
 };

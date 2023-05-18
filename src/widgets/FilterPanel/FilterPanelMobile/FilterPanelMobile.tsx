@@ -8,10 +8,10 @@ import classNames from 'classnames';
 import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
 import { FilterPanelMobileButtonsBlock } from './FilterPanelMobileButtonsBlock';
 import { FilterPanelCarousel } from '../FilterPanelCarousel';
-import { Accordion } from 'shared/ui/Accordion';
 import { FilterPanelMobileSearch } from './FilterPanelMobileSearch';
 import { useAppSelector } from 'app/store/hooks';
 import { filtersCountSelector } from 'app/store/filterSlice';
+import { FilterPanelMobileAccordion } from './FilterPanelMobileAccordion';
 
 export const FilterPanelMobile = React.memo(() => {
   const { t } = useTranslation();
@@ -42,7 +42,7 @@ export const FilterPanelMobile = React.memo(() => {
         className={classNames(styles.openButton, {
           [styles.active]: !!filtersCount,
         })}
-        variant="third"
+        variant='third'
         large
         onClick={onModalShow}
       >
@@ -58,9 +58,7 @@ export const FilterPanelMobile = React.memo(() => {
           <div className={styles.filterPanelMobile}>
             <div className={styles.filterWrapper} onScroll={onContentScroll}>
               <div className={styles.contentScroll}>
-                <SectionTitle className={styles.contentTitle}>
-                  {t('FilterPanel.Filters')}
-                </SectionTitle>
+                <SectionTitle className={styles.contentTitle}>{t('FilterPanel.Filters')}</SectionTitle>
                 <p
                   className={classNames(styles.titleFixed, {
                     [styles.show]: showHeader,
@@ -68,30 +66,27 @@ export const FilterPanelMobile = React.memo(() => {
                 >
                   {t('FilterPanel.Filters')}
                 </p>
-                <FilterPanelCarousel type="genres" array={genres} />
+                <FilterPanelCarousel type='genres' array={genres} />
 
-                <Accordion textButton={t('headerMoviesFilter.Countries')}>
-                  <FilterPanelCarousel array={countries} type="countries" carouselContainerClassName={styles.carouselContainer}/>
-                </Accordion>
-
-                <Accordion textButton={t('FilterPanel.Rating')}>
-                  <FilterPanelCarousel array={ratings} type="rating" carouselContainerClassName={styles.carouselContainer}/>
-                </Accordion>
-
-                <Accordion textButton={t('FilterPanel.Estimated')}>
-                  <FilterPanelCarousel array={estimates} type="votes" carouselContainerClassName={styles.carouselContainer} />
-                </Accordion>
-
-                <FilterPanelMobileSearch
-                  type="director"
-                  placeholderText={t('FilterPanel.Director')}
-                  title={t('FilterPanel.Director')}
+                <FilterPanelMobileAccordion
+                  textButton={t('headerDropdownNavigation.countries')}
+                  array={countries}
+                  type='countries'
                 />
 
+                <FilterPanelMobileAccordion textButton={t('FilterPanel.rating')} array={ratings} type='rating' />
+
+                <FilterPanelMobileAccordion textButton={t('FilterPanel.votes')} array={estimates} type='votes' />
+
                 <FilterPanelMobileSearch
-                  type="actor"
-                  placeholderText={t('FilterPanel.Actor')}
-                  title={t('FilterPanel.Actor')}
+                  type='director'
+                  placeholderText={t('FilterPanel.director')}
+                  title={t('FilterPanel.director')}
+                />
+                <FilterPanelMobileSearch
+                  type='actor'
+                  placeholderText={t('FilterPanel.actor')}
+                  title={t('FilterPanel.actor')}
                 />
               </div>
             </div>

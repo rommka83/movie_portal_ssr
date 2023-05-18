@@ -8,7 +8,7 @@ import { useAppSelector } from 'app/store/hooks';
 import { getSelectedFilterSelector } from 'app/store/filterSlice';
 import { FilterDropdownProvider } from './FilterDropdownContext';
 
-export type FilterType = 'Genres' | 'Countries' | 'Rating' | 'Estimated' | 'Director' | 'Actor';
+export type FilterType = 'genres' | 'countries' | 'rating' | 'votes' | 'director' | 'actor';
 interface IFilterDropdown {
   title: string;
   type: FilterType;
@@ -46,7 +46,7 @@ export const FilterDropdown = React.memo(
 
     return (
       <div ref={containerRef} className={classNames(styles.filterDropdownContainer, className)}>
-        <ButtonOrLink className={styles.filterButton} variant="third" large onClick={onToggleClick}>
+        <ButtonOrLink className={styles.filterButton} variant='third' large onClick={onToggleClick}>
           <div className={styles.textWrapper}>
             <span className={styles.textTop}>{t(`${title}.${type}`)}</span>
             <span className={styles.textUnder}>{selectedFilter}</span>

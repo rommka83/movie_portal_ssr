@@ -20,85 +20,55 @@ export const FilterPanelDesktop = React.memo(() => {
     <section className={styles.filterDesktop}>
       <div className={styles.container}>
         <div className={styles.plankList}>
-          <FilterDropdown title="headerMoviesFilter" type="Genres" position="left">
+          <FilterDropdown title='headerDropdownNavigation' type='genres' position='left'>
             <FilterPanelCarousel
               array={genres}
-              type="genres"
+              type='genres'
               carouselContainerClassName={styles.carouselContainer}
               withButton
             />
-            <FilterDropdownList
-              className={styles.list}
-              array={genres}
-              title="headerMoviesFilter"
-              type="genres"
-            />
+            <FilterDropdownList className={styles.list} array={genres} title='headerDropdownNavigation' type='genres' />
           </FilterDropdown>
 
-          <FilterDropdown title="FilterPanel" type="Countries" position="left">
+          <FilterDropdown title='FilterPanel' type='countries' position='left'>
             <FilterPanelCarousel
               array={countries}
-              type="countries"
+              type='countries'
               carouselContainerClassName={styles.carouselContainer}
               withButton
             />
 
-            <FilterDropdownList
-              className={styles.list}
-              array={countries}
-              title="FilterPanel"
-              type="countries"
-            />
+            <FilterDropdownList className={styles.list} array={countries} title='FilterPanel' type='countries' />
           </FilterDropdown>
 
-          <FilterDropdown
-            title="FilterPanel"
-            type="Rating"
-            position="left"
-            className={styles.dropdownRating}
-          >
+          <FilterDropdown title='FilterPanel' type='rating' position='left' className={styles.dropdownRating}>
             <FilterInputRange
-              type="rating"
-              startValue="71"
-              maxValue="100"
-              minValue="61"
+              type='rating'
+              startValue='71'
+              maxValue='100'
+              minValue='61'
               formatter={formatterRating}
               className={styles.inputRating}
             />
           </FilterDropdown>
 
-          <FilterDropdown
-            title="FilterPanel"
-            type="Estimated"
-            position="left"
-            className={styles.dropdownVotes}
-          >
+          <FilterDropdown title='FilterPanel' type='votes' position='left' className={styles.dropdownVotes}>
             <FilterInputRange
-              type="votes"
-              startValue="300"
-              maxValue="1000"
-              minValue="200"
+              type='votes'
+              startValue='400'
+              maxValue='1000'
+              minValue='300'
               formatter={formatterVotes}
               className={styles.inputRating}
             />
           </FilterDropdown>
 
-          <FilterDropdown
-            title="FilterPanel"
-            type="Director"
-            position="right"
-            className={styles.dropdownSearch}
-          >
-            <FilterDropdownSearch placeholderText={t('FilterPanel.Director')} type="director" />
+          <FilterDropdown title='FilterPanel' type='director' position='right' className={styles.dropdownSearch}>
+            <FilterDropdownSearch placeholderText={t('FilterPanel.director')} type='director' />
           </FilterDropdown>
 
-          <FilterDropdown
-            title="FilterPanel"
-            type="Actor"
-            position="right"
-            className={styles.dropdownSearch}
-          >
-            <FilterDropdownSearch placeholderText={t('FilterPanel.Actor')} type="actor" />
+          <FilterDropdown title='FilterPanel' type='actor' position='right' className={styles.dropdownSearch}>
+            <FilterDropdownSearch placeholderText={t('FilterPanel.actor')} type='actor' />
           </FilterDropdown>
         </div>
         <FilterPanelDesktopResetButton />

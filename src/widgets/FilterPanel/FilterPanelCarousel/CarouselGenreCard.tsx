@@ -1,23 +1,18 @@
 import React, { useCallback } from 'react';
 import styles from './filterpanelcarousel.module.css';
 import { FilterGenreCard } from 'shared/ui/FilterGenreCard';
-import {
-  addGenresFilter,
-  isGenreSelectedSelector,
-  removeGenresFilter,
-} from 'app/store/filterSlice';
+import { addGenresFilter, isGenreSelectedSelector, removeGenresFilter } from 'app/store/filterSlice';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { useTranslation } from 'i18n';
 import classNames from 'classnames';
-import { useRouter } from 'next/router';
-import { generatesParamsString } from 'shared/utils/generatesParamsString';
+import { useGenerateParamsString } from 'shared/utils/generatesParamsString';
 
 interface ICarouselGenreCard {
   genre: string;
 }
 export const CarouselGenreCard = ({ genre }: ICarouselGenreCard) => {
-  const router = useRouter();
   const { t } = useTranslation();
+  const generatesParamsString = useGenerateParamsString();
   const dispatch = useAppDispatch();
   const isGenreSelected = useAppSelector(isGenreSelectedSelector(genre));
 
@@ -26,13 +21,12 @@ export const CarouselGenreCard = ({ genre }: ICarouselGenreCard) => {
       const action = !isGenreSelected ? addGenresFilter : removeGenresFilter;
       dispatch(action(genre));
       generatesParamsString({
-        router,
         isElementSelected: isGenreSelected,
         selectedElement: genre,
-        type: 'genre',
+        type: 'genres',
       });
     },
-    [isGenreSelected, dispatch, router, genre],
+    [isGenreSelected, dispatch, genre],
   );
   return (
     <FilterGenreCard
@@ -42,7 +36,7 @@ export const CarouselGenreCard = ({ genre }: ICarouselGenreCard) => {
       })}
       iconClassName={styles.iconCard}
       genre={genre}
-      caption={t(`headerMoviesFilter.${genre}`)}
+      caption={t(`headerDropdownNavigation.${genre}`)}
       onClick={onGenreCardClick}
     />
   );

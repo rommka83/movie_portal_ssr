@@ -1,4 +1,4 @@
-.filterContainer {
+.navContainer {
   margin-top: 73px;
   padding: 35px;
   border-top: 1px solid var(--gray-16);
@@ -10,7 +10,7 @@
 }
 
 .doubleColumn {
-  width: 33%;
+  width: 80%;
   margin-right: 15px;
 }
 
@@ -19,8 +19,8 @@
 }
 
 .filmLinkList {
-  columns: 2;
-  column-gap: 24px;
+  columns: 3;
+  column-gap: 46px;
   column-fill: auto;
   height: 304px;
 }

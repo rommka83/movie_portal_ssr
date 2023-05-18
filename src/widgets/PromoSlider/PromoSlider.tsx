@@ -9,14 +9,14 @@ import { Autoplay, Navigation } from 'swiper';
 
 import { PromoSlide } from 'entities/PromoSlide';
 import { IFilm } from 'shared/types/IFilm';
-import { UseMedia } from 'shared/hooks/useMedia';
+import { useMedia } from 'shared/hooks/useMedia';
 
 type PropsType = {
   movies: IFilm[];
 };
 
 export const PromoSlider: React.FC<PropsType> = ({ movies }) => {
-  const brakePoint = UseMedia('(max-width:768px)');
+  const brakePoint = useMedia('(max-width:768px)');
 
   return (
     <Swiper

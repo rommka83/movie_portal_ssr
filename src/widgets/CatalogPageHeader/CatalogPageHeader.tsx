@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { FilterPanelMobile } from 'widgets/FilterPanel';
 import { useTranslation } from 'i18n';
 import { useAppSelector } from 'app/store/hooks';
-import { countriesSelectedSelector, genresSelectedSelector } from 'app/store/filterSlice';
+import { getSelectedFilterSelector } from 'app/store/filterSlice';
 
 interface ICatalogPageHeader {
   titleText: string;
@@ -13,8 +13,9 @@ interface ICatalogPageHeader {
 }
 export const CatalogPageHeader = ({ titleText, showSelectedFilters }: ICatalogPageHeader) => {
   const { t } = useTranslation();
-  const genres = useAppSelector(genresSelectedSelector(t));
-  const countries = useAppSelector(countriesSelectedSelector(t));
+  const genres = useAppSelector(getSelectedFilterSelector('genres', t));
+  const arrayFromGenres = typeof genres === 'string' ? genres.split(',') : [];
+  const countries = useAppSelector(getSelectedFilterSelector('countries', t));
 
   return (
     <div className={styles.containerOuter}>
@@ -24,19 +25,17 @@ export const CatalogPageHeader = ({ titleText, showSelectedFilters }: ICatalogPa
           {showSelectedFilters && (
             <p className={styles.filtersText}>
               <span className={styles.filtersGenres}>
-                {genres.length ? genres.join(', ') : t(`CatalogPageHeader.AllGenres`)}
+                {typeof genres === 'string' ? genres : t(`CatalogPageHeader.AllGenres`)}
               </span>
-              {genres.length && countries.length ? ', ' : null}
+              {genres && countries ? ', ' : null}
               <span className={styles.filtersCountries}>
-                {countries.length
-                  ? countries.join(', ')
-                  : `, ${t(`CatalogPageHeader.AllCountries`)}`}
+                {typeof countries === 'string' ? countries : `, ${t(`CatalogPageHeader.AllCountries`)}`}
               </span>
             </p>
           )}
         </div>
 
-        {genres.length <= 1 && <ExpandableBlock text={t(`CatalogPageHeader.MovieText`)} />}
+        {arrayFromGenres.length <= 1 && <ExpandableBlock text={t(`CatalogPageHeader.MovieText`)} />}
         <FilterPanelMobile />
       </div>
     </div>
