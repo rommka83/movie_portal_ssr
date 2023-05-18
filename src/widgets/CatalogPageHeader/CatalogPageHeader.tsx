@@ -28,9 +28,7 @@ export const CatalogPageHeader = ({ titleText, showSelectedFilters }: ICatalogPa
               </span>
               {genres.length && countries.length ? ', ' : null}
               <span className={styles.filtersCountries}>
-                {countries.length
-                  ? countries.join(', ')
-                  : `, ${t(`CatalogPageHeader.AllCountries`)}`}
+                {countries.length ? countries.join(', ') : `, ${t(`CatalogPageHeader.AllCountries`)}`}
               </span>
             </p>
           )}

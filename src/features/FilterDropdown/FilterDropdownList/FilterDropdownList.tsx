@@ -11,14 +11,12 @@ interface IFilterDropdownList {
 }
 
 export type FilterDropdownListType = 'countries' | 'genres';
-export const FilterDropdownList = React.memo(
-  ({ array, title, className, type }: IFilterDropdownList) => {
-    return (
-      <ul className={classNames(styles.filterDropList, className)}>
-        {array.map((item) => (
-          <FilterDropdownListItem key={item} title={title} item={item} type={type} />
-        ))}
-      </ul>
-    );
-  },
-);
+export const FilterDropdownList = React.memo(({ array, title, className, type }: IFilterDropdownList) => {
+  return (
+    <ul className={classNames(styles.filterDropList, className)}>
+      {array.map((item) => (
+        <FilterDropdownListItem key={item} title={title} item={item} type={type} />
+      ))}
+    </ul>
+  );
+});

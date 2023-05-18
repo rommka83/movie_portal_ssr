@@ -9,10 +9,7 @@ interface IProps {
   comment: IOneComment;
 }
 
-export const OneCommentHeader: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({
-  comment,
-  className,
-}) => {
+export const OneCommentHeader: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ comment, className }) => {
   const name = comment.author.split(' ').slice(0, 1);
   const surName = comment.author.split(' ').slice(1);
 

@@ -41,7 +41,7 @@ export const FilterDropdownListItem = ({ title, item, type }: IFilterDropdownLis
       <label className={styles.filterDropLabel}>
         <input
           className={classNames(styles.filterDropInput, 'visually-hidden')}
-          type="checkbox"
+          type='checkbox'
           onChange={onChange}
           checked={checked}
         />

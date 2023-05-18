@@ -24,7 +24,7 @@ export const OneComment: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ classN
         <div className={styles.commentFooter}>
           <ButtonOrLink
             large
-            variant="third"
+            variant='third'
             className={classNames(styles.commentBtn, styles.open, 'icon-message_20__0')}
             onClick={() => setModalIsOpen(true)}
           >
@@ -32,7 +32,7 @@ export const OneComment: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ classN
           </ButtonOrLink>
           <ButtonOrLink
             large
-            variant="third"
+            variant='third'
             className={classNames(styles.commentBtn, styles.like, 'icon-thumbUp_16__0')}
           >
             <span>{t('sectionTitle.Healthy')}</span>
@@ -40,7 +40,7 @@ export const OneComment: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ classN
           </ButtonOrLink>
           <ButtonOrLink
             large
-            variant="third"
+            variant='third'
             className={classNames(styles.commentBtn, styles.like, 'icon-thumbDown_16__0')}
           >
             <span>{t('sectionTitle.No')}</span>
@@ -53,14 +53,14 @@ export const OneComment: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ classN
           <div className={classNames(styles.modal, 'container')}>
             <OneCommentHeader comment={comment} className={styles.modalHead} />
             <OneCommentBody comment={comment} className={styles.modalComment} />
-            <textarea className={styles.myComment} placeholder="Оставте ваш коментарий" />
+            <textarea className={styles.myComment} placeholder='Оставте ваш коментарий' />
             <div className={styles.modalBlockBtn}>
-              <ButtonOrLink large variant="third" onClick={() => {}} className={styles.modalBtn}>
+              <ButtonOrLink large variant='third' onClick={() => {}} className={styles.modalBtn}>
                 Комментировать
               </ButtonOrLink>
               <ButtonOrLink
                 large
-                variant="third"
+                variant='third'
                 onClick={() => setModalIsOpen(false)}
                 className={styles.modalBtn}
               >

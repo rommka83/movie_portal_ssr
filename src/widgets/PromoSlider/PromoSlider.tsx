@@ -118,7 +118,11 @@ export const PromoSlider = () => {
 
   return (
     <section className={styles.root}>
-      <div className={classNames(styles.slider, 'container')} style={{ height: `${sliderHight}px` }} ref={container}>
+      <div
+        className={classNames(styles.slider, 'container')}
+        style={{ height: `${sliderHight}px` }}
+        ref={container}
+      >
         <div key={prevImgIndex} className={classNames(styles.sliderImg, styles.sliderImgPrev)}>
           <PromoSlide
             title={DB[prevImgIndex].title}

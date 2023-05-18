@@ -39,7 +39,7 @@ export function ActorsCreators({ persons, className }: props) {
               </li>
             );
           })}
-          <Link href="/AllParticipants">
+          <Link href='/AllParticipants'>
             <li className={classNames(styles.item, styles.entryModal)}>{t('more')}</li>
           </Link>
         </ul>

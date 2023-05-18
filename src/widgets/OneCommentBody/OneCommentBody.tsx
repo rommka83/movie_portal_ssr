@@ -8,10 +8,7 @@ interface IProps {
   comment: IOneComment;
 }
 
-export const OneCommentBody: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({
-  className,
-  comment,
-}) => {
+export const OneCommentBody: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ className, comment }) => {
   return (
     <div className={classNames(styles.commentBody, className)}>
       <h5 className={styles.commentTitle}>{comment.title}</h5>
