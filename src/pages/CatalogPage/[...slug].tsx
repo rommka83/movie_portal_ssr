@@ -20,13 +20,16 @@ import { getFilters, restoreParams } from 'shared/utils/generatesParamsString';
 
 export const getServerSideProps: GetServerSideProps<{ movies: IFilm[] }> = async (context) => {
   const genre = context.params?.slug?.[0];
-  const responseMovies = await axios.get(`https://api.kinopoisk.dev/v1.3/movie?&page=1&genres.name=${genre}&limit=30`, {
-    headers: {
-      Accept: 'application/json',
-      'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
-      // 'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
+  const responseMovies = await axios.get(
+    `https://api.kinopoisk.dev/v1.3/movie?&page=1&genres.name=${genre}&limit=30`,
+    {
+      headers: {
+        Accept: 'application/json',
+        'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
+        // 'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
+      },
     },
-  });
+  );
   if (!responseMovies) {
     return {
       notFound: true,

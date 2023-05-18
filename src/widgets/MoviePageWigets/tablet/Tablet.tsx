@@ -28,7 +28,9 @@ export default function Tablet({ film }: IProps) {
       <Back f={() => {}}>{t('Back')}</Back>
       <VideoDescription short film={film} className={styles.description} />
       <VideoPlayer
-        trailer={film.videos !== undefined && film.videos.trailers.length > 0 ? film.videos.trailers[0].url : '#'}
+        trailer={
+          film.videos !== undefined && film.videos.trailers.length > 0 ? film.videos.trailers[0].url : '#'
+        }
         age={film.ageRating ? film.ageRating : 0}
         className={styles.player}
       />
@@ -59,7 +61,12 @@ export default function Tablet({ film }: IProps) {
       <ActorsCreators persons={film.persons} className={styles.actorsCreators} />
       <AdditionalMaterials className={styles.additionalMaterials} video={film.videos} />
       <BlockComments className={styles.comments} />
-      <AllDevaicePoster name={film.name} enName={film.enName} poster={film.poster.url} className={styles.allDvices} />
+      <AllDevaicePoster
+        name={film.name}
+        enName={film.enName}
+        poster={film.poster.url}
+        className={styles.allDvices}
+      />
     </div>
   );
 }

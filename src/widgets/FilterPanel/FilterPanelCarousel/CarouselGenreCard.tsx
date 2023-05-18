@@ -1,11 +1,7 @@
 import React, { useCallback } from 'react';
 import styles from './filterpanelcarousel.module.css';
 import { FilterGenreCard } from 'shared/ui/FilterGenreCard';
-import {
-  addGenresFilter,
-  isGenreSelectedSelector,
-  removeGenresFilter,
-} from 'app/store/filterSlice';
+import { addGenresFilter, isGenreSelectedSelector, removeGenresFilter } from 'app/store/filterSlice';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { useTranslation } from 'i18n';
 import classNames from 'classnames';
@@ -32,7 +28,7 @@ export const CarouselGenreCard = ({ genre }: ICarouselGenreCard) => {
         type: 'genre',
       });
     },
-    [isGenreSelected, dispatch, router, genre],
+    [isGenreSelected, dispatch, router],
   );
   return (
     <FilterGenreCard

@@ -46,7 +46,10 @@ export default function ActorPageWiget({ actor }: IProps) {
               <div className={styles.title}>
                 Полная фильмография
                 <span className={styles.lable}>
-                  {declension(actor?.movies && actor?.movies.filter((item) => item.name !== null).length, 'фильм')}
+                  {declension(
+                    actor?.movies && actor?.movies.filter((item) => item.name !== null).length,
+                    'фильм',
+                  )}
                 </span>
               </div>
               <ActorTabs tabs={['Всё']} />

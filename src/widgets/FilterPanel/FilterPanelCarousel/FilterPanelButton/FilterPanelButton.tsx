@@ -25,9 +25,7 @@ export const FilterPanelButton = React.memo(({ item, type }: IFilterButton) => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const isFilterSelectedSelector =
-    type === 'countries'
-      ? isCountrySelectedSelector(item)
-      : isInputRangeSelectedSelector(type, +item);
+    type === 'countries' ? isCountrySelectedSelector(item) : isInputRangeSelectedSelector(type, +item);
 
   const isFilterSelected = useAppSelector(isFilterSelectedSelector);
 
@@ -37,9 +35,7 @@ export const FilterPanelButton = React.memo(({ item, type }: IFilterButton) => {
         return isFilterSelected ? removeCountriesFilter(item) : addCountriesFilter(item);
       case 'rating':
       case 'votes':
-        return isFilterSelected
-          ? removeInputRangeFilter(type)
-          : addInputRangeFilter({ type, value: +item });
+        return isFilterSelected ? removeInputRangeFilter(type) : addInputRangeFilter({ type, value: +item });
     }
   }, [type, item, isFilterSelected]);
 
@@ -53,10 +49,7 @@ export const FilterPanelButton = React.memo(({ item, type }: IFilterButton) => {
     });
   }, [dispatch, action, router, isFilterSelected, type, item]);
 
-  const getFilterTitle = useCallback(
-    (item: string) => (type === 'countries' ? item : type + item),
-    [type],
-  );
+  const getFilterTitle = useCallback((item: string) => (type === 'countries' ? item : type + item), [type]);
 
   return (
     <div className={styles.filterButtonContainer}>
@@ -64,7 +57,7 @@ export const FilterPanelButton = React.memo(({ item, type }: IFilterButton) => {
         className={classNames(styles.filterButton, {
           [styles.active]: isFilterSelected,
         })}
-        variant="third"
+        variant='third'
         large
         onClick={onClick}
       >

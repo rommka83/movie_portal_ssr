@@ -72,9 +72,7 @@ const filters = createSlice({
       state.filters.countries.push(action.payload);
     },
     removeCountriesFilter(state, action: PayloadAction<string>) {
-      state.filters.countries = state.filters.countries.filter(
-        (country) => country !== action.payload,
-      );
+      state.filters.countries = state.filters.countries.filter((country) => country !== action.payload);
     },
 
     addInputRangeFilter(state, action: PayloadAction<{ type: InputRangeType; value: number }>) {
@@ -172,9 +170,8 @@ export const isCountrySelectedSelector = (country: string) => (state: RootState)
   state.filters.filters.countries.includes(country);
 export const countriesSelectedSelector = (t: TFunction) => (state: RootState) =>
   state.filters.filters.countries.map((country) => t(`FilterPanel.${country}`));
-export const isInputRangeSelectedSelector =
-  (type: 'rating' | 'votes', value: number) => (state: RootState) =>
-    state.filters.filters[type] === value;
+export const isInputRangeSelectedSelector = (type: 'rating' | 'votes', value: number) => (state: RootState) =>
+  state.filters.filters[type] === value;
 export const filtersCountSelector = (state: RootState) =>
   Object.values(state.filters.filters)
     .flatMap((filter) => filter)

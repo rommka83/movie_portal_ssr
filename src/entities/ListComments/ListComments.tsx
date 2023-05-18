@@ -12,14 +12,10 @@ interface IProps {
   all?: boolean;
 }
 
-export const ListComments: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({
-  all = false,
-  className,
-}) => {
+export const ListComments: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({ all = false, className }) => {
   const comments = useAppSelector((state) => state.filmComents.comments);
   const mobile = UseMedia('(max-width:600px)');
-  if (comments?.total === 0)
-    return <p className={styles.message}>К данному фильму, пока нет комментариев</p>;
+  if (comments?.total === 0) return <p className={styles.message}>К данному фильму, пока нет комментариев</p>;
   if (comments === undefined) return null;
   return mobile ? (
     <Mobile comments={comments.docs} />

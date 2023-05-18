@@ -37,12 +37,7 @@
     "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_1111765.jpg"
   },
   "facts": null,
-  "genres": [
-    { "name": "аниме" },
-    { "name": "мультфильм" },
-    { "name": "приключения" },
-    { "name": "фэнтези" }
-  ],
+  "genres": [{ "name": "аниме" }, { "name": "мультфильм" }, { "name": "приключения" }, { "name": "фэнтези" }],
   "countries": [{ "name": "Япония" }],
   "seasonsInfo": [{ "number": 1, "episodesCount": 12 }],
   "persons": [
