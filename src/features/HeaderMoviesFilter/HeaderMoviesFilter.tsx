@@ -33,67 +33,67 @@ export function HeaderMoviesFilter() {
           <CardTitle className={styles.title}>{t('headerMoviesFilter.Genres')}</CardTitle>
           <ul className={styles.filmLinkList}>
             <li className={styles.filmListItem}>
-              <Link to="/CatalogPage/биография">{t('headerMoviesFilter.biography')}</Link>
+              <Link to='/CatalogPage/биография'>{t('headerMoviesFilter.biography')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="/CatalogPage/боевик">{t('headerMoviesFilter.actions')}</Link>
+              <Link to='/CatalogPage/боевик'>{t('headerMoviesFilter.actions')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="/CatalogPage/вестерн">{t('headerMoviesFilter.western')}</Link>
+              <Link to='/CatalogPage/вестерн'>{t('headerMoviesFilter.western')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="/CatalogPage/военные">{t('headerMoviesFilter.military')}</Link>
+              <Link to='/CatalogPage/военные'>{t('headerMoviesFilter.military')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="/CatalogPage/детектив">{t('headerMoviesFilter.detectives')}</Link>
+              <Link to='/CatalogPage/детектив'>{t('headerMoviesFilter.detectives')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.family')}</Link>
+              <Link to=''>{t('headerMoviesFilter.family')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.kids')}</Link>
+              <Link to=''>{t('headerMoviesFilter.kids')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.documentaries')}</Link>
+              <Link to=''>{t('headerMoviesFilter.documentaries')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="/CatalogPage/драма">{t('headerMoviesFilter.drama')}</Link>
+              <Link to='/CatalogPage/драма'>{t('headerMoviesFilter.drama')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.historical')}</Link>
+              <Link to=''>{t('headerMoviesFilter.historical')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.musical')}</Link>
+              <Link to=''>{t('headerMoviesFilter.musical')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.comedy')}</Link>
+              <Link to=''>{t('headerMoviesFilter.comedy')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.criminal')}</Link>
+              <Link to=''>{t('headerMoviesFilter.criminal')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.melodrama')}</Link>
+              <Link to=''>{t('headerMoviesFilter.melodrama')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.cartoons')}</Link>
+              <Link to=''>{t('headerMoviesFilter.cartoons')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.adventures')}</Link>
+              <Link to=''>{t('headerMoviesFilter.adventures')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.sport')}</Link>
+              <Link to=''>{t('headerMoviesFilter.sport')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.thrillers')}</Link>
+              <Link to=''>{t('headerMoviesFilter.thrillers')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.horror')}</Link>
+              <Link to=''>{t('headerMoviesFilter.horror')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.fantastic')}</Link>
+              <Link to=''>{t('headerMoviesFilter.fantastic')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.fantasy')}</Link>
+              <Link to=''>{t('headerMoviesFilter.fantasy')}</Link>
             </li>
           </ul>
         </div>
@@ -101,29 +101,29 @@ export function HeaderMoviesFilter() {
           <CardTitle className={styles.title}>{t('headerMoviesFilter.Countries')}</CardTitle>
           <ul className={styles.singleColumnList}>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.Russians')}</Link>
+              <Link to=''>{t('headerMoviesFilter.Russians')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.Foreign')}</Link>
+              <Link to=''>{t('headerMoviesFilter.Foreign')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.SovietCinema')}</Link>
+              <Link to=''>{t('headerMoviesFilter.SovietCinema')}</Link>
             </li>
           </ul>
 
           <CardTitle className={styles.title}>{t('headerMoviesFilter.Years')}</CardTitle>
           <ul className={styles.singleColumnList}>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.Movies2023')}</Link>
+              <Link to=''>{t('headerMoviesFilter.Movies2023')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.Movies2022')}</Link>
+              <Link to=''>{t('headerMoviesFilter.Movies2022')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.Movies2021')}</Link>
+              <Link to=''>{t('headerMoviesFilter.Movies2021')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to="">{t('headerMoviesFilter.Movies2020')}</Link>
+              <Link to=''>{t('headerMoviesFilter.Movies2020')}</Link>
             </li>
           </ul>
         </div>
@@ -139,15 +139,12 @@ export function HeaderMoviesFilter() {
                   })}
                   onMouseEnter={onMouseEnter}
                 >
-                  <Link to=""> {t(`headerMoviesFilter.${content}`)}</Link>
+                  <Link to=''> {t(`headerMoviesFilter.${content}`)}</Link>
                 </li>
               ))}
             </ul>
             <div className={styles.gutter}>
-              <div
-                className={styles.gutterStripe}
-                style={{ transform: `translateY(${offset}px)` }}
-              />
+              <div className={styles.gutterStripe} style={{ transform: `translateY(${offset}px)` }} />
             </div>
           </div>
         </div>

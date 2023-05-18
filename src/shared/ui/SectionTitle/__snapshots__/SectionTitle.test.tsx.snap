@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка SectionTitle отрисовка SectionTitle 1`] = `
+<h3
+  className="sectionTitle"
+>
+  <span>
+    Проверка
+  </span>
+</h3>
+`;

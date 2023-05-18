@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка ExpandableBlock отрисовка ExpandableBlock 1`] = `
+<div
+  className="container"
+>
+  <p
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "Проверка",
+      }
+    }
+  />
+  <button
+    className="expandButton"
+    onClick={[Function]}
+  >
+    Expand
+  </button>
+</div>
+`;

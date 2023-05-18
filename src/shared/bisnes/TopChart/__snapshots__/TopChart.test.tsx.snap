@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка TopChart отрисовка TopChart  1`] = `
+<div
+  className="root"
+>
+  <p
+    className="name"
+  >
+    Our
+  </p>
+  <p
+    className="name"
+  >
+    grade
+  </p>
+  <input
+    className="inp"
+    id="topChart"
+    max="10"
+    min="0"
+    readOnly={true}
+    step="0,1"
+    style={
+      Object {
+        "width": "width",
+      }
+    }
+    type="range"
+    value={0}
+  />
+</div>
+`;

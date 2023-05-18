@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка FilterGenreCard отрисовка FilterGenreCard 1`] = `
+<div
+  className="container"
+  onClick={[Function]}
+>
+  <div
+    className="containerInner"
+  >
+    <div
+      className="icon icon-genre__24__0"
+    />
+    <span
+      className="caption"
+    />
+  </div>
+</div>
+`;

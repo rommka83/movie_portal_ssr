@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка InputSearch отрисовка InputSearch 1`] = `
+<div>
+  <label
+    className="inputContainer"
+  >
+    <input
+      className="inputSearch"
+      onChange={[Function]}
+      placeholder=" "
+      type="text"
+      value=""
+    />
+    <button
+      className="icon-search_20__0 searchButton"
+      disabled={true}
+      onClick={[Function]}
+    />
+    <span
+      className="textPlaceholder"
+    >
+      Проверка
+    </span>
+  </label>
+</div>
+`;

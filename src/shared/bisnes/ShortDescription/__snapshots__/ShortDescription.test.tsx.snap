@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка ShortDescription отрисовка ShortDescription  1`] = `
+<div
+  className="root"
+>
+  <p
+    className="yearСountry"
+  >
+    1970
+    , 
+  </p>
+  <p
+    className="genre"
+  >
+    sss
+  </p>
+  <p
+    className="duration"
+  >
+    0 ч 0 мин
+  </p>
+</div>
+`;

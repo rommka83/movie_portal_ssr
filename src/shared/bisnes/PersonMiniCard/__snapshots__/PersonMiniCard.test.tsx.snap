@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка PersonMiniCard отрисовка PersonMiniCard  1`] = `
+<a
+  className="link"
+  href="/ActorPage/1"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onTouchStart={[Function]}
+>
+  <div
+    className="root"
+  >
+    <img
+      alt="string"
+      className="pic"
+      data-nimg="1"
+      decoding="async"
+      height={60}
+      loading="lazy"
+      onError={[Function]}
+      onLoad={[Function]}
+      src=""
+      style={
+        Object {
+          "color": "transparent",
+        }
+      }
+      width={60}
+    />
+    <p
+      className="name"
+    >
+      string
+    </p>
+    <p
+      className="name surName"
+    />
+  </div>
+</a>
+`;

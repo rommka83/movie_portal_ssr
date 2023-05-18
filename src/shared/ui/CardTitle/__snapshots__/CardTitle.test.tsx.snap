@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка CardTitle отрисовка CardTitle 1`] = `
+<h3
+  className="cardTitle"
+>
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur quod velit rem consequuntur nihil ullam, dicta modi nostrum dolore saepe illum provident quae asperiores excepturi possimus, fuga, distinctio officia numquam?
+</h3>
+`;
