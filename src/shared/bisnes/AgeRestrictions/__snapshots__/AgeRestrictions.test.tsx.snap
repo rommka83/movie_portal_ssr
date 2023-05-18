@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка AgeRestrictions отрисовка AgeRestrictions  1`] = `
+<div
+  className="wrapper"
+>
+  <span
+    className="text"
+  >
+    22
+     +
+  </span>
+</div>
+`;

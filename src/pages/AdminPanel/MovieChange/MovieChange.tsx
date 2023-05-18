@@ -4,7 +4,7 @@ import styles from './movieChange.module.css';
 import classNames from 'classnames';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { getMovieTitleSearch, resetmovieTitleSearch } from 'app/store/movieTitleSearchSlice';
-import { OutputWindow } from 'shared/CastomInput';
+import { OutputWindow } from 'shared/ui/CastomInput';
 import { nanoid } from '@reduxjs/toolkit';
 import { IFilm } from 'shared/types/IFilm';
 import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
@@ -94,7 +94,12 @@ export default function MovieChange() {
         </div>
         <div className={styles.label}>
           <span className={styles.labelText}>английское название:</span>
-          <input type='text' className={styles.inp} value={enName} onChange={(e) => setEnName(e.currentTarget.value)} />
+          <input
+            type='text'
+            className={styles.inp}
+            value={enName}
+            onChange={(e) => setEnName(e.currentTarget.value)}
+          />
         </div>
         <OutputWindow name='альтернативное название' value={oneFilm.alternativeName} />
         <OutputWindow name='идентификационный номер' value={oneFilm.id} />

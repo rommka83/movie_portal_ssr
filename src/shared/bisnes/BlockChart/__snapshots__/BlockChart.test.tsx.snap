@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка BlockChart отрисовка BlockChart  1`] = `
+<div
+  className="root"
+>
+  <input
+    className="inp"
+    max="10"
+    min="0"
+    readOnly={true}
+    step="0,1"
+    style={
+      Object {
+        "width": 0,
+      }
+    }
+    type="range"
+    value={0}
+  />
+  <input
+    className="inp"
+    max="10"
+    min="0"
+    readOnly={true}
+    step="0,1"
+    style={
+      Object {
+        "width": 0,
+      }
+    }
+    type="range"
+    value={0}
+  />
+  <input
+    className="inp"
+    max="10"
+    min="0"
+    readOnly={true}
+    step="0,1"
+    style={
+      Object {
+        "width": 0,
+      }
+    }
+    type="range"
+    value={0}
+  />
+  <input
+    className="inp"
+    max="10"
+    min="0"
+    readOnly={true}
+    step="0,1"
+    style={
+      Object {
+        "width": 0,
+      }
+    }
+    type="range"
+    value={0}
+  />
+</div>
+`;

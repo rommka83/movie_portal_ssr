@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка ButtonOrLink отрисовка ButtonOrLink primary, круглой 1`] = `
+<button
+  className="button primary round"
+>
+  Lorem ipsum dolor
+</button>
+`;
+
+exports[`проверка ButtonOrLink отрисовка ButtonOrLink secondary, большой 1`] = `
+<button
+  className="button secondary large"
+>
+  Lorem ipsum dolor
+</button>
+`;
+
+exports[`проверка ButtonOrLink отрисовка ButtonOrLink прозрачной, маленькой 1`] = `
+<button
+  className="button primary transparent small"
+>
+  Lorem ipsum dolor
+</button>
+`;

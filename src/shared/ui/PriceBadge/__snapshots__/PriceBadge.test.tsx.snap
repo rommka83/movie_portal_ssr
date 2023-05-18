@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка PriceBadge бесплатно 1`] = `
+<span
+  className="priceBadge gray"
+>
+  Бесплатно
+</span>
+`;
+
+exports[`проверка PriceBadge подписка 1`] = `
+<span
+  className="priceBadge pink"
+>
+  Подписка
+</span>
+`;

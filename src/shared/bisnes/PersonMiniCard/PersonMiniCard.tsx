@@ -24,13 +24,7 @@ export function PersonMiniCard({
     <Link href={`/ActorPage/${person.id}`} className={styles.link}>
       <div className={classNames(styles.root, className)}>
         {person.photo != null ? (
-          <Image
-            width={60}
-            height={60}
-            src={person.photo}
-            alt={personName}
-            className={styles.pic}
-          />
+          <Image width={60} height={60} src={person.photo} alt={personName} className={styles.pic} />
         ) : (
           <div className={styles.noPhoto}>
             <span className={classNames(styles.noPhotoIcon, 'icon-person_56__0')} />
