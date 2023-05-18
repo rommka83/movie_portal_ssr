@@ -7,8 +7,7 @@ const meta = {
   component: SvgIcon,
   tags: ['autodocs'],
   args: {
-    type:
-      'Google' || 'AppleLogo' || 'VK' || 'OK' || 'Twitter' || 'Viber' || 'Linkedin' || 'Telegram',
+    type: 'Google' || 'AppleLogo' || 'VK' || 'OK' || 'Twitter' || 'Viber' || 'Linkedin' || 'Telegram',
     size: 20,
   },
 

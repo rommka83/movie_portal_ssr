@@ -27,7 +27,12 @@ export const FilterPanelDesktop = React.memo(() => {
               carouselContainerClassName={styles.carouselContainer}
               withButton
             />
-            <FilterDropdownList className={styles.list} array={genres} title='headerDropdownNavigation' type='genres' />
+            <FilterDropdownList
+              className={styles.list}
+              array={genres}
+              title='headerDropdownNavigation'
+              type='genres'
+            />
           </FilterDropdown>
 
           <FilterDropdown title='FilterPanel' type='countries' position='left'>
@@ -38,7 +43,12 @@ export const FilterPanelDesktop = React.memo(() => {
               withButton
             />
 
-            <FilterDropdownList className={styles.list} array={countries} title='FilterPanel' type='countries' />
+            <FilterDropdownList
+              className={styles.list}
+              array={countries}
+              title='FilterPanel'
+              type='countries'
+            />
           </FilterDropdown>
 
           <FilterDropdown title='FilterPanel' type='rating' position='left' className={styles.dropdownRating}>
@@ -63,7 +73,12 @@ export const FilterPanelDesktop = React.memo(() => {
             />
           </FilterDropdown>
 
-          <FilterDropdown title='FilterPanel' type='director' position='right' className={styles.dropdownSearch}>
+          <FilterDropdown
+            title='FilterPanel'
+            type='director'
+            position='right'
+            className={styles.dropdownSearch}
+          >
             <FilterDropdownSearch placeholderText={t('FilterPanel.director')} type='director' />
           </FilterDropdown>
 

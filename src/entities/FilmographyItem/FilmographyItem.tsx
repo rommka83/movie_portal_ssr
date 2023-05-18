@@ -21,7 +21,9 @@ export const FilmographyItem: React.FC<PropsType> = ({ movie }) => {
         <div className={styles.filmographyBody}>
           <div className={styles.filmographyInfo}>
             <div className={styles.filmographyTitle}>
-              {movie.name && brakePoint && movie.name.length > 16 ? movie.name.slice(0, 16) + '...' : movie.name}
+              {movie.name && brakePoint && movie.name.length > 16
+                ? movie.name.slice(0, 16) + '...'
+                : movie.name}
             </div>
             {movie.rating && (
               <div className={styles.filmographyRating}>

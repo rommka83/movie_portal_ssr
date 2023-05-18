@@ -3,19 +3,18 @@ import styles from './buttonorlink.module.css';
 import classNames from 'classnames';
 import Link from 'next/link';
 
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: 'primary' | 'secondary' | 'third';
+  large?: boolean;
+  transparent?: boolean;
+  small?: boolean;
+  round?: boolean;
+  to?: string;
+  onClick?: (event: MouseEvent<HTMLElement>) => void;
+};
+
 export const ButtonOrLink = React.memo<ButtonProps>(
-  ({
-    className,
-    variant = 'primary',
-    round,
-    large,
-    transparent,
-    small,
-    children,
-    to,
-    onClick,
-    ...props
-  }) => {
+  ({ className, variant = 'primary', round, large, transparent, small, children, to, onClick, ...props }) => {
     const classes = classNames(styles.button, className, {
       [styles.primary]: variant === 'primary',
       [styles.secondary]: variant === 'secondary',
@@ -41,13 +40,3 @@ export const ButtonOrLink = React.memo<ButtonProps>(
     );
   },
 );
-
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'secondary' | 'third';
-  large?: boolean;
-  transparent?: boolean;
-  small?: boolean;
-  round?: boolean;
-  to?: string;
-  onClick?: (event: MouseEvent<HTMLElement>) => void;
-};

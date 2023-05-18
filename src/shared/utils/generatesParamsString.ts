@@ -77,7 +77,11 @@ export const clearParams = (router: NextRouter, isPushed = true) => {
   isPushed && router.push(DEFAULT_GENRES_PARAMS, undefined, { shallow: true });
 };
 
-export const generatesParamsString = ({ isElementSelected, type, selectedElement }: IGeneratesParamsString) => {
+export const generatesParamsString = ({
+  isElementSelected,
+  type,
+  selectedElement,
+}: IGeneratesParamsString) => {
   const prevGenreParam = currentParams?.[typeParamsIndex.genre];
   const prevCountryParam = currentParams?.[typeParamsIndex.countries];
 
@@ -111,7 +115,9 @@ export const applyFilterParams = (router: NextRouter) => {
   const queryParamsString = queryParams.toString();
   const prevParams = router.query.slug;
   router.push(
-    `${prevParams ? '' : 'CatalogPage/'}${currentParams.join('/')}${queryParamsString ? '?' + queryParamsString : ''}`,
+    `${prevParams ? '' : 'CatalogPage/'}${currentParams.join('/')}${
+      queryParamsString ? '?' + queryParamsString : ''
+    }`,
     undefined,
     {
       shallow: true,
@@ -136,7 +142,9 @@ export const useGenerateParamsString = (allDevices?: boolean) => {
 export const getFilters = (router: NextRouter) => {
   return {
     genres:
-      router.query.slug?.[typeParamsIndex.genre].split('+').filter((item) => item !== DEFAULT_GENRES_PARAMS) ?? [],
+      router.query.slug?.[typeParamsIndex.genre]
+        .split('+')
+        .filter((item) => item !== DEFAULT_GENRES_PARAMS) ?? [],
     countries: router.query.slug?.[typeParamsIndex.countries]?.split('+') ?? [],
     rating: router.query['rating'] ? +router.query['rating'] ?? 0 : null,
     votes: router.query['votes'] ? +(router.query['votes'] ?? 0) : null,

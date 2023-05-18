@@ -46,7 +46,10 @@ interface ICatalogPage {
 }
 function CatalogPage({ movies, actors }: ICatalogPage) {
   const { t } = useTranslation();
-  const adventures = useMemo(() => movies?.filter((el) => el.genres.find((e) => e.name === 'приключения')), [movies]);
+  const adventures = useMemo(
+    () => movies?.filter((el) => el.genres.find((e) => e.name === 'приключения')),
+    [movies],
+  );
   const router = useRouter();
   const dispatch = useAppDispatch();
 

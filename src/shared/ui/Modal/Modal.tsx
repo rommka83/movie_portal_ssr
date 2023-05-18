@@ -3,10 +3,7 @@ import React, { PropsWithChildren, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './modal.module.css';
 
-export const Modal: React.FC<PropsWithChildren<{ className?: string }>> = ({
-  children,
-  className,
-}) => {
+export const Modal: React.FC<PropsWithChildren<{ className?: string }>> = ({ children, className }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {

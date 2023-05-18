@@ -8,22 +8,14 @@ import { IFilterDropdownSearch } from 'features/FilterDropdown/FilterDropdownSea
 interface IModalSearch {
   onClickClose: () => void;
 }
-export function ModalSearch({
-  type,
-  placeholderText,
-  onClickClose,
-}: IModalSearch & IFilterDropdownSearch) {
+export function ModalSearch({ type, placeholderText, onClickClose }: IModalSearch & IFilterDropdownSearch) {
   return (
     <Modal>
       <button className={styles.closeButton} onClick={onClickClose}>
         <span className={classNames('icon-close_20__0', styles.closeButtonIcon)} />
       </button>
       <div className={styles.modalContainer}>
-        <FilterDropdownSearch
-          type={type}
-          placeholderText={placeholderText}
-          onSearch={onClickClose}
-        />
+        <FilterDropdownSearch type={type} placeholderText={placeholderText} onSearch={onClickClose} />
       </div>
     </Modal>
   );

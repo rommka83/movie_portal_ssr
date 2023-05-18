@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Не слышу зла",
+    "description": "Глухонемая девушка сбегает от хитрого маньяка. Напряжённые кошки-мышки со звездой «Игры в кальмара»",
+    "picture": "/static/promo_1.jfif",
+    "pictureMobile": "/static/promo_11.jfif"
+  },
+  {
+    "title": "Взломщик",
+    "description": "Искусный взломщик идёт на последнее дело, чтобы вернуть старые долги. Динамичный триллер о расплате",
+    "picture": "/static/promo_2.jfif",
+    "pictureMobile": "/static/promo_21.jfif"
+  },
+  {
+    "title": "Паронольмальные явления",
+    "description": "Блогер-пранкер узнаёт о последствиях плохих шуток и разрушенной дружбы. Комедийный хоррор",
+    "picture": "/static/promo_3.jfif",
+    "pictureMobile": "/static/promo_31.jfif"
+  },
+  {
+    "title": "Сержант",
+    "description": "Сержант спецназа ищет виновных в гибели своего взвода. Боевик с Владимиром Епифанцевым",
+    "picture": "/static/promo_4.jfif",
+    "pictureMobile": "/static/promo_41.jfif"
+  },
+  {
+    "title": "Против всех",
+    "description": "Дед Захар борется с застройщиком и соседями за свой старый дом. Комедия от авторов «Ивановы-Ивановы»",
+    "picture": "/static/promo_5.jfif",
+    "pictureMobile": "/static/promo_51.jfif"
+  }
+]

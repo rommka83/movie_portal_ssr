@@ -37,7 +37,13 @@ export const FilterPanelMobileButtonsBlock = ({ onCloseModal }: IFilterPanelMobi
       >
         {t('FilterPanel.ShowResults')}
       </ButtonOrLink>
-      <ButtonOrLink className={styles.filterButton} variant='primary' transparent large onClick={onClickReset}>
+      <ButtonOrLink
+        className={styles.filterButton}
+        variant='primary'
+        transparent
+        large
+        onClick={onClickReset}
+      >
         {t('FilterPanel.ResetFilters')}
         {!!filtersCount && <div className={styles.filtersCounter}>{filtersCount}</div>}
       </ButtonOrLink>

@@ -74,9 +74,17 @@ export const FilterPanelMobile = React.memo(() => {
                   type='countries'
                 />
 
-                <FilterPanelMobileAccordion textButton={t('FilterPanel.rating')} array={ratings} type='rating' />
+                <FilterPanelMobileAccordion
+                  textButton={t('FilterPanel.rating')}
+                  array={ratings}
+                  type='rating'
+                />
 
-                <FilterPanelMobileAccordion textButton={t('FilterPanel.votes')} array={estimates} type='votes' />
+                <FilterPanelMobileAccordion
+                  textButton={t('FilterPanel.votes')}
+                  array={estimates}
+                  type='votes'
+                />
 
                 <FilterPanelMobileSearch
                   type='director'

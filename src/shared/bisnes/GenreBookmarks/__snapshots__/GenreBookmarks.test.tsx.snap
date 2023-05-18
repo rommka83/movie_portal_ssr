@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка GenreBookmarks отрисовка GenreBookmarks  1`] = `
+<ul
+  className="list"
+>
+  <li
+    className="item"
+  >
+    <a
+      className="link"
+      href="https://www.ivi.ru/movies"
+    >
+      string
+    </a>
+  </li>
+</ul>
+`;

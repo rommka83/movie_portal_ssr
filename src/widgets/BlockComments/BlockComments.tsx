@@ -30,18 +30,18 @@ export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({ className })
   return (
     <>
       <section className={classNames(styles.root, className)}>
-        <Link href="/MovieReviews">
+        <Link href='/MovieReviews'>
           <SectionTitle onClick={() => setModalIsOpen(true)}>
             {
               <div className={styles.title}>
                 <span>{t('sectionTitle.MovieCommentary')}</span>
-                <div className="icon-arrowRight_6x16__0"></div>
+                <div className='icon-arrowRight_6x16__0'></div>
               </div>
             }
           </SectionTitle>
         </Link>
         <ButtonOrLink
-          variant="third"
+          variant='third'
           large={true}
           className={styles.commentAdd}
           onClick={() => setModalIsOpen(true)}
@@ -60,7 +60,7 @@ export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({ className })
               <UserPhoto />
               <span className={styles.modalHeadName}>Имя пользователя</span>
               <ButtonOrLink
-                variant="third"
+                variant='third'
                 large={true}
                 className={styles.modalHeadBtn}
                 onClick={() => setModalIsOpen(false)}
@@ -69,21 +69,21 @@ export const BlockComments: FC<HTMLAttributes<HTMLDivElement>> = ({ className })
               </ButtonOrLink>
             </div>
             <CastomSelect
-              placeholder="Тип рецензии"
+              placeholder='Тип рецензии'
               list={categoriesComment}
               className={styles.categoryComment}
               func={(val) => assignAcommentCategory(val)}
             />
             <input
-              type="text"
+              type='text'
               className={styles.inpTitle}
-              placeholder="Заголовок"
+              placeholder='Заголовок'
               value={valueTitleComment}
               onChange={(e) => setValueTitleComment(e.target.value)}
             />
             <textarea
               className={styles.textComment}
-              placeholder="Текст"
+              placeholder='Текст'
               value={valueComment}
               onChange={(e) => setValueComment(e.target.value)}
             />

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка UserPhoto отрисовка UserPhoto без фотографии 1`] = `
+<div
+  className="pic noUser icon-avatar_20__0 "
+/>
+`;
+
+exports[`проверка UserPhoto отрисовка UserPhoto с фотографией 1`] = `
+<img
+  alt=""
+  className="pic"
+  data-nimg="1"
+  decoding="async"
+  height={50}
+  loading="lazy"
+  onError={[Function]}
+  onLoad={[Function]}
+  src="/_next/image?url=%2Faaa&w=128&q=75"
+  srcSet="/_next/image?url=%2Faaa&w=64&q=75 1x, /_next/image?url=%2Faaa&w=128&q=75 2x"
+  style={
+    Object {
+      "color": "transparent",
+    }
+  }
+  width={50}
+/>
+`;
