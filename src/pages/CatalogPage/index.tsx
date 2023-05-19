@@ -5,7 +5,6 @@ import { CatalogPageHeader } from 'widgets/CatalogPageHeader';
 import { FilterPanelDesktop } from 'widgets/FilterPanel';
 import { useTranslation } from 'i18n';
 import { CatalogPageContent } from 'widgets/CatalogPageContent';
-import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
 import { IPerson } from 'shared/types/IPerson';
 import { Breadcrumbs } from 'shared/ui/Breadcrumbs';
@@ -13,23 +12,12 @@ import { useAppDispatch } from 'app/store/hooks';
 import { resetFilters } from 'app/store/filterSlice';
 import { clearParams } from 'shared/utils/generatesParamsString';
 import { useRouter } from 'next/router';
+import { getMovies, getPersons } from 'shared/apiService';
 
 export const getStaticProps = async () => {
   const [responseMovies, responseActors] = await Promise.all([
-    axios.get('https://api.kinopoisk.dev/v1.3/movie?&page=1&limit=30', {
-      headers: {
-        Accept: 'application/json',
-        // 'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
-        'X-API-KEY': 'DMGDYW0-0FC4Z7T-N7R9K0N-HFPEH3J',
-      },
-    }),
-    axios.get('https://api.kinopoisk.dev/v1/person?page=1&limit=20&movies.enProfession=actor', {
-      headers: {
-        Accept: 'application/json',
-        // 'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
-        'X-API-KEY': 'DMGDYW0-0FC4Z7T-N7R9K0N-HFPEH3J',
-      },
-    }),
+    getMovies({ params: { page: '1', limit: '30' } }),
+    getPersons({ params: { page: '1', limit: '20', ['movies.enProfession']: 'actor' } }),
   ]);
   if (!responseMovies) {
     return {
@@ -38,7 +26,7 @@ export const getStaticProps = async () => {
   }
 
   return {
-    props: { movies: responseMovies.data.docs, actors: responseActors.data.docs },
+    props: { movies: responseMovies.docs, actors: responseActors.docs },
   };
 };
 

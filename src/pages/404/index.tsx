@@ -4,17 +4,12 @@ import { MoviesCarousel } from 'widgets/MoviesCarousel';
 import { useTranslation } from 'i18n';
 import { IFilm } from 'shared/types/IFilm';
 import { GetStaticProps } from 'next';
-import axios from 'axios';
 import classNames from 'classnames';
+import { getMovies } from 'shared/apiService';
 
 export const getStaticProps: GetStaticProps<{ movies: IFilm[] }> = async () => {
-  const responseMovies = await axios.get(`https://api.kinopoisk.dev/v1.3/movie?&page=1&limit=30`, {
-    headers: {
-      Accept: 'application/json',
-      // 'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
-      'X-API-KEY': 'DMGDYW0-0FC4Z7T-N7R9K0N-HFPEH3J',
-    },
-  });
+  const responseMovies = await getMovies({ params: { page: '1', limit: '30' } });
+
   if (!responseMovies) {
     return {
       notFound: true,
@@ -22,7 +17,7 @@ export const getStaticProps: GetStaticProps<{ movies: IFilm[] }> = async () => {
   }
 
   return {
-    props: { movies: responseMovies.data.docs },
+    props: { movies: responseMovies.docs },
   };
 };
 interface ICustom404 {

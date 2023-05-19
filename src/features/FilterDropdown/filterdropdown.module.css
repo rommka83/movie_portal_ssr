@@ -103,13 +103,10 @@
 }
 
 .textUnder {
-  display: flex;
   font-size: 13px;
   line-height: 15px;
-  transition-duration: 0.4s;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  transition-property: color;
   color: var(--gray-light);
 }

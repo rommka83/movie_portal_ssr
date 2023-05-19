@@ -8,7 +8,12 @@ interface IAccordion {
   selectedItem?: string | number | null;
   buttonIconClass?: string;
 }
-export function Accordion({ textButton, children, selectedItem, buttonIconClass }: PropsWithChildren<IAccordion>) {
+export function Accordion({
+  textButton,
+  children,
+  selectedItem,
+  buttonIconClass,
+}: PropsWithChildren<IAccordion>) {
   const [expanded, setExpanded] = useState(false);
   const iconClass = expanded ? 'icon-arrowUpSquare_16__0' : 'icon-arrowDownSquare_16__0';
 
