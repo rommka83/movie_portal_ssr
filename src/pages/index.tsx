@@ -15,7 +15,8 @@ export const getStaticProps = async () => {
       headers: {
         Accept: 'application/json',
         // 'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
-        'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
+        // 'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
+        'X-API-KEY': 'DMGDYW0-0FC4Z7T-N7R9K0N-HFPEH3J',
       },
     });
 

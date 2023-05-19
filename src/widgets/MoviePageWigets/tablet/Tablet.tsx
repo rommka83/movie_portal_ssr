@@ -25,7 +25,7 @@ export default function Tablet({ film }: IProps) {
 
   return film === undefined ? null : (
     <div className='container'>
-      <Back f={() => {}}>{t('Back')}</Back>
+      <Back>{t('Back')}</Back>
       <VideoDescription short film={film} className={styles.description} />
       <VideoPlayer
         trailer={
