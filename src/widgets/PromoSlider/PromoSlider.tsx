@@ -4,7 +4,7 @@ import { PromoSlide } from 'entities/PromoSlide';
 import { IFilm } from 'shared/types/IFilm';
 import { useMedia } from 'shared/hooks/useMedia';
 
-import DB from '../../../static/promo_DB.json';
+import DB from '../../../public/static/promo_DB.json';
 import classNames from 'classnames';
 
 const CARD_HEIGHT_COEFFICIENT_TABLET = 1.45;
