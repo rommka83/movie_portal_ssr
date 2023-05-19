@@ -44,7 +44,7 @@ export const FilterPanelButton = React.memo(({ item, type }: IFilterButton) => {
       selectedElement: item,
       type: type,
     });
-  }, [dispatch, action, isFilterSelected, type, item, generatesParamsString]);
+  }, [dispatch, action, generatesParamsString, isFilterSelected, item, type]);
 
   const getFilterTitle = useCallback((item: string) => (type === 'countries' ? item : type + item), [type]);
 

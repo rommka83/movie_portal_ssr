@@ -27,10 +27,13 @@
     height: 100%;
 
     text-align: center;
-    overflow: hidden;
+    overflow: scroll;
 
     display: -webkit-box;
     -webkit-line-clamp: 8;
     -webkit-box-orient: vertical;
+  }
+  .commentContent::-webkit-scrollbar {
+    width: 0;
   }
 }

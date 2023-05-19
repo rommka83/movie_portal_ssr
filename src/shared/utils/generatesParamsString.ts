@@ -135,7 +135,7 @@ export const useGenerateParamsString = (allDevices?: boolean) => {
         applyFilterParams(router);
       }
     },
-    [router, mobile, allDevices],
+    [allDevices, mobile, router],
   );
 };
 

@@ -34,11 +34,6 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
-.container {
-  width: 80vw;
-  margin: 0 auto;
-}
-
 input[type='range'] {
   overflow: hidden;
   -webkit-appearance: none;
@@ -104,4 +99,13 @@ input[type='range']::-ms-fill-upper {
 .visually-hidden {
   position: fixed;
   transform: scale(0);
+}
+.container {
+  width: 80vw;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .container {
+    width: 90vw;
+  }
 }
