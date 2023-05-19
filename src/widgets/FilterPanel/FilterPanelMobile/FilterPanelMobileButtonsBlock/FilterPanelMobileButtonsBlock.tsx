@@ -5,20 +5,27 @@ import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import { useTranslation } from 'i18n';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { filtersCountSelector, resetFilters } from 'app/store/filterSlice';
+import { useRouter } from 'next/router';
+import { applyFilterParams, clearParams } from 'shared/utils/generatesParamsString';
 
 interface IFilterPanelMobileButtonsBlock {
   onCloseModal: () => void;
 }
+const CATALOG_PAGE_PATH = '/CatalogPage';
 export const FilterPanelMobileButtonsBlock = ({ onCloseModal }: IFilterPanelMobileButtonsBlock) => {
   const { t } = useTranslation();
+  const router = useRouter();
+
   const dispatch = useAppDispatch();
   const filtersCount = useAppSelector(filtersCountSelector);
   const onClickReset = useCallback(() => {
     dispatch(resetFilters());
-  }, []);
+    clearParams(router, router.asPath !== CATALOG_PAGE_PATH);
+  }, [router, dispatch]);
   const onApplyClick = useCallback(() => {
+    applyFilterParams(router);
     onCloseModal();
-  }, [onCloseModal]);
+  }, [onCloseModal, router]);
   return (
     <div className={styles.buttonsBlock}>
       <ButtonOrLink
@@ -30,7 +37,13 @@ export const FilterPanelMobileButtonsBlock = ({ onCloseModal }: IFilterPanelMobi
       >
         {t('FilterPanel.ShowResults')}
       </ButtonOrLink>
-      <ButtonOrLink className={styles.filterButton} variant='primary' transparent large onClick={onClickReset}>
+      <ButtonOrLink
+        className={styles.filterButton}
+        variant='primary'
+        transparent
+        large
+        onClick={onClickReset}
+      >
         {t('FilterPanel.ResetFilters')}
         {!!filtersCount && <div className={styles.filtersCounter}>{filtersCount}</div>}
       </ButtonOrLink>

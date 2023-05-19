@@ -11,7 +11,10 @@ interface IGeneralDataOnCommentsForTheFilm {
   comments: IReviev;
 }
 
-export const GeneralDataOnCommentsForTheFilm: FC<IGeneralDataOnCommentsForTheFilm> = ({ className, comments }) => {
+export const GeneralDataOnCommentsForTheFilm: FC<IGeneralDataOnCommentsForTheFilm> = ({
+  className,
+  comments,
+}) => {
   const { t } = useTranslation();
 
   const { positive, neutral, negative, positiveProcent, negativeProcent, neutralProcent } = useMemo(() => {

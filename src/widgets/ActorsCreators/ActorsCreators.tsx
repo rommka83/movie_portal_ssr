@@ -3,7 +3,7 @@ import styles from './actorscreators.module.css';
 import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
 import { nanoid } from '@reduxjs/toolkit';
 import classNames from 'classnames';
-import { UseMedia } from 'shared/hooks/useMedia';
+import { useMedia } from 'shared/hooks/useMedia';
 import { HTMLAttributes } from 'react';
 import { IPerson } from 'shared/types/IPerson';
 import { useTranslation } from '../../i18n';
@@ -17,8 +17,8 @@ interface IProps {
 type props = HTMLAttributes<HTMLDivElement> & IProps;
 
 export function ActorsCreators({ persons, className }: props) {
-  const tablet = UseMedia('(max-width: 850px)');
-  const mobile = UseMedia('(max-width: 500px)');
+  const tablet = useMedia('(max-width: 850px)');
+  const mobile = useMedia('(max-width: 500px)');
   const { t } = useTranslation();
 
   const [amountCardPerson, widthCardPerson] = useMemo(() => {
@@ -39,7 +39,7 @@ export function ActorsCreators({ persons, className }: props) {
               </li>
             );
           })}
-          <Link href="/AllParticipants">
+          <Link href='/AllParticipants'>
             <li className={classNames(styles.item, styles.entryModal)}>{t('more')}</li>
           </Link>
         </ul>

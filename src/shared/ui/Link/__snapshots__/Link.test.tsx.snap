@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка Link отрисовка Link 1`] = `
+<a
+  className="link"
+  href="/CatalogPage/биография"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onTouchStart={[Function]}
+/>
+`;

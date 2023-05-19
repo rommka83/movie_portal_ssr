@@ -14,6 +14,7 @@ import {
 import classNames from 'classnames';
 import { Loader } from 'shared/ui/Loader';
 import { useDropdownContext } from '../FilterDropdownContext';
+import { useGenerateParamsString } from 'shared/utils/generatesParamsString';
 
 export type FilterDropdownSearchType = 'director' | 'actor';
 export interface IFilterDropdownSearch {
@@ -25,6 +26,7 @@ export interface IFilterDropdownSearch {
 export const FilterDropdownSearch = React.memo(
   ({ placeholderText, type, className, onSearch }: IFilterDropdownSearch) => {
     const [selectedPerson, setSelectedPerson] = useState('');
+    const generatesParamsString = useGenerateParamsString();
     const dropdownClose = useDropdownContext();
     const dispatch = useAppDispatch();
     const personsList = useAppSelector(personsListSelector);
@@ -57,6 +59,11 @@ export const FilterDropdownSearch = React.memo(
       dispatch(addInputSearchPersonFilter({ type, value: selectedPerson }));
       onSearch && onSearch();
       dropdownClose && dropdownClose();
+      generatesParamsString({
+        isElementSelected: false,
+        selectedElement: selectedPerson,
+        type: type,
+      });
     }, [dispatch, selectedPerson, onSearch, dropdownClose, type]);
 
     useEffect(() => {

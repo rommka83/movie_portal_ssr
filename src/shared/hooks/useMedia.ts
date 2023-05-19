@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const UseMedia = (query: string): boolean => {
+export const useMedia = (query: string): boolean => {
   const getMatches = (query: string): boolean => {
     // Prevents SSR issues
     if (typeof window !== 'undefined') {

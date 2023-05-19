@@ -80,6 +80,7 @@
 }
 
 .loader.loader {
+  position: absolute;
   top: 0;
   --transform-origin: 2px 30px;
   --width: 5px;

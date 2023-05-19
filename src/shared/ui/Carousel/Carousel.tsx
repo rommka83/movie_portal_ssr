@@ -109,7 +109,10 @@ export function Carousel({
           {children}
         </div>
         {withButton && showNextButton && (
-          <button className={classNames(styles.nextButton, 'icon-arrowRight_8x20__0')} onClick={onNextCLick} />
+          <button
+            className={classNames(styles.nextButton, 'icon-arrowRight_8x20__0')}
+            onClick={onNextCLick}
+          />
         )}
       </div>
     </div>

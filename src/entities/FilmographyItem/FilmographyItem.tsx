@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './filmographyItem.module.css';
 import ButtonOrLink from 'shared/ui/ButtonOrLink';
 import { IActorFilms } from 'shared/types/IActorFilms';
-import { UseMedia } from 'shared/hooks/useMedia';
+import { useMedia } from 'shared/hooks/useMedia';
 import Link from 'next/link';
 
 type PropsType = {
@@ -10,7 +10,7 @@ type PropsType = {
 };
 
 export const FilmographyItem: React.FC<PropsType> = ({ movie }) => {
-  const brakePoint = UseMedia('(max-width:380px)');
+  const brakePoint = useMedia('(max-width:380px)');
 
   return (
     <>
@@ -21,7 +21,9 @@ export const FilmographyItem: React.FC<PropsType> = ({ movie }) => {
         <div className={styles.filmographyBody}>
           <div className={styles.filmographyInfo}>
             <div className={styles.filmographyTitle}>
-              {movie.name && brakePoint && movie.name.length > 16 ? movie.name.slice(0, 16) + '...' : movie.name}
+              {movie.name && brakePoint && movie.name.length > 16
+                ? movie.name.slice(0, 16) + '...'
+                : movie.name}
             </div>
             {movie.rating && (
               <div className={styles.filmographyRating}>

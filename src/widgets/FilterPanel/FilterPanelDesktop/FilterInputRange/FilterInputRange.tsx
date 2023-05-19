@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'app/store/hooks';
 import { addInputRangeFilter } from 'app/store/filterSlice';
 import { useDropdownContext } from 'features/FilterDropdown/FilterDropdownContext';
+import { useGenerateParamsString } from 'shared/utils/generatesParamsString';
 
 export type InputRangeType = 'rating' | 'votes';
 interface IFilterInputRange {
@@ -19,6 +20,8 @@ interface IFilterInputRange {
 export const FilterInputRange = React.memo(
   ({ formatter, className, startValue, maxValue, minValue, type }: IFilterInputRange) => {
     const { t } = useTranslation();
+
+    const generatesParamsString = useGenerateParamsString();
     const dispatch = useAppDispatch();
     const [value, setValue] = useState(startValue);
     const dropdownClose = useDropdownContext();
@@ -31,6 +34,11 @@ export const FilterInputRange = React.memo(
       dispatch(addInputRangeFilter({ type, value: formattedValue }));
       setValue(startValue);
       dropdownClose && dropdownClose();
+      generatesParamsString({
+        isElementSelected: false,
+        selectedElement: formattedValue.toString(),
+        type: type,
+      });
     };
 
     return (

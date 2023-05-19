@@ -34,38 +34,6 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
-.container {
-  width: 80vw;
-  margin: 0 auto;
-}
-
-.swiper .swiper-button-next {
-  color: rgb(28, 26, 26);
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--gray-light) !important;
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  font-size: 34px !important;
-}
-
-.swiper-slide-next,
-.swiper-slide-prev {
-  opacity: 0.5;
-}
-
-.swiper-slide-next .promoSlide_btnContainer__h2RvJ {
-  display: none;
-}
-
-.swiper-slide-active {
-  max-width: 80vw !important;
-}
-
 input[type='range'] {
   overflow: hidden;
   -webkit-appearance: none;
@@ -132,53 +100,12 @@ input[type='range']::-ms-fill-upper {
   position: fixed;
   transform: scale(0);
 }
-.movieBadgeCarouselContent {
-  padding-top: 5px;
-  --viewed-elements-count: 7;
+.container {
+  width: 80vw;
+  margin: 0 auto;
 }
-
-@media (max-width: 1050px) {
-  .movieBadgeCarouselContent {
-    --viewed-elements-count: 5;
-  }
-}
-
-@media (max-width: 900px) {
-  .movieBadgeCarouselContent {
-    --viewed-elements-count: 4;
-  }
-}
-
-@media (max-width: 768px) {
-  .movieBadgeCarouselContent {
-    --viewed-elements-count: 4;
-  }
-}
-
-@media (max-width: 650px) {
-  .movieBadgeCarouselContent {
-    --viewed-elements-count: 3;
-  }
-}
-
-@media (max-width: 453px) {
-  .movieBadgeCarouselContent {
-    --viewed-elements-count: 2;
-  }
-}
-
-.movieBadgeContainer {
-  padding: 0px 8px;
-}
-
-@media (max-width: 768px) {
-  .movieBadgeContainer {
-    padding: 0px 20px 0px 0px;
-  }
-}
-
-@media (max-width: 650px) {
-  .movieBadgeContainer {
-    padding: 0px 8px 0px 0px;
+@media (max-width: 800px) {
+  .container {
+    width: 90vw;
   }
 }

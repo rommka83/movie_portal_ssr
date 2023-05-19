@@ -1,0 +1,80 @@
+.navContainer {
+  margin-top: 73px;
+  padding: 35px;
+  border-top: 1px solid var(--gray-16);
+}
+
+.wrapper {
+  display: flex;
+  height: 328px;
+}
+
+.doubleColumn {
+  width: 80%;
+  margin-right: 15px;
+}
+
+.title {
+  margin-bottom: 8px;
+}
+
+.filmLinkList {
+  columns: 3;
+  column-gap: 46px;
+  column-fill: auto;
+  height: 304px;
+}
+
+.filmListItem {
+  display: flex;
+}
+
+.filmListItem + .filmListItem:not(first-child) {
+  margin-top: 8px;
+}
+
+.filmListItem.active > a {
+  color: var(--white);
+}
+
+.filmListItem > a {
+  width: 100%;
+}
+
+.singleColumn {
+  width: 16%;
+  margin-right: 12px;
+}
+
+.singleColumnList + .title {
+  margin-top: 24px;
+}
+
+.sideContent {
+  width: 50%;
+  padding-left: 35px;
+}
+
+.sideContentWrapper {
+  position: relative;
+  padding-left: 15px;
+  height: 328px;
+  width: fit-content;
+}
+
+.gutter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background-color: var(--gray-16);
+}
+
+.gutterStripe {
+  height: 20px;
+  width: 1px;
+  background-color: var(--white);
+  transition: transform 0.2s, width 0.4s, height 0.4s;
+  will-change: transform, width, height;
+}

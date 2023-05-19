@@ -27,7 +27,9 @@ const Desktop = ({ film }: IProps) => {
       <div className={styles.playerAndDescription}>
         <VideoPlayer
           className={styles.player}
-          trailer={film.videos !== undefined && film.videos.trailers.length > 0 ? film.videos.trailers[0].url : '#'}
+          trailer={
+            film.videos !== undefined && film.videos.trailers.length > 0 ? film.videos.trailers[0].url : '#'
+          }
           age={film.ageRating ? film.ageRating : 0}
         />
         <VideoDescription film={film} className={styles.description} />
@@ -35,7 +37,7 @@ const Desktop = ({ film }: IProps) => {
       {film.similarMovies && film.similarMovies.length > 0 && (
         <Carousel
           carouselContainerClassName={styles.carousel}
-          className='movieBadgeCarouselContent'
+          className={styles.movieBadgeCarouselContent}
           title={`${t('sectionTitle.WithFilm')} «${lng === 'ru' ? film.name : film.enName ?? film.name}» ${t(
             'sectionTitle.watching',
           )}:`}
@@ -44,7 +46,7 @@ const Desktop = ({ film }: IProps) => {
           scrollMultipleItems
         >
           {film.similarMovies?.map((movie) => (
-            <div key={movie.id} className='movieBadgeContainer'>
+            <div key={movie.id} className={styles.movieBadgeContainer}>
               <Link href={`/MoviePage/${movie.id}`}>
                 <PosterCards src={movie.poster.url ?? ''} name={movie.name} />
               </Link>
@@ -55,7 +57,12 @@ const Desktop = ({ film }: IProps) => {
       <ActorsCreators persons={film.persons} className={styles.actorsCreators} />
       <AdditionalMaterials className={styles.additionalMaterials} video={film.videos} />
       <BlockComments className={styles.comments} />
-      <AllDevaicePoster name={film.name} enName={film.enName} poster={film.poster.url} className={styles.allDvices} />
+      <AllDevaicePoster
+        name={film.name}
+        enName={film.enName}
+        poster={film.poster.url}
+        className={styles.allDvices}
+      />
       <GenreBookmarks home ganre={film.genres} page={film.name} className={styles.crumbs} />
     </div>
   );

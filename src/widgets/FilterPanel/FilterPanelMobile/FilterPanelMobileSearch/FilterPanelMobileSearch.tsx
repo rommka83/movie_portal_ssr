@@ -31,9 +31,7 @@ export const FilterPanelMobileSearch = ({
         </p>
         <span className={styles.select}>{selectedPerson}</span>
       </button>
-      {show && (
-        <ModalSearch onClickClose={onClickClose} type={type} placeholderText={placeholderText} />
-      )}
+      {show && <ModalSearch onClickClose={onClickClose} type={type} placeholderText={placeholderText} />}
     </div>
   );
 };

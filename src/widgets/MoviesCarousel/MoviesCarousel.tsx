@@ -17,14 +17,14 @@ export const MoviesCarousel = React.memo(({ title, movies }: IMoviesCarousel) =>
   return (
     <Carousel
       carouselContainerClassName={styles.carousel}
-      className='movieBadgeCarouselContent'
+      className={styles.movieBadgeCarouselContent}
       title={title}
       withArrow
       withButton
       scrollMultipleItems
     >
       {movies?.map((movie) => (
-        <div key={movie.id} className='movieBadgeContainer'>
+        <div key={movie.id} className={styles.movieBadgeContainer}>
           <Link href={`/MoviePage/${movie.id}`}>
             <MovieBadge film={movie} />
           </Link>

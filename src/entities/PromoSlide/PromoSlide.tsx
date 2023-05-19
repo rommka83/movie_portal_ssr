@@ -1,34 +1,30 @@
 import React from 'react';
-import { UseMedia } from 'shared/hooks/useMedia';
-
 import styles from './promoSlide.module.css';
-
 import ButtonOrLink from 'shared/ui/ButtonOrLink';
-import { IFilm } from 'shared/types/IFilm';
 import Image from 'next/image';
+import classNames from 'classnames';
+import Link from 'next/link';
 
-type PropsType = {
-  movie: IFilm;
-};
+interface PropsType extends React.ComponentPropsWithoutRef<'div'> {
+  title: string;
+  picture: string;
+  description: string;
+  width: number;
+}
 
-export const PromoSlide: React.FC<PropsType> = ({ movie }) => {
+export const PromoSlide = ({ title, picture, description, width, className }: PropsType) => {
   return (
-    <div className={styles.block}>
-      <Image alt='' className={styles.background} src={movie.poster.url} />
-      {/* <NavLink to='/watch' className={styles.body}> */}
-      <div className={styles.content}>
-        <div className={styles.logoContainer}>
-          <h2 className={styles.logo}>{movie.name}</h2>
-          {/* <img src={movie.poster.url} className={styles.logo} alt='' /> */}
+    <div className={classNames(styles.root, className)}>
+      <Link href='/CatalogPage' style={{ width: `${width}px` }}>
+        <Image src={picture} alt={picture} width={1600} height={900} className={styles.pic} />
+        <div className={styles.content}>
+          <h2 className={styles.title}>{title}</h2>
+          <div className={styles.description}>{description}</div>
         </div>
-        <div className={styles.description}>{movie.shortDescription}</div>
-        <div className={styles.btnContainer}>
-          <ButtonOrLink className={styles.btn} variant='primary'>
-            {movie.rating && movie.rating.kp > 5 ? 'Смотреть по подписке' : 'Смотреть'}
-          </ButtonOrLink>
-        </div>
-      </div>
-      {/* </NavLink> */}
+      </Link>
+      <ButtonOrLink className={styles.btn} variant='primary'>
+        <span>Смотреть по подписке</span>
+      </ButtonOrLink>
     </div>
   );
 };

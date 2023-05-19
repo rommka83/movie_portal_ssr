@@ -971,10 +971,10 @@
 .icon-genre_action_64__1:before {
   content: '\ea3b';
 }
-.icon-genre_adult_32__0:before {
+.icon-genre_play_24__0:before {
   content: '\ea3c';
 }
-.icon-genre_adult_32__1:before {
+.icon-genre_play_24__0:after {
   content: '\ea3d';
 }
 .icon-genre_adult_64__0:before {
@@ -1010,10 +1010,10 @@
 .icon-genre_american_64__1:before {
   content: '\ea48';
 }
-.icon-genre_anime_32__0:before {
+.icon-genre_anime_24__0:before {
   content: '\ea49';
 }
-.icon-genre_anime_32__1:before {
+.icon-genre_anime_24__0:after {
   content: '\ea4a';
 }
 .icon-genre_anime_64__0:before {
@@ -1223,13 +1223,13 @@
 .icon-genre_feature_length_64__1:before {
   content: '\ea8f';
 }
-.icon-genre_foreign_24__0:before {
+.icon-genre_news_24__0:before {
   content: '\ea90';
 }
-.icon-genre_foreign_32__0:before {
+.icon-genre_news_32__0:before {
   content: '\ea91';
 }
-.icon-genre_foreign_32__1:before {
+.icon-genre_news_32__1:before {
   content: '\ea92';
 }
 .icon-genre_foreign_64__0:before {
@@ -1262,10 +1262,10 @@
 .icon-genre_horror_64__1:before {
   content: '\ea9c';
 }
-.icon-genre_interview_32__0:before {
+.icon-genre_talkShow_24__0:before {
   content: '\ea9d';
 }
-.icon-genre_interview_32__1:before {
+.icon-genre_talkShow_24__0:after {
   content: '\ea9e';
 }
 .icon-genre_interview_64__0:before {
@@ -1337,10 +1337,10 @@
 .icon-genre_military_64__1:before {
   content: '\eab5';
 }
-.icon-genre_multiseries_32__0:before {
+.icon-genre_realTv_24__0:before {
   content: '\eab6';
 }
-.icon-genre_multiseries_32__1:before {
+.icon-genre_realTv_24__0:after {
   content: '\eab7';
 }
 .icon-genre_multiseries_64__0:before {
@@ -1349,10 +1349,10 @@
 .icon-genre_multiseries_64__1:before {
   content: '\eab9';
 }
-.icon-genre_music_32__0:before {
+.icon-genre_music_24__0:before {
   content: '\eaba';
 }
-.icon-genre_music_32__1:before {
+.icon-genre_music_24__0:after {
   content: '\eabb';
 }
 .icon-genre_music_64__0:before {
@@ -1397,10 +1397,10 @@
 .icon-genre_mystic_64__1:before {
   content: '\eac9';
 }
-.icon-genre_noir_32__0:before {
+.icon-genre_noir_24__0:before {
   content: '\eaca';
 }
-.icon-genre_noir_32__1:before {
+.icon-genre_noir_24__0:after {
   content: '\eacb';
 }
 .icon-genre_noir_64__0:before {
@@ -1433,10 +1433,10 @@
 .icon-genre_screening_64__1:before {
   content: '\ead5';
 }
-.icon-genre_short_length_32__0:before {
+.icon-genre_shortFilm_24__0:before {
   content: '\ead6';
 }
-.icon-genre_short_length_32__1:before {
+.icon-genre_shortFilm_24__0:after {
   content: '\ead7';
 }
 .icon-genre_short_length_64__0:before {

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`проверка PersonHeader отрисовка PersonHeader  1`] = `
+<div
+  className="personHeader"
+>
+  <div
+    className="figure"
+  >
+    <img
+      alt=""
+      className="photo"
+      data-nimg="1"
+      decoding="async"
+      height={50}
+      loading="lazy"
+      onError={[Function]}
+      onLoad={[Function]}
+      src=""
+      style={
+        Object {
+          "color": "transparent",
+        }
+      }
+      width={50}
+    />
+  </div>
+  <div
+    className="info"
+  >
+    <h2
+      className="name"
+    />
+    <span
+      className="alternate"
+    />
+  </div>
+</div>
+`;

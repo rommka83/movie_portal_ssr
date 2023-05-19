@@ -3,38 +3,17 @@ import styles from './changethelanguage.module.css';
 import { useTranslation } from 'react-i18next';
 
 export function ChangeTheLanguage() {
-  const [active, setActive] = useState('');
+  const [english, setEnglish] = useState(false);
   const { i18n } = useTranslation();
-  const lng = i18n.language;
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
 
   useEffect(() => {
-    lng === 'ru' ? setActive('ru') : setActive('en');
-  }, [lng]);
+    english ? i18n.changeLanguage('en') : i18n.changeLanguage('ru');
+  }, [english, i18n]);
 
   return (
-    <div className={styles.wrapper}>
-      <button
-        className={`${styles.btn} ${active === 'ru' && styles.active}`}
-        onClick={() => {
-          changeLanguage('ru');
-          setActive('ru');
-        }}
-      >
-        ru
-      </button>
-      <button
-        className={`${styles.btn} ${active === 'en' && styles.active}`}
-        onClick={() => {
-          changeLanguage('en');
-          setActive('en');
-        }}
-      >
-        en
-      </button>
+    <div className={styles.wrapper} onClick={() => setEnglish(!english)}>
+      <button className={`${styles.btn} ${!english ? styles.active : styles.passive}`}>ru</button>
+      <button className={`${styles.btn} ${english ? styles.active : styles.passive}`}>en</button>
     </div>
   );
 }

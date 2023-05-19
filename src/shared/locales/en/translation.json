@@ -54,9 +54,10 @@
   "ActorsCreators": "Actors and Creators",
   "more": "more",
 
-  "headerMoviesFilter": {
+  "headerDropdownNavigation": {
     "Genres": "Genres",
     "biography": "Biography",
+    "anime": "Anime",
     "actions": "Actions",
     "western": "Western",
     "military": "War films",
@@ -65,19 +66,26 @@
     "kids": "For children",
     "documentaries": "Documentaries",
     "drama": "Drama",
+    "play": "Play",
     "historical": "Historical",
+    "music": "Music",
     "musical": "Musical",
+    "news": "News",
     "comedy": "Comedy",
+    "shortFilm": "Short film",
     "criminal": "Criminal",
     "melodrama": "Melodrama",
     "cartoons": "Cartoons",
     "adventures": "Adventures",
+    "realTv": "Real TV",
     "sport": "Sport",
+    "talkShow": "Talk show",
     "thrillers": "Thrillers",
     "horror": "Horror",
     "fantastic": "Fantastic",
+    "noir": "Noir",
     "fantasy": "Fantasy",
-    "Countries": "Countries",
+    "countries": "Countries",
     "Russians": "Russians",
     "Foreign": "Foreign",
     "SovietCinema": "Soviet cinema",
@@ -112,7 +120,7 @@
     "trailer": "trailer"
   },
   "FilterPanel": {
-    "Countries": "Countries",
+    "countries": "Countries",
     "Australia": "Australia",
     "Argentina": "Argentina",
     "Belarus": "Belarus",
@@ -129,20 +137,23 @@
     "SouthKorea": "South Korea",
     "France": "France",
     "Italy": "Italy",
-    "Rating": "Rating",
-    "Estimated": "Estimated",
-    "Director": "Director",
-    "Actor": "Actor",
+    "rating": "Rating",
+    "votes": "Estimated",
+    "director": "Director",
+    "actor": "Actor",
     "ResetFilters": "Reset filters",
     "rating9": "Over 9",
     "rating8": "Over 8",
     "rating7": "Over 7",
     "rating6": "Over 6",
+    "votes300000": "from 300к",
+    "votes400000": "from 400к",
     "votes500000": "from 500к",
     "votes600000": "from 600к",
     "votes700000": "from 700к",
     "votes800000": "from 800к",
     "votes900000": "from 900к",
+    "votes1000000": "from 1000к",
     "Filters": "Filters",
     "ShowResults": "Show results",
     "Apply": "Apply",
@@ -201,5 +212,14 @@
   "ButtonsWithPadarkas": {
     "subscription": "30 days subscription for 1 ₽",
     "certificate": "Activate Certificate"
+  },
+
+  "404": {
+    "Error": "Error",
+    "TheRequestedPageDoesNotExist": "The requested page does not exist"
+  },
+
+  "CatalogPage": {
+    "Movies": "Movies"
   }
 }

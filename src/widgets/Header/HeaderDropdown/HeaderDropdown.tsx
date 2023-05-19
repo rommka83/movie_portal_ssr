@@ -2,6 +2,7 @@
 import { PropsWithChildren, useState, useCallback, useEffect } from 'react';
 import styles from './headerdropdown.module.css';
 import classNames from 'classnames';
+import { HeaderDropdownProvider } from './HeaderDropdownContext';
 
 interface IHeaderDropdown {
   opened: boolean;
@@ -9,6 +10,7 @@ interface IHeaderDropdown {
 }
 export function HeaderDropdown({ children, opened, onClose }: PropsWithChildren<IHeaderDropdown>) {
   const [dropShow, setDropShow] = useState(opened);
+
   const onMouseEnter = useCallback(() => {
     setDropShow(true);
   }, []);
@@ -17,6 +19,10 @@ export function HeaderDropdown({ children, opened, onClose }: PropsWithChildren<
       setDropShow(false);
     }, 250);
   }, []);
+
+  const onCloseHandler = useCallback(() => {
+    onMouseLeave();
+  }, [onMouseLeave]);
 
   useEffect(() => {
     if (!opened && !dropShow) {
@@ -32,7 +38,7 @@ export function HeaderDropdown({ children, opened, onClose }: PropsWithChildren<
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {children}
+      <HeaderDropdownProvider value={onCloseHandler}>{children}</HeaderDropdownProvider>
     </div>
   );
 }

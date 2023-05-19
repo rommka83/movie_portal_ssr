@@ -18,15 +18,12 @@ const initialState = {
 };
 
 export const getComments = createAsyncThunk('comments/comments-request', async (id: string) => {
-  const response = await axios.get(
-    `https://api.kinopoisk.dev/v1/review?page=1&limit=100&movieId=${id}`,
-    {
-      headers: {
-        Accept: 'application/json',
-        'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
-      },
+  const response = await axios.get(`https://api.kinopoisk.dev/v1/review?page=1&limit=100&movieId=${id}`, {
+    headers: {
+      Accept: 'application/json',
+      'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
     },
-  );
+  });
   return response.data;
 });
 
@@ -52,5 +49,4 @@ export const filmComents = createSlice({
 
 export default filmComents.reducer;
 
-export const commentsSelector = (state: RootState) =>
-  state.filmComents.comments;
+export const commentsSelector = (state: RootState) => state.filmComents.comments;

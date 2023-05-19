@@ -3,12 +3,12 @@
   overflow: hidden;
 }
 .coruselWrapper {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 .corusel {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 .ItemComments {
   width: 100%;
