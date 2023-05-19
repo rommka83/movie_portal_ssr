@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './promoSlider.module.css';
 import { PromoSlide } from 'entities/PromoSlide';
-import { UseMedia } from 'shared/hooks/useMedia';
+import { IFilm } from 'shared/types/IFilm';
+import { useMedia } from 'shared/hooks/useMedia';
+
 import DB from '../../../static/promo_DB.json';
 import classNames from 'classnames';
 
@@ -10,7 +12,7 @@ const CARD_HEIGHT_COEFFICIENT_DESKTOP = 0.45;
 
 export const PromoSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const tablet = UseMedia('(max-width:800px)');
+  const tablet = useMedia('(max-width:800px)');
   const container = useRef<HTMLDivElement>(null);
   const [cardWidth, setCardWidth] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(false);

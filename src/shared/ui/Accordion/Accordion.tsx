@@ -5,15 +5,10 @@ import { AccordionDropdownProvider } from './AccordionContext';
 
 interface IAccordion {
   textButton: string | null;
-  selectedItem?: string;
+  selectedItem?: string | number | null;
   buttonIconClass?: string;
 }
-export function Accordion({
-  textButton,
-  children,
-  selectedItem,
-  buttonIconClass,
-}: PropsWithChildren<IAccordion>) {
+export function Accordion({ textButton, children, selectedItem, buttonIconClass }: PropsWithChildren<IAccordion>) {
   const [expanded, setExpanded] = useState(false);
   const iconClass = expanded ? 'icon-arrowUpSquare_16__0' : 'icon-arrowDownSquare_16__0';
 
@@ -28,10 +23,13 @@ export function Accordion({
   return (
     <div className={styles.container}>
       <button className={styles.accordionButton} onClick={onToggleClick}>
-        <span className={buttonIconClass} />
-        <span className={styles.textButton}>{textButton}</span>
-        <span className={classNames(styles.icon, iconClass)} />
-        <span className={styles.textUnder}>{selectedItem}</span>
+        <div className={styles.buttonInnerContainer}>
+          <span className={buttonIconClass} />
+          <span className={styles.textButton}>{textButton}</span>
+          <span className={classNames(styles.icon, iconClass)} />
+        </div>
+
+        {!expanded && selectedItem && <span className={styles.textUnder}>{selectedItem}</span>}
       </button>
       {expanded && (
         <div className={styles.content}>

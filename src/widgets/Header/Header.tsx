@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { HeaderDropdown } from 'widgets/Header/HeaderDropdown';
 import { useCallback, MouseEvent, useState } from 'react';
-import { HeaderMoviesFilter } from 'features/HeaderMoviesFilter';
+import { HeaderDropdownNavigation } from 'features/HeaderDropdownNavigation';
 import Link from 'next/link';
 
 export type HeaderDropdownType = 'movies' | 'promo' | 'avatar';
@@ -61,7 +61,7 @@ export function Header() {
           </div>
         </div>
         <HeaderDropdown opened={show} onClose={onHeaderDropdownClose}>
-          <HeaderMoviesFilter />
+          <HeaderDropdownNavigation />
         </HeaderDropdown>
       </div>
     </header>

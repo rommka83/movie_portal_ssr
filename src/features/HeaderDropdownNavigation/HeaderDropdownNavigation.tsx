@@ -1,5 +1,5 @@
 import { MouseEvent, useState } from 'react';
-import styles from './headermoviesfilter.module.css';
+import styles from './headerdropdownnavigation.module.css';
 import { CardTitle } from 'shared/ui/CardTitle/CardTitle';
 import { useTranslation } from '../../i18n';
 import { Link } from 'shared/ui/Link/MyLink';
@@ -18,7 +18,7 @@ const sideContent = [
 
 const ROW_CONTENT_HEIGHT = 28;
 
-export function HeaderMoviesFilter() {
+export function HeaderDropdownNavigation() {
   const { t } = useTranslation();
   const [offset, setOffset] = useState(0);
   const currentIndex = offset / ROW_CONTENT_HEIGHT;
@@ -27,103 +27,97 @@ export function HeaderMoviesFilter() {
     setOffset(+index * ROW_CONTENT_HEIGHT);
   };
   return (
-    <div className={styles.filterContainer}>
+    <div className={styles.navContainer}>
       <div className={styles.wrapper}>
         <div className={styles.doubleColumn}>
-          <CardTitle className={styles.title}>{t('headerMoviesFilter.Genres')}</CardTitle>
+          <CardTitle className={styles.title}>{t('headerDropdownNavigation.genres')}</CardTitle>
           <ul className={styles.filmLinkList}>
             <li className={styles.filmListItem}>
-              <Link to='/CatalogPage/биография'>{t('headerMoviesFilter.biography')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.anime')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to='/CatalogPage/боевик'>{t('headerMoviesFilter.actions')}</Link>
+              <Link to='/CatalogPage/биография'>{t('headerDropdownNavigation.biography')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to='/CatalogPage/вестерн'>{t('headerMoviesFilter.western')}</Link>
+              <Link to='/CatalogPage/боевик'>{t('headerDropdownNavigation.actions')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to='/CatalogPage/военные'>{t('headerMoviesFilter.military')}</Link>
+              <Link to='/CatalogPage/вестерн'>{t('headerDropdownNavigation.western')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to='/CatalogPage/детектив'>{t('headerMoviesFilter.detectives')}</Link>
+              <Link to='/CatalogPage/военные'>{t('headerDropdownNavigation.military')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.family')}</Link>
+              <Link to='/CatalogPage/детектив'>{t('headerDropdownNavigation.detectives')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.kids')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.kids')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.documentaries')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.documentaries')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to='/CatalogPage/драма'>{t('headerMoviesFilter.drama')}</Link>
+              <Link to='/CatalogPage/драма'>{t('headerDropdownNavigation.drama')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.historical')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.play')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.musical')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.historical')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.comedy')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.comedy')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.criminal')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.shortFilm')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.melodrama')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.criminal')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.cartoons')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.melodrama')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.adventures')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.music')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.sport')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.cartoons')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.thrillers')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.musical')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.horror')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.news')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.fantastic')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.adventures')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.fantasy')}</Link>
-            </li>
-          </ul>
-        </div>
-        <div className={styles.singleColumn}>
-          <CardTitle className={styles.title}>{t('headerMoviesFilter.Countries')}</CardTitle>
-          <ul className={styles.singleColumnList}>
-            <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.Russians')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.realTv')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.Foreign')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.family')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.SovietCinema')}</Link>
-            </li>
-          </ul>
-
-          <CardTitle className={styles.title}>{t('headerMoviesFilter.Years')}</CardTitle>
-          <ul className={styles.singleColumnList}>
-            <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.Movies2023')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.sport')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.Movies2022')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.talkShow')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.Movies2021')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.thrillers')}</Link>
             </li>
             <li className={styles.filmListItem}>
-              <Link to=''>{t('headerMoviesFilter.Movies2020')}</Link>
+              <Link to=''>{t('headerDropdownNavigation.horror')}</Link>
+            </li>
+            <li className={styles.filmListItem}>
+              <Link to=''>{t('headerDropdownNavigation.fantastic')}</Link>
+            </li>
+            <li className={styles.filmListItem}>
+              <Link to=''>{t('headerDropdownNavigation.noir')}</Link>
+            </li>
+            <li className={styles.filmListItem}>
+              <Link to=''>{t('headerDropdownNavigation.fantasy')}</Link>
             </li>
           </ul>
         </div>
@@ -139,7 +133,7 @@ export function HeaderMoviesFilter() {
                   })}
                   onMouseEnter={onMouseEnter}
                 >
-                  <Link to=''> {t(`headerMoviesFilter.${content}`)}</Link>
+                  <Link to=''> {t(`headerDropdownNavigation.${content}`)}</Link>
                 </li>
               ))}
             </ul>

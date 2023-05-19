@@ -20,7 +20,7 @@ export const FilterPanelDesktop = React.memo(() => {
     <section className={styles.filterDesktop}>
       <div className={styles.container}>
         <div className={styles.plankList}>
-          <FilterDropdown title='headerMoviesFilter' type='Genres' position='left'>
+          <FilterDropdown title='headerDropdownNavigation' type='genres' position='left'>
             <FilterPanelCarousel
               array={genres}
               type='genres'
@@ -30,12 +30,12 @@ export const FilterPanelDesktop = React.memo(() => {
             <FilterDropdownList
               className={styles.list}
               array={genres}
-              title='headerMoviesFilter'
+              title='headerDropdownNavigation'
               type='genres'
             />
           </FilterDropdown>
 
-          <FilterDropdown title='FilterPanel' type='Countries' position='left'>
+          <FilterDropdown title='FilterPanel' type='countries' position='left'>
             <FilterPanelCarousel
               array={countries}
               type='countries'
@@ -51,7 +51,7 @@ export const FilterPanelDesktop = React.memo(() => {
             />
           </FilterDropdown>
 
-          <FilterDropdown title='FilterPanel' type='Rating' position='left' className={styles.dropdownRating}>
+          <FilterDropdown title='FilterPanel' type='rating' position='left' className={styles.dropdownRating}>
             <FilterInputRange
               type='rating'
               startValue='71'
@@ -62,17 +62,12 @@ export const FilterPanelDesktop = React.memo(() => {
             />
           </FilterDropdown>
 
-          <FilterDropdown
-            title='FilterPanel'
-            type='Estimated'
-            position='left'
-            className={styles.dropdownVotes}
-          >
+          <FilterDropdown title='FilterPanel' type='votes' position='left' className={styles.dropdownVotes}>
             <FilterInputRange
               type='votes'
-              startValue='300'
+              startValue='400'
               maxValue='1000'
-              minValue='200'
+              minValue='300'
               formatter={formatterVotes}
               className={styles.inputRating}
             />
@@ -80,15 +75,15 @@ export const FilterPanelDesktop = React.memo(() => {
 
           <FilterDropdown
             title='FilterPanel'
-            type='Director'
+            type='director'
             position='right'
             className={styles.dropdownSearch}
           >
-            <FilterDropdownSearch placeholderText={t('FilterPanel.Director')} type='director' />
+            <FilterDropdownSearch placeholderText={t('FilterPanel.director')} type='director' />
           </FilterDropdown>
 
-          <FilterDropdown title='FilterPanel' type='Actor' position='right' className={styles.dropdownSearch}>
-            <FilterDropdownSearch placeholderText={t('FilterPanel.Actor')} type='actor' />
+          <FilterDropdown title='FilterPanel' type='actor' position='right' className={styles.dropdownSearch}>
+            <FilterDropdownSearch placeholderText={t('FilterPanel.actor')} type='actor' />
           </FilterDropdown>
         </div>
         <FilterPanelDesktopResetButton />

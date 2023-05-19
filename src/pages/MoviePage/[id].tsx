@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo } from 'react';
 import styles from './moviepage.module.css';
 import Desktop from '../../widgets/MoviePageWigets/desktop/Desktop';
-import { UseMedia } from 'shared/hooks/useMedia';
+import { useMedia } from 'shared/hooks/useMedia';
 import Tablet from '../../widgets/MoviePageWigets/tablet/Tablet';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { getComments } from 'app/store/commentsRequest';
@@ -39,7 +39,7 @@ interface IProps {
 }
 
 export default function MoviePage({ film, id }: IProps) {
-  const tablet = UseMedia('(max-width: 1160px)');
+  const tablet = useMedia('(max-width: 1160px)');
   const dispatch = useAppDispatch();
 
   useEffect(() => {

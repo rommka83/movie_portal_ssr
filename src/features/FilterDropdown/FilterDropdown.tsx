@@ -8,7 +8,7 @@ import { useAppSelector } from 'app/store/hooks';
 import { getSelectedFilterSelector } from 'app/store/filterSlice';
 import { FilterDropdownProvider } from './FilterDropdownContext';
 
-export type FilterType = 'Genres' | 'Countries' | 'Rating' | 'Estimated' | 'Director' | 'Actor';
+export type FilterType = 'genres' | 'countries' | 'rating' | 'votes' | 'director' | 'actor';
 interface IFilterDropdown {
   title: string;
   type: FilterType;

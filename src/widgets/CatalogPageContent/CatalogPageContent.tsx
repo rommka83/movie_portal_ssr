@@ -33,7 +33,7 @@ export const CatalogPageContent = ({ movies, actors }: ICatalogPageContent) => {
             key={genre}
             className={styles.innerContainerGenreCard}
             containerClassName={styles.genreCardContainer}
-            caption={t(`headerMoviesFilter.${genre}`)}
+            caption={t(`headerDropdownNavigation.${genre}`)}
             genre={genre}
           />
         ))}

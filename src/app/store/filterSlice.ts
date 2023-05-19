@@ -87,7 +87,7 @@ const filters = createSlice({
     ) {
       state.filters[action.payload.type] = action.payload.value;
     },
-    addSortTypesSort(state, action: PayloadAction<string>) {
+    addSortTypesSort(state, action: PayloadAction<string | null>) {
       state.sortTypes = action.payload;
     },
     removeSortTypesSort(state) {
@@ -139,24 +139,22 @@ export const {
 } = filters.actions;
 export default filters;
 
-export const filtersSelector = (state: RootState) => state.filters;
 export const personsListSelector = (state: RootState) => state.filters.personsList;
-export const countriesSelector = (state: RootState) => state.filters.filters.countries;
 export const pendingPersonsSelector = (state: RootState) => state.filters.personsPending;
 export const getSelectedFilterSelector = (type: FilterType, t: TFunction) => (state: RootState) => {
   const filters = state.filters;
   switch (type) {
-    case 'Actor':
+    case 'actor':
       return filters.filters.actor;
-    case 'Director':
+    case 'director':
       return filters.filters.director;
-    case 'Countries':
+    case 'countries':
       return filters.filters.countries.map((country) => t(`FilterPanel.${country}`)).join(', ');
-    case 'Estimated':
+    case 'votes':
       return filters.filters.votes ? formatterVotes(filters.filters.votes / 1000) : '';
-    case 'Genres':
-      return filters.filters.genres.map((genre) => t(`headerMoviesFilter.${genre}`)).join(', ');
-    case 'Rating':
+    case 'genres':
+      return filters.filters.genres.map((genre) => t(`headerDropdownNavigation.${genre}`)).join(', ');
+    case 'rating':
       return filters.filters.rating;
   }
 };
@@ -164,14 +162,28 @@ export const personSelector = (person: FilterDropdownSearchType) => (state: Root
   state.filters.filters[person];
 export const isGenreSelectedSelector = (genre: string) => (state: RootState) =>
   state.filters.filters.genres.includes(genre);
-export const genresSelectedSelector = (t: TFunction) => (state: RootState) =>
-  state.filters.filters.genres.map((genre) => t(`headerMoviesFilter.${genre}`));
 export const isCountrySelectedSelector = (country: string) => (state: RootState) =>
   state.filters.filters.countries.includes(country);
-export const countriesSelectedSelector = (t: TFunction) => (state: RootState) =>
-  state.filters.filters.countries.map((country) => t(`FilterPanel.${country}`));
-export const isInputRangeSelectedSelector = (type: 'rating' | 'votes', value: number) => (state: RootState) =>
-  state.filters.filters[type] === value;
+export const isInputRangeSelectedSelector =
+  (type: 'rating' | 'votes', value: number) => (state: RootState) => {
+    const filterState = state.filters.filters[type];
+    if (type === 'votes') {
+      if (filterState == null) return false;
+      const votesNumberDigit = 100_000;
+      const extremeValueVotes = 10;
+      const firstClassUnitFilterState = Math.trunc(filterState / votesNumberDigit);
+      const firstClassUnitValue = Math.trunc(value / votesNumberDigit);
+
+      if (firstClassUnitFilterState === firstClassUnitValue) return true;
+      if (firstClassUnitFilterState > extremeValueVotes && extremeValueVotes === firstClassUnitValue) {
+        return true;
+      }
+      return false;
+    } else {
+      return Math.trunc(filterState ?? 0) === value;
+    }
+  };
+
 export const filtersCountSelector = (state: RootState) =>
   Object.values(state.filters.filters)
     .flatMap((filter) => filter)
