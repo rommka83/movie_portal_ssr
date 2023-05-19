@@ -11,7 +11,8 @@ export const getStaticProps: GetStaticProps<{ movies: IFilm[] }> = async () => {
   const responseMovies = await axios.get(`https://api.kinopoisk.dev/v1.3/movie?&page=1&limit=30`, {
     headers: {
       Accept: 'application/json',
-      'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
+      // 'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
+      'X-API-KEY': 'DMGDYW0-0FC4Z7T-N7R9K0N-HFPEH3J',
     },
   });
   if (!responseMovies) {

@@ -65,4 +65,20 @@
     width: 100%;
     display: none;
   }
+  .modal {
+    padding: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(224, 231, 236, 0.6) inset;
+    border-radius: 8px;
+  }
+  .modalHead {
+    padding: 10px !important;
+  }
+  .modalComment {
+    margin-top: 10px;
+
+    padding: 10px !important;
+  }
+  .modalBlockBtn {
+    margin-top: 10px;
+  }
 }

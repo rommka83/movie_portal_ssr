@@ -1,8 +1,8 @@
 .ldsSpinner {
-  --transform-origin: 5px 70px;
-  --width: 10px;
+  --transform-origin: 3px 70px;
+  --width: 5px;
   --height: 45px;
-  color: var(--pink--linear-gradient);
+  color: var(--white);
   display: inline-block;
   position: fixed;
   top: 35%;
@@ -22,7 +22,7 @@
   width: var(--width);
   height: var(--height);
   border-radius: 20%;
-  background: linear-gradient(0deg, var(--white), var(--pink));
+  background: var(--white);
 }
 .ldsSpinner div:nth-child(1) {
   transform: rotate(0deg);
