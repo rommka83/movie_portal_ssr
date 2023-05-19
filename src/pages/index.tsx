@@ -1,23 +1,16 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import styles from '../../styles/home.module.css';
 import { PromoSlider } from 'widgets/PromoSlider';
-import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
 import { MoviesCarousel } from 'widgets/MoviesCarousel';
 import { ButtonsWithPadarkas } from 'features/ButtonsWithPadarkas';
 import { AboutUs } from 'widgets/AboutUs';
 import { TopSection } from 'widgets/TopSection';
-import Image from 'next/image';
+import { getMovies } from 'shared/apiService';
 
 export const getStaticProps = async () => {
   try {
-    const response = await axios.get('https://api.kinopoisk.dev/v1.3/movie?&page=1&limit=40', {
-      headers: {
-        Accept: 'application/json',
-        // 'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
-        'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
-      },
-    });
+    const response = await getMovies({ params: { page: '1', limit: '40' } });
 
     if (!response) {
       return {
@@ -26,7 +19,7 @@ export const getStaticProps = async () => {
     }
 
     return {
-      props: { movies: response.data.docs },
+      props: { movies: response.docs },
     };
   } catch {
     return {

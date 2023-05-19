@@ -6,7 +6,6 @@ import classNames from 'classnames';
 import { Accordion } from 'shared/ui/Accordion';
 import { SortDropdown } from 'features/SortDropdown';
 import { FilterPanelDesktop } from 'widgets/FilterPanel';
-import axios from 'axios';
 import { IFilm } from 'shared/types/IFilm';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
@@ -17,19 +16,14 @@ import { useRouter } from 'next/router';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { addAllFilters, addSortTypesSort, getSelectedFilterSelector } from 'app/store/filterSlice';
 import { getFilters, getSortType, restoreParams } from 'shared/utils/generatesParamsString';
+import { getMovies } from 'shared/apiService';
 
 export const getServerSideProps: GetServerSideProps<{ movies: IFilm[] }> = async (context) => {
   const genre = context.params?.slug?.[0];
-  const responseMovies = await axios.get(
-    `https://api.kinopoisk.dev/v1.3/movie?&page=1&genres.name=${genre}&limit=30`,
-    {
-      headers: {
-        Accept: 'application/json',
-        'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
-        // 'X-API-KEY': 'PZQK66P-MP6MTV9-MMNQB95-S4P3NH9',
-      },
-    },
-  );
+  const responseMovies = await getMovies({
+    params: { page: '1', ['genres.name']: genre ?? '', limit: '30' },
+  });
+
   if (!responseMovies) {
     return {
       notFound: true,
@@ -37,7 +31,7 @@ export const getServerSideProps: GetServerSideProps<{ movies: IFilm[] }> = async
   }
 
   return {
-    props: { movies: responseMovies.data.docs },
+    props: { movies: responseMovies.docs },
   };
 };
 interface IGenrePage {

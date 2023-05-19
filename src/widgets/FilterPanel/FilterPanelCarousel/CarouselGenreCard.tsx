@@ -26,7 +26,7 @@ export const CarouselGenreCard = ({ genre }: ICarouselGenreCard) => {
         type: 'genres',
       });
     },
-    [isGenreSelected, dispatch, genre],
+    [isGenreSelected, dispatch, generatesParamsString],
   );
   return (
     <FilterGenreCard

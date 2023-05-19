@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
-import axios from 'axios';
 import { FilterType } from 'features/FilterDropdown/FilterDropdown';
 import { TFunction } from 'i18next';
 import { formatterVotes } from 'shared/utils/formatterVotes';
 import { FilterDropdownSearchType } from 'features/FilterDropdown/FilterDropdownSearch';
 import { InputRangeType } from 'widgets/FilterPanel/FilterPanelDesktop/FilterInputRange';
+import { getPersons } from 'shared/apiService';
+import { IPerson } from 'shared/types/IPerson';
 
 interface IFilter {
   filters: {
@@ -16,31 +17,30 @@ interface IFilter {
     director: string | null;
     actor: string | null;
   };
-  personsList: Persons[];
+  personsList: IPerson[];
   personsPending: boolean;
   sortTypes: string | null;
 }
 
-type Persons = { name: string; id: number };
-type PersonsResponse = { docs: Persons[] };
 export const getSearchPersons = createAsyncThunk<
-  Persons[],
+  IPerson[],
   { name: string; profession: FilterDropdownSearchType }
 >('filters/director-request', async ({ name, profession }) => {
   if (!name) {
     return [];
   }
-
-  const response = await axios.get<PersonsResponse>(
-    `https://api.kinopoisk.dev/v1/person?selectFields=name%20id&sortField=name&sortType=1%20&limit=10&name=${name}&movies.enProfession=${profession}`,
-    {
-      headers: {
-        Accept: 'application/json',
-        'X-API-KEY': 'DMGDYW0-0FC4Z7T-N7R9K0N-HFPEH3J',
-      },
+  const response = await getPersons({
+    params: {
+      selectFields: 'name id',
+      sortField: 'name',
+      sortType: '1',
+      name,
+      page: '1',
+      ['movies.enProfession']: profession,
+      limit: '10',
     },
-  );
-  return response.data.docs;
+  });
+  return response.docs;
 });
 
 const initialState: IFilter = {
