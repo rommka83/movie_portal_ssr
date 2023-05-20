@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IReviev } from 'shared/types/IReviev';
 import { RootState } from './store';
 
 const initialState = {

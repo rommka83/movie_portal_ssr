@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import {
+  GetCommentsResponseData,
   GetMovieResponseData,
   GetMoviesResponseData,
   GetPersonResponseData,
@@ -47,4 +48,20 @@ export const getPersons = async ({
     params,
   };
   return await apiRequest<GetPersonsResponseData>(config);
+};
+
+export const getMovieSearch = async (name: string): Promise<GetMoviesResponseData> => {
+  const config: AxiosRequestConfig = {
+    method: 'GET',
+    url: `v1.3/movie?page=1&limit=10&name=${name}`,
+  };
+  return await apiRequest<GetMoviesResponseData>(config);
+};
+
+export const getCommentsSearch = async (id: string): Promise<GetCommentsResponseData> => {
+  const config: AxiosRequestConfig = {
+    method: 'GET',
+    url: `v1/review?page=1&limit=100&movieId=${id}`,
+  };
+  return await apiRequest<GetCommentsResponseData>(config);
 };

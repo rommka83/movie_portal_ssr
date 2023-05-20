@@ -3,12 +3,12 @@ import React, { FC, HTMLAttributes, useMemo } from 'react';
 import styles from './generaldataoncommentsforthefilm.module.css';
 import classNames from 'classnames';
 import { useAppSelector } from 'app/store/hooks';
-import { IReviev } from 'shared/types/IReviev';
 import { useTranslation } from 'react-i18next';
+import { GetCommentsResponseData } from 'shared/apiService/types';
 
 interface IGeneralDataOnCommentsForTheFilm {
   className?: string;
-  comments: IReviev;
+  comments: GetCommentsResponseData;
 }
 
 export const GeneralDataOnCommentsForTheFilm: FC<IGeneralDataOnCommentsForTheFilm> = ({

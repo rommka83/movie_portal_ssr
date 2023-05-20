@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IReviev } from 'shared/types/IReviev';
+import { getCommentsSearch } from 'shared/apiService/requestContent';
+import { GetCommentsResponseData } from 'shared/apiService/types';
 import { RootState } from './store';
 
-let comments: IReviev = {
+let comments: GetCommentsResponseData = {
   docs: [],
   total: 0,
   limit: 0,
@@ -18,13 +19,8 @@ const initialState = {
 };
 
 export const getComments = createAsyncThunk('comments/comments-request', async (id: string) => {
-  const response = await axios.get(`https://api.kinopoisk.dev/v1/review?page=1&limit=100&movieId=${id}`, {
-    headers: {
-      Accept: 'application/json',
-      'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
-    },
-  });
-  return response.data;
+  const response = await getCommentsSearch(id);
+  return response;
 });
 
 export const filmComents = createSlice({
