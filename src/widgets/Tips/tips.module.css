@@ -1,0 +1,14 @@
+.container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: grid;
+  grid-template-rows: 1fr;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  pointer-events: none;
+  width: max(30%, 320px);
+  z-index: 11;
+  transition: grid-template-rows 700ms ease-in;
+}

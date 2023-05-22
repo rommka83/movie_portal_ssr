@@ -10,20 +10,13 @@ import { getMovies } from 'shared/apiService';
 
 export const getStaticProps = async () => {
   try {
-    const response = await getMovies({ params: { page: '1', limit: '40' } });
-
-    if (!response) {
-      return {
-        notFound: true,
-      };
-    }
-
+    const response = await getMovies({ limit: '40' });
     return {
       props: { movies: response.docs },
     };
   } catch {
     return {
-      props: { movies: null },
+      notFound: true,
     };
   }
 };

@@ -7,6 +7,7 @@ import { FilterDropdownSearchType } from 'features/FilterDropdown/FilterDropdown
 import { InputRangeType } from 'widgets/FilterPanel/FilterPanelDesktop/FilterInputRange';
 import { getPersons } from 'shared/apiService';
 import { IPerson } from 'shared/types/IPerson';
+import { onExtraReducersRejected } from './helpers';
 
 interface IFilter {
   filters: {
@@ -25,22 +26,29 @@ interface IFilter {
 export const getSearchPersons = createAsyncThunk<
   IPerson[],
   { name: string; profession: FilterDropdownSearchType }
->('filters/director-request', async ({ name, profession }) => {
+>('filters/director-request', async ({ name, profession }, { dispatch }) => {
   if (!name) {
     return [];
   }
-  const response = await getPersons({
-    params: {
+  try {
+    const response = await getPersons({
       selectFields: 'name id',
       sortField: 'name',
       sortType: '1',
       name,
-      page: '1',
       ['movies.enProfession']: profession,
       limit: '10',
-    },
-  });
-  return response.docs;
+    });
+    return response.docs;
+  } catch (err) {
+    dispatch(
+      onExtraReducersRejected({
+        title: 'Errors.title',
+        text: 'Errors.getPersons',
+      }),
+    );
+    return [];
+  }
 });
 
 const initialState: IFilter = {
@@ -118,7 +126,6 @@ const filters = createSlice({
       if (!action.meta.aborted) {
         state.personsPending = false;
       }
-      console.log(action.error);
     });
   },
 });

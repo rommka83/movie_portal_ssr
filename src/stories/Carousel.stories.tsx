@@ -10,6 +10,7 @@ const meta = {
   args: {
     title: 'Заголовок',
     withButton: true,
+    carouselContainerClassName: 'storybookCarousel',
     children: (
       <>
         <FilterGenreCard caption='Драма' genre='drama' onClick={() => {}} />

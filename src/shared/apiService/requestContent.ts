@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import {
+  GetCommentsResponseData,
   GetMovieResponseData,
   GetMoviesResponseData,
   GetPersonResponseData,
@@ -15,15 +16,11 @@ export const getMovie = async (path: string): Promise<GetMovieResponseData> => {
   return await apiRequest<GetMovieResponseData>(config);
 };
 
-export const getMovies = async ({
-  params,
-}: {
-  params: Record<string, string>;
-}): Promise<GetMoviesResponseData> => {
+export const getMovies = async (params?: Record<string, string>): Promise<GetMoviesResponseData> => {
   const config: AxiosRequestConfig = {
     method: 'GET',
     url: 'v1.3/movie',
-    params,
+    params: { page: '1', limit: '30', ...params },
   };
   return await apiRequest<GetMoviesResponseData>(config);
 };
@@ -36,15 +33,19 @@ export const getPerson = async (path: string): Promise<GetPersonResponseData> =>
   return await apiRequest<GetPersonResponseData>(config);
 };
 
-export const getPersons = async ({
-  params,
-}: {
-  params: Record<string, string>;
-}): Promise<GetPersonsResponseData> => {
+export const getPersons = async (params?: Record<string, string>): Promise<GetPersonsResponseData> => {
   const config: AxiosRequestConfig = {
     method: 'GET',
     url: 'v1/person',
-    params,
+    params: { page: '1', limit: '30', ...params },
   };
   return await apiRequest<GetPersonsResponseData>(config);
+};
+export const getComments = async (params?: Record<string, string>): Promise<GetCommentsResponseData> => {
+  const config: AxiosRequestConfig = {
+    method: 'GET',
+    url: 'v1/review',
+    params: { page: '1', limit: '30', ...params },
+  };
+  return await apiRequest<GetCommentsResponseData>(config);
 };

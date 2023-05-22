@@ -17,22 +17,20 @@ import { useAppDispatch, useAppSelector } from 'app/store/hooks';
 import { addAllFilters, addSortTypesSort, getSelectedFilterSelector } from 'app/store/filterSlice';
 import { getFilters, getSortType, restoreParams } from 'shared/utils/generatesParamsString';
 import { getMovies } from 'shared/apiService';
+import { NotFound } from 'shared/ui/NotFound';
 
 export const getServerSideProps: GetServerSideProps<{ movies: IFilm[] }> = async (context) => {
   const genre = context.params?.slug?.[0];
-  const responseMovies = await getMovies({
-    params: { page: '1', ['genres.name']: genre ?? '', limit: '30' },
-  });
-
-  if (!responseMovies) {
+  try {
+    const responseMovies = await getMovies({ ['genres.name']: genre ?? '' });
+    return {
+      props: { movies: responseMovies.docs },
+    };
+  } catch (err) {
     return {
       notFound: true,
     };
   }
-
-  return {
-    props: { movies: responseMovies.docs },
-  };
 };
 interface IGenrePage {
   movies: IFilm[];
@@ -69,15 +67,21 @@ const GenrePage = ({ movies }: IGenrePage) => {
           <SortDropdown />
         </Accordion>
         <FilterPanelDesktop />
+
         <div className={styles.moviesContainer}>
-          {movies.map((movie) => (
-            <div key={movie.id} className={styles.movieBadgeContainer}>
-              <Link href={`/MoviePage/${movie.id}`}>
-                <MovieBadge film={movie} />
-              </Link>
-            </div>
-          ))}
+          {!movies.length ? (
+            <NotFound className={styles.notFound} />
+          ) : (
+            movies.map((movie) => (
+              <div key={movie.id} className={styles.movieBadgeContainer}>
+                <Link href={`/MoviePage/${movie.id}`}>
+                  <MovieBadge film={movie} />
+                </Link>
+              </div>
+            ))
+          )}
         </div>
+
         <ButtonOrLink className={styles.buttonShowMore} variant='secondary' transparent large>
           {t(`GenrePage.ShowMore`)}
         </ButtonOrLink>

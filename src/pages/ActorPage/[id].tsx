@@ -8,18 +8,12 @@ export async function getServerSideProps(context: any) {
     const { id } = context.params;
     const actor = await getPerson(id);
 
-    if (!actor) {
-      return {
-        notFound: true,
-      };
-    }
-
     return {
       props: { actor: actor },
     };
   } catch {
     return {
-      props: { actor: null },
+      notFound: true,
     };
   }
 }
@@ -29,5 +23,5 @@ interface IProps {
 }
 
 export default function ActorPage({ actor }: IProps) {
-  return actor ? <ActorPageWiget actor={actor} /> : null;
+  return <ActorPageWiget actor={actor} />;
 }
