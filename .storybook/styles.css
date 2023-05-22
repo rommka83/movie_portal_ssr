@@ -10,3 +10,15 @@ th > span,
 #control-type > option {
   color: black;
 }
+
+#storybook-root {
+  overflow: hidden;
+}
+
+.storybookTip.storybookTip {
+  animation-iteration-count: infinite;
+}
+
+.storybookCarousel.storybookCarousel {
+  --viewed-elements-count: 4;
+}

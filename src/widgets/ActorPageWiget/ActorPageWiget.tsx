@@ -7,7 +7,6 @@ import { FilmographyItem } from 'entities/FilmographyItem';
 import Back from 'shared/ui/Back';
 import declension from '../../entities/ActorPageLib/lib/helpers/declension ';
 import { useTranslation } from '../../i18n';
-import axios from 'axios';
 import { IPersonBackend } from 'shared/types/IPersonBackend';
 
 interface IProps {

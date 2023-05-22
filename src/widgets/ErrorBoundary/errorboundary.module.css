@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
+
+.button {
+  gap: 10px;
+  font-size: 20px;
+}
+
+.title {
+  font-size: 18px;
+  color: var(--gray-light);
+}

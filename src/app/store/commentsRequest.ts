@@ -1,6 +1,7 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { getComments } from 'shared/apiService';
 import { IReviev } from 'shared/types/IReviev';
+import { onExtraReducersRejected } from './helpers';
 import { RootState } from './store';
 
 let comments: IReviev = {
@@ -17,15 +18,23 @@ const initialState = {
   error: false,
 };
 
-export const getComments = createAsyncThunk('comments/comments-request', async (id: string) => {
-  const response = await axios.get(`https://api.kinopoisk.dev/v1/review?page=1&limit=100&movieId=${id}`, {
-    headers: {
-      Accept: 'application/json',
-      'X-API-KEY': 'WK12G32-AS5MC31-G3YD6BS-R9FN48S',
-    },
-  });
-  return response.data;
-});
+export const getCommentsThunk = createAsyncThunk(
+  'comments/comments-request',
+  async (id: string, { dispatch }) => {
+    try {
+      const response = await getComments({ limit: '50', movieId: id });
+      return response;
+    } catch (err) {
+      dispatch(
+        onExtraReducersRejected({
+          title: 'Errors.title',
+          text: 'Errors.getComments',
+        }),
+      );
+      return comments;
+    }
+  },
+);
 
 export const filmComents = createSlice({
   name: 'filmComents',
@@ -33,14 +42,14 @@ export const filmComents = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getComments.pending, (state) => {
+      .addCase(getCommentsThunk.pending, (state) => {
         state.pending = true;
       })
-      .addCase(getComments.fulfilled, (state, { payload }) => {
+      .addCase(getCommentsThunk.fulfilled, (state, { payload }) => {
         state.pending = false;
         state.comments = payload;
       })
-      .addCase(getComments.rejected, (state) => {
+      .addCase(getCommentsThunk.rejected, (state) => {
         state.pending = false;
         state.error = true;
       });
