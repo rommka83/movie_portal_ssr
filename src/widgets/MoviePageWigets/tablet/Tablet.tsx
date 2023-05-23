@@ -59,7 +59,7 @@ export default function Tablet({ film, className }: IProps) {
         </Carousel>
       )}
 
-      <ActorsCreators persons={film.persons} className={styles.actorsCreators} />
+      <ActorsCreators id={film.id} persons={film.persons} className={styles.actorsCreators} />
       <AdditionalMaterials className={styles.additionalMaterials} video={film.videos} />
       <BlockComments className={styles.comments} />
       <AllDevaicePoster

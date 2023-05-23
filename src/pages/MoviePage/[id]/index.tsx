@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import styles from './moviepage.module.css';
-import Desktop from '../../widgets/MoviePageWigets/desktop/Desktop';
-import Tablet from '../../widgets/MoviePageWigets/tablet/Tablet';
+import styles from '../moviepage.module.css';
+
+import Desktop from '../../../widgets/MoviePageWigets/desktop/Desktop';
+import Tablet from '../../../widgets/MoviePageWigets/tablet/Tablet';
 import { useAppDispatch } from 'app/store/hooks';
 import { getCommentsThunk } from 'app/store/commentsRequest';
 import { IFilm } from 'shared/types/IFilm';
@@ -33,7 +34,6 @@ export default function MoviePage({ film, id }: IProps) {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (film === undefined) return;
-    localStorage.setItem('oneFilm', JSON.stringify(film));
     dispatch(getCommentsThunk(id));
   }, [film, id]);
 

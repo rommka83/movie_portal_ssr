@@ -1,8 +1,8 @@
 import React, { HTMLAttributes, useMemo } from 'react';
 import styles from './postercards.module.css';
 import classNames from 'classnames';
-import Image from 'next/image';
 import { SvgIcon } from 'shared/ui/SvgIcon';
+import Image from 'next/image';
 
 interface IProps {
   src: string;
@@ -34,7 +34,7 @@ export const PosterCards = ({ src, name, className, top, num }: props) => {
     </div>
   ) : (
     <div className={classNames(styles.wrapper, className)}>
-      <Image width={200} height={300} src={src} alt={name} className={styles.pic} />
+      {src && <Image src={src} width={200} height={300} alt={name} className={styles.pic} />}
     </div>
   );
 };

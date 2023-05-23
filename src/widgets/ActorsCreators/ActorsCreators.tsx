@@ -11,8 +11,10 @@ import { Carousel } from 'shared/ui/Carousel';
 interface IProps {
   persons: IPerson[];
   className?: string;
+  id: number;
 }
-export function ActorsCreators({ persons, className }: IProps) {
+
+export function ActorsCreators({ id, persons, className }: IProps) {
   const { t } = useTranslation();
 
   return (
@@ -30,7 +32,7 @@ export function ActorsCreators({ persons, className }: IProps) {
           </div>
         ))}
         <div className={styles.item}>
-          <Link href='/AllParticipants'>
+          <Link href={`/AllParticipants/${id}`}>
             <p className={styles.entryModal}>{t('more')}</p>
           </Link>
         </div>
