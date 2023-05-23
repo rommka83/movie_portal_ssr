@@ -221,5 +221,18 @@
 
   "CatalogPage": {
     "Movies": "Movies"
+  },
+  "Errors": {
+    "title": "Oops, something went wrong...",
+    "getComments": "Unable to get movie review data",
+    "getPerson": "Failed to get person data",
+    "getMovieTitle": "Failed to get movie title data"
+  },
+  "ErrorBoundary": {
+    "title": "Oops, there is an error!",
+    "buttonText": "Back to"
+  },
+  "NotFound": {
+    "notFound": "Nothing found for your request"
   }
 }

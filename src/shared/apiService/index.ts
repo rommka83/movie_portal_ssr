@@ -1,1 +1,1 @@
-export { getMovie, getMovies, getPerson, getPersons } from './requestContent';
+export { getMovie, getMovies, getPerson, getPersons, getComments } from './requestContent';

@@ -8,17 +8,16 @@ import classNames from 'classnames';
 import { getMovies } from 'shared/apiService';
 
 export const getStaticProps: GetStaticProps<{ movies: IFilm[] }> = async () => {
-  const responseMovies = await getMovies({ params: { page: '1', limit: '30' } });
-
-  if (!responseMovies) {
+  try {
+    const responseMovies = await getMovies();
+    return {
+      props: { movies: responseMovies.docs },
+    };
+  } catch (err) {
     return {
       notFound: true,
     };
   }
-
-  return {
-    props: { movies: responseMovies.docs },
-  };
 };
 interface ICustom404 {
   movies: IFilm[];

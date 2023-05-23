@@ -13,21 +13,22 @@ import { resetFilters } from 'app/store/filterSlice';
 import { clearParams } from 'shared/utils/generatesParamsString';
 import { useRouter } from 'next/router';
 import { getMovies, getPersons } from 'shared/apiService';
+import { NotFound } from 'shared/ui/NotFound';
 
 export const getStaticProps = async () => {
-  const [responseMovies, responseActors] = await Promise.all([
-    getMovies({ params: { page: '1', limit: '30' } }),
-    getPersons({ params: { page: '1', limit: '20', ['movies.enProfession']: 'actor' } }),
-  ]);
-  if (!responseMovies) {
+  try {
+    const [responseMovies, responseActors] = await Promise.all([
+      getMovies(),
+      getPersons({ limit: '20', ['movies.enProfession']: 'actor' }),
+    ]);
+    return {
+      props: { movies: responseMovies.docs, actors: responseActors.docs },
+    };
+  } catch (err) {
     return {
       notFound: true,
     };
   }
-
-  return {
-    props: { movies: responseMovies.docs, actors: responseActors.docs },
-  };
 };
 
 interface ICatalogPage {
@@ -56,7 +57,11 @@ function CatalogPage({ movies, actors }: ICatalogPage) {
 
       <div className={classNames('container', styles.catalogContentContainer)}>
         <FilterPanelDesktop />
-        <CatalogPageContent movies={adventures} actors={actors} />
+        {!movies.length ? (
+          <NotFound className={styles.catalogNotFound} />
+        ) : (
+          <CatalogPageContent movies={adventures} actors={actors} />
+        )}
       </div>
     </div>
   );

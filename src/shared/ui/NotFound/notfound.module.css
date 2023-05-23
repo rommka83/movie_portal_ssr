@@ -1,0 +1,6 @@
+.notFound {
+  font-size: 20px;
+  color: var(--gray-light);
+  text-align: center;
+  padding-block: 10px;
+}

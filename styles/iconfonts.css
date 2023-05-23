@@ -572,7 +572,7 @@
 .icon-developer_20__0:before {
   content: '\e9b6';
 }
-.icon-developer_32__0:before {
+.icon-developer_32__0:after {
   content: '\e9b7';
 }
 .icon-developer_32__1:before {
@@ -2906,7 +2906,7 @@
 .icon-warning_32__0:before {
   content: '\ecc0';
 }
-.icon-warning_32__1:before {
+.icon-warning_32__1:after {
   content: '\ecc1';
 }
 .icon-warning_56__0:before {
