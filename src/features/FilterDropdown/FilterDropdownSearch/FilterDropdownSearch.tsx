@@ -47,7 +47,11 @@ export const FilterDropdownSearch = React.memo(
         }
         const controller = dispatch(getSearchPersons({ name: value, profession: type }));
         abortRef.current = controller.abort;
-        controller.finally(() => setNotFoundShow(true));
+        controller.then((response) => {
+          if (response.meta.requestStatus === 'fulfilled') {
+            setNotFoundShow(true);
+          }
+        });
       }, 350),
       [selectedPerson, abortRef, dispatch],
     );

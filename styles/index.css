@@ -113,3 +113,8 @@ input[type='range']::-ms-fill-upper {
     width: 90vw;
   }
 }
+
+button:focus-within,
+li:focus-within {
+  outline: solid 1px var(--white);
+}

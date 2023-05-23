@@ -225,7 +225,7 @@
   "Errors": {
     "title": "Oops, something went wrong...",
     "getComments": "Unable to get movie review data",
-    "getPerson": "Failed to get person data",
+    "getPersons": "Failed to get person data",
     "getMovieTitle": "Failed to get movie title data"
   },
   "ErrorBoundary": {
