@@ -1,5 +1,4 @@
 .root {
-  display: flex;
   flex-direction: column;
 }
 .head {
@@ -11,7 +10,6 @@
   display: grid;
   grid-template-columns: 1fr 0.6fr;
   grid-column-gap: 40px;
-
   margin-bottom: 50px;
 }
 .player {
@@ -28,6 +26,7 @@
 }
 .actorsCreators {
   margin-bottom: 50px;
+  margin-top: 30px;
 }
 .additionalMaterials {
   margin-bottom: 50px;

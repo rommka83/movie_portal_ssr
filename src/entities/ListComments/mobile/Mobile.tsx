@@ -1,24 +1,24 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { FC } from 'react';
 import styles from './mobile.module.css';
 import { nanoid } from '@reduxjs/toolkit';
 import OneComment from 'entities/OneComment';
 import { Carousel } from 'shared/ui/Carousel';
 import { IOneComment } from 'shared/types/IOneComment';
+import classNames from 'classnames';
 
 interface IProps {
   comments: IOneComment[];
+  className?: string;
 }
 
-export const Mobile: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({ comments, className }) => {
+export const Mobile: FC<IProps> = ({ comments, className }) => {
   return (
-    <div className={styles.root}>
-      <div className={styles.coruselWrapper}>
-        <Carousel withButton scrollMultipleItems className={styles.corusel}>
-          {comments.map((el) => {
-            return <OneComment comment={el} className={styles.ItemComments} key={nanoid()} />;
-          })}
-        </Carousel>
-      </div>
+    <div className={classNames(styles.root, className)}>
+      <Carousel withButton scrollMultipleItems className={styles.carousel}>
+        {comments.map((el) => (
+          <OneComment comment={el} key={nanoid()} />
+        ))}
+      </Carousel>
     </div>
   );
 };

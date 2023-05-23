@@ -8,6 +8,7 @@ import Back from 'shared/ui/Back';
 import declension from '../../entities/ActorPageLib/lib/helpers/declension ';
 import { useTranslation } from '../../i18n';
 import { IPersonBackend } from 'shared/types/IPersonBackend';
+import classNames from 'classnames';
 
 interface IProps {
   actor: IPersonBackend;
@@ -35,35 +36,33 @@ export default function ActorPageWiget({ actor }: IProps) {
   }, [actor]);
 
   return (
-    <section className={styles.actorPage}>
-      <div className='container'>
-        <Back className={styles.back}>{t('Back')}</Back>
-        <div className={styles.container}>
-          <PersonHeader name={actor.name} photo={actor.photo} enName={actor.enName} />
-          <div className={styles.filmography}>
-            <div className={styles.content}>
-              <div className={styles.title}>
-                Полная фильмография
-                <span className={styles.lable}>
-                  {declension(
-                    actor?.movies && actor?.movies.filter((item) => item.name !== null).length,
-                    'фильм',
-                  )}
-                </span>
-              </div>
-              <ActorTabs tabs={['Всё']} />
-            </div>
-            <div className={styles.filmographyList}>
-              <div className={styles.filmographyContent}>
-                {movies.map((movie) => movie.name && <FilmographyItem key={movie.id} movie={movie} />)}
-                {!showMoreMovies && moreMovies && (
-                  <button className={styles.btn} onClick={() => setShowMoreMovies(true)}>
-                    Еще {declension(moreMovies.length, 'фильм')}
-                  </button>
+    <section className={classNames(styles.actorPage, 'container')}>
+      <Back className={styles.back}>{t('Back')}</Back>
+      <div className={styles.container}>
+        <PersonHeader name={actor.name} photo={actor.photo} enName={actor.enName} />
+        <div className={styles.filmography}>
+          <div className={styles.content}>
+            <div className={styles.title}>
+              Полная фильмография
+              <span className={styles.lable}>
+                {declension(
+                  actor?.movies && actor?.movies.filter((item) => item.name !== null).length,
+                  'фильм',
                 )}
-                {showMoreMovies &&
-                  moreMovies?.map((movie) => movie.name && <FilmographyItem key={movie.id} movie={movie} />)}
-              </div>
+              </span>
+            </div>
+            <ActorTabs tabs={['Всё']} />
+          </div>
+          <div className={styles.filmographyList}>
+            <div className={styles.filmographyContent}>
+              {movies.map((movie) => movie.name && <FilmographyItem key={movie.id} movie={movie} />)}
+              {!showMoreMovies && moreMovies && (
+                <button className={styles.btn} onClick={() => setShowMoreMovies(true)}>
+                  Еще {declension(moreMovies.length, 'фильм')}
+                </button>
+              )}
+              {showMoreMovies &&
+                moreMovies?.map((movie) => movie.name && <FilmographyItem key={movie.id} movie={movie} />)}
             </div>
           </div>
         </div>

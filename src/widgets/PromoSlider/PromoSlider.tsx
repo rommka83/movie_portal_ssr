@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './promoSlider.module.css';
 import { PromoSlide } from 'entities/PromoSlide';
-import { IFilm } from 'shared/types/IFilm';
 import { useMedia } from 'shared/hooks/useMedia';
 
 import DB from '../../../public/static/promo_DB.json';
@@ -167,11 +166,11 @@ export const PromoSlider = () => {
         <button
           className={classNames(styles.btnControls, styles.btnControlsLeft, 'icon-arrowLeft_12x32__0')}
           onClick={() => setScrollLeft(true)}
-        ></button>
+        />
         <button
           className={classNames(styles.btnControls, styles.btnControlsRight, 'icon-arrowRight_12x32__0')}
           onClick={() => setScrolRight(true)}
-        ></button>
+        />
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import { IOneComment } from 'shared/types/IOneComment';
 
 interface IProps {
   comments: IOneComment[];
+  className?: string;
 }
 
 export const Desktop: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({ comments, className }) => {

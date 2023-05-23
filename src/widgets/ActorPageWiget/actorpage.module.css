@@ -1,7 +1,5 @@
 .actorPage {
   padding: 20px 0 100px;
-  width: 80wh;
-  margin: 0 auto;
 }
 
 .back {
@@ -35,6 +33,8 @@
 }
 
 .filmographyContent {
+  display: grid;
+  gap: 24px;
   padding: 20px 0;
 }
 
@@ -57,10 +57,11 @@
 }
 
 .btn {
+  justify-self: self-start;
   font-size: 15px;
   line-height: 20px;
   font-weight: 500;
-  font-style: normal;
+  color: var(--gray-light);
 }
 
 @media (max-width: 1160px) {

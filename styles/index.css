@@ -114,7 +114,6 @@ input[type='range']::-ms-fill-upper {
   }
 }
 
-button:focus-within,
-li:focus-within {
+button:focus-within {
   outline: solid 1px var(--white);
 }

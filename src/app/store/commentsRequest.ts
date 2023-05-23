@@ -44,6 +44,7 @@ export const filmComents = createSlice({
     builder
       .addCase(getCommentsThunk.pending, (state) => {
         state.pending = true;
+        state.comments = comments;
       })
       .addCase(getCommentsThunk.fulfilled, (state, { payload }) => {
         state.pending = false;
@@ -59,3 +60,4 @@ export const filmComents = createSlice({
 export default filmComents.reducer;
 
 export const commentsSelector = (state: RootState) => state.filmComents.comments;
+export const commentsPendingSelector = (state: RootState) => state.filmComents.pending;

@@ -14,17 +14,19 @@ import { IFilm } from 'shared/types/IFilm';
 import PosterCards from 'shared/bisnes/PosterCards';
 import { Carousel } from 'shared/ui/Carousel';
 import Link from 'next/link';
+import classNames from 'classnames';
 
 interface IProps {
   film: IFilm;
+  className?: string;
 }
 
-export default function Tablet({ film }: IProps) {
+export default function Tablet({ film, className }: IProps) {
   const { t, i18n } = useTranslation();
   const lng = i18n.language;
 
   return film === undefined ? null : (
-    <div className='container'>
+    <div className={classNames('container', className)}>
       <Back>{t('Back')}</Back>
       <VideoDescription short film={film} className={styles.description} />
       <VideoPlayer
@@ -43,8 +45,7 @@ export default function Tablet({ film }: IProps) {
           className={styles.movieBadgeCarouselContent}
           title={`${t('sectionTitle.WithFilm')} «${lng === 'ru' ? film.name : film.enName ?? film.name}» ${t(
             'sectionTitle.watching',
-          )}:`}
-          withArrow
+          )}`}
           withButton
           scrollMultipleItems
         >
@@ -64,7 +65,7 @@ export default function Tablet({ film }: IProps) {
       <AllDevaicePoster
         name={film.name}
         enName={film.enName}
-        poster={film.poster.url}
+        poster={film.poster?.url}
         className={styles.allDvices}
       />
     </div>

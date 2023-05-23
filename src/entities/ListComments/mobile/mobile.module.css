@@ -2,14 +2,9 @@
   width: 100%;
   overflow: hidden;
 }
-.coruselWrapper {
-  width: 90%;
-  margin: 0 auto;
-}
-.corusel {
-  display: flex;
+
+.carousel.carousel {
+  grid-template-columns: min-content;
+  grid-auto-columns: min-content;
   gap: 10px;
-}
-.ItemComments {
-  width: 100%;
 }

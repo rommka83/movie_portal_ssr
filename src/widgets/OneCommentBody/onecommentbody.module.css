@@ -25,15 +25,11 @@
   }
   .commentContent {
     height: 100%;
-
     text-align: center;
-    overflow: scroll;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 8;
-    -webkit-box-orient: vertical;
+    overflow: auto;
+    overscroll-behavior-y: contain;
   }
   .commentContent::-webkit-scrollbar {
-    width: 0;
+    width: 3px;
   }
 }

@@ -1,3 +1,8 @@
+.container {
+  position: relative;
+  display: flex;
+}
+
 .filmographyList {
   display: flex;
   flex-direction: column;
@@ -5,8 +10,8 @@
 }
 
 .filmographyItem {
-  display: flex;
-  margin-bottom: 15px;
+  position: absolute;
+  inset: 0;
 }
 
 .filmographyPhoto {
@@ -41,7 +46,11 @@
   font-style: normal;
   color: var(--white);
   margin-bottom: 5px;
-  word-wrap: break-word;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 .filmographyRating {
@@ -63,6 +72,7 @@
 .btn {
   width: 140px;
   height: 40px;
+  z-index: 1;
 }
 
 @media (max-width: 600px) {

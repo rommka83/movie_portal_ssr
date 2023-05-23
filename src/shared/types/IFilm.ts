@@ -17,7 +17,7 @@ export interface IFilm {
   poster: {
     url: string;
     previewUrl: string;
-  };
+  } | null;
   videos: IVideo;
   genres: {
     name: string;
