@@ -35,7 +35,7 @@ export function TopSection({ films, className }: IProps) {
             <div key={movie.id} className={styles.movieBadgeContainer}>
               <Link href={`/MoviePage/${movie.id}`}>
                 <PosterCards
-                  src={movie.poster.url ?? ''}
+                  src={movie.poster?.url}
                   name={movie.name}
                   className={styles.card}
                   top

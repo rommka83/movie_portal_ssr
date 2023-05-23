@@ -108,8 +108,8 @@ export default function MovieChange() {
         <OutputWindow name='короткое описание' value={oneFilm.shortDescription} />
         <OutputWindow name='продолжительность (мин)' value={oneFilm.movieLength} />
         <OutputWindow name='ограничения по возрасту' value={oneFilm.ageRating} />
-        <OutputWindow name='постер url' value={oneFilm.poster.url} />
-        <OutputWindow name='постер (предварительный просмотр) url' value={oneFilm.poster.previewUrl} />
+        <OutputWindow name='постер url' value={oneFilm.poster?.url} />
+        <OutputWindow name='постер (предварительный просмотр) url' value={oneFilm.poster?.previewUrl} />
         {oneFilm.rating && (
           <div className={styles.blockInp}>
             <h3 className={styles.blockInpTitle}>Рейтинги</h3>

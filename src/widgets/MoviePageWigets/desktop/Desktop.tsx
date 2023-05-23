@@ -15,14 +15,15 @@ import PosterCards from 'shared/bisnes/PosterCards';
 
 interface IProps {
   film: IFilm;
+  className?: string;
 }
 
-const Desktop = ({ film }: IProps) => {
+const Desktop = ({ film, className }: IProps) => {
   const { t, i18n } = useTranslation();
   const lng = i18n.language;
 
   return (
-    <div className={classNames(styles.root, 'container')}>
+    <div className={classNames(styles.root, 'container', className)}>
       <GenreBookmarks ganre={film.genres} className={styles.head} />
       <div className={styles.playerAndDescription}>
         <VideoPlayer
@@ -40,8 +41,7 @@ const Desktop = ({ film }: IProps) => {
           className={styles.movieBadgeCarouselContent}
           title={`${t('sectionTitle.WithFilm')} «${lng === 'ru' ? film.name : film.enName ?? film.name}» ${t(
             'sectionTitle.watching',
-          )}:`}
-          withArrow
+          )}`}
           withButton
           scrollMultipleItems
         >
@@ -60,7 +60,7 @@ const Desktop = ({ film }: IProps) => {
       <AllDevaicePoster
         name={film.name}
         enName={film.enName}
-        poster={film.poster.url}
+        poster={film.poster?.url}
         className={styles.allDvices}
       />
       <GenreBookmarks home ganre={film.genres} page={film.name} className={styles.crumbs} />

@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 interface IProps {
-  poster: string;
+  poster?: string;
   name: string;
   enName: string | null;
 }
@@ -38,9 +38,9 @@ export const AllDevaicePoster: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({
         </ButtonOrLink>
       </div>
       <div className={styles.posters}>
-        <Image width={100} height={100} src={poster} alt='' className={styles.posterTv} />
+        {poster && <Image width={100} height={100} src={poster} alt='' className={styles.posterTv} />}
         <Image width={500} height={500} src={tv} alt='' className={styles.tv} />
-        <Image width={100} height={100} src={poster} alt='' className={styles.posterIPad} />
+        {poster && <Image width={100} height={100} src={poster} alt='' className={styles.posterIPad} />}
         <Image width={100} height={100} src={ipad} alt='' className={styles.IPad} />
       </div>
     </div>

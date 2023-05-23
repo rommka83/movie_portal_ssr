@@ -56,7 +56,7 @@
 }
 @media (max-width: 600px) {
   .root {
-    min-width: 250px;
+    width: 250px;
   }
   .commentFooter {
     flex-direction: column;

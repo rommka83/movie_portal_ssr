@@ -1,7 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
+import styles from '../moviepage.module.css';
+
 import Desktop from '../../../widgets/MoviePageWigets/desktop/Desktop';
-import { useMedia } from 'shared/hooks/useMedia';
 import Tablet from '../../../widgets/MoviePageWigets/tablet/Tablet';
 import { useAppDispatch } from 'app/store/hooks';
 import { getCommentsThunk } from 'app/store/commentsRequest';
@@ -28,18 +28,18 @@ interface IProps {
 }
 
 export default function MoviePage({ film, id }: IProps) {
-  const tablet = useMedia('(max-width: 1160px)');
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     window.scrollTo(0, 0);
     if (film === undefined) return;
     dispatch(getCommentsThunk(id));
-  }, [film, id]);
+  }, [film, id, dispatch]);
 
-  if (tablet) {
-    return <Tablet film={film} />;
-  }
-
-  return <Desktop film={film} />;
+  return (
+    <>
+      <Tablet className={styles.tablet} film={film} />
+      <Desktop className={styles.desktop} film={film} />
+    </>
+  );
 }

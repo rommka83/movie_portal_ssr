@@ -20,7 +20,7 @@ export function MovieBadge({ film }: IProps) {
       <div className={styles.banner}>
         <div className={styles.bannerMain}>
           <PosterCards
-            src={film.poster.url ? film.poster.url : ''}
+            src={film.poster?.url}
             name={lng === 'ru' ? film.name ?? film.alternativeName : film.enName ?? film.name}
             className={styles.pic}
           />
