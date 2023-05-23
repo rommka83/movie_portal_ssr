@@ -5,7 +5,7 @@ import { SvgIcon } from 'shared/ui/SvgIcon';
 import Image from 'next/image';
 
 interface IProps {
-  src: string;
+  src?: string;
   name: string;
   top?: boolean;
   num?: number;
@@ -20,7 +20,7 @@ export const PosterCards = ({ src, name, className, top, num }: props) => {
 
   return top ? (
     <div className={classNames(styles.wrapper, className)}>
-      <Image width={200} height={300} src={src} alt={name} className={styles.pic} />
+      {src && <Image width={200} height={300} src={src} alt={name} className={styles.pic} />}
       {number != 'number10' ? (
         <div className={styles.num}>
           <SvgIcon type={number} />

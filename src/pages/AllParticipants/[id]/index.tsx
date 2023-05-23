@@ -79,7 +79,7 @@ const AllParticipants: FC<HTMLAttributes<HTMLDivElement> & IProps> = ({ film }) 
         </div>
         <div className={styles.poster}>
           <Link href={`/MoviePage/${film.id ?? ''}`}>
-            <PosterCards src={film.poster.url} name={film.name} />
+            <PosterCards src={film.poster?.url} name={film.name} />
           </Link>
           <div className={styles.rating}>
             <ReitingMovie grade={film.rating ? film.rating.kp : 0} className={styles.ratingValue} />

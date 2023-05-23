@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import styles from '../moviepage.module.css';
 
@@ -35,7 +34,7 @@ export default function MoviePage({ film, id }: IProps) {
     window.scrollTo(0, 0);
     if (film === undefined) return;
     dispatch(getCommentsThunk(id));
-  }, [film, id]);
+  }, [film, id, dispatch]);
 
   return (
     <>
