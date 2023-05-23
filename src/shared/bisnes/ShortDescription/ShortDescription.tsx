@@ -26,7 +26,13 @@ export const ShortDescription: FC<PropsWithChildren<HTMLAttributes<HTMLDivElemen
       <p className={styles.yearСountry}>
         {new Date(obj.year).getFullYear()}, {countries}
       </p>
-      <p className={styles.genre}>{allGenres ? <GenreBookmarks ganre={obj.genres} /> : obj.genres[0].name}</p>
+      <div className={styles.genre}>
+        {allGenres ? (
+          <GenreBookmarks className={styles.genreBookmarks} ganre={obj.genres} />
+        ) : (
+          obj.genres[0].name
+        )}
+      </div>
       <p className={styles.duration}>{hours < 0 ? obj.movieLength + ' мин' : hours + ' ч ' + min + ' мин'}</p>
     </div>
   );

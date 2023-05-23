@@ -13,10 +13,11 @@ import { PersonMiniCard } from 'shared/bisnes/PersonMiniCard';
 
 interface IProps {
   persons: IPerson[];
+  id: number;
+  className: string;
 }
-type props = HTMLAttributes<HTMLDivElement> & IProps;
 
-export function ActorsCreators({ persons, className }: props) {
+export function ActorsCreators({ id, persons, className }: IProps) {
   const tablet = useMedia('(max-width: 850px)');
   const mobile = useMedia('(max-width: 500px)');
   const { t } = useTranslation();
@@ -39,7 +40,7 @@ export function ActorsCreators({ persons, className }: props) {
               </li>
             );
           })}
-          <Link href='/AllParticipants'>
+          <Link href={`/AllParticipants/${id}`}>
             <li className={classNames(styles.item, styles.entryModal)}>{t('more')}</li>
           </Link>
         </ul>
