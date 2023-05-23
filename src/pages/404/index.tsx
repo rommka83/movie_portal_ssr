@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps<{ movies: IFilm[] }> = async () => {
     };
   } catch (err) {
     return {
-      notFound: true,
+      props: { movies: [] },
     };
   }
 };

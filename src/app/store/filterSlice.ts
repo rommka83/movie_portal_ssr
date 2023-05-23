@@ -103,6 +103,7 @@ const filters = createSlice({
     },
     clearPersonsList(state) {
       state.personsList = [];
+      state.personsPending = false;
     },
     resetFilters() {
       return initialState;

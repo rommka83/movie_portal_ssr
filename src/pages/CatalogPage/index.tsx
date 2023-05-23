@@ -26,6 +26,9 @@ export const getStaticProps = async () => {
     };
   } catch (err) {
     return {
+      props: { movies: [], actors: [] },
+    };
+    return {
       notFound: true,
     };
   }
