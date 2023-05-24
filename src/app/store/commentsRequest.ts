@@ -60,4 +60,3 @@ export const filmComents = createSlice({
 export default filmComents.reducer;
 
 export const commentsSelector = (state: RootState) => state.filmComents.comments;
-export const commentsPendingSelector = (state: RootState) => state.filmComents.pending;

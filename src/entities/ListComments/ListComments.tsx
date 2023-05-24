@@ -3,7 +3,6 @@ import { Desktop } from './desktop/Desktop';
 import { Mobile } from './mobile/Mobile';
 import { useAppSelector } from 'app/store/hooks';
 import styles from './listcomments.module.css';
-import { commentsPendingSelector, commentsSelector } from 'app/store/commentsRequest';
 import { Loader } from 'shared/ui/Loader';
 
 interface IProps {
@@ -11,8 +10,7 @@ interface IProps {
 }
 
 export const ListComments: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({ all = false, className }) => {
-  const comments = useAppSelector(commentsSelector);
-  const commentsPending = useAppSelector(commentsPendingSelector);
+  const { pending: commentsPending, comments } = useAppSelector((state) => state.filmComents);
 
   if (commentsPending) {
     return (
