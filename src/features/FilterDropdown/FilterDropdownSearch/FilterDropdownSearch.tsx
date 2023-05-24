@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
+import React, { MouseEvent, useCallback, useEffect, useState } from 'react';
 import { InputSearch } from 'shared/ui/InputSearch';
 import styles from './filterdropdownsearch.module.css';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
@@ -16,6 +16,8 @@ import { Loader } from 'shared/ui/Loader';
 import { useDropdownContext } from '../FilterDropdownContext';
 import { useGenerateParamsString } from 'shared/utils/generatesParamsString';
 import { NotFound } from 'shared/ui/NotFound';
+import { useDispatchWithAbort } from 'shared/hooks/useDispatchWithAbort';
+import { IPerson } from 'shared/types/IPerson';
 
 export type FilterDropdownSearchType = 'director' | 'actor';
 export interface IFilterDropdownSearch {
@@ -31,29 +33,26 @@ export const FilterDropdownSearch = React.memo(
     const generatesParamsString = useGenerateParamsString();
     const dropdownClose = useDropdownContext();
     const dispatch = useAppDispatch();
+    const dispatchWithAbort = useDispatchWithAbort();
     const personsList = useAppSelector(personsListSelector);
     const pendingPersons = useAppSelector(pendingPersonsSelector);
-    const abortRef = useRef<((reason?: string) => void) | null>(null);
+
     const isDirectorType = type === 'director';
     const iconClassName = isDirectorType ? 'icon-films_20__0' : 'icon-person_20__0';
+
     const onChange = useCallback(
       debounce((value: string) => {
         setNotFoundShow(false);
-        if (abortRef.current) {
-          abortRef.current();
-        }
         if (selectedPerson) {
           setSelectedPerson('');
         }
-        const controller = dispatch(getSearchPersons({ name: value, profession: type }));
-        abortRef.current = controller.abort;
-        controller.then((response) => {
-          if (response.meta.requestStatus === 'fulfilled') {
+        dispatchWithAbort(getSearchPersons({ name: value, profession: type })).then((response) => {
+          if (response.meta.requestStatus === 'fulfilled' && !(response.payload as IPerson[]).length) {
             setNotFoundShow(true);
           }
         });
       }, 350),
-      [selectedPerson, abortRef, dispatch],
+      [selectedPerson, dispatchWithAbort],
     );
 
     const onPersonClick = (event: MouseEvent<HTMLLIElement>) => {
@@ -76,12 +75,9 @@ export const FilterDropdownSearch = React.memo(
 
     useEffect(() => {
       return () => {
-        if (abortRef.current) {
-          abortRef.current();
-        }
         dispatch(clearPersonsList());
       };
-    }, [dispatch, abortRef]);
+    }, [dispatch]);
 
     return (
       <div className={classNames(styles.container, className)}>
@@ -98,7 +94,7 @@ export const FilterDropdownSearch = React.memo(
           </div>
         )}
         <ul className={styles.list}>
-          {!personsList.length && notFoundShow ? (
+          {notFoundShow ? (
             <li>
               <NotFound className={styles.notFound} />
             </li>
