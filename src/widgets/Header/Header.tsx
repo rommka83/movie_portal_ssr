@@ -11,14 +11,13 @@ import { HeaderDropdownNavigation } from 'features/HeaderDropdownNavigation';
 import Link from 'next/link';
 import { HeaderDropdownUser } from 'features/HeaderDropdownUser';
 
-export type HeaderDropdownType = 'movies' | 'promo' | 'avatar';
+export type HeaderDropdownType = 'movies' | 'series' | 'authorization';
 export function Header() {
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
-  const [entranceShow, setEntranceShow] = useState(false);
   const [type, setType] = useState<HeaderDropdownType | ''>('');
 
-  const onMouseEnter = useCallback((event: MouseEvent<HTMLLIElement>) => {
+  const onMouseEnter = useCallback((event: MouseEvent<HTMLElement>) => {
     const type = event.currentTarget.dataset['type'] ?? '';
     setType(type as HeaderDropdownType);
     setShow(true);
@@ -30,13 +29,8 @@ export function Header() {
     }, 250);
   }, []);
 
-  const autorisationEnter = useCallback((event: MouseEvent<HTMLButtonElement>) => {
-    setEntranceShow(true);
-  }, []);
-
   const onDropdownClose = useCallback(() => {
     setShow(false);
-    setEntranceShow(false);
   }, []);
 
   const onHeaderDropdownClose = useCallback(() => {
@@ -64,12 +58,14 @@ export function Header() {
               <ButtonOrLink className={styles.wideAreaButton}>{t('header.PayForASubscription')}</ButtonOrLink>
               <ChangeTheLanguage />
               <ButtonOrLink
+                data-type='authorization'
                 className={styles.avatarButton}
                 variant='secondary'
                 round
                 small
                 transparent
-                onMouseEnter={autorisationEnter}
+                onMouseLeave={onMouseLeave}
+                onMouseEnter={onMouseEnter}
               >
                 <span className={classNames('icon-avatar_20__0', styles.adminIcon)} />
               </ButtonOrLink>
@@ -77,10 +73,8 @@ export function Header() {
           </div>
         </div>
         <HeaderDropdown opened={show} onClose={onHeaderDropdownClose}>
-          <HeaderDropdownNavigation />
-        </HeaderDropdown>
-        <HeaderDropdown opened={entranceShow}>
-          <HeaderDropdownUser open={entranceShow} entranceDropdownClose={() => setEntranceShow(false)} />
+          {type === 'movies' && <HeaderDropdownNavigation />}
+          {type === 'authorization' && <HeaderDropdownUser entranceDropdownClose={onDropdownClose} />}
         </HeaderDropdown>
       </div>
     </header>
