@@ -1,0 +1,43 @@
+.wrapper {
+  width: fit-content;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.messege {
+  width: fit-content;
+  margin-bottom: 30px;
+  padding: 16px;
+  background-color: var(--gray);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 16px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.messegeTitle {
+  font-size: 15px;
+  font-weight: 700;
+}
+.messegeText {
+  font-size: 13px;
+  margin-top: 4px;
+  opacity: 0.5;
+}
+.form {
+}
+.inp {
+  width: 100%;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  padding: 2px 20px;
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  height: fit-content;
+  line-height: 1.5;
+  font-size: 16px;
+  background-color: var(--main-background-color);
+}
+.btn {
+  width: 100%;
+}

@@ -9,17 +9,20 @@ import { HeaderDropdown } from 'widgets/Header/HeaderDropdown';
 import { useCallback, MouseEvent, useState } from 'react';
 import { HeaderDropdownNavigation } from 'features/HeaderDropdownNavigation';
 import Link from 'next/link';
+import { HeaderDropdownUser } from 'features/HeaderDropdownUser';
 
-export type HeaderDropdownType = 'movies' | 'promo' | 'avatar';
+export type HeaderDropdownType = 'movies' | 'series' | 'authorization';
 export function Header() {
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
   const [type, setType] = useState<HeaderDropdownType | ''>('');
-  const onMouseEnter = useCallback((event: MouseEvent<HTMLLIElement>) => {
+
+  const onMouseEnter = useCallback((event: MouseEvent<HTMLElement>) => {
     const type = event.currentTarget.dataset['type'] ?? '';
     setType(type as HeaderDropdownType);
     setShow(true);
   }, []);
+
   const onMouseLeave = useCallback(() => {
     setTimeout(() => {
       setShow(false);
@@ -54,14 +57,24 @@ export function Header() {
             <div className={styles.wideAreaInner}>
               <ButtonOrLink className={styles.wideAreaButton}>{t('header.PayForASubscription')}</ButtonOrLink>
               <ChangeTheLanguage />
-              <ButtonOrLink className={styles.avatarButton} variant='secondary' round small transparent>
+              <ButtonOrLink
+                data-type='authorization'
+                className={styles.avatarButton}
+                variant='secondary'
+                round
+                small
+                transparent
+                onMouseLeave={onMouseLeave}
+                onMouseEnter={onMouseEnter}
+              >
                 <span className={classNames('icon-avatar_20__0', styles.adminIcon)} />
               </ButtonOrLink>
             </div>
           </div>
         </div>
         <HeaderDropdown opened={show} onClose={onHeaderDropdownClose}>
-          <HeaderDropdownNavigation />
+          {type === 'movies' && <HeaderDropdownNavigation />}
+          {type === 'authorization' && <HeaderDropdownUser entranceDropdownClose={onDropdownClose} />}
         </HeaderDropdown>
       </div>
     </header>

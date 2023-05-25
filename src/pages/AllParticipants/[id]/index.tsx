@@ -16,8 +16,6 @@ import Link from 'next/link';
 
 export async function getServerSideProps(context: any) {
   try {
-    console.log(context.params);
-
     const { id } = context.params;
     const film = await getMovie(id);
     return {
