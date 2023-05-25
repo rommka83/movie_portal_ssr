@@ -21,7 +21,7 @@ export const CatalogPageContent = ({ movies, actors }: ICatalogPageContent) => {
 
       <Carousel
         carouselContainerClassName={styles.carousel}
-        className={styles.genreCardCarouselContent}
+        carouselChildrenClassName={styles.genreCardCarouselContent}
         title={t('CatalogPageContent.Genres')}
         withButton
         scrollMultipleItems
@@ -45,7 +45,7 @@ export const CatalogPageContent = ({ movies, actors }: ICatalogPageContent) => {
 
       <Carousel
         carouselContainerClassName={styles.carousel}
-        className={styles.personCardCarouselContent}
+        carouselChildrenClassName={styles.personCardCarouselContent}
         title={t('CatalogPageContent.Persons')}
         withButton
         scrollMultipleItems

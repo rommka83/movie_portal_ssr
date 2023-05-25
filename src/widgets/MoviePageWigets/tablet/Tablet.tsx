@@ -42,7 +42,7 @@ export default function Tablet({ film, className }: IProps) {
       {film.similarMovies && film.similarMovies.length > 0 && (
         <Carousel
           carouselContainerClassName={styles.carousel}
-          className={styles.movieBadgeCarouselContent}
+          carouselChildrenClassName={styles.movieBadgeCarouselContent}
           title={`${t('sectionTitle.WithFilm')} «${lng === 'ru' ? film.name : film.enName ?? film.name}» ${t(
             'sectionTitle.watching',
           )}`}

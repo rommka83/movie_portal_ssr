@@ -14,7 +14,7 @@ interface IProps {
 export const Mobile: FC<IProps> = ({ comments, className }) => {
   return (
     <div className={classNames(styles.root, className)}>
-      <Carousel withButton scrollMultipleItems className={styles.carousel}>
+      <Carousel withButton scrollMultipleItems carouselChildrenClassName={styles.carousel}>
         {comments.map((el) => (
           <OneComment comment={el} key={nanoid()} />
         ))}

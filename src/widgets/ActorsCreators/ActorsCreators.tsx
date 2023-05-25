@@ -22,7 +22,7 @@ export function ActorsCreators({ id, persons, className }: IProps) {
       <Carousel
         carouselContainerClassName={styles.carouselContainer}
         title={t('ActorsCreators')}
-        className={styles.personCardCarouselContent}
+        carouselChildrenClassName={styles.personCardCarouselContent}
         withButton
         scrollMultipleItems
       >

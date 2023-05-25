@@ -17,7 +17,7 @@ export const MoviesCarousel = React.memo(({ title, movies }: IMoviesCarousel) =>
   return (
     <Carousel
       carouselContainerClassName={styles.carousel}
-      className={styles.movieBadgeCarouselContent}
+      carouselChildrenClassName={styles.movieBadgeCarouselContent}
       title={title}
       withArrow
       withButton

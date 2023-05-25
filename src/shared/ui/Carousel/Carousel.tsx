@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 interface ICarousel {
   title?: string | null;
-  className?: string;
+  carouselChildrenClassName?: string;
   carouselContainerClassName?: string;
   scrollMultipleItems?: boolean;
   withButton?: boolean;
@@ -15,7 +15,7 @@ const LAST_ITEM_COUNT = 1;
 const CORRECT_COEFFICIENT = 5;
 export function Carousel({
   title,
-  className,
+  carouselChildrenClassName,
   carouselContainerClassName,
   scrollMultipleItems,
   withButton,
@@ -104,7 +104,7 @@ export function Carousel({
         <div
           ref={carouselContentRef}
           onScroll={onContentScroll}
-          className={classNames(styles.carouselContent, className)}
+          className={classNames(styles.carouselContent, carouselChildrenClassName)}
         >
           {children}
         </div>

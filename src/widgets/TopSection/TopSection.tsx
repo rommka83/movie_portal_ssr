@@ -25,7 +25,7 @@ export function TopSection({ films, className }: IProps) {
       </SectionTitle>
       <Carousel
         carouselContainerClassName={styles.carousel}
-        className={styles.movieBadgeCarouselContent}
+        carouselChildrenClassName={styles.movieBadgeCarouselContent}
         withArrow
         withButton
         scrollMultipleItems
