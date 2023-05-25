@@ -50,7 +50,8 @@
     "Series": "Сериалы",
     "Cartoons": "Мультфильмы",
     "TvChannels": "ТВ-каналы",
-    "PayForASubscription": "Оплатить подписку"
+    "PayForASubscription": "Оплатить подписку",
+    "LoginOrRegister": "Войти или зарегестрироваться"
   },
   "ActorsCreators": "Актёры и создатели",
   "more": "ещё",

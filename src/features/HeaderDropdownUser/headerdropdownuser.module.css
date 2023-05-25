@@ -1,0 +1,8 @@
+.root {
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+.link {
+  margin-left: auto;
+}
