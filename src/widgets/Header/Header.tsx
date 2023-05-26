@@ -74,7 +74,7 @@ export function Header() {
         </div>
         <HeaderDropdown opened={show} onClose={onHeaderDropdownClose}>
           {type === 'movies' && <HeaderDropdownNavigation />}
-          {type === 'authorization' && <HeaderDropdownUser entranceDropdownClose={onDropdownClose} />}
+          {type === 'authorization' && <HeaderDropdownUser />}
         </HeaderDropdown>
       </div>
     </header>

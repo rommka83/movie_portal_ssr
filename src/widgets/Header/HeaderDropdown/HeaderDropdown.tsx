@@ -6,7 +6,7 @@ import { HeaderDropdownProvider } from './HeaderDropdownContext';
 
 interface IHeaderDropdown {
   opened: boolean;
-  onClose?: () => void;
+  onClose: () => void;
 }
 export function HeaderDropdown({ children, opened, onClose }: PropsWithChildren<IHeaderDropdown>) {
   const [dropShow, setDropShow] = useState(opened);
@@ -26,7 +26,7 @@ export function HeaderDropdown({ children, opened, onClose }: PropsWithChildren<
 
   useEffect(() => {
     if (!opened && !dropShow) {
-      onClose && onClose();
+      onClose();
     }
   }, [opened, dropShow]);
 
