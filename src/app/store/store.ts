@@ -5,6 +5,7 @@ import { filmComents } from './commentsRequest';
 import movieTitleSearch from './movieTitleSearchSlice';
 import { allGenres } from './allGenresRequest';
 import tips from './tipsSlice';
+import { userResponce } from './user';
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     movieTitleSearch: movieTitleSearch,
     allGenres: allGenres.reducer,
     tips: tips.reducer,
+    userResponce: userResponce.reducer,
   },
 });
 
