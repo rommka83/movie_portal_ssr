@@ -19,7 +19,7 @@ export const FilterPanelCarousel = ({
 }: IFilterPanelCarousel) => {
   return (
     <Carousel
-      className={classNames(styles.carousel, {
+      carouselChildrenClassName={classNames(styles.carousel, {
         [styles.carouselGenres]: type === 'genres',
         [styles.carouselButtons]: type !== 'genres',
       })}
