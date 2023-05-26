@@ -50,6 +50,13 @@
   display: flex;
 }
 
+.authorizationButtonWrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+
 .wideAreaButton.wideAreaButton {
   background: var(--pink--linear-gradient);
   border: none;

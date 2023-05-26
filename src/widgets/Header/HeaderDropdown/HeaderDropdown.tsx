@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { PropsWithChildren, useState, useCallback, useEffect } from 'react';
 import styles from './headerdropdown.module.css';
 import classNames from 'classnames';
@@ -10,35 +9,41 @@ interface IHeaderDropdown {
 }
 export function HeaderDropdown({ children, opened, onClose }: PropsWithChildren<IHeaderDropdown>) {
   const [dropShow, setDropShow] = useState(opened);
+  const [hide, setHide] = useState(false);
 
-  const onMouseEnter = useCallback(() => {
-    setDropShow(true);
-  }, []);
-  const onMouseLeave = useCallback(() => {
+  const onDropdownClose = useCallback(() => {
+    setHide(true);
     setTimeout(() => {
       setDropShow(false);
     }, 250);
   }, []);
 
-  const onCloseHandler = useCallback(() => {
-    onMouseLeave();
-  }, [onMouseLeave]);
+  const onMouseEnter = () => {
+    setHide(false);
+    setDropShow(true);
+  };
+
+  const onMouseLeave = () => {
+    onDropdownClose();
+  };
 
   useEffect(() => {
     if (!opened && !dropShow) {
+      onDropdownClose();
       onClose();
     }
-  }, [opened, dropShow]);
+  }, [opened, dropShow, onDropdownClose]);
 
   return (
     <div
       className={classNames(styles.headerDropdownBody, {
         [styles.show]: opened || dropShow,
+        [styles.hide]: !opened && hide,
       })}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <HeaderDropdownProvider value={onCloseHandler}>{children}</HeaderDropdownProvider>
+      <HeaderDropdownProvider value={onDropdownClose}>{children}</HeaderDropdownProvider>
     </div>
   );
 }
