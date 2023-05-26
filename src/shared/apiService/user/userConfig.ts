@@ -4,8 +4,7 @@ const userApi = axios.create({
   withCredentials: true,
   baseURL: 'http://45.141.101.66/',
   headers: {
-    accept: '*/*',
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
   },
 });
 

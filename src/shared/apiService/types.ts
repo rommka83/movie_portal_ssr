@@ -13,3 +13,12 @@ export type GetPersonsResponseData = {
 };
 
 export type GetCommentsResponseData = IReviev;
+
+export type IUserCreat = {
+  email: string;
+  password: string;
+  name: string;
+  surname: string;
+  phoneNumber: string;
+  selfDescription: string;
+};
