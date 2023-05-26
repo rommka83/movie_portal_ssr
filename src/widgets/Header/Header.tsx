@@ -15,7 +15,7 @@ export type HeaderDropdownType = 'movies' | 'series' | 'authorization';
 export function Header() {
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
-  const [type, setType] = useState<HeaderDropdownType | ''>('');
+  const [type, setType] = useState<HeaderDropdownType | null>(null);
 
   const onMouseEnter = useCallback((event: MouseEvent<HTMLElement>) => {
     const type = event.currentTarget.dataset['type'] ?? '';
@@ -26,7 +26,7 @@ export function Header() {
   const onMouseLeave = useCallback(() => {
     setTimeout(() => {
       setShow(false);
-    }, 250);
+    }, 100);
   }, []);
 
   const onDropdownClose = useCallback(() => {
@@ -34,7 +34,7 @@ export function Header() {
   }, []);
 
   const onHeaderDropdownClose = useCallback(() => {
-    setType('');
+    setType(null);
   }, []);
 
   return (
@@ -57,18 +57,16 @@ export function Header() {
             <div className={styles.wideAreaInner}>
               <ButtonOrLink className={styles.wideAreaButton}>{t('header.PayForASubscription')}</ButtonOrLink>
               <ChangeTheLanguage />
-              <ButtonOrLink
+              <div
                 data-type='authorization'
-                className={styles.avatarButton}
-                variant='secondary'
-                round
-                small
-                transparent
+                className={styles.authorizationButtonWrapper}
                 onMouseLeave={onMouseLeave}
                 onMouseEnter={onMouseEnter}
               >
-                <span className={classNames('icon-avatar_20__0', styles.adminIcon)} />
-              </ButtonOrLink>
+                <ButtonOrLink className={styles.avatarButton} variant='secondary' round small transparent>
+                  <span className={classNames('icon-avatar_20__0', styles.adminIcon)} />
+                </ButtonOrLink>
+              </div>
             </div>
           </div>
         </div>

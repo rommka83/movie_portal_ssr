@@ -2,26 +2,24 @@
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
   height: auto;
+  padding-inline: 8px;
   background-color: var(--dark-gray);
   box-shadow: 0 20px 96px var(--gray-shadow);
   border-radius: 12px;
-  width: 100%;
   opacity: 0;
-  visibility: hidden;
   z-index: 2;
-  transition-property: visibility, opacity, height;
-  transform: translateY(0);
-  will-change: transform, height;
+  transition-property: opacity;
   transition-duration: 250ms;
-  pointer-events: none;
-  padding: 0px 8px;
 }
 
 .headerDropdownBody.show {
   opacity: 1;
-  visibility: visible;
-  pointer-events: initial;
+}
+
+.headerDropdownBody.hide {
+  opacity: 0;
 }
 
 @media (max-width: 1253px) {

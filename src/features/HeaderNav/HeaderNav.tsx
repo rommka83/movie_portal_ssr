@@ -9,7 +9,7 @@ interface IHeaderNav {
   onMouseEnter: (event: MouseEvent<HTMLLIElement>) => void;
   onMouseLeave: (event: MouseEvent<HTMLLIElement>) => void;
   onItemClick: (event: MouseEvent<HTMLLIElement>) => void;
-  type: HeaderDropdownType | '';
+  type: HeaderDropdownType | null;
 }
 export function HeaderNav({ onMouseEnter, onMouseLeave, type, onItemClick }: IHeaderNav) {
   const { t } = useTranslation();
