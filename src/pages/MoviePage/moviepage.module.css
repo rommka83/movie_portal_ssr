@@ -1,17 +1,136 @@
+.head {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.root .back {
+  display: none;
+}
+
+.playerAndDescription {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  grid-template-areas:
+    'player descriptionHeader'
+    'player descriptionBody';
+  grid-column-gap: 40px;
+  grid-row-gap: 15px;
+  margin-bottom: 50px;
+}
+
+.player {
+  grid-area: player;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.videoDescriptionHeader {
+  grid-area: descriptionHeader;
+}
+
+.videoDescriptionBody {
+  grid-area: descriptionBody;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.allDevices {
+  margin-top: 50px;
+}
+
+.crumbs {
+  margin-top: 30px;
+}
+
+.movieBadgeContainer {
+  padding: 0px 8px;
+}
+
+.carousel.carousel {
+  --fz: 24px;
+  --lh: 28px;
+  --left: -18px;
+  --right: -21px;
+}
+
+.movieBadgeCarouselContent {
+  padding-top: 5px;
+  --viewed-elements-count: 7;
+}
+
 @media (max-width: 1160px) {
-  .tablet {
-    display: block;
+  .playerAndDescription {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'descriptionHeader'
+      'player'
+      'descriptionBody';
+    grid-row-gap: 30px;
+    margin-top: 10px;
   }
-  .desktop {
+
+  .player {
+    position: static;
+  }
+
+  .root .back {
+    display: flex;
+  }
+
+  .root .head {
     display: none;
   }
 }
 
-@media (min-width: 1160px) {
-  .desktop {
-    display: flex;
+@media (max-width: 1050px) {
+  .movieBadgeCarouselContent {
+    --viewed-elements-count: 5;
   }
-  .tablet {
-    display: none;
+}
+
+@media (max-width: 900px) {
+  .movieBadgeCarouselContent {
+    --viewed-elements-count: 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .movieBadgeCarouselContent {
+    --viewed-elements-count: 4;
+  }
+
+  .movieBadgeContainer {
+    padding: 0px 20px 0px 0px;
+  }
+
+  .playerAndDescription {
+    grid-row-gap: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .movieBadgeCarouselContent {
+    --viewed-elements-count: 3;
+  }
+
+  .movieBadgeContainer {
+    padding: 0px 8px 0px 0px;
+  }
+}
+
+@media (max-width: 453px) {
+  .movieBadgeCarouselContent {
+    --viewed-elements-count: 2;
+  }
+
+  .playerAndDescription {
+    grid-row-gap: 15px;
   }
 }

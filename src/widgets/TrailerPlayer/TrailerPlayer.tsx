@@ -9,20 +9,17 @@ interface IProps {
 }
 
 export function TrailerPlayer({ src, func }: IProps) {
-  const video = useRef<HTMLVideoElement>(null);
-
   return (
     <div className={styles.root}>
-      <div className={styles.wrapper} onClick={(ev) => {}}>
+      <div className={styles.wrapper}>
         <div className={classNames(styles.exit, 'icon-close_20__0')} onClick={func}></div>
-        <video
+        <iframe
           className={styles.player}
           src={src}
           width={document.documentElement.clientWidth * 0.7}
-          autoPlay
-          controls
-          ref={video}
-        ></video>
+          allowFullScreen
+          frameBorder='0'
+        />
       </div>
     </div>
   );

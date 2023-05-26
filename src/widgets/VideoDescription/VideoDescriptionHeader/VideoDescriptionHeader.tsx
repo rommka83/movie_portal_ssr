@@ -1,28 +1,22 @@
-import React from 'react';
-import styles from './videodescription.module.css';
-import { GenreBookmarks } from 'shared/bisnes/GenreBookmarks';
 import classNames from 'classnames';
-import { ActorsList } from 'entities/ActorsList';
-import { Grading } from 'features/Grading';
+import { useTranslation } from 'i18n';
+import React from 'react';
+import { GenreBookmarks } from 'shared/bisnes/GenreBookmarks';
 import { IFilm } from 'shared/types/IFilm';
-import { useTranslation } from '../../i18n';
-import { HTMLAttributes } from 'react';
-import { ContentText } from 'shared/ui/ContentText';
+import styles from '../videodescription.module.css';
 
-interface IProps {
+interface IVideoDescriptionHeader {
   film: IFilm;
-  short?: boolean;
+  containerClassName?: string;
 }
-type props = HTMLAttributes<HTMLDivElement> & IProps;
-
-export function VideoDescription({ film, className, short = false }: props) {
+export const VideoDescriptionHeader = ({ film, containerClassName }: IVideoDescriptionHeader) => {
   const { i18n } = useTranslation();
   const lng = i18n.language;
   const hours = Math.floor(film.movieLength / 60);
   const min = film.movieLength - hours * 60;
 
   return (
-    <div className={classNames(styles.root, className)}>
+    <div className={classNames(styles.containerInner, containerClassName)}>
       <h2 className={styles.title}>{lng === 'ru' ? film.name : film.enName ?? film.name}</h2>
       <ul className={styles.atributes}>
         <li className={styles.atributesItem}>
@@ -48,13 +42,6 @@ export function VideoDescription({ film, className, short = false }: props) {
         <li className={styles.qualityVideo}>FullHD</li>
         <li className={classNames(styles.qualityAudio, 'icon-player_volumeMidRegular_16__0')}>Рус</li>
       </ul>
-      {!short && (
-        <>
-          <ActorsList actors={film.persons} reiting={film.rating ? film.rating.kp : 0} />
-          <ContentText className={styles.description}>{film.description}</ContentText>
-          <Grading grading={film.rating ? film.rating.kp : 0} />
-        </>
-      )}
     </div>
   );
-}
+};

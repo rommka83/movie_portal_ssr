@@ -8,8 +8,9 @@
   position: relative;
 }
 .player {
-  z-index: 2;
   border-radius: 8px;
+  aspect-ratio: 16 / 9;
+  z-index: 2;
 }
 .exit {
   position: absolute;

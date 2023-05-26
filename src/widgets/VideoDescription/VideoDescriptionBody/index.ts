@@ -1,0 +1,1 @@
+export { VideoDescriptionBody } from './VideoDescriptionBody';
