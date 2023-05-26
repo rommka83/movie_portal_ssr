@@ -40,7 +40,7 @@ export function AdditionalMaterials({ className, video }: props) {
                   setSrc(el.url);
                 }}
               >
-                <video src={el.url} className={styles.video}></video>
+                <iframe src={el.url} className={styles.video} allowFullScreen frameBorder='0' />
                 <p className={styles.itemName}>{el.name}</p>
               </li>
             );

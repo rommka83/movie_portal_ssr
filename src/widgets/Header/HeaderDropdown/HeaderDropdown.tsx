@@ -32,7 +32,7 @@ export function HeaderDropdown({ children, opened, onClose }: PropsWithChildren<
       onDropdownClose();
       onClose();
     }
-  }, [opened, dropShow, onDropdownClose]);
+  }, [opened, dropShow, onDropdownClose, onClose]);
 
   return (
     <div

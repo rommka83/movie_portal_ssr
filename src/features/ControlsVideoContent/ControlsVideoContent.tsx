@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { useTranslation } from '../../i18n';
 import { Modal } from 'shared/ui/Modal';
 import { TrailerPlayer } from 'widgets/TrailerPlayer/TrailerPlayer';
+import ButtonOrLink from 'shared/ui/ButtonOrLink';
 
 interface IProps {
   trailer: string;
@@ -20,16 +21,25 @@ export const ControlsVideoContent: FC<HTMLAttributes<HTMLUListElement> & IProps>
 
   return (
     <>
-      <ul className={classNames(styles.list, className)}>
-        <li
-          className={classNames(styles.item, styles.treilerPlay, 'icon-playOutline_20__0')}
+      <div className={classNames(styles.buttonContainer, className)}>
+        <ButtonOrLink
+          className={classNames(styles.trailerButton, 'icon-playOutline_20__0', styles.button)}
+          variant='secondary'
+          large
           onClick={() => setIsOpen(true)}
         >
-          <span> {t('Player.trailer')}</span>
-        </li>
-        <li className={classNames(styles.item, styles.bookmark, 'icon-favoriteAdd_20__0')}></li>
-        <li className={classNames(styles.item, styles.download, 'icon-share_20__0')}></li>
-      </ul>
+          {t('Player.trailer')}
+        </ButtonOrLink>
+        <div className={styles.innerButtonContainer}>
+          <ButtonOrLink
+            className={classNames('icon-favoriteAdd_20__0', styles.button)}
+            variant='secondary'
+            large
+          />
+
+          <ButtonOrLink className={classNames('icon-share_20__0', styles.button)} variant='secondary' large />
+        </div>
+      </div>
       {isOpen && (
         <Modal>
           <TrailerPlayer src={trailer} func={() => setIsOpen(false)} />
