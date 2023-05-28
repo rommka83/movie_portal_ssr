@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './authorization.module.css';
 import { useForm } from 'react-hook-form';
-import { fetchRegister } from 'app/store/authReducer/authCreators';
+import { fetchRegister, fetchUserData } from 'app/store/authReducer/authCreators';
 import { useDispatch } from 'react-redux';
 import { UserType } from 'app/store/authReducer/authSlice';
+import { useAppSelector } from 'app/store/hooks';
 
 // 1.Сделать красивие
 // 2.Разбить на компоненты
@@ -19,31 +20,40 @@ import { UserType } from 'app/store/authReducer/authSlice';
 export function Authorization() {
 
   const dispatch = useDispatch()
+  const { data, isLoading, error } = useAppSelector(state => state.authSlice)
+
+  console.log(data);
+  console.log(error);
+
+
 
 
   const { register, handleSubmit, setError, reset, formState: { errors, isValid } } = useForm({
     defaultValues: {
       email: '',
       password: '',
-      name: '',
-      surname: '',
-      phoneNumber: '',
-      selfDescription: '',
+      // name: '',
+      // surname: '',
+      // phoneNumber: '',
+      // selfDescription: '',
 
     },
     mode: 'onBlur'
   })
 
-  const onSubmit = async (values: UserType) => {
-    // @ts-ignore
-    const data = await dispatch(fetchRegister(values))
-    if (!data.payload) {
-      alert('Не удалось зарегистрироваться')
-    }
+  const onSubmit = async (values: any) => {
+    // const data = await dispatch(fetchRegister(values))
 
-    // if ('token' in data.payload) {
-    // window.localStorage.setItem('token', data.payload.token)
+    // @ts-ignore
+    const data = await dispatch(fetchUserData(values))
+
+    console.log(data);
+
+    // if (!data.payload) {
+    // alert('Не удалось зарегистрироваться')
     // }
+
+    // 
     reset()
   }
 
@@ -71,7 +81,7 @@ export function Authorization() {
         {...register('password', { required: 'Введите пароль', minLength: { value: 8, message: 'Слишком короткий пароль' } })}
       />
       {errors.password && <p className={styles.error}>{errors.password.message}</p>}
-      <input
+      {/*<input
         className={styles.input}
         type="text"
         placeholder='Введите Имя'
@@ -96,7 +106,7 @@ export function Authorization() {
         type="text"
         placeholder='О себе'
         {...register('selfDescription')}
-      />
+/>*/}
       <button className={styles.btn}>Войти</button>
     </form>
   </div>;
