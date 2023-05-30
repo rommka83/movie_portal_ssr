@@ -51,7 +51,3 @@ export const getComments = async (params?: Record<string, string>): Promise<GetC
   };
   return await apiRequest<GetCommentsResponseData>(config);
 };
-
-// export const login = async (user: IUserCreat): Promise<{ status: string; profileId: string }> => {
-//   return userApi.post('/profile', { user });
-// };

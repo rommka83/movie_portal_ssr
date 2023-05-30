@@ -1,15 +1,30 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { IUserCreat } from 'shared/apiService/types';
+// import { userCreat } from 'shared/apiService/requestContent';
+import { IUser, IUserRequest } from 'shared/apiService/types';
+import AuthService from 'shared/apiService/user/AuthService';
+import { onExtraReducersRejected } from './helpers';
 
-let user: IUserCreat = {
-  email: '',
-  password: '',
+const user: IUser = {
   name: '',
   surname: '',
+  password: '',
+  email: '',
   phoneNumber: '',
   selfDescription: '',
+  isAuth: false,
+  isAutorisation: false,
+  accessToken: '',
+  refreshToken: '',
 };
+
+// let responce: IUserRequest = {
+//   name: '',
+//   surname: '',
+//   password: '',
+//   email: '',
+//   phoneNumber: '',
+//   selfDescription: '',
+// };
 
 const initialState = {
   user,
@@ -19,18 +34,37 @@ const initialState = {
   error: false,
 };
 
-type arg = {
-  email: string;
-  password: string;
-};
+export const registration = createAsyncThunk(
+  'user/user-request',
+  async (responce: IUserRequest, { dispatch }) => {
+    try {
+      const response = await AuthService.registration(responce);
+      return response.data;
+    } catch (err) {
+      dispatch(
+        onExtraReducersRejected({
+          title: 'ошибка запроса',
+          text: `${err}`,
+        }),
+      );
+      return { status: 'неуспех', profileId: 'нет' };
+    }
+  },
+);
 
-export const login = createAsyncThunk('user/user-request', async (user: IUserCreat) => {
-  const response = await axios.post('http://45.141.101.66/profile', user, {
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-  });
-  return response.data;
+export const login = createAsyncThunk('user/user-request', async (responce: IUserRequest, { dispatch }) => {
+  try {
+    const response = await AuthService.login(responce);
+    return response.data;
+  } catch (err) {
+    dispatch(
+      onExtraReducersRejected({
+        title: 'ошибка запроса',
+        text: `${err}`,
+      }),
+    );
+    return { status: 'неуспех', profileId: 'нет' };
+  }
 });
 
 export const userResponce = createSlice({
@@ -39,16 +73,15 @@ export const userResponce = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(login.pending, (state) => {
+      .addCase(registration.pending, (state) => {
         state.pending = true;
-        state.user = user;
       })
-      .addCase(login.fulfilled, (state, { payload }) => {
+      .addCase(registration.fulfilled, (state, { payload }) => {
         state.pending = false;
         state.status = payload.status;
         state.profileId = payload.profileId;
       })
-      .addCase(login.rejected, (state) => {
+      .addCase(registration.rejected, (state) => {
         state.pending = false;
         state.error = true;
       });
@@ -56,5 +89,3 @@ export const userResponce = createSlice({
 });
 
 export default userResponce.reducer;
-
-// export const commentsSelector = (state: RootState) => state.filmComents.comments;
