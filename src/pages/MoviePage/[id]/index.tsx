@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import styles from '../moviepage.module.css';
 import { useAppDispatch } from 'app/store/hooks';
 import { getCommentsThunk } from 'app/store/commentsRequest';
@@ -42,6 +42,11 @@ export default function MoviePage({ film, id }: IProps) {
   const { t, i18n } = useTranslation();
   const lng = i18n.language;
 
+  const youtubeTrailers = useMemo(
+    () => film.videos.trailers.filter((video) => video?.site === 'youtube' && video.url.includes('embed')),
+    [film],
+  );
+
   useEffect(() => {
     window.scrollTo(0, 0);
     if (film === undefined) return;
@@ -55,9 +60,7 @@ export default function MoviePage({ film, id }: IProps) {
       <div className={styles.playerAndDescription}>
         <VideoPlayer
           className={styles.player}
-          trailer={
-            film.videos !== undefined && film.videos.trailers.length > 0 ? film.videos.trailers[0].url : '#'
-          }
+          trailer={youtubeTrailers.length > 0 ? youtubeTrailers[0].url : '#'}
           age={film.ageRating ? film.ageRating : 0}
         />
 
@@ -65,9 +68,7 @@ export default function MoviePage({ film, id }: IProps) {
         <VideoDescriptionBody
           containerClassName={styles.videoDescriptionBody}
           film={film}
-          trailer={
-            film.videos !== undefined && film.videos.trailers.length > 0 ? film.videos.trailers[0].url : '#'
-          }
+          trailer={youtubeTrailers.length > 0 ? youtubeTrailers[0].url : '#'}
           age={film.ageRating ? film.ageRating : 0}
         />
       </div>
@@ -92,7 +93,7 @@ export default function MoviePage({ film, id }: IProps) {
       )}
       <div className={styles.innerContainer}>
         <ActorsCreators id={film.id} persons={film.persons} className={styles.actorsCreators} />
-        <AdditionalMaterials className={styles.additionalMaterials} video={film.videos} />
+        <AdditionalMaterials className={styles.additionalMaterials} video={youtubeTrailers} />
         <BlockComments className={styles.comments} />
       </div>
       <AllDevaicePoster

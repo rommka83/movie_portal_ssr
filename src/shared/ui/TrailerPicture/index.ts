@@ -1,0 +1,1 @@
+export { TrailerPicture } from './TrailerPicture';

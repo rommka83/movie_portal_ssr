@@ -1,0 +1,45 @@
+.container {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.trailerImg,
+.trailerButton {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.trailerButton {
+  width: 63px;
+  height: 48px;
+  border: none;
+  background-color: var(--pink);
+  opacity: 0.5;
+  outline: none;
+  border-radius: 20px;
+  font-size: 19px;
+}
+
+.container:hover .trailerButton,
+.trailerButton:focus {
+  opacity: 1;
+}
+
+.trailerImg {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 768px) {
+  .trailerButton {
+    width: 50px;
+    height: 38px;
+    font-size: 15px;
+    border-radius: 14px;
+  }
+}
