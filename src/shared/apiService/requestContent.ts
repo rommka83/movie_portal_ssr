@@ -5,7 +5,6 @@ import {
   GetMoviesResponseData,
   GetPersonResponseData,
   GetPersonsResponseData,
-  IUserCreat,
 } from './types';
 import { apiRequest } from './config';
 import userApi from './user/userConfig';
