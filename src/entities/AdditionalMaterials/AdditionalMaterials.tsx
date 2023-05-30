@@ -1,55 +1,54 @@
-import React, { HTMLAttributes, useMemo, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './additionalmaterials.module.css';
-import { SectionTitle } from 'shared/ui/SectionTitle/SectionTitle';
 import classNames from 'classnames';
 import { nanoid } from '@reduxjs/toolkit';
-import { useAppDispatch } from 'app/store/hooks';
 import { IVideo } from 'shared/types/IVideo';
 import { useTranslation } from 'react-i18next';
 import { Modal } from 'shared/ui/Modal';
 import TrailerPlayer from 'widgets/TrailerPlayer';
+import { Carousel } from 'shared/ui/Carousel';
+import { TrailerPicture } from 'shared/ui/TrailerPicture';
+import { getTrailerId } from 'shared/utils/getTrailerId';
 
-interface IProps {
-  video: IVideo;
+interface IAdditionalMaterials {
+  video: IVideo['trailers'];
+  className?: string;
 }
-type props = HTMLAttributes<HTMLDivElement> & IProps;
 
-export function AdditionalMaterials({ className, video }: props) {
-  const list = useRef<HTMLUListElement>(null);
+export function AdditionalMaterials({ className, video }: IAdditionalMaterials) {
   const { t } = useTranslation();
-  const itemWidth = useMemo(() => {
-    if (list.current === null) return;
-    return (list.current.getBoundingClientRect().width - 30) / 4;
-  }, [list]);
   const [isOpen, setIsOpen] = useState(false);
   const [src, setSrc] = useState('');
 
-  return video.trailers.length > 0 ? (
+  return video.length > 0 ? (
     <>
       <div className={classNames(styles.root, className)}>
-        <SectionTitle className={styles.title}>{t('sectionTitle.additionalMaterials')}</SectionTitle>
-        <ul className={styles.list} ref={list}>
-          {video.trailers.slice(0, 4).map((el) => {
+        <Carousel
+          title={t('sectionTitle.additionalMaterials')}
+          carouselContainerClassName={styles.carousel}
+          carouselChildrenClassName={styles.carouselChildren}
+          scrollMultipleItems
+          withButton
+        >
+          {video.map((el) => {
             return (
-              <li
+              <div
                 className={styles.item}
                 key={nanoid()}
-                style={{ width: `${itemWidth}px` }}
                 onClick={() => {
                   setIsOpen(true);
                   setSrc(el.url);
                 }}
               >
-                <iframe src={el.url} className={styles.video} allowFullScreen frameBorder='0' />
-                <p className={styles.itemName}>{el.name}</p>
-              </li>
+                <TrailerPicture trailerID={getTrailerId(el.url)} />
+              </div>
             );
           })}
-        </ul>
+        </Carousel>
       </div>
       {isOpen && (
         <Modal>
-          <TrailerPlayer src={src} func={() => setIsOpen(false)} />
+          <TrailerPlayer className={styles.trailerPlayer} src={src} onClose={() => setIsOpen(false)} modal />
         </Modal>
       )}
     </>

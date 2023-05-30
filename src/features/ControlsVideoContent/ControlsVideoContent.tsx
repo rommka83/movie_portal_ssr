@@ -42,7 +42,12 @@ export const ControlsVideoContent: FC<HTMLAttributes<HTMLUListElement> & IProps>
       </div>
       {isOpen && (
         <Modal>
-          <TrailerPlayer src={trailer} func={() => setIsOpen(false)} />
+          <TrailerPlayer
+            className={styles.trailerPlayer}
+            src={trailer}
+            onClose={() => setIsOpen(false)}
+            modal
+          />
         </Modal>
       )}
     </>
