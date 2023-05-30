@@ -14,11 +14,23 @@ export type GetPersonsResponseData = {
 
 export type GetCommentsResponseData = IReviev;
 
-export type IUserCreat = {
-  email: string;
-  password: string;
+export interface IUser {
   name: string;
   surname: string;
+  password: string;
+  email: string;
   phoneNumber: string;
   selfDescription: string;
-};
+  isAuth: boolean;
+  isAutorisation: boolean;
+  accessToken: string;
+  refreshToken: string;
+}
+export interface IUserRequest {
+  name: string;
+  surname: string;
+  password: string;
+  email: string;
+  phoneNumber: string;
+  selfDescription: string;
+}

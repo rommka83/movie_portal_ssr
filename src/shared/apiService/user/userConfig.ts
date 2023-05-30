@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
 const userApi = axios.create({
   withCredentials: true,
@@ -8,14 +8,9 @@ const userApi = axios.create({
   },
 });
 
-userApi.interceptors.request.use(async <T>(config: AxiosRequestConfig): Promise<T> => {
-  try {
-    const response = await userApi(config);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
+export const registeredUserRequest = userApi.interceptors.request.use((config) => {
+  config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+  return config;
 });
 
 export default userApi;
