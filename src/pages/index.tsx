@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useState } from 'react';
 import styles from '../../styles/home.module.css';
 import { PromoSlider } from 'widgets/PromoSlider';
 import { IFilm } from 'shared/types/IFilm';
@@ -6,13 +6,16 @@ import { MoviesCarousel } from 'widgets/MoviesCarousel';
 import { ButtonsWithPadarkas } from 'features/ButtonsWithPadarkas';
 import { AboutUs } from 'widgets/AboutUs';
 import { TopSection } from 'widgets/TopSection';
-import { getMovies } from 'shared/apiService';
+import { getMoviesByGenre, getTop10 } from 'shared/apiService/requestContent';
 
 export const getStaticProps = async () => {
   try {
-    const response = await getMovies({ limit: '40' });
+    const top = await getTop10();
+    const fantasy = await getMoviesByGenre('фэнтези', 1);
+    const adventure = await getMoviesByGenre('приключения', 1);
+
     return {
-      props: { movies: response.docs },
+      props: { top: top.docs, adventure: adventure.docs, fantasy: fantasy.docs },
     };
   } catch {
     return {
@@ -20,18 +23,17 @@ export const getStaticProps = async () => {
     };
   }
 };
+let fantasyPage = 2;
+let adventurePage = 2;
 
 interface Iprops {
-  movies: IFilm[];
+  top: IFilm[];
+  adventure: IFilm[];
+  fantasy: IFilm[];
 }
-export default function Home({ movies }: Iprops) {
-  let { adventures, fantasy, biography, top } = useMemo(() => {
-    const adventures = movies.filter((el) => el.genres.find((e) => e.name === 'приключения'));
-    const fantasy = movies.filter((el) => el.genres.find((e) => e.name === 'фэнтези'));
-    const biography = movies.filter((el) => el.genres.find((e) => e.name === 'биография'));
-    const top = movies.filter((el) => el.rating);
-    return { adventures, fantasy, biography, top };
-  }, [movies]);
+export default function Home({ top, adventure, fantasy }: Iprops) {
+  const [fantasyFilms, setFantasyFilms] = useState(fantasy);
+  const [adventureFilms, setAdventureFilms] = useState(adventure);
   return (
     <>
       <PromoSlider />
@@ -39,17 +41,29 @@ export default function Home({ movies }: Iprops) {
         <div className={styles.wrapper}>
           <ButtonsWithPadarkas />
           <AboutUs />
-          <TopSection
-            films={top
-              .sort((a, b) => {
-                if (!a.rating || !b.rating) return 1;
-                return a.rating.kp > b.rating.kp ? -1 : 1;
-              })
-              .slice(0, 10)}
+          <TopSection films={top} />
+          <MoviesCarousel
+            title={'Фэнтези'}
+            movies={fantasyFilms}
+            getFilms={async () => {
+              const newFantasy = await getMoviesByGenre('фэнтези', fantasyPage);
+              setFantasyFilms((old) => {
+                return [...old, ...newFantasy.docs];
+              });
+              ++fantasyPage;
+            }}
           />
-          <MoviesCarousel title={'Фэнтези'} movies={fantasy} />
-          <MoviesCarousel title={'Приключения'} movies={adventures} />
-          <MoviesCarousel title={'Биография'} movies={biography} />
+          <MoviesCarousel
+            title={'Приключения'}
+            movies={adventureFilms}
+            getFilms={async () => {
+              const newAdventure = await getMoviesByGenre('приключения', adventurePage);
+              setAdventureFilms((old) => {
+                return [...old, ...newAdventure.docs];
+              });
+              ++adventurePage;
+            }}
+          />
         </div>
       </div>
     </>
