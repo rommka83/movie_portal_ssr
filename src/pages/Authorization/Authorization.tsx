@@ -39,7 +39,6 @@ export default function Authorization() {
 
   const hendleSubmit = function (ev: React.FormEvent<HTMLFormElement>) {
     ev.preventDefault();
-    console.log(autorisation);
     if (autorisation) {
       setNamePattern(name_pattern.test(name));
       setPasswordPattern(password_pattern.test(password));
@@ -60,8 +59,6 @@ export default function Authorization() {
       const _namePattern = name_pattern.test(name);
       const _passwordPattern = password_pattern.test(password);
       const _surNamePattern = name_pattern.test(surname);
-
-      console.log(_mailPattern && _namePattern && _surNamePattern && _passwordPattern);
 
       if (_mailPattern && _namePattern && _surNamePattern && _passwordPattern) {
         // dispach(registration(newUser));

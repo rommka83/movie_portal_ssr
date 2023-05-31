@@ -26,6 +26,27 @@ export const getMovies = async (params?: Record<string, string>): Promise<GetMov
   return await apiRequest<GetMoviesResponseData>(config);
 };
 
+export const getMoviesByGenre = async (
+  name: string,
+  page: number,
+  params?: Record<string, string>,
+): Promise<GetMoviesResponseData> => {
+  const config: AxiosRequestConfig = {
+    method: 'GET',
+    url: 'v1.3/movie',
+    params: { page: `${page}`, limit: '30', 'genres.name': `${name}`, ...params },
+  };
+  return await apiRequest<GetMoviesResponseData>(config);
+};
+
+export const getTop10 = async (): Promise<GetMoviesResponseData> => {
+  const config: AxiosRequestConfig = {
+    method: 'GET',
+    url: 'v1.3/movie?page=1&limit=10&top10',
+  };
+  return await apiRequest<GetMoviesResponseData>(config);
+};
+
 export const getPerson = async (path: string): Promise<GetPersonResponseData> => {
   const config: AxiosRequestConfig = {
     method: 'GET',
@@ -42,6 +63,7 @@ export const getPersons = async (params?: Record<string, string>): Promise<GetPe
   };
   return await apiRequest<GetPersonsResponseData>(config);
 };
+
 export const getComments = async (params?: Record<string, string>): Promise<GetCommentsResponseData> => {
   const config: AxiosRequestConfig = {
     method: 'GET',

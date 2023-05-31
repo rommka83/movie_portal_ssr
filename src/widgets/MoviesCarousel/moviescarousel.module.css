@@ -8,7 +8,6 @@
   padding-top: 5px;
   --viewed-elements-count: 7;
 }
-
 @media (max-width: 1050px) {
   .movieBadgeCarouselContent {
     --viewed-elements-count: 5;

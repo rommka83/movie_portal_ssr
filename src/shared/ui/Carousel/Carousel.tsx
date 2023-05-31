@@ -9,6 +9,8 @@ interface ICarousel {
   scrollMultipleItems?: boolean;
   withButton?: boolean;
   withArrow?: boolean;
+  reff?: React.LegacyRef<HTMLDivElement>;
+  scrollObserver?: () => void;
 }
 
 const LAST_ITEM_COUNT = 1;
@@ -21,6 +23,8 @@ export function Carousel({
   withButton,
   children,
   withArrow,
+  reff,
+  scrollObserver,
 }: PropsWithChildren<ICarousel>) {
   const carouselContentRef = useRef<HTMLDivElement | null>(null);
   const offsetRef = useRef(0);
@@ -41,9 +45,10 @@ export function Carousel({
   };
 
   const onContentScroll = (event: MouseEvent<HTMLDivElement>) => {
+    event && scrollObserver && scrollObserver();
+
     const scrollLeft = event.currentTarget.scrollLeft;
     const scrollWidth = event.currentTarget.scrollWidth - contentWidthRef.current;
-
     if (scrollLeft > 0) {
       setShowPrevButton(true);
     } else {
@@ -90,7 +95,7 @@ export function Carousel({
   }, [carouselContentRef, offsetRef, scrollMultipleItems, withButton]);
 
   return (
-    <div className={classNames(styles.carouselContainer, carouselContainerClassName)}>
+    <div className={classNames(styles.carouselContainer, carouselContainerClassName)} ref={reff}>
       {title && (
         <h2 className={styles.title}>
           {title}

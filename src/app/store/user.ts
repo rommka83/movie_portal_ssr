@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import { userCreat } from 'shared/apiService/requestContent';
 import { IUser, IUserRequest } from 'shared/apiService/types';
 import AuthService from 'shared/apiService/user/AuthService';
 import { onExtraReducersRejected } from './helpers';
@@ -16,15 +15,6 @@ const user: IUser = {
   accessToken: '',
   refreshToken: '',
 };
-
-// let responce: IUserRequest = {
-//   name: '',
-//   surname: '',
-//   password: '',
-//   email: '',
-//   phoneNumber: '',
-//   selfDescription: '',
-// };
 
 const initialState = {
   user,
