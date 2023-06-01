@@ -1,15 +1,31 @@
-import { AxiosResponse } from 'axios';
-import { IUserCreat } from '../types';
+import { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { IUser, IUserRequest } from '../types';
 import userApi from './userConfig';
 
 export default class AuthService {
-  //   static async login(user: IUserCreat): Promise<AxiosResponse<{ status: string; profileId: string }>> {
-  //     return userApi.post<{ status: string; profileId: string }>('/profile', { user });
-  //   }
-  //   static async registration(email: string, password: string): Promise<AxiosResponse<IUserCreat>> {
-  //     return userApi.post<IUserCreat>('/registration', { email, password });
-  //   }
-  //   static async logout(): Promise<void> {
-  //     return userApi.post('/logout');
-  //   }
+  static async registration(user: IUserRequest): Promise<{ data: { status: string; profileId: string } }> {
+    const config: AxiosRequestConfig = {
+      method: 'POST',
+      url: 'profile',
+      data: user,
+    };
+    return userApi(config);
+  }
+
+  static async login(user: IUserRequest): Promise<{ data: { status: string; profileId: string } }> {
+    const config: AxiosRequestConfig = {
+      method: 'POST',
+      url: 'login',
+      data: user,
+    };
+    return userApi(config);
+  }
+
+  static async logout() {
+    const config: AxiosRequestConfig = {
+      method: 'POST',
+      url: 'logout',
+    };
+    return userApi(config);
+  }
 }

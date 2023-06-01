@@ -5,7 +5,6 @@ import {
   GetMoviesResponseData,
   GetPersonResponseData,
   GetPersonsResponseData,
-  IUserCreat,
 } from './types';
 import { apiRequest } from './config';
 import userApi from './user/userConfig';
@@ -59,6 +58,7 @@ export const getPersons = async (params?: Record<string, string>): Promise<GetPe
   };
   return await apiRequest<GetPersonsResponseData>(config);
 };
+
 export const getComments = async (params?: Record<string, string>): Promise<GetCommentsResponseData> => {
   const config: AxiosRequestConfig = {
     method: 'GET',
@@ -67,7 +67,3 @@ export const getComments = async (params?: Record<string, string>): Promise<GetC
   };
   return await apiRequest<GetCommentsResponseData>(config);
 };
-
-// export const login = async (user: IUserCreat): Promise<{ status: string; profileId: string }> => {
-//   return userApi.post('/profile', { user });
-// };
