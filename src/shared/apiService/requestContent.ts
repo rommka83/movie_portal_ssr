@@ -34,7 +34,7 @@ export const getMoviesByGenre = async (
   const config: AxiosRequestConfig = {
     method: 'GET',
     url: 'v1.3/movie',
-    params: { page: `${page}`, limit: '30', 'genres.name': `${name}`, ...params },
+    params: { page: `${page}`, limit: '15', 'genres.name': `${name}`, ...params },
   };
   return await apiRequest<GetMoviesResponseData>(config);
 };

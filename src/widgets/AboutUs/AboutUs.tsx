@@ -11,7 +11,7 @@ export function AboutUs({ className }: IProps) {
   const { t } = useTranslation();
 
   return (
-    <section className={classNames(styles.root, className)}>
+    <section className={classNames(styles.root, className)} data-cy='AboutUs'>
       <SectionTitle>
         <p className={styles.title}>{t('AboutUs.title')}</p>
       </SectionTitle>
