@@ -9,7 +9,7 @@ import { SvgIcon } from 'shared/ui/SvgIcon';
 export const FooterDesktop = () => {
   const { t } = useTranslation();
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-cy='FooterDesktop'>
       <div className={styles.footerContainer}>
         <div className={classNames(styles.footerContent, styles.containerBorder)}>
           <div className={classNames(styles.column, styles.columnNarrow)}>
@@ -50,7 +50,7 @@ export const FooterDesktop = () => {
                   {t('footer.PrivacyPolicy')}
                 </Link>
               </li>
-              <li className={styles.linkItem}>
+              <li className={styles.linkItem} data-cy='AdminPanelBtn'>
                 <Link to='/AdminPanel'>{t('footer.AdminPanel')}</Link>
               </li>
             </ul>

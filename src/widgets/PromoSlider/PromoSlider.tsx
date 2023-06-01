@@ -118,7 +118,7 @@ export const PromoSlider = () => {
   }, [cardWidth, scrollLeft, scrollRight, tablet, touchEnd]);
 
   return (
-    <section className={styles.root}>
+    <section className={styles.root} data-cy='PromoSlider'>
       <div
         className={classNames(styles.slider, 'container')}
         style={{ height: `${sliderHight}px` }}

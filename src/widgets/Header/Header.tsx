@@ -36,7 +36,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-cy='header'>
       <div className={styles.headerWrapper}>
         <div className={classNames(styles.container, 'container')}>
           <div className={styles.content}>

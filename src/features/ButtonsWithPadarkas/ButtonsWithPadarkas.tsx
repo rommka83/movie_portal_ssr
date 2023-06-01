@@ -11,7 +11,7 @@ export function ButtonsWithPadarkas({ className }: IProps) {
   const { t } = useTranslation();
 
   return (
-    <section className={classNames(styles.root, className)}>
+    <section className={classNames(styles.root, className)} data-cy='ButtonsWithPadarkas'>
       <ButtonOrLink className={classNames(styles.btnGrad, styles.btn)} variant='secondary'>
         <SvgIcon type={'winamp'} />
         <span className={styles.text}>{t('ButtonsWithPadarkas.subscription')}</span>

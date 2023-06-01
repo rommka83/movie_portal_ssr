@@ -11,8 +11,8 @@ import { getMovies } from 'shared/apiService/requestContent';
 export const getStaticProps = async () => {
   try {
     const [fantasy, adventure, top] = await Promise.all([
-      getMovies({ 'genres.name': 'фэнтези', limit: '30' }),
-      getMovies({ 'genres.name': 'приключения', limit: '30' }),
+      getMovies({ 'genres.name': 'фэнтези', limit: '15' }),
+      getMovies({ 'genres.name': 'приключения', limit: '15' }),
       getMovies({ limit: '10', top10: '!null' }),
     ]);
 
@@ -52,7 +52,7 @@ export default function Home({ top, adventure, fantasy }: Iprops) {
               const newFantasy = await getMovies({
                 'genres.name': 'фэнтези',
                 page: fantasyPage.toString(),
-                limit: '30',
+                limit: '15',
               });
               setFantasyFilms((old) => {
                 return [...old, ...newFantasy.docs];
@@ -68,7 +68,7 @@ export default function Home({ top, adventure, fantasy }: Iprops) {
               const newAdventure = await getMovies({
                 'genres.name': 'приключения',
                 page: adventurePage.toString(),
-                limit: '30',
+                limit: '15',
               });
               setAdventureFilms((old) => {
                 return [...old, ...newAdventure.docs];

@@ -98,7 +98,7 @@ export const Carousel = React.forwardRef<HTMLDivElement, PropsWithChildren<ICaro
     }, [carouselContentRef, offsetRef, scrollMultipleItems, withButton]);
 
     return (
-      <div className={classNames(styles.carouselContainer, carouselContainerClassName)}>
+      <div className={classNames(styles.carouselContainer, carouselContainerClassName)} data-cy='carusel'>
         {title && (
           <Link href={href ?? ''}>
             <h2 className={styles.title}>
