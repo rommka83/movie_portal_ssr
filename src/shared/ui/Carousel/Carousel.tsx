@@ -95,7 +95,11 @@ export function Carousel({
   }, [carouselContentRef, offsetRef, scrollMultipleItems, withButton]);
 
   return (
-    <div className={classNames(styles.carouselContainer, carouselContainerClassName)} ref={reff}>
+    <div
+      className={classNames(styles.carouselContainer, carouselContainerClassName)}
+      ref={reff}
+      data-cy='carusel'
+    >
       {title && (
         <h2 className={styles.title}>
           {title}
