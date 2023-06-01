@@ -4,7 +4,7 @@ import { CardTitle } from 'shared/ui/CardTitle/CardTitle';
 import { useTranslation } from '../../i18n';
 import { Link } from 'shared/ui/Link/MyLink';
 import classNames from 'classnames';
-import { genres } from 'widgets/FilterPanel/constants';
+import { genresId } from 'widgets/FilterPanel/constants';
 import { useHeaderDropdownContext } from 'widgets/Header/HeaderDropdown/HeaderDropdownContext';
 
 const sideContent = [
@@ -38,11 +38,9 @@ export function HeaderDropdownNavigation() {
         <div className={styles.doubleColumn}>
           <CardTitle className={styles.title}>{t('headerDropdownNavigation.genres')}</CardTitle>
           <ul className={styles.filmLinkList}>
-            {genres.map((genre) => (
-              <li className={styles.filmListItem} key={genre} onClick={onDropdownCloseHandler}>
-                <Link to={`/CatalogPage/${t(`headerDropdownNavigation.${genre}`).toLowerCase()}`}>
-                  {t(`headerDropdownNavigation.${genre}`)}
-                </Link>
+            {genresId.map((genre) => (
+              <li className={styles.filmListItem} key={genre.id} onClick={onDropdownCloseHandler}>
+                <Link to={`/CatalogPage/${genre.name}`}>{t(`headerDropdownNavigation.${genre.name}`)}</Link>
               </li>
             ))}
           </ul>

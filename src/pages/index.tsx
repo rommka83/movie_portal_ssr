@@ -47,9 +47,9 @@ export default function Home({ movies }: Iprops) {
               })
               .slice(0, 10)}
           />
-          <MoviesCarousel title={'Фэнтези'} movies={fantasy} />
-          <MoviesCarousel title={'Приключения'} movies={adventures} />
-          <MoviesCarousel title={'Биография'} movies={biography} />
+          <MoviesCarousel genreLink='фэнтези' title={'Фэнтези'} movies={fantasy} />
+          <MoviesCarousel genreLink='приключения' title={'Приключения'} movies={adventures} />
+          <MoviesCarousel genreLink='биография' title={'Биография'} movies={biography} />
         </div>
       </div>
     </>

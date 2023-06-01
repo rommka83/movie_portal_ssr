@@ -6,10 +6,12 @@ import { FilterPanelCarousel } from 'widgets/FilterPanel/FilterPanelCarousel';
 import { FilterPanelButtonType } from 'widgets/FilterPanel/FilterPanelCarousel/FilterPanelButton';
 import { useAppSelector } from 'app/store/hooks';
 import { getSelectedFilterSelector } from 'app/store/filterSlice';
+import { ICountry } from 'shared/types/ICountry';
+import { IGenre } from 'shared/types/IGenre';
 
 interface IFilterPanelMobileAccordion {
   textButton: string;
-  array: string[];
+  array: ICountry[] | IGenre[] | string[];
   type: FilterPanelButtonType;
 }
 export const FilterPanelMobileAccordion = ({ array, type, textButton }: IFilterPanelMobileAccordion) => {

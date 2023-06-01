@@ -24,9 +24,7 @@ export function Header() {
   }, []);
 
   const onMouseLeave = useCallback(() => {
-    setTimeout(() => {
-      setShow(false);
-    }, 100);
+    setShow(false);
   }, []);
 
   const onDropdownClose = useCallback(() => {
@@ -72,6 +70,7 @@ export function Header() {
         </div>
         <HeaderDropdown opened={show} onClose={onHeaderDropdownClose}>
           {type === 'movies' && <HeaderDropdownNavigation />}
+          {type === 'series' && <HeaderDropdownNavigation />}
           {type === 'authorization' && <HeaderDropdownUser />}
         </HeaderDropdown>
       </div>

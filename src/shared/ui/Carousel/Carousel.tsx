@@ -1,6 +1,7 @@
 import { PropsWithChildren, useEffect, useRef, useState, MouseEvent } from 'react';
 import styles from './carousel.module.css';
 import classNames from 'classnames';
+import Link from 'next/link';
 
 interface ICarousel {
   title?: string | null;
@@ -9,6 +10,7 @@ interface ICarousel {
   scrollMultipleItems?: boolean;
   withButton?: boolean;
   withArrow?: boolean;
+  href?: string;
 }
 
 const LAST_ITEM_COUNT = 1;
@@ -21,6 +23,7 @@ export function Carousel({
   withButton,
   children,
   withArrow,
+  href,
 }: PropsWithChildren<ICarousel>) {
   const carouselContentRef = useRef<HTMLDivElement | null>(null);
   const offsetRef = useRef(0);
@@ -92,10 +95,12 @@ export function Carousel({
   return (
     <div className={classNames(styles.carouselContainer, carouselContainerClassName)}>
       {title && (
-        <h2 className={styles.title}>
-          {title}
-          {withArrow && <span className={classNames('icon-arrowRight_6x16__0', styles.iconStyle)} />}
-        </h2>
+        <Link href={href ?? ''}>
+          <h2 className={styles.title}>
+            {title}
+            {withArrow && <span className={classNames('icon-arrowRight_6x16__0', styles.iconStyle)} />}
+          </h2>
+        </Link>
       )}
       <div className={styles.wrapper}>
         {withButton && showPrevButton && (

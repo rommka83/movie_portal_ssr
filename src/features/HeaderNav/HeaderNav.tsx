@@ -33,7 +33,15 @@ export function HeaderNav({ onMouseEnter, onMouseLeave, type, onItemClick }: IHe
         >
           <Link to='/CatalogPage'>{t('header.Movies')}</Link>
         </li>
-        <li className={styles.item}>
+        <li
+          className={classNames(styles.item, {
+            [styles.active]: type === 'series',
+          })}
+          data-type='series'
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onClick={onItemClick}
+        >
           <Link to='https://www.ivi.ru/series'>{t('header.Series')}</Link>
         </li>
         <li className={styles.item}>

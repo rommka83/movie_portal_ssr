@@ -18,11 +18,27 @@ export const getMovie = async (path: string): Promise<GetMovieResponseData> => {
   return await apiRequest<GetMovieResponseData>(config);
 };
 
-export const getMovies = async (params?: Record<string, string>): Promise<GetMoviesResponseData> => {
+export const getMovies = async (
+  params?: Record<string, string | string[]>,
+): Promise<GetMoviesResponseData> => {
+  const urlSearchParams = new URLSearchParams({ page: '1', limit: '100' });
+  if (params) {
+    Object.keys(params).forEach((key) => {
+      const value = params[key];
+      if (Array.isArray(value)) {
+        value.forEach((arrayValue) => {
+          !!arrayValue && urlSearchParams.append(key, arrayValue);
+        });
+      } else if (!!value) {
+        urlSearchParams.set(key, value);
+      }
+    });
+  }
+
   const config: AxiosRequestConfig = {
     method: 'GET',
     url: 'v1.3/movie',
-    params: { page: '1', limit: '30', ...params },
+    params: urlSearchParams,
   };
   return await apiRequest<GetMoviesResponseData>(config);
 };

@@ -1,5 +1,6 @@
 import { FilterDropdownListType } from 'features/FilterDropdown/FilterDropdownList/FilterDropdownList';
 import { FilterDropdownSearchType } from 'features/FilterDropdown/FilterDropdownSearch';
+import { NextParsedUrlQuery } from 'next/dist/server/request-meta';
 import { NextRouter, useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { useMedia } from 'shared/hooks/useMedia';
@@ -150,6 +151,22 @@ export const getFilters = (router: NextRouter) => {
     votes: router.query['votes'] ? +(router.query['votes'] ?? 0) : null,
     director: !Array.isArray(router.query['director']) ? router.query['director'] ?? '' : null,
     actor: !Array.isArray(router.query['actor']) ? router.query['actor'] ?? '' : null,
+  };
+};
+
+export const getParams = (params: NextParsedUrlQuery | undefined) => {
+  return {
+    ['genres.name']:
+      params?.slug?.[typeParamsIndex.genre].split('+').filter((item) => item !== DEFAULT_GENRES_PARAMS) ?? '',
+    ['countries.name']: params?.slug?.[typeParamsIndex.countries]?.split('+') ?? '',
+    ['rating.kp']: params?.['rating'] + '-10' ?? '',
+    ['votes.kp']: params?.['votes'] + '-1000000' ?? '',
+    ['persons.name']: [
+      !Array.isArray(params?.['director']) ? params?.['director'] ?? '' : '',
+      !Array.isArray(params?.['actor']) ? params?.['actor'] ?? '' : '',
+    ],
+    ['sortField']: params?.['sort'] ?? '',
+    ['sortType']: '-1',
   };
 };
 
