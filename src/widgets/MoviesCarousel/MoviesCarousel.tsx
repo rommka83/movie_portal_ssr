@@ -1,39 +1,30 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './moviescarousel.module.css';
 import { Carousel } from 'shared/ui/Carousel';
 import { IFilm } from 'shared/types/IFilm';
 import Link from 'next/link';
 import { MovieBadge } from 'entities/MovieBadge';
-import { nanoid } from '@reduxjs/toolkit';
+import useIntersectionObserver from 'shared/hooks/useIntersectionObserver';
 
 interface IMoviesCarousel {
   title: string;
   movies: IFilm[];
   getFilms?: () => void;
+  genreLink: string;
 }
-export const MoviesCarousel = React.memo(({ title, movies, getFilms }: IMoviesCarousel) => {
-  const contentCaruselRef = useRef<HTMLDivElement>(null);
-  const caruselRef = useRef<HTMLDivElement>(null);
-  const [fetch, setFetch] = useState(false);
 
-  const handleScroll = function () {
-    const caruselWidth = caruselRef.current?.getBoundingClientRect().width;
-    const observerWidth = contentCaruselRef.current?.getBoundingClientRect().width;
-    const observerX = contentCaruselRef.current?.getBoundingClientRect().x;
-
-    if (!caruselWidth || !observerWidth || !observerX) return;
-    if (caruselWidth + observerWidth > observerX) {
-      setFetch(true);
-      setTimeout(() => {
-        setFetch(false);
-      }, 4000);
-    }
-  };
+export const MoviesCarousel = React.memo(({ title, movies, getFilms, genreLink }: IMoviesCarousel) => {
+  const contentCarouselRef = useRef<HTMLDivElement | null>(null);
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(contentCarouselRef, {
+    root: carouselRef.current,
+    rootMargin: '0px 200% 0px -200%',
+  });
 
   useEffect(() => {
-    fetch && getFilms && getFilms();
-  }, [fetch]);
+    entry?.isIntersecting && getFilms && getFilms();
+  }, [entry]);
 
   if (movies.length === 0) {
     return null;
@@ -42,12 +33,12 @@ export const MoviesCarousel = React.memo(({ title, movies, getFilms }: IMoviesCa
     <Carousel
       carouselContainerClassName={styles.carousel}
       carouselChildrenClassName={styles.movieBadgeCarouselContent}
+      href={`/CatalogPage/${genreLink}`}
       title={title}
       withArrow
       withButton
       scrollMultipleItems
-      scrollObserver={handleScroll}
-      reff={caruselRef}
+      ref={carouselRef}
     >
       {movies?.map((movie) => (
         <div key={movie.id} className={styles.movieBadgeContainer}>
@@ -56,7 +47,7 @@ export const MoviesCarousel = React.memo(({ title, movies, getFilms }: IMoviesCa
           </Link>
         </div>
       ))}
-      <div key={nanoid()} className={styles.observer} ref={contentCaruselRef}></div>
+      <div className={styles.observer} ref={contentCarouselRef} />
     </Carousel>
   );
 });

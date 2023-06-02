@@ -39,11 +39,11 @@ const Custom404 = ({ movies }: ICustom404) => {
         </div>
       </div>
       <section className={styles.notFoundSection}>
-        <MoviesCarousel title='Фильмы' movies={adventures} />
-        <MoviesCarousel title='Фильмы' movies={adventures} />
-        <MoviesCarousel title='Фильмы' movies={adventures} />
-        <MoviesCarousel title='Фильмы' movies={adventures} />
-        <MoviesCarousel title='Фильмы' movies={adventures} />
+        <MoviesCarousel genreLink='приключения' title='Фильмы' movies={adventures} />
+        <MoviesCarousel genreLink='приключения' title='Фильмы' movies={adventures} />
+        <MoviesCarousel genreLink='приключения' title='Фильмы' movies={adventures} />
+        <MoviesCarousel genreLink='приключения' title='Фильмы' movies={adventures} />
+        <MoviesCarousel genreLink='приключения' title='Фильмы' movies={adventures} />
       </section>
     </div>
   );

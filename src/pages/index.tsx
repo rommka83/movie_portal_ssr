@@ -6,13 +6,15 @@ import { MoviesCarousel } from 'widgets/MoviesCarousel';
 import { ButtonsWithPadarkas } from 'features/ButtonsWithPadarkas';
 import { AboutUs } from 'widgets/AboutUs';
 import { TopSection } from 'widgets/TopSection';
-import { getMoviesByGenre, getTop10 } from 'shared/apiService/requestContent';
+import { getMovies } from 'shared/apiService/requestContent';
 
 export const getStaticProps = async () => {
   try {
-    const top = await getTop10();
-    const fantasy = await getMoviesByGenre('фэнтези', 1);
-    const adventure = await getMoviesByGenre('приключения', 1);
+    const [fantasy, adventure, top] = await Promise.all([
+      getMovies({ 'genres.name': 'фэнтези', limit: '15' }),
+      getMovies({ 'genres.name': 'приключения', limit: '15' }),
+      getMovies({ limit: '10', top10: '!null' }),
+    ]);
 
     return {
       props: { top: top.docs, adventure: adventure.docs, fantasy: fantasy.docs },
@@ -43,10 +45,15 @@ export default function Home({ top, adventure, fantasy }: Iprops) {
           <AboutUs />
           <TopSection films={top} />
           <MoviesCarousel
+            genreLink='фэнтези'
             title={'Фэнтези'}
             movies={fantasyFilms}
             getFilms={async () => {
-              const newFantasy = await getMoviesByGenre('фэнтези', fantasyPage);
+              const newFantasy = await getMovies({
+                'genres.name': 'фэнтези',
+                page: fantasyPage.toString(),
+                limit: '15',
+              });
               setFantasyFilms((old) => {
                 return [...old, ...newFantasy.docs];
               });
@@ -54,10 +61,15 @@ export default function Home({ top, adventure, fantasy }: Iprops) {
             }}
           />
           <MoviesCarousel
+            genreLink='приключения'
             title={'Приключения'}
             movies={adventureFilms}
             getFilms={async () => {
-              const newAdventure = await getMoviesByGenre('приключения', adventurePage);
+              const newAdventure = await getMovies({
+                'genres.name': 'приключения',
+                page: adventurePage.toString(),
+                limit: '15',
+              });
               setAdventureFilms((old) => {
                 return [...old, ...newAdventure.docs];
               });

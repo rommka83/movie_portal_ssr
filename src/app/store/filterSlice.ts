@@ -1,13 +1,20 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+  AsyncThunkPayloadCreator,
+  createAsyncThunk,
+  createSlice,
+  isAnyOf,
+  PayloadAction,
+} from '@reduxjs/toolkit';
 import { RootState } from './store';
 import { FilterType } from 'features/FilterDropdown/FilterDropdown';
 import { TFunction } from 'i18next';
 import { formatterVotes } from 'shared/utils/formatterVotes';
 import { FilterDropdownSearchType } from 'features/FilterDropdown/FilterDropdownSearch';
 import { InputRangeType } from 'widgets/FilterPanel/FilterPanelDesktop/FilterInputRange';
-import { getPersons } from 'shared/apiService';
+import { getMovies, getPersons } from 'shared/apiService';
 import { IPerson } from 'shared/types/IPerson';
 import { onExtraReducersRejected } from './helpers';
+import { IFilm } from 'shared/types/IFilm';
 
 interface IFilter {
   filters: {
@@ -21,7 +28,65 @@ interface IFilter {
   personsList: IPerson[];
   personsPending: boolean;
   sortTypes: string | null;
+  filteredMovies: IFilm[];
+  filteredMoviesPending: boolean;
 }
+
+const initialState: IFilter = {
+  filters: {
+    genres: [],
+    countries: [],
+    rating: null,
+    votes: null,
+    director: null,
+    actor: null,
+  },
+  personsList: [],
+  personsPending: false,
+  sortTypes: null,
+  filteredMovies: [],
+  filteredMoviesPending: false,
+};
+
+const getFilteredMoviesHandler: AsyncThunkPayloadCreator<
+  IFilm[],
+  string | undefined,
+  { state: RootState }
+> = async (page = '1', { getState, dispatch }) => {
+  const filters = getState().filters.filters;
+  const sortType = getState().filters.sortTypes;
+  try {
+    const response = await getMovies({
+      page,
+      ['genres.name']: filters.genres,
+      ['countries.name']: filters.countries,
+      ['rating.kp']: filters.rating?.toString() + '-10' ?? '',
+      ['votes.kp']: filters.votes?.toString() + '-1000000' ?? '',
+      ['persons.name']: [filters.director ?? '', filters.actor ?? ''],
+      ['sortField']: sortType ?? '',
+      ['sortType']: '-1',
+    });
+    return response.docs;
+  } catch (err) {
+    dispatch(
+      onExtraReducersRejected({
+        title: 'Errors.title',
+        text: 'Errors.getMovies',
+      }),
+    );
+    return [];
+  }
+};
+
+export const getFilteredMoviesPage = createAsyncThunk<IFilm[], string | undefined, { state: RootState }>(
+  'filters/moviePage-request',
+  getFilteredMoviesHandler,
+);
+
+export const getFilteredMovies = createAsyncThunk<IFilm[], string | undefined, { state: RootState }>(
+  'filters/movie-request',
+  getFilteredMoviesHandler,
+);
 
 export const getSearchPersons = createAsyncThunk<
   IPerson[],
@@ -50,20 +115,6 @@ export const getSearchPersons = createAsyncThunk<
     return [];
   }
 });
-
-const initialState: IFilter = {
-  filters: {
-    genres: [],
-    countries: [],
-    rating: null,
-    votes: null,
-    director: null,
-    actor: null,
-  },
-  personsList: [],
-  personsPending: false,
-  sortTypes: null,
-};
 
 const filters = createSlice({
   name: 'filters',
@@ -111,6 +162,9 @@ const filters = createSlice({
     addAllFilters(state, action: PayloadAction<IFilter['filters']>) {
       state.filters = action.payload;
     },
+    addFilteredMovies(state, action: PayloadAction<IFilm[]>) {
+      state.filteredMovies = action.payload;
+    },
   },
   extraReducers(builder) {
     builder.addCase(getSearchPersons.pending, (state) => {
@@ -118,9 +172,23 @@ const filters = createSlice({
       state.personsList = [];
     });
 
+    builder.addCase(getFilteredMovies.pending, (state) => {
+      state.filteredMoviesPending = true;
+    });
+
     builder.addCase(getSearchPersons.fulfilled, (state, action) => {
       state.personsList = action.payload;
       state.personsPending = false;
+    });
+
+    builder.addCase(getFilteredMoviesPage.fulfilled, (state, action) => {
+      state.filteredMovies = [...state.filteredMovies, ...action.payload];
+      state.filteredMoviesPending = false;
+    });
+
+    builder.addCase(getFilteredMovies.fulfilled, (state, action) => {
+      state.filteredMovies = action.payload;
+      state.filteredMoviesPending = false;
     });
 
     builder.addCase(getSearchPersons.rejected, (state, action) => {
@@ -128,6 +196,15 @@ const filters = createSlice({
         state.personsPending = false;
       }
     });
+
+    builder.addMatcher(
+      isAnyOf(getFilteredMovies.rejected, getFilteredMoviesPage.rejected),
+      (state, action) => {
+        if (!action.meta.aborted) {
+          state.filteredMoviesPending = false;
+        }
+      },
+    );
   },
 });
 
@@ -144,6 +221,7 @@ export const {
   addSortTypesSort,
   removeSortTypesSort,
   addAllFilters,
+  addFilteredMovies,
 } = filters.actions;
 export default filters;
 
@@ -161,7 +239,7 @@ export const getSelectedFilterSelector = (type: FilterType, t: TFunction) => (st
     case 'votes':
       return filters.filters.votes ? formatterVotes(filters.filters.votes / 1000) : '';
     case 'genres':
-      return filters.filters.genres.map((genre) => t(`headerDropdownNavigation.${genre}`)).join(', ');
+      return filters.filters.genres.map((genre) => genre).join(', ');
     case 'rating':
       return filters.filters.rating;
   }
@@ -198,3 +276,6 @@ export const filtersCountSelector = (state: RootState) =>
     .filter(Boolean).length;
 
 export const sortTypesSelectedSelector = (state: RootState) => state.filters.sortTypes;
+
+export const filteredMoviesSelector = (state: RootState) => state.filters.filteredMovies;
+export const filteredMoviesPendingSelector = (state: RootState) => state.filters.filteredMoviesPending;

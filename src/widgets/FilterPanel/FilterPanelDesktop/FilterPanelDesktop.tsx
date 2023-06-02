@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import styles from './filterpaneldesktop.module.css';
 import { useTranslation } from 'react-i18next';
-import { countries, genres } from '../constants';
+import { countriesId, genresId } from '../constants';
 import { FilterDropdown } from 'features/FilterDropdown';
 import { FilterDropdownList } from 'features/FilterDropdown/FilterDropdownList';
 import { FilterDropdownSearch } from 'features/FilterDropdown/FilterDropdownSearch';
@@ -22,14 +22,14 @@ export const FilterPanelDesktop = React.memo(() => {
         <div className={styles.plankList}>
           <FilterDropdown title='headerDropdownNavigation' type='genres' position='left'>
             <FilterPanelCarousel
-              array={genres}
+              array={genresId}
               type='genres'
               carouselContainerClassName={styles.carouselContainer}
               withButton
             />
             <FilterDropdownList
               className={styles.list}
-              array={genres}
+              array={genresId}
               title='headerDropdownNavigation'
               type='genres'
             />
@@ -37,7 +37,7 @@ export const FilterPanelDesktop = React.memo(() => {
 
           <FilterDropdown title='FilterPanel' type='countries' position='left'>
             <FilterPanelCarousel
-              array={countries}
+              array={countriesId}
               type='countries'
               carouselContainerClassName={styles.carouselContainer}
               withButton
@@ -45,7 +45,7 @@ export const FilterPanelDesktop = React.memo(() => {
 
             <FilterDropdownList
               className={styles.list}
-              array={countries}
+              array={countriesId}
               title='FilterPanel'
               type='countries'
             />

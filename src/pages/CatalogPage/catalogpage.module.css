@@ -5,31 +5,12 @@
   margin-bottom: 80px;
 }
 
-@media (max-width: 768px) {
-  .catalogContentContainer {
-    width: 100%;
-    padding: var(--padding-mobile);
-    margin-top: 16px;
-  }
-}
-
 .moviesContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-rows: auto;
   gap: 20px;
   margin-top: 20px;
-}
-
-@media (min-width: 1920px) {
-  .moviesContainer {
-    grid-template-columns: repeat(auto-fill, minmax(227px, 1fr));
-  }
-}
-
-@media (max-width: 375px) {
-  .moviesContainer {
-    grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
-  }
 }
 
 .buttonShowMore {
@@ -43,4 +24,24 @@
 
 .catalogNotFound {
   padding-block: 30px;
+}
+
+@media (min-width: 1920px) {
+  .moviesContainer {
+    grid-template-columns: repeat(auto-fill, minmax(227px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .catalogContentContainer {
+    width: 100%;
+    padding: var(--padding-mobile);
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .moviesContainer {
+    grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
+  }
 }

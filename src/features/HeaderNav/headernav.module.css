@@ -10,7 +10,6 @@
 
 .list {
   display: flex;
-  gap: 16px;
   height: 100%;
 }
 .item {
@@ -20,6 +19,7 @@
   font-weight: 600;
   height: 100%;
   cursor: pointer;
+  padding-inline: 8px;
 }
 
 .item.active > a {

@@ -1,1 +1,1 @@
-export const sortTypes = ['ByNumberOfVotes', 'ByRating', 'ByReleaseDate', 'Alphabetically'];
+export const sortTypes = ['votes.kp', 'rating.kp', 'year', 'name'];

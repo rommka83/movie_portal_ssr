@@ -3,9 +3,11 @@
   width: 100%;
   height: 100%;
   border-radius: 8px;
+  aspect-ratio: 64 / 91;
   overflow: hidden;
   transform: scale(0.95);
   transition: transform 0.3s ease-in-out;
+  background-color: var(--gray-798);
 }
 .pic {
   width: 100%;

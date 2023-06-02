@@ -1,23 +1,59 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styles from './catalogpagecontent.module.css';
 import { IFilm } from 'shared/types/IFilm';
-import { genres } from 'widgets/FilterPanel/constants';
+import { genresId } from 'widgets/FilterPanel/constants';
 import { FilterGenreCard } from 'shared/ui/FilterGenreCard';
 import { useTranslation } from 'react-i18next';
 import { IPerson } from 'shared/types/IPerson';
 import { PersonMiniCard } from 'shared/bisnes/PersonMiniCard';
 import { Carousel } from 'shared/ui/Carousel';
 import { MoviesCarousel } from 'widgets/MoviesCarousel';
+import Link from 'next/link';
 
+const catalogPageGenres = {
+  firstCarousel: {
+    enName: 'detectives',
+    ruName: 'детектив',
+  },
+  secondCarousel: {
+    enName: 'actions',
+    ruName: 'боевик',
+  },
+  thirdCarousel: {
+    enName: 'comedy',
+    ruName: 'комедия',
+  },
+  fourthCarousel: {
+    enName: 'drama',
+    ruName: 'драма',
+  },
+};
 interface ICatalogPageContent {
   movies: IFilm[];
   actors: IPerson[];
 }
 export const CatalogPageContent = ({ movies, actors }: ICatalogPageContent) => {
   const { t } = useTranslation();
+  const moviesForCarousel = useMemo(
+    () =>
+      movies?.reduce((acc: Record<string, IFilm[]>, movie) => {
+        Object.values(catalogPageGenres).forEach((value) => {
+          if (movie.genres.find(({ name }) => name === value.ruName)) {
+            acc[value.ruName] ? acc[value.ruName].push(movie) : (acc[value.ruName] = [movie]);
+          }
+        });
+        return acc;
+      }, {}),
+    [movies],
+  );
+
   return (
     <div className={styles.container}>
-      <MoviesCarousel title={t('CatalogPageContent.MoviePremieres')} movies={movies} />
+      <MoviesCarousel
+        genreLink={catalogPageGenres.firstCarousel.ruName}
+        title={t(`headerDropdownNavigation.${catalogPageGenres.firstCarousel.enName}`)}
+        movies={moviesForCarousel[catalogPageGenres.firstCarousel.ruName]}
+      />
 
       <Carousel
         carouselContainerClassName={styles.carousel}
@@ -26,22 +62,32 @@ export const CatalogPageContent = ({ movies, actors }: ICatalogPageContent) => {
         withButton
         scrollMultipleItems
       >
-        {genres.map((genre) => (
-          // TODO: Обернуть FilterGenreCard Ведет на страницу с включенным фильтром
-          // <Link href={}></Link>
-          <FilterGenreCard
-            key={genre}
-            className={styles.innerContainerGenreCard}
-            containerClassName={styles.genreCardContainer}
-            caption={t(`headerDropdownNavigation.${genre}`)}
-            genre={genre}
-          />
+        {genresId.map((genre) => (
+          <Link
+            href={`/CatalogPage/${t(`headerDropdownNavigation.${genre.name}`).toLowerCase()}`}
+            key={genre.id}
+          >
+            <FilterGenreCard
+              className={styles.innerContainerGenreCard}
+              containerClassName={styles.genreCardContainer}
+              caption={t(`headerDropdownNavigation.${genre.name}`)}
+              genre={genre.name}
+            />
+          </Link>
         ))}
       </Carousel>
 
-      <MoviesCarousel title={t('CatalogPageContent.MoviePremieres')} movies={movies} />
+      <MoviesCarousel
+        genreLink={catalogPageGenres.secondCarousel.ruName}
+        title={t(`headerDropdownNavigation.${catalogPageGenres.secondCarousel.enName}`)}
+        movies={moviesForCarousel[catalogPageGenres.secondCarousel.ruName]}
+      />
 
-      <MoviesCarousel title={t('CatalogPageContent.MoviePremieres')} movies={movies} />
+      <MoviesCarousel
+        genreLink={catalogPageGenres.thirdCarousel.ruName}
+        title={t(`headerDropdownNavigation.${catalogPageGenres.thirdCarousel.enName}`)}
+        movies={moviesForCarousel[catalogPageGenres.thirdCarousel.ruName]}
+      />
 
       <Carousel
         carouselContainerClassName={styles.carousel}
@@ -57,7 +103,11 @@ export const CatalogPageContent = ({ movies, actors }: ICatalogPageContent) => {
         ))}
       </Carousel>
 
-      <MoviesCarousel title={t('CatalogPageContent.MoviePremieres')} movies={movies} />
+      <MoviesCarousel
+        genreLink={catalogPageGenres.fourthCarousel.ruName}
+        title={t(`headerDropdownNavigation.${catalogPageGenres.fourthCarousel.enName}`)}
+        movies={moviesForCarousel[catalogPageGenres.fourthCarousel.ruName]}
+      />
     </div>
   );
 };

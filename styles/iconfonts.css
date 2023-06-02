@@ -956,7 +956,7 @@
 .icon-fullscreenExpand_20__0:before {
   content: '\ea36';
 }
-.icon-genre_actions_24__0:before {
+.icon-genre_боевик_24__0:before {
   content: '\ea37';
 }
 .icon-genre_action_32__0:before {
@@ -971,7 +971,7 @@
 .icon-genre_action_64__1:before {
   content: '\ea3b';
 }
-.icon-genre_play_24__0:before {
+.icon-genre_игра_24__0:before {
   content: '\ea3c';
 }
 .icon-genre_play_24__0:after {
@@ -983,7 +983,7 @@
 .icon-genre_adult_64__1:before {
   content: '\ea3f';
 }
-.icon-genre_adventures_24__0:before {
+.icon-genre_приключения_24__0:before {
   content: '\ea40';
 }
 .icon-genre_adventure_32__0:before {
@@ -1010,7 +1010,7 @@
 .icon-genre_american_64__1:before {
   content: '\ea48';
 }
-.icon-genre_anime_24__0:before {
+.icon-genre_аниме_24__0:before {
   content: '\ea49';
 }
 .icon-genre_anime_24__0:after {
@@ -1034,10 +1034,10 @@
 .icon-genre_arthouse_64__1:before {
   content: '\ea50';
 }
-.icon-genre_biography_24__0:after {
+.icon-genre_биография_24__0:after {
   content: '\ea51';
 }
-.icon-genre_biography_24__0:before {
+.icon-genre_биография_24__0:before {
   content: '\ea52';
 }
 .icon-genre_biography_64__0:before {
@@ -1058,7 +1058,7 @@
 .icon-genre_classic_64__1:before {
   content: '\ea58';
 }
-.icon-genre_comedy_24__0:before {
+.icon-genre_комедия_24__0:before {
   content: '\ea59';
 }
 .icon-genre_comedy_32__0:before {
@@ -1073,10 +1073,10 @@
 .icon-genre_comedy_64__1:before {
   content: '\ea5d';
 }
-.icon-genre_cartoons_24__0:before {
+.icon-genre_мультфильм_24__0:before {
   content: '\ea5e';
 }
-.icon-genre_cartoons_24__0:after {
+.icon-genre_мультфильм_24__0:after {
   content: '\ea5f';
 }
 .icon-genre_comics_64__0:before {
@@ -1085,10 +1085,10 @@
 .icon-genre_comics_64__1:before {
   content: '\ea61';
 }
-.icon-genre_criminal_24__0:before {
+.icon-genre_криминал_24__0:before {
   content: '\ea62';
 }
-.icon-genre_criminal_24__0:after {
+.icon-genre_криминал_24__0:after {
   content: '\ea63';
 }
 .icon-genre_criminal_64__0:before {
@@ -1097,10 +1097,10 @@
 .icon-genre_criminal_64__1:before {
   content: '\ea65';
 }
-.icon-genre_detectives_24__0:before {
+.icon-genre_детектив_24__0:before {
   content: '\ea66';
 }
-.icon-genre_detectives_24__0:after {
+.icon-genre_детектив_24__0:after {
   content: '\ea67';
 }
 .icon-genre_detective_64__0:before {
@@ -1121,10 +1121,10 @@
 .icon-genre_disaster_64__1:before {
   content: '\ea6d';
 }
-.icon-genre_documentaries_24__0:before {
+.icon-genre_документальный_24__0:before {
   content: '\ea6e';
 }
-.icon-genre_documentaries_24__0:after {
+.icon-genre_документальный_24__0:after {
   content: '\ea6f';
 }
 .icon-genre_documentary_64__0:before {
@@ -1145,7 +1145,7 @@
 .icon-genre_dorama_64__1:before {
   content: '\ea75';
 }
-.icon-genre_drama_24__0:before {
+.icon-genre_драма_24__0:before {
   content: '\ea76';
 }
 .icon-genre_drama_32__1:before {
@@ -1166,7 +1166,7 @@
 .icon-genre_erotica_64__1:before {
   content: '\ea7c';
 }
-.icon-genre_family_24__0:before {
+.icon-genre_семейный_24__0:before {
   content: '\ea7d';
 }
 .icon-genre_family_32__0:before {
@@ -1181,7 +1181,7 @@
 .icon-genre_family_64__1:before {
   content: '\ea81';
 }
-.icon-genre_fantastic_24__0:before {
+.icon-genre_фантастика_24__0:before {
   content: '\ea82';
 }
 .icon-genre_fantastic_32__0:before {
@@ -1196,7 +1196,7 @@
 .icon-genre_fantastic_64__1:before {
   content: '\ea86';
 }
-.icon-genre_fantasy_24__0:before {
+.icon-genre_фэнтези_24__0:before {
   content: '\ea87';
 }
 .icon-genre_fantasy_32__0:before {
@@ -1223,7 +1223,7 @@
 .icon-genre_feature_length_64__1:before {
   content: '\ea8f';
 }
-.icon-genre_news_24__0:before {
+.icon-genre_новости_24__0:before {
   content: '\ea90';
 }
 .icon-genre_news_32__0:before {
@@ -1238,10 +1238,10 @@
 .icon-genre_foreign_64__1:before {
   content: '\ea94';
 }
-.icon-genre_historical_24__0:before {
+.icon-genre_история_24__0:before {
   content: '\ea95';
 }
-.icon-genre_historical_24__0:after {
+.icon-genre_история_24__0:after {
   content: '\ea96';
 }
 .icon-genre_historical_64__0:before {
@@ -1250,10 +1250,10 @@
 .icon-genre_historical_64__1:before {
   content: '\ea98';
 }
-.icon-genre_horror_24__0:before {
+.icon-genre_ужасы_24__0:before {
   content: '\ea99';
 }
-.icon-genre_horror_24__0:after {
+.icon-genre_ужасы_24__0:after {
   content: '\ea9a';
 }
 .icon-genre_horror_64__0:before {
@@ -1262,10 +1262,10 @@
 .icon-genre_horror_64__1:before {
   content: '\ea9c';
 }
-.icon-genre_talkShow_24__0:before {
+.icon-genre_ток-шоу_24__0:before {
   content: '\ea9d';
 }
-.icon-genre_talkShow_24__0:after {
+.icon-genre_ток-шоу_24__0:after {
   content: '\ea9e';
 }
 .icon-genre_interview_64__0:before {
@@ -1274,10 +1274,10 @@
 .icon-genre_interview_64__1:before {
   content: '\eaa0';
 }
-.icon-genre_kids_24__0:before {
+.icon-genre_детский_24__0:before {
   content: '\eaa1';
 }
-.icon-genre_kids_24__0:after {
+.icon-genre_детский_24__0:after {
   content: '\eaa2';
 }
 .icon-genre_kids_64__0:before {
@@ -1310,7 +1310,7 @@
 .icon-genre_medicine_64__1:before {
   content: '\eaac';
 }
-.icon-genre_melodrama_24__0:before {
+.icon-genre_мелодрама_24__0:before {
   content: '\eaad';
 }
 .icon-genre_melodrama_32__0:before {
@@ -1325,7 +1325,7 @@
 .icon-genre_melodrama_64__1:before {
   content: '\eab1';
 }
-.icon-genre_military_24__0:before {
+.icon-genre_военный_24__0:before {
   content: '\eab2';
 }
 .icon-genre_military_32__1:before {
@@ -1337,10 +1337,10 @@
 .icon-genre_military_64__1:before {
   content: '\eab5';
 }
-.icon-genre_realTv_24__0:before {
+.icon-genre_реальноеТВ_24__0:before {
   content: '\eab6';
 }
-.icon-genre_realTv_24__0:after {
+.icon-genre_реальноеТВ_24__0:after {
   content: '\eab7';
 }
 .icon-genre_multiseries_64__0:before {
@@ -1349,10 +1349,10 @@
 .icon-genre_multiseries_64__1:before {
   content: '\eab9';
 }
-.icon-genre_music_24__0:before {
+.icon-genre_музыка_24__0:before {
   content: '\eaba';
 }
-.icon-genre_music_24__0:after {
+.icon-genre_музыка_24__0:after {
   content: '\eabb';
 }
 .icon-genre_music_64__0:before {
@@ -1361,10 +1361,10 @@
 .icon-genre_music_64__1:before {
   content: '\eabd';
 }
-.icon-genre_musical_24__0:before {
+.icon-genre_мюзикл_24__0:before {
   content: '\eabe';
 }
-.icon-genre_musical_24__0:after {
+.icon-genre_мюзикл_24__0:after {
   content: '\eabf';
 }
 .icon-genre_musical_64__0:before {
@@ -1397,10 +1397,10 @@
 .icon-genre_mystic_64__1:before {
   content: '\eac9';
 }
-.icon-genre_noir_24__0:before {
+.icon-genre_фильм-нуар_24__0:before {
   content: '\eaca';
 }
-.icon-genre_noir_24__0:after {
+.icon-genre_фильм-нуар_24__0:after {
   content: '\eacb';
 }
 .icon-genre_noir_64__0:before {
@@ -1433,10 +1433,10 @@
 .icon-genre_screening_64__1:before {
   content: '\ead5';
 }
-.icon-genre_shortFilm_24__0:before {
+.icon-genre_короткометражка_24__0:before {
   content: '\ead6';
 }
-.icon-genre_shortFilm_24__0:after {
+.icon-genre_короткометражка_24__0:after {
   content: '\ead7';
 }
 .icon-genre_short_length_64__0:before {
@@ -1469,10 +1469,10 @@
 .icon-genre_spectacle_64__1:before {
   content: '\eae1';
 }
-.icon-genre_sport_24__0:before {
+.icon-genre_спорт_24__0:before {
   content: '\eae2';
 }
-.icon-genre_sport_24__0:after {
+.icon-genre_спорт_24__0:after {
   content: '\eae3';
 }
 .icon-genre_sport_64__0:before {
@@ -1481,7 +1481,7 @@
 .icon-genre_sport_64__1:before {
   content: '\eae5';
 }
-.icon-genre_thrillers_24__0:before {
+.icon-genre_триллер_24__0:before {
   content: '\eae6';
 }
 .icon-genre_triller_32__0:before {
@@ -1508,10 +1508,10 @@
 .icon-genre_tv_show_64__1:before {
   content: '\eaee';
 }
-.icon-genre_western_24__0:before {
+.icon-genre_вестерн_24__0:before {
   content: '\eaef';
 }
-.icon-genre_western_24__0:after {
+.icon-genre_вестерн_24__0:after {
   content: '\eaf0';
 }
 .icon-genre_western_64__0:before {

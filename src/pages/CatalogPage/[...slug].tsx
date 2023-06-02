@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './catalogpage.module.css';
 import { CatalogPageHeader } from 'widgets/CatalogPageHeader';
 import { useTranslation } from 'i18n';
@@ -10,19 +10,36 @@ import { IFilm } from 'shared/types/IFilm';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { MovieBadge } from 'entities/MovieBadge';
-import { ButtonOrLink } from 'shared/ui/ButtonOrLink/ButtonOrLink';
 import { Breadcrumbs } from 'shared/ui/Breadcrumbs';
 import { useRouter } from 'next/router';
 import { useAppDispatch, useAppSelector } from 'app/store/hooks';
-import { addAllFilters, addSortTypesSort, getSelectedFilterSelector } from 'app/store/filterSlice';
-import { getFilters, getSortType, restoreParams } from 'shared/utils/generatesParamsString';
+import {
+  addAllFilters,
+  addFilteredMovies,
+  addSortTypesSort,
+  filteredMoviesPendingSelector,
+  filteredMoviesSelector,
+  getFilteredMovies,
+  getFilteredMoviesPage,
+  getSelectedFilterSelector,
+  resetFilters,
+} from 'app/store/filterSlice';
+import {
+  clearParams,
+  getFilters,
+  getParams,
+  getSortType,
+  restoreParams,
+} from 'shared/utils/generatesParamsString';
 import { getMovies } from 'shared/apiService';
 import { NotFound } from 'shared/ui/NotFound';
+import { Loader } from 'shared/ui/Loader';
+import useIntersectionObserver from 'shared/hooks/useIntersectionObserver';
 
 export const getServerSideProps: GetServerSideProps<{ movies: IFilm[] }> = async (context) => {
-  const genre = context.params?.slug?.[0];
   try {
-    const responseMovies = await getMovies({ ['genres.name']: genre ?? '' });
+    const responseMovies = await getMovies(getParams(context.query));
+
     return {
       props: { movies: responseMovies.docs },
     };
@@ -38,15 +55,46 @@ interface IGenrePage {
 
 const GenrePage = ({ movies }: IGenrePage) => {
   const { t } = useTranslation();
+  const observedElementRef = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(observedElementRef, { rootMargin: '0px 0px 500px' });
+  const pageRef = useRef(1);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const genres = useAppSelector(getSelectedFilterSelector('genres', t));
+  const filteredMovies = useAppSelector(filteredMoviesSelector);
+  const filteredMoviesPending = useAppSelector(filteredMoviesPendingSelector);
 
   useEffect(() => {
     restoreParams(router);
     dispatch(addAllFilters(getFilters(router)));
     dispatch(addSortTypesSort(getSortType(router)));
-  }, [router, dispatch]);
+
+    const getFilteredMoviesHandler = () => {
+      dispatch(getFilteredMovies());
+      pageRef.current = 0;
+    };
+
+    router.events.on('routeChangeComplete', getFilteredMoviesHandler);
+    const resetFiltersHandler = () => {
+      dispatch(resetFilters());
+      clearParams(router, false);
+    };
+    return () => {
+      router.events.off('routeChangeComplete', getFilteredMoviesHandler);
+      resetFiltersHandler();
+    };
+  }, [router, dispatch, pageRef]);
+
+  useEffect(() => {
+    dispatch(addFilteredMovies(movies));
+  }, [movies, dispatch]);
+
+  useEffect(() => {
+    if (entry?.isIntersecting) {
+      pageRef.current += 1;
+      pageRef.current > 1 && dispatch(getFilteredMoviesPage(pageRef.current.toString()));
+    }
+  }, [entry, pageRef, dispatch]);
 
   return (
     <div className={styles.container}>
@@ -57,7 +105,7 @@ const GenrePage = ({ movies }: IGenrePage) => {
           { title: typeof genres === 'string' ? genres : t(`CatalogPageHeader.AllGenres`) },
         ]}
       />
-      <CatalogPageHeader titleText={t(`CatalogPageHeader.MoviesWatchOnline`)} showSelectedFilters />
+      <CatalogPageHeader showSelectedFilters />
 
       <div className={classNames('container', styles.catalogContentContainer)}>
         <Accordion
@@ -69,22 +117,22 @@ const GenrePage = ({ movies }: IGenrePage) => {
         <FilterPanelDesktop />
 
         <div className={styles.moviesContainer}>
-          {!movies.length ? (
+          {!filteredMoviesPending && !filteredMovies.length ? (
             <NotFound className={styles.notFound} />
-          ) : (
-            movies.map((movie) => (
+          ) : !filteredMoviesPending ? (
+            filteredMovies.map((movie) => (
               <div key={movie.id} className={styles.movieBadgeContainer}>
                 <Link href={`/MoviePage/${movie.id}`}>
                   <MovieBadge film={movie} />
                 </Link>
               </div>
             ))
+          ) : (
+            <Loader />
           )}
         </div>
 
-        <ButtonOrLink className={styles.buttonShowMore} variant='secondary' transparent large>
-          {t(`GenrePage.ShowMore`)}
-        </ButtonOrLink>
+        <div ref={observedElementRef} />
       </div>
     </div>
   );

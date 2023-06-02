@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import styles from './catalogpage.module.css';
 import classNames from 'classnames';
 import { CatalogPageHeader } from 'widgets/CatalogPageHeader';
@@ -26,9 +26,6 @@ export const getStaticProps = async () => {
     };
   } catch (err) {
     return {
-      props: { movies: [], actors: [] },
-    };
-    return {
       notFound: true,
     };
   }
@@ -40,10 +37,6 @@ interface ICatalogPage {
 }
 function CatalogPage({ movies, actors }: ICatalogPage) {
   const { t } = useTranslation();
-  const adventures = useMemo(
-    () => movies?.filter((el) => el.genres.find((e) => e.name === 'приключения')),
-    [movies],
-  );
   const router = useRouter();
   const dispatch = useAppDispatch();
 
@@ -56,14 +49,14 @@ function CatalogPage({ movies, actors }: ICatalogPage) {
     <div className={styles.container}>
       <Breadcrumbs className='container' crumbs={[{ title: t('CatalogPage.Movies') }]} />
 
-      <CatalogPageHeader titleText={t(`CatalogPageHeader.MoviesWatchOnline`)} />
+      <CatalogPageHeader />
 
       <div className={classNames('container', styles.catalogContentContainer)}>
         <FilterPanelDesktop />
         {!movies.length ? (
           <NotFound className={styles.catalogNotFound} />
         ) : (
-          <CatalogPageContent movies={adventures} actors={actors} />
+          <CatalogPageContent movies={movies} actors={actors} />
         )}
       </div>
     </div>
