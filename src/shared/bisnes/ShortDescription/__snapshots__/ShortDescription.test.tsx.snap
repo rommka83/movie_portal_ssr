@@ -10,11 +10,11 @@ exports[`проверка ShortDescription отрисовка ShortDescription  
     1970
     , 
   </p>
-  <p
+  <div
     className="genre"
   >
     sss
-  </p>
+  </div>
   <p
     className="duration"
   >
