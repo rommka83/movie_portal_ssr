@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import styles from './genrebookmarks.module.css';
 import { nanoid } from '@reduxjs/toolkit';
-import { type } from 'os';
 import { HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
@@ -26,7 +25,7 @@ export const GenreBookmarks: FC<HTMLAttributes<HTMLUListElement> & IProps> = ({
           </Link>
         </li>
       )}
-      {ganre.map((el) => {
+      {ganre?.map((el) => {
         return (
           <li className={styles.item} key={nanoid()}>
             <a href='https://www.ivi.ru/movies' className={styles.link}>

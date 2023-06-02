@@ -10,12 +10,12 @@ export const ReitingMovie: FC<PropsWithChildren<HTMLAttributes<HTMLDivElement> &
   grade,
   className,
 }) => {
-  const [integer, decimal] = grade.toString().split('.');
+  const [integer, decimal] = grade.toFixed(1).split('.');
 
   return (
     <div className={classNames(styles.root, className)}>
-      <span className={styles.left}>{integer},</span>
-      <span className={styles.right}>{decimal}</span>
+      <span className={styles.left}>{integer}</span>
+      <span className={styles.right}>,{decimal}</span>
     </div>
   );
 };

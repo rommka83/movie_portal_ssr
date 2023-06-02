@@ -6,3 +6,7 @@
 .inp:not(:last-child) {
   margin-bottom: 3px;
 }
+
+.inp {
+  height: 3px;
+}

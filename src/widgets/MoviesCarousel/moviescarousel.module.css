@@ -8,6 +8,20 @@
   padding-top: 5px;
   --viewed-elements-count: 7;
 }
+
+.observer {
+  padding-inline: 8px;
+}
+
+.showMoreCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 64 / 91;
+  background-color: var(--gray-active);
+  border-radius: 8px;
+}
+
 @media (max-width: 1050px) {
   .movieBadgeCarouselContent {
     --viewed-elements-count: 5;

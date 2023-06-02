@@ -89,7 +89,7 @@
   height: 48px;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 1253px) {
   .avatarButton.avatarButton {
     display: none;
   }

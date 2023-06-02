@@ -47,7 +47,13 @@ export const MoviesCarousel = React.memo(({ title, movies, getFilms, genreLink }
           </Link>
         </div>
       ))}
-      <div className={styles.observer} ref={contentCarouselRef} />
+      <div className={styles.observer} ref={contentCarouselRef}>
+        {!getFilms && (
+          <Link className={styles.showMoreCard} href={`/CatalogPage/${genreLink}`}>
+            Показать еще
+          </Link>
+        )}
+      </div>
     </Carousel>
   );
 });
