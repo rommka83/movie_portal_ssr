@@ -159,8 +159,8 @@ export const getParams = (params: NextParsedUrlQuery | undefined) => {
     ['genres.name']:
       params?.slug?.[typeParamsIndex.genre].split('+').filter((item) => item !== DEFAULT_GENRES_PARAMS) ?? '',
     ['countries.name']: params?.slug?.[typeParamsIndex.countries]?.split('+') ?? '',
-    ['rating.kp']: params?.['rating'] + '-10' ?? '',
-    ['votes.kp']: params?.['votes'] + '-1000000' ?? '',
+    ['rating.kp']: params?.['rating'] ? params?.['rating'] + '-10' : '',
+    ['votes.kp']: params?.['votes'] ? params?.['votes'] + '-1000000' : '',
     ['persons.name']: [
       !Array.isArray(params?.['director']) ? params?.['director'] ?? '' : '',
       !Array.isArray(params?.['actor']) ? params?.['actor'] ?? '' : '',
