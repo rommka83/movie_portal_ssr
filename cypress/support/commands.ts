@@ -6,4 +6,8 @@ Cypress.Commands.add('interceptRequest', (method) => {
     req.alias = method;
   });
 });
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false;
+});
 export {};

@@ -3,6 +3,7 @@
 exports[`проверка Carousel отрисовка Carousel 1`] = `
 <div
   className="carouselContainer"
+  data-cy="carusel"
 >
   <div
     className="wrapper"

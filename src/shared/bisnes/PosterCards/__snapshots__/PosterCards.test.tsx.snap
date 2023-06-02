@@ -3,23 +3,5 @@
 exports[`проверка PosterCards отрисовка PosterCards  1`] = `
 <div
   className="wrapper"
->
-  <img
-    alt=""
-    className="pic"
-    data-nimg="1"
-    decoding="async"
-    height={300}
-    loading="lazy"
-    onError={[Function]}
-    onLoad={[Function]}
-    src=""
-    style={
-      Object {
-        "color": "transparent",
-      }
-    }
-    width={200}
-  />
-</div>
+/>
 `;

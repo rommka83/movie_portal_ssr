@@ -62,7 +62,7 @@ export function Header() {
                 onMouseEnter={onMouseEnter}
               >
                 <ButtonOrLink className={styles.avatarButton} variant='secondary' round small transparent>
-                  <span className={classNames('icon-avatar_20__0', styles.adminIcon)} />
+                  <span className={classNames('icon-avatar_20__0', styles.adminIcon)} data-cy='iconAvatar' />
                 </ButtonOrLink>
               </div>
             </div>
