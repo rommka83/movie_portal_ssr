@@ -20,6 +20,7 @@ export function ActorsCreators({ id, persons, className }: IProps) {
   return (
     <div className={classNames(styles.root, className)}>
       <Carousel
+        href={`/AllParticipants/${id}`}
         carouselContainerClassName={styles.carouselContainer}
         title={t('ActorsCreators')}
         carouselChildrenClassName={styles.personCardCarouselContent}
