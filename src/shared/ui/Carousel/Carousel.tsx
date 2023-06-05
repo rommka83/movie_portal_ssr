@@ -99,13 +99,19 @@ export const Carousel = React.forwardRef<HTMLDivElement, PropsWithChildren<ICaro
 
     return (
       <div className={classNames(styles.carouselContainer, carouselContainerClassName)} data-cy='carusel'>
-        {title && (
-          <Link href={href ?? ''}>
+        {title && href && (
+          <Link href={href} className={styles.titleLink}>
             <h2 className={styles.title}>
               {title}
               {withArrow && <span className={classNames('icon-arrowRight_6x16__0', styles.iconStyle)} />}
             </h2>
           </Link>
+        )}
+        {title && !href && (
+          <h2 className={styles.title}>
+            {title}
+            {withArrow && <span className={classNames('icon-arrowRight_6x16__0', styles.iconStyle)} />}
+          </h2>
         )}
         <div className={styles.wrapper}>
           {withButton && showPrevButton && (
